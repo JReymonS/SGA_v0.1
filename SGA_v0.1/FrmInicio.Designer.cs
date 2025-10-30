@@ -1,6 +1,6 @@
 ﻿namespace SGA_v0._1
 {
-    partial class Form1
+    partial class FrmInicio
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FrmInicio
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Name = "FrmInicio";
+            this.Text = "FrmInicio";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

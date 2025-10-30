@@ -1,0 +1,14 @@
+﻿using AccesoDatos;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Manejadores
+{
+    public class ManejadorDetallesEntradas
+    {
+        Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen");
+    }
+}
