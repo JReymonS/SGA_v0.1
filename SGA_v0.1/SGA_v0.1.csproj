@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +79,81 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alerta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Almacen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Categoria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Configuracion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Consulta_Inventario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Descar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inicio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Max.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mostrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\No_Mostrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notificacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Perfil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Producto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Proveedores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Recargar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Registro_Entrada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Registro_Salida.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reloj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reporte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rol_Permisos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuarios.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
