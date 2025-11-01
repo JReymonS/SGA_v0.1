@@ -31,8 +31,8 @@
             this.tsPrincipal = new System.Windows.Forms.ToolStrip();
             this.tsbInicio = new System.Windows.Forms.ToolStripButton();
             this.tsbProveedores = new System.Windows.Forms.ToolStripButton();
-            this.tsbCategoria = new System.Windows.Forms.ToolStripButton();
-            this.tsbNotificacion = new System.Windows.Forms.ToolStripButton();
+            this.tsbCategorias = new System.Windows.Forms.ToolStripButton();
+            this.tsbNotificaciones = new System.Windows.Forms.ToolStripButton();
             this.tsbProductos = new System.Windows.Forms.ToolStripButton();
             this.tsbEntradas = new System.Windows.Forms.ToolStripButton();
             this.tsbSalidas = new System.Windows.Forms.ToolStripButton();
@@ -50,8 +50,8 @@
             this.tsPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbInicio,
             this.tsbProveedores,
-            this.tsbCategoria,
-            this.tsbNotificacion,
+            this.tsbCategorias,
+            this.tsbNotificaciones,
             this.tsbProductos,
             this.tsbEntradas,
             this.tsbSalidas,
@@ -86,25 +86,25 @@
             this.tsbProveedores.Size = new System.Drawing.Size(60, 60);
             this.tsbProveedores.Text = "PROVEEDORES";
             // 
-            // tsbCategoria
+            // tsbCategorias
             // 
-            this.tsbCategoria.AutoSize = false;
-            this.tsbCategoria.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbCategoria.Image = global::SGA_v0._1.Properties.Resources.Categoria;
-            this.tsbCategoria.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbCategoria.Name = "tsbCategoria";
-            this.tsbCategoria.Size = new System.Drawing.Size(60, 60);
-            this.tsbCategoria.Text = "CATEGORIA";
+            this.tsbCategorias.AutoSize = false;
+            this.tsbCategorias.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbCategorias.Image = global::SGA_v0._1.Properties.Resources.Categoria;
+            this.tsbCategorias.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbCategorias.Name = "tsbCategorias";
+            this.tsbCategorias.Size = new System.Drawing.Size(60, 60);
+            this.tsbCategorias.Text = "CATEGORIA";
             // 
-            // tsbNotificacion
+            // tsbNotificaciones
             // 
-            this.tsbNotificacion.AutoSize = false;
-            this.tsbNotificacion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbNotificacion.Image = global::SGA_v0._1.Properties.Resources.Notificacion;
-            this.tsbNotificacion.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbNotificacion.Name = "tsbNotificacion";
-            this.tsbNotificacion.Size = new System.Drawing.Size(60, 60);
-            this.tsbNotificacion.Text = "NOTIFICACION";
+            this.tsbNotificaciones.AutoSize = false;
+            this.tsbNotificaciones.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbNotificaciones.Image = global::SGA_v0._1.Properties.Resources.Notificacion;
+            this.tsbNotificaciones.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNotificaciones.Name = "tsbNotificaciones";
+            this.tsbNotificaciones.Size = new System.Drawing.Size(60, 60);
+            this.tsbNotificaciones.Text = "NOTIFICACION";
             // 
             // tsbProductos
             // 
@@ -187,6 +187,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmInicio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmInicio_Load);
             this.tsPrincipal.ResumeLayout(false);
             this.tsPrincipal.PerformLayout();
             this.ResumeLayout(false);
@@ -198,8 +199,8 @@
         private System.Windows.Forms.ToolStrip tsPrincipal;
         private System.Windows.Forms.ToolStripButton tsbInicio;
         private System.Windows.Forms.ToolStripButton tsbProveedores;
-        private System.Windows.Forms.ToolStripButton tsbCategoria;
-        private System.Windows.Forms.ToolStripButton tsbNotificacion;
+        private System.Windows.Forms.ToolStripButton tsbCategorias;
+        private System.Windows.Forms.ToolStripButton tsbNotificaciones;
         private System.Windows.Forms.ToolStripButton tsbProductos;
         private System.Windows.Forms.ToolStripButton tsbEntradas;
         private System.Windows.Forms.ToolStripButton tsbSalidas;
