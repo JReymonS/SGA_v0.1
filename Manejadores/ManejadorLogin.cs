@@ -7,6 +7,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Manejadores
 {
@@ -20,10 +21,10 @@ namespace Manejadores
         {
             if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contrasena)) 
             {
-                return (false, "Por favor complete todos los campos", null,null);
+                return (false, "Por favor complete todos los campos.", null,null);
             }
 
-            DataSet ds = b.Consulta($"SELECT * FROM v_UsuariosRolPermisos WHERE Nombre like '%{usuario}%' AND Clave like '%{Sha1(contrasena)}%'", "v_UsuariosRolPermisos");
+            DataSet ds = b.Consulta($"SELECT * FROM v_UsuariosRolPermisos WHERE BINARY NombreUsuario like '%{usuario}%' AND Clave like '%{Sha1(contrasena)}%'", "v_UsuariosRolPermisos");
             if (ds.Tables.Count >0 && ds.Tables[0].Rows.Count >=1)
             {
                 DataTable dt = ds.Tables[0];
@@ -34,8 +35,8 @@ namespace Manejadores
                 {
                     if (user.id_usuario == 0) 
                     {
-                        user.id_usuario = Convert.ToInt32(row["Id"]);
-                        user.nombre = row["Nombre"].ToString();
+                        user.id_usuario = Convert.ToInt32(row["IdUsuario"]);
+                        user.nombre = row["NombreUsuario"].ToString();
                         user.fkid_rol = Convert.ToInt32(row["IdRol"]);
                     }
 
@@ -52,13 +53,35 @@ namespace Manejadores
                     );
                     rol.permisos.Add(permisos);
                 }
-                return(true, "Acceso concedido", user, rol);
+                return(true, "Acceso concedido.", user, rol);
             }
             else 
             {
-                return (false, "Usuario o contraseña incorrectos", null,null);
+                return (false, "Usuario o contraseña incorrectos.", null,null);
             }
 
+        }
+
+
+        //METODO PARA MOSTRAR CONTRASEÑA O OCULTARLA
+        public void MostrarOcultarContrasena(TextBox caja, bool mostrar)
+        {
+            if (mostrar)
+            {
+                caja.PasswordChar = '\0';
+            }
+            else
+            {
+                caja.PasswordChar = '*';
+            }
+        }
+
+
+        //METODO PARA LIMPIAR CAJAS DE TEXTO
+        public void LimipiarCajas(TextBox caja1, TextBox caja2)
+        {
+            caja1.Clear();
+            caja2.Clear();
         }
 
 

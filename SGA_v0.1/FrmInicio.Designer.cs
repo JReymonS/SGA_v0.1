@@ -39,7 +39,8 @@
             this.tsbReportes = new System.Windows.Forms.ToolStripButton();
             this.tsbRolesPermisos = new System.Windows.Forms.ToolStripButton();
             this.tsbUsuarios = new System.Windows.Forms.ToolStripButton();
-            this.tsbSalir = new System.Windows.Forms.ToolStripButton();
+            this.tsbCerrarSesion = new System.Windows.Forms.ToolStripButton();
+            this.LblUsuarioActivo = new System.Windows.Forms.Label();
             this.tsPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             this.tsbReportes,
             this.tsbRolesPermisos,
             this.tsbUsuarios,
-            this.tsbSalir});
+            this.tsbCerrarSesion});
             this.tsPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tsPrincipal.Name = "tsPrincipal";
             this.tsPrincipal.Size = new System.Drawing.Size(60, 755);
@@ -166,21 +167,32 @@
             this.tsbUsuarios.Size = new System.Drawing.Size(60, 60);
             this.tsbUsuarios.Text = "USUARIOS";
             // 
-            // tsbSalir
+            // tsbCerrarSesion
             // 
-            this.tsbSalir.AutoSize = false;
-            this.tsbSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbSalir.Image = global::SGA_v0._1.Properties.Resources.Salir;
-            this.tsbSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbSalir.Name = "tsbSalir";
-            this.tsbSalir.Size = new System.Drawing.Size(60, 60);
-            this.tsbSalir.Text = "SALIR";
+            this.tsbCerrarSesion.AutoSize = false;
+            this.tsbCerrarSesion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbCerrarSesion.Image = global::SGA_v0._1.Properties.Resources.Salir;
+            this.tsbCerrarSesion.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbCerrarSesion.Name = "tsbCerrarSesion";
+            this.tsbCerrarSesion.Size = new System.Drawing.Size(60, 60);
+            this.tsbCerrarSesion.Text = "CERRAR SESION";
+            this.tsbCerrarSesion.Click += new System.EventHandler(this.tsbCerrarSesion_Click);
+            // 
+            // LblUsuarioActivo
+            // 
+            this.LblUsuarioActivo.AutoSize = true;
+            this.LblUsuarioActivo.Location = new System.Drawing.Point(74, 19);
+            this.LblUsuarioActivo.Name = "LblUsuarioActivo";
+            this.LblUsuarioActivo.Size = new System.Drawing.Size(71, 13);
+            this.LblUsuarioActivo.TabIndex = 3;
+            this.LblUsuarioActivo.Text = "Bienvenid@: ";
             // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 755);
+            this.Controls.Add(this.LblUsuarioActivo);
             this.Controls.Add(this.tsPrincipal);
             this.IsMdiContainer = true;
             this.Name = "FrmInicio";
@@ -191,6 +203,7 @@
             this.tsPrincipal.ResumeLayout(false);
             this.tsPrincipal.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -207,7 +220,8 @@
         private System.Windows.Forms.ToolStripButton tsbReportes;
         private System.Windows.Forms.ToolStripButton tsbRolesPermisos;
         private System.Windows.Forms.ToolStripButton tsbUsuarios;
-        private System.Windows.Forms.ToolStripButton tsbSalir;
+        private System.Windows.Forms.ToolStripButton tsbCerrarSesion;
+        private System.Windows.Forms.Label LblUsuarioActivo;
     }
 }
 

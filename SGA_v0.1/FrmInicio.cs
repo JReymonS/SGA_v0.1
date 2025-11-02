@@ -26,6 +26,7 @@ namespace SGA_v0._1
         private void FrmInicio_Load(object sender, EventArgs e)
         {
             //HABILITAR O DESHABILITAR BOTONES SEGUN PERMISOS DEL ROL
+            LblUsuarioActivo.Text = $"Bienvenid@: {_usuarioActivo.nombre}";
             tsbProveedores.Enabled = false;
             tsbCategorias.Enabled = false;
             tsbNotificaciones.Enabled = false;
@@ -69,6 +70,13 @@ namespace SGA_v0._1
                         break;
                 }
             }
+        }
+
+
+        //EVENTO CLICK PARA CERRAR SESION
+        private void tsbCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }
