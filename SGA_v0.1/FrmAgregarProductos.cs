@@ -45,12 +45,29 @@ namespace SGA_v0._1
             {
                 if(FrmVerProductos.producto.id_producto == 0)
                 {
-                    mp.Guardar(new Productos(0, txtNombre.Text, txtDescripcion.Text, cmbUnidad.Text, double.Parse(txtCosto.Text), int.Parse(txtStockActual.Text),int.Parse(txtStockMinimo.Text), cmbEstatus.Text,(int) cmbCategoria.SelectedValue));
-                    MessageBox.Show("Datos Guardados Exitosamente");
-                    Close();
+                    if(!mp.ValidarCampos(txtNombre, txtDescripcion, txtCosto, txtStockActual, txtStockMinimo))
+                    {
+                        return;
+                    }
+                    if (!mp.ValidarNumeros(txtCosto, txtStockActual, txtStockMinimo))
+                    {
+                        return;
+                    }
+                    mp.Guardar(new Productos(0, txtNombre.Text, txtDescripcion.Text, cmbUnidad.Text, double.Parse(txtCosto.Text), int.Parse(txtStockActual.Text), int.Parse(txtStockMinimo.Text), cmbEstatus.Text, (int)cmbCategoria.SelectedValue));
+                        MessageBox.Show("Datos Guardados Exitosamente");
+                        Close();
+                    
                 }
                 else
                 {
+                    if (!mp.ValidarCampos(txtNombre, txtDescripcion, txtCosto, txtStockActual, txtStockMinimo))
+                    {
+                        return;
+                    }
+                    if (!mp.ValidarNumeros(txtCosto, txtStockActual, txtStockMinimo))
+                    {
+                        return;
+                    }
                     mp.Modificar(new Productos(FrmVerProductos.producto.id_producto, txtNombre.Text, txtDescripcion.Text, cmbUnidad.Text, double.Parse(txtCosto.Text), int.Parse(txtStockActual.Text), int.Parse(txtStockMinimo.Text), cmbEstatus.Text, (int)cmbCategoria.SelectedValue));
                     MessageBox.Show("Datos Actualizados Correctamente");
                     Close();

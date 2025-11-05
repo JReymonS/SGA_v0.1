@@ -22,17 +22,8 @@ namespace Manejadores
             b.Comando($"CALL InsertarProducto('{producto.nombre}', '{producto.descripcion}', '{producto.unidad}', {producto.precio_salida}, {producto.stock}, {producto.stock_minimo}, '{producto.status}', {producto.fkid_categoria})");
         }
 
-        // Metodo para eliminar registros en la base de datos
-        public void Borrar(Productos producto)
-        {
-            var rs = MessageBox.Show($"Esta seguro de Eliminar el Producto {producto.nombre}", 
-                "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (rs == DialogResult.Yes)
-            {
-                b.Comando($"delete from productos where id_producto = {producto.id_producto}");
-            }
-        }
-
+        
+        
         // Metodo para modificar registros en la base de datos
         public void Modificar(Productos producto)
         {
@@ -58,11 +49,10 @@ namespace Manejadores
             tabla.Columns.Clear();
             tabla.DataSource = b.Consulta(consulta, datos).Tables[datos];
             tabla.Columns["id_producto"].Visible = false;
-            tabla.Columns["fkid_categoria"].Visible = false;
+            tabla.Columns["id_categoria"].Visible = false;
+            tabla.Columns["Categoria"].Visible = true;
             tabla.Columns.Insert(10, Boton("Modificar", Color.Green));
-            tabla.Columns.Insert(11, Boton("Eliminar", Color.Red));
-            
-
+      
         }
 
         // Metodo para llenar los combo box de tipo ENUM
@@ -82,6 +72,43 @@ namespace Manejadores
             caja.DataSource = b.Consulta($"select id_categoria, nombre from categorias", $"categorias").Tables[0];
             caja.DisplayMember = $"nombre";
             caja.ValueMember = $"Id_categoria";
+        }
+
+        // Metodo para asegurar que al registrar productos se llenen todos los campos de datos del formulario
+        public bool ValidarCampos(TextBox nombre, TextBox descripcion, TextBox costo, TextBox stockActual, TextBox stockMinimo)
+        {
+            if (string.IsNullOrWhiteSpace(nombre.Text) || string.IsNullOrWhiteSpace(descripcion.Text) || string.IsNullOrWhiteSpace(costo.Text) || string.IsNullOrWhiteSpace(stockActual.Text) ||
+                string.IsNullOrWhiteSpace(stockMinimo.Text))
+            {
+                MessageBox.Show("Por favor, complete todos los campos", "Registro incompleto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        //Metodo para validar la entrada de los numeros para registrar o actualizar registros de productos validos, que no sean negativos, letras o numeros decimales donde deben ser enteros
+        public bool ValidarNumeros(TextBox txtCosto, TextBox txtStockActual, TextBox txtStockMinimo)
+        {
+            if (!double.TryParse(txtCosto.Text, out double precio) || precio < 0)
+            {
+                MessageBox.Show("El precio debe ser un numero",
+                               "Precio invalido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (!int.TryParse(txtStockActual.Text, out int stock) || stock < 0)
+            {
+                MessageBox.Show("El stock debe ser un numero entero", "Stock invalido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (!int.TryParse(txtStockMinimo.Text, out int stockMinimo) || stockMinimo < 0)
+            {
+                MessageBox.Show("El stock mínimo debe ser un numero entero", "Stock mínimo invalido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            return true;
         }
 
     }

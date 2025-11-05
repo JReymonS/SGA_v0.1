@@ -51,14 +51,14 @@ namespace SGA_v0._1
         private void dtgDatos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             producto.id_producto = int.Parse(dtgDatos.Rows[fila].Cells[0].Value.ToString());
-            producto.nombre = dtgDatos.Rows[fila].Cells["nombre"].Value.ToString();
-            producto.descripcion = dtgDatos.Rows[fila].Cells["descripcion"].Value.ToString();
-            producto.unidad = dtgDatos.Rows[fila].Cells["unidad"].Value.ToString();
-            producto.precio_salida = double.Parse(dtgDatos.Rows[fila].Cells["precio_salida"].Value.ToString());
-            producto.stock = int.Parse(dtgDatos.Rows[fila].Cells["stock"].Value.ToString());
-            producto.stock_minimo = int.Parse(dtgDatos.Rows[fila].Cells["stock_minimo"].Value.ToString());
-            producto.status = dtgDatos.Rows[fila].Cells["status"].Value.ToString();
-            producto.fkid_categoria = int.Parse(dtgDatos.Rows[fila].Cells["fkid_categoria"].Value.ToString());
+            producto.nombre = dtgDatos.Rows[fila].Cells["Nombre"].Value.ToString();
+            producto.descripcion = dtgDatos.Rows[fila].Cells["Descripcion"].Value.ToString();
+            producto.unidad = dtgDatos.Rows[fila].Cells["Unidad"].Value.ToString();
+            producto.precio_salida = double.Parse(dtgDatos.Rows[fila].Cells["Precio"].Value.ToString());
+            producto.stock = int.Parse(dtgDatos.Rows[fila].Cells["Stock"].Value.ToString());
+            producto.stock_minimo = int.Parse(dtgDatos.Rows[fila].Cells["Stock Minimo"].Value.ToString());
+            producto.status = dtgDatos.Rows[fila].Cells["Estatus"].Value.ToString();
+            producto.fkid_categoria = int.Parse(dtgDatos.Rows[fila].Cells["id_categoria"].Value.ToString());
 
             switch(columna)
             {
@@ -67,12 +67,8 @@ namespace SGA_v0._1
                         FrmAgregarProductos p = new FrmAgregarProductos();
                         p.ShowDialog();
                         dtgDatos.Columns.Clear();
+
                     }break;
-                case 11:
-                    {
-                        mp.Borrar(producto);
-                        dtgDatos.Columns.Clear();
-                    }break ;
             }
         }
 

@@ -16,7 +16,7 @@ namespace SGA_v0._1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmInicio());
+            Application.Run(new FrmVerProductos());
         }
     }
 }

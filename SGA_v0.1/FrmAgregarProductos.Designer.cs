@@ -187,6 +187,7 @@
             // 
             // cmbEstatus
             // 
+            this.cmbEstatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstatus.FormattingEnabled = true;
             this.cmbEstatus.Location = new System.Drawing.Point(579, 163);
             this.cmbEstatus.Name = "cmbEstatus";
@@ -195,6 +196,7 @@
             // 
             // cmbCategoria
             // 
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Location = new System.Drawing.Point(579, 279);
             this.cmbCategoria.Name = "cmbCategoria";
@@ -203,6 +205,7 @@
             // 
             // cmbUnidad
             // 
+            this.cmbUnidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUnidad.FormattingEnabled = true;
             this.cmbUnidad.Location = new System.Drawing.Point(579, 217);
             this.cmbUnidad.Name = "cmbUnidad";
