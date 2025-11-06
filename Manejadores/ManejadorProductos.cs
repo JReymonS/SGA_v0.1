@@ -19,7 +19,7 @@ namespace Manejadores
         // Metodo para realizar registros en la base de datos
         public void Guardar(Productos producto)
         {
-            b.Comando($"CALL InsertarProducto('{producto.nombre}', '{producto.descripcion}', '{producto.unidad}', {producto.precio_salida}, {producto.stock}, {producto.stock_minimo}, '{producto.status}', {producto.fkid_categoria})");
+            b.Comando($"CALL p_InsertarProducto('{producto.nombre}', '{producto.descripcion}', '{producto.unidad}', {producto.precio_salida}, {producto.stock}, {producto.stock_minimo}, '{producto.status}', {producto.fkid_categoria})");
         }
 
         
@@ -52,7 +52,8 @@ namespace Manejadores
             tabla.Columns["id_categoria"].Visible = false;
             tabla.Columns["Categoria"].Visible = true;
             tabla.Columns.Insert(10, Boton("Modificar", Color.Green));
-      
+            tabla.Columns.Insert(11, Boton("Eliminar", Color.Red));
+
         }
 
         // Metodo para llenar los combo box de tipo ENUM
@@ -110,6 +111,42 @@ namespace Manejadores
 
             return true;
         }
+        //Metodo para mostrar Activo e Inactivo en los ComboBox
+        public void LlenarComboEstatus(ComboBox caja)
+        {
+            
+            var lista = new List<object>
+            {
+              new { Texto = "Activo", Valor = "A" },
+              new { Texto = "Inactivo", Valor = "I" }
+            };
+
+            caja.DataSource = lista;
+            caja.DisplayMember = "Texto"; 
+            caja.ValueMember = "Valor";   
+        }
+
+        // Método para eliminar el producto es decir, cambiar el estatus de un producto a Inactivo
+        public void CambiarEstatusInactivo(int idProducto)
+        {
+            try
+            {
+                var rs = MessageBox.Show("¿Esta seguro de eliminar el Producto?","Eliminar Producto", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+
+                if (rs == DialogResult.Yes)
+                {
+                    b.Comando($"UPDATE productos SET status = 'I' WHERE id_producto = {idProducto}");
+                    MessageBox.Show("El producto ha sido marcado como Inactivo.", "Estatus actualizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cambiar el estatus del producto: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
 
     }
 }

@@ -22,7 +22,7 @@ namespace SGA_v0._1
             InitializeComponent();
             mp = new ManejadorProductos();
             mp.LlenarCategorias(cmbCategoria);
-            mp.LlenarComboBox(cmbEstatus, "status", "productos");
+            mp.LlenarComboEstatus(cmbEstatus);
             mp.LlenarComboBox(cmbUnidad, "unidad", "productos");
             if(FrmVerProductos.producto.id_producto > 0)
             {
@@ -33,7 +33,9 @@ namespace SGA_v0._1
                 txtStockMinimo.Text = FrmVerProductos.producto.stock_minimo.ToString();
                 cmbCategoria.Text = FrmVerProductos.producto.unidad;
                 cmbEstatus.Text = FrmVerProductos.producto.status;
+                cmbUnidad.Text = FrmVerProductos.producto.unidad;
                 cmbCategoria.SelectedValue = FrmVerProductos.producto.fkid_categoria;
+
 
             }
         }
@@ -53,7 +55,7 @@ namespace SGA_v0._1
                     {
                         return;
                     }
-                    mp.Guardar(new Productos(0, txtNombre.Text, txtDescripcion.Text, cmbUnidad.Text, double.Parse(txtCosto.Text), int.Parse(txtStockActual.Text), int.Parse(txtStockMinimo.Text), cmbEstatus.Text, (int)cmbCategoria.SelectedValue));
+                    mp.Guardar(new Productos(0, txtNombre.Text, txtDescripcion.Text, cmbUnidad.Text, double.Parse(txtCosto.Text), int.Parse(txtStockActual.Text), int.Parse(txtStockMinimo.Text), cmbEstatus.SelectedValue.ToString(), (int)cmbCategoria.SelectedValue));
                         MessageBox.Show("Datos Guardados Exitosamente");
                         Close();
                     
@@ -68,7 +70,7 @@ namespace SGA_v0._1
                     {
                         return;
                     }
-                    mp.Modificar(new Productos(FrmVerProductos.producto.id_producto, txtNombre.Text, txtDescripcion.Text, cmbUnidad.Text, double.Parse(txtCosto.Text), int.Parse(txtStockActual.Text), int.Parse(txtStockMinimo.Text), cmbEstatus.Text, (int)cmbCategoria.SelectedValue));
+                    mp.Modificar(new Productos(FrmVerProductos.producto.id_producto, txtNombre.Text, txtDescripcion.Text, cmbUnidad.Text, double.Parse(txtCosto.Text), int.Parse(txtStockActual.Text), int.Parse(txtStockMinimo.Text), cmbEstatus.SelectedValue.ToString(), (int)cmbCategoria.SelectedValue));
                     MessageBox.Show("Datos Actualizados Correctamente");
                     Close();
                 }

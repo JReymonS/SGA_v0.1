@@ -29,8 +29,8 @@ namespace SGA_v0._1
         // Boton para buscar un registro en la base de datos
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            mp.Mostrar($"CALL BuscarProductos('{txtNombre.Text}')", dtgDatos, "productos");
-            txtNombre.Text = "";
+            mp.Mostrar($"CALL p_BuscarProducto('{txtNombre.Text}')", dtgDatos, "productos");
+            
         }
 
 
@@ -69,6 +69,13 @@ namespace SGA_v0._1
                         dtgDatos.Columns.Clear();
 
                     }break;
+                case 11:
+                    {
+                        mp.CambiarEstatusInactivo(producto.id_producto);
+                        dtgDatos.Columns.Clear(); 
+
+                    }
+                    break;
             }
         }
 
