@@ -31,15 +31,16 @@
             this.tsPrincipal = new System.Windows.Forms.ToolStrip();
             this.tsbInicio = new System.Windows.Forms.ToolStripButton();
             this.tsbProveedores = new System.Windows.Forms.ToolStripButton();
-            this.tsbCategoria = new System.Windows.Forms.ToolStripButton();
-            this.tsbNotificacion = new System.Windows.Forms.ToolStripButton();
+            this.tsbCategorias = new System.Windows.Forms.ToolStripButton();
+            this.tsbNotificaciones = new System.Windows.Forms.ToolStripButton();
             this.tsbProductos = new System.Windows.Forms.ToolStripButton();
             this.tsbEntradas = new System.Windows.Forms.ToolStripButton();
             this.tsbSalidas = new System.Windows.Forms.ToolStripButton();
             this.tsbReportes = new System.Windows.Forms.ToolStripButton();
             this.tsbRolesPermisos = new System.Windows.Forms.ToolStripButton();
             this.tsbUsuarios = new System.Windows.Forms.ToolStripButton();
-            this.tsbSalir = new System.Windows.Forms.ToolStripButton();
+            this.tsbCerrarSesion = new System.Windows.Forms.ToolStripButton();
+            this.LblUsuarioActivo = new System.Windows.Forms.Label();
             this.tsPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,15 +51,15 @@
             this.tsPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbInicio,
             this.tsbProveedores,
-            this.tsbCategoria,
-            this.tsbNotificacion,
+            this.tsbCategorias,
+            this.tsbNotificaciones,
             this.tsbProductos,
             this.tsbEntradas,
             this.tsbSalidas,
             this.tsbReportes,
             this.tsbRolesPermisos,
             this.tsbUsuarios,
-            this.tsbSalir});
+            this.tsbCerrarSesion});
             this.tsPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tsPrincipal.Name = "tsPrincipal";
             this.tsPrincipal.Size = new System.Drawing.Size(60, 755);
@@ -86,25 +87,25 @@
             this.tsbProveedores.Size = new System.Drawing.Size(60, 60);
             this.tsbProveedores.Text = "PROVEEDORES";
             // 
-            // tsbCategoria
+            // tsbCategorias
             // 
-            this.tsbCategoria.AutoSize = false;
-            this.tsbCategoria.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbCategoria.Image = global::SGA_v0._1.Properties.Resources.Categoria;
-            this.tsbCategoria.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbCategoria.Name = "tsbCategoria";
-            this.tsbCategoria.Size = new System.Drawing.Size(60, 60);
-            this.tsbCategoria.Text = "CATEGORIA";
+            this.tsbCategorias.AutoSize = false;
+            this.tsbCategorias.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbCategorias.Image = global::SGA_v0._1.Properties.Resources.Categoria;
+            this.tsbCategorias.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbCategorias.Name = "tsbCategorias";
+            this.tsbCategorias.Size = new System.Drawing.Size(60, 60);
+            this.tsbCategorias.Text = "CATEGORIA";
             // 
-            // tsbNotificacion
+            // tsbNotificaciones
             // 
-            this.tsbNotificacion.AutoSize = false;
-            this.tsbNotificacion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbNotificacion.Image = global::SGA_v0._1.Properties.Resources.Notificacion;
-            this.tsbNotificacion.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbNotificacion.Name = "tsbNotificacion";
-            this.tsbNotificacion.Size = new System.Drawing.Size(60, 60);
-            this.tsbNotificacion.Text = "NOTIFICACION";
+            this.tsbNotificaciones.AutoSize = false;
+            this.tsbNotificaciones.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbNotificaciones.Image = global::SGA_v0._1.Properties.Resources.Notificacion;
+            this.tsbNotificaciones.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNotificaciones.Name = "tsbNotificaciones";
+            this.tsbNotificaciones.Size = new System.Drawing.Size(60, 60);
+            this.tsbNotificaciones.Text = "NOTIFICACION";
             // 
             // tsbProductos
             // 
@@ -166,30 +167,43 @@
             this.tsbUsuarios.Size = new System.Drawing.Size(60, 60);
             this.tsbUsuarios.Text = "USUARIOS";
             // 
-            // tsbSalir
+            // tsbCerrarSesion
             // 
-            this.tsbSalir.AutoSize = false;
-            this.tsbSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbSalir.Image = global::SGA_v0._1.Properties.Resources.Salir;
-            this.tsbSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbSalir.Name = "tsbSalir";
-            this.tsbSalir.Size = new System.Drawing.Size(60, 60);
-            this.tsbSalir.Text = "SALIR";
+            this.tsbCerrarSesion.AutoSize = false;
+            this.tsbCerrarSesion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbCerrarSesion.Image = global::SGA_v0._1.Properties.Resources.Salir;
+            this.tsbCerrarSesion.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbCerrarSesion.Name = "tsbCerrarSesion";
+            this.tsbCerrarSesion.Size = new System.Drawing.Size(60, 60);
+            this.tsbCerrarSesion.Text = "CERRAR SESION";
+            this.tsbCerrarSesion.Click += new System.EventHandler(this.tsbCerrarSesion_Click);
+            // 
+            // LblUsuarioActivo
+            // 
+            this.LblUsuarioActivo.AutoSize = true;
+            this.LblUsuarioActivo.Location = new System.Drawing.Point(74, 19);
+            this.LblUsuarioActivo.Name = "LblUsuarioActivo";
+            this.LblUsuarioActivo.Size = new System.Drawing.Size(71, 13);
+            this.LblUsuarioActivo.TabIndex = 3;
+            this.LblUsuarioActivo.Text = "Bienvenid@: ";
             // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 755);
+            this.Controls.Add(this.LblUsuarioActivo);
             this.Controls.Add(this.tsPrincipal);
             this.IsMdiContainer = true;
             this.Name = "FrmInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmInicio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmInicio_Load);
             this.tsPrincipal.ResumeLayout(false);
             this.tsPrincipal.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -198,15 +212,16 @@
         private System.Windows.Forms.ToolStrip tsPrincipal;
         private System.Windows.Forms.ToolStripButton tsbInicio;
         private System.Windows.Forms.ToolStripButton tsbProveedores;
-        private System.Windows.Forms.ToolStripButton tsbCategoria;
-        private System.Windows.Forms.ToolStripButton tsbNotificacion;
+        private System.Windows.Forms.ToolStripButton tsbCategorias;
+        private System.Windows.Forms.ToolStripButton tsbNotificaciones;
         private System.Windows.Forms.ToolStripButton tsbProductos;
         private System.Windows.Forms.ToolStripButton tsbEntradas;
         private System.Windows.Forms.ToolStripButton tsbSalidas;
         private System.Windows.Forms.ToolStripButton tsbReportes;
         private System.Windows.Forms.ToolStripButton tsbRolesPermisos;
         private System.Windows.Forms.ToolStripButton tsbUsuarios;
-        private System.Windows.Forms.ToolStripButton tsbSalir;
+        private System.Windows.Forms.ToolStripButton tsbCerrarSesion;
+        private System.Windows.Forms.Label LblUsuarioActivo;
     }
 }
 
