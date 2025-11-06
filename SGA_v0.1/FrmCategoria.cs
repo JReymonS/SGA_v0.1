@@ -27,27 +27,20 @@ namespace SGA_v0._1
                 columna = e.ColumnIndex;
 
                 FrmCategoria.categoria.id_categoria = int.Parse(DtgDatos.Rows[fila].Cells["id_categoria"].Value.ToString());
-                FrmCategoria.categoria.nombre = DtgDatos.Rows[fila].Cells["nombre"].Value.ToString();
-                FrmCategoria.categoria.status = DtgDatos.Rows[fila].Cells["status"].Value.ToString();
+                FrmCategoria.categoria.nombre = DtgDatos.Rows[fila].Cells["Nombre"].Value.ToString();
+                FrmCategoria.categoria.status = DtgDatos.Rows[fila].Cells["Estatus"].Value.ToString(); 
 
                 switch (columna)
                 {
-                    case 3: 
-                        {
-                            FrmCategoriaMenu frmDatos = new FrmCategoriaMenu();
-                            frmDatos.FormClosed += (s, args) =>
-                            {
-                                LimpiarTabla(); 
-                            };
-                            frmDatos.ShowDialog();
-                        }
+                    case 4: 
+                        FrmCategoriaMenu frmDatos = new FrmCategoriaMenu();
+                        frmDatos.FormClosed += (s, args) => LimpiarTabla();
+                        frmDatos.ShowDialog();
                         break;
 
-                    case 4: 
-                        {
-                            mc.Borrar(FrmCategoria.categoria);
-                            LimpiarTabla();
-                        }
+                    case 5: 
+                        mc.Borrar(FrmCategoria.categoria);
+                        LimpiarTabla();
                         break;
                 }
             }
@@ -68,7 +61,7 @@ namespace SGA_v0._1
             FrmCategoriaMenu frmMenu = new FrmCategoriaMenu();
             frmMenu.FormClosed += (s, args) =>
             {
-                LimpiarTabla(); 
+                LimpiarTabla();
             };
             frmMenu.ShowDialog();
         }

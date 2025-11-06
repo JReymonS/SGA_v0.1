@@ -10,7 +10,6 @@ namespace Manejadores
     {
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen", 3310);
 
-
         public void Guardar(Categorias categoria)
         {
             try
@@ -54,7 +53,6 @@ namespace Manejadores
                 {
                     string query = $"CALL InactivarCategoria({categoria.id_categoria})";
                     b.Comando(query);
-
                     MessageBox.Show("La categoría se marcó como inactiva correctamente.",
                                     "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -66,7 +64,6 @@ namespace Manejadores
             }
         }
 
-
         public void Mostrar(string nombre, DataGridView tabla)
         {
             try
@@ -74,10 +71,19 @@ namespace Manejadores
                 tabla.Columns.Clear();
 
                 tabla.DataSource = b.Consulta(
-                    $"SELECT * FROM vista_categorias WHERE nombre LIKE '%{nombre}%' OR status LIKE '%{nombre}%'",
+                    $"SELECT * FROM vista_categorias " +
+                    $"WHERE (nombre COLLATE utf8mb4_general_ci LIKE '%{nombre}%') " +
+                    $"AND status = 'A'",
                     "categorias").Tables[0];
 
+                if (tabla.Columns.Contains("status"))
+                    tabla.Columns["status"].Visible = false;
 
+                if (tabla.Columns.Contains("status_texto"))
+                    tabla.Columns["status_texto"].HeaderText = "Estatus";
+
+                if (tabla.Columns.Contains("nombre"))
+                    tabla.Columns["nombre"].HeaderText = "Nombre";
 
                 if (tabla.Columns.Contains("id_categoria"))
                     tabla.Columns["id_categoria"].Visible = false;

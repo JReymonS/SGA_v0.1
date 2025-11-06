@@ -20,6 +20,7 @@ namespace SGA_v0._1
             if (FrmCategoria.categoria.id_categoria > 0)
             {
                 TxtNombre.Text = FrmCategoria.categoria.nombre;
+
                 CmbStatus.SelectedItem = FrmCategoria.categoria.status == "A" ? "Activo" : "Inactivo";
             }
             else
@@ -57,7 +58,7 @@ namespace SGA_v0._1
                     MessageBox.Show("Se modificó correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-                Close(); 
+                Close();
             }
             catch (Exception ex)
             {
@@ -72,4 +73,5 @@ namespace SGA_v0._1
         }
     }
 }
+
 
