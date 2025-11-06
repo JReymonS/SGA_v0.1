@@ -28,7 +28,7 @@ namespace SGA_v0._1
 
                 FrmCategoria.categoria.id_categoria = int.Parse(DtgDatos.Rows[fila].Cells["id_categoria"].Value.ToString());
                 FrmCategoria.categoria.nombre = DtgDatos.Rows[fila].Cells["Nombre"].Value.ToString();
-                FrmCategoria.categoria.status = DtgDatos.Rows[fila].Cells["Estatus"].Value.ToString(); 
+                FrmCategoria.categoria.status = DtgDatos.Rows[fila].Cells["status"].Value.ToString(); 
 
                 switch (columna)
                 {

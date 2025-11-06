@@ -14,7 +14,7 @@ namespace Manejadores
         {
             try
             {
-                string query = $"CALL InsertarCategoria('{categoria.nombre}', '{categoria.status}')";
+                string query = $"CALL p_InsertarCategoria('{categoria.nombre}', '{categoria.status}')";
                 b.Comando(query);
             }
             catch (Exception ex)
@@ -28,7 +28,7 @@ namespace Manejadores
         {
             try
             {
-                string query = $"CALL ModificarCategoria({categoria.id_categoria}, '{categoria.nombre}', '{categoria.status}')";
+                string query = $"CALL p_ModificarCategoria({categoria.id_categoria}, '{categoria.nombre}', '{categoria.status}')";
                 b.Comando(query);
             }
             catch (Exception ex)
@@ -51,7 +51,7 @@ namespace Manejadores
             {
                 try
                 {
-                    string query = $"CALL InactivarCategoria({categoria.id_categoria})";
+                    string query = $"CALL p_InactivarCategoria({categoria.id_categoria})";
                     b.Comando(query);
                     MessageBox.Show("La categoría se marcó como inactiva correctamente.",
                                     "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -71,7 +71,7 @@ namespace Manejadores
                 tabla.Columns.Clear();
 
                 tabla.DataSource = b.Consulta(
-                    $"SELECT * FROM vista_categorias " +
+                    $"SELECT * FROM v_ConsultaCategoria " +
                     $"WHERE (nombre COLLATE utf8mb4_general_ci LIKE '%{nombre}%') " +
                     $"AND status = 'A'",
                     "categorias").Tables[0];
