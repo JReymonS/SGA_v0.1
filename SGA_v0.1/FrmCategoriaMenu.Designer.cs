@@ -87,12 +87,13 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(121, 189);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "status";
+            this.label3.Text = "Status";
             // 
             // CmbStatus
             // 
+            this.CmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbStatus.FormattingEnabled = true;
             this.CmbStatus.Location = new System.Drawing.Point(282, 189);
             this.CmbStatus.Name = "CmbStatus";
@@ -112,6 +113,7 @@
             this.Controls.Add(this.BtnCancelar);
             this.Controls.Add(this.BtnGuardar);
             this.Name = "FrmCategoriaMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCategoriaMenu";
             this.ResumeLayout(false);
             this.PerformLayout();

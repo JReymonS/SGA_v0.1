@@ -18,6 +18,7 @@ namespace SGA_v0._1
             InitializeComponent();
             mc = new ManejadorCategorias();
         }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -31,20 +32,21 @@ namespace SGA_v0._1
 
                 switch (columna)
                 {
-                    case 3:
+                    case 3: 
                         {
                             FrmCategoriaMenu frmDatos = new FrmCategoriaMenu();
+                            frmDatos.FormClosed += (s, args) =>
+                            {
+                                LimpiarTabla(); 
+                            };
                             frmDatos.ShowDialog();
-
-                            mc.Mostrar(TxtBuscar.Text.Trim(), DtgDatos);
                         }
                         break;
 
-                    case 4:
+                    case 4: 
                         {
                             mc.Borrar(FrmCategoria.categoria);
-
-                            mc.Mostrar(TxtBuscar.Text.Trim(), DtgDatos);
+                            LimpiarTabla();
                         }
                         break;
                 }
@@ -62,7 +64,12 @@ namespace SGA_v0._1
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
+            FrmCategoria.categoria = new Categorias(0, "", "");
             FrmCategoriaMenu frmMenu = new FrmCategoriaMenu();
+            frmMenu.FormClosed += (s, args) =>
+            {
+                LimpiarTabla(); 
+            };
             frmMenu.ShowDialog();
         }
 
@@ -75,6 +82,14 @@ namespace SGA_v0._1
         {
             fila = e.RowIndex;
             columna = e.ColumnIndex;
+        }
+
+        public void LimpiarTabla()
+        {
+            DtgDatos.DataSource = null;
+            DtgDatos.Rows.Clear();
+            DtgDatos.Columns.Clear();
+            DtgDatos.Refresh();
         }
     }
 }

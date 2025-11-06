@@ -40,6 +40,7 @@
             // 
             // DtgDatos
             // 
+            this.DtgDatos.AllowUserToAddRows = false;
             this.DtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DtgDatos.Location = new System.Drawing.Point(81, 121);
             this.DtgDatos.Name = "DtgDatos";
@@ -117,6 +118,7 @@
             this.Controls.Add(this.TxtBuscar);
             this.Controls.Add(this.DtgDatos);
             this.Name = "FrmCategoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCategoria";
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
             this.ResumeLayout(false);

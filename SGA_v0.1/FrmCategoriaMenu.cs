@@ -14,14 +14,12 @@ namespace SGA_v0._1
             InitializeComponent();
             mc = new ManejadorCategorias();
 
-            // Llenar el ComboBox de status
             CmbStatus.Items.Add("Activo");
             CmbStatus.Items.Add("Inactivo");
 
             if (FrmCategoria.categoria.id_categoria > 0)
             {
                 TxtNombre.Text = FrmCategoria.categoria.nombre;
-
                 CmbStatus.SelectedItem = FrmCategoria.categoria.status == "A" ? "Activo" : "Inactivo";
             }
             else
@@ -41,21 +39,31 @@ namespace SGA_v0._1
             string statusSeleccionado = CmbStatus.SelectedItem.ToString() == "Activo" ? "A" : "I";
 
             Categorias categoria = new Categorias(
-                FrmCategoria.categoria.id_categoria, 
-                TxtNombre.Text.Trim(),               
-                statusSeleccionado                  
+                FrmCategoria.categoria.id_categoria,
+                TxtNombre.Text.Trim(),
+                statusSeleccionado
             );
 
-            if (categoria.id_categoria == 0)
+            try
             {
-                mc.Guardar(categoria);
-            }
-            else
-            {
-                mc.Modificar(categoria);
-            }
+                if (categoria.id_categoria == 0)
+                {
+                    mc.Guardar(categoria);
+                    MessageBox.Show("Se guardó correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    mc.Modificar(categoria);
+                    MessageBox.Show("Se modificó correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
-            Close();
+                Close(); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar o modificar: {ex.Message}",
+                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -64,3 +72,4 @@ namespace SGA_v0._1
         }
     }
 }
+

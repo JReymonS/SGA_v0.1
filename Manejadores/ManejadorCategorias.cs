@@ -10,6 +10,7 @@ namespace Manejadores
     {
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen", 3310);
 
+
         public void Guardar(Categorias categoria)
         {
             try
@@ -40,24 +41,31 @@ namespace Manejadores
 
         public void Borrar(Categorias categoria)
         {
-            var rs = MessageBox.Show($"¿Estás seguro de eliminar la categoría '{categoria.nombre}'?",
-                                     "¡Atención!",
-                                     MessageBoxButtons.YesNo,
-                                     MessageBoxIcon.Question);
+            var rs = MessageBox.Show(
+                $"¿Estás seguro de inactivar la categoría '{categoria.nombre}'?",
+                "Confirmar inactivación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
 
             if (rs == DialogResult.Yes)
             {
                 try
                 {
-                    b.Comando($"DELETE FROM categorias WHERE id_categoria = {categoria.id_categoria}");
+                    string query = $"CALL InactivarCategoria({categoria.id_categoria})";
+                    b.Comando(query);
+
+                    MessageBox.Show("La categoría se marcó como inactiva correctamente.",
+                                    "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al borrar la categoría: {ex.Message}",
+                    MessageBox.Show($"Error al inactivar la categoría: {ex.Message}",
                                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
 
         public void Mostrar(string nombre, DataGridView tabla)
         {
@@ -66,14 +74,16 @@ namespace Manejadores
                 tabla.Columns.Clear();
 
                 tabla.DataSource = b.Consulta(
-                    $"SELECT id_categoria, nombre, status FROM categorias WHERE nombre LIKE '%{nombre}%' OR status LIKE '%{nombre}%'",
+                    $"SELECT * FROM vista_categorias WHERE nombre LIKE '%{nombre}%' OR status LIKE '%{nombre}%'",
                     "categorias").Tables[0];
+
+
 
                 if (tabla.Columns.Contains("id_categoria"))
                     tabla.Columns["id_categoria"].Visible = false;
 
                 tabla.Columns.Insert(tabla.Columns.Count, Boton("Modificar", Color.Blue));
-                tabla.Columns.Insert(tabla.Columns.Count, Boton("Borrar", Color.Red));
+                tabla.Columns.Insert(tabla.Columns.Count, Boton("Eliminar", Color.Red));
 
                 tabla.AutoResizeColumns();
                 tabla.AutoResizeRows();
