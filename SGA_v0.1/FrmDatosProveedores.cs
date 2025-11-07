@@ -29,6 +29,10 @@ namespace SGA_v0._1
                 txtPlazo.Text = FrmProveedores.proveedor.plazo_disponibilidad.ToString();
                 cmbEstatus.Text = FrmProveedores.proveedor.status;
             }
+            else 
+            {
+                cmbEstatus.SelectedIndex = 0;
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

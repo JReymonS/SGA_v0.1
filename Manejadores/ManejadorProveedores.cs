@@ -15,7 +15,7 @@ namespace Manejadores
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen");
         public void Guardar(Proveedores proveedor)
         {
-            b.Comando($"CALL p_agregar_proveedor('{proveedor.nombre}','{proveedor.apellido_paterno}','{proveedor.apellido_materno}','{proveedor.telefono}','{proveedor.correo}',{proveedor.plazo_disponibilidad},'{proveedor.status}')");
+            b.Comando($"CALL p_AgregarProveedor('{proveedor.nombre}','{proveedor.apellido_paterno}','{proveedor.apellido_materno}','{proveedor.telefono}','{proveedor.correo}',{proveedor.plazo_disponibilidad},'{proveedor.status}')");
         }
 
         public void Borrar(Proveedores proveedor)
@@ -24,13 +24,13 @@ namespace Manejadores
                 "ATENCIÓN!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rs == DialogResult.Yes)
             {
-                b.Comando($"CALL p_desactivar_proveedor({proveedor.id_proveedor})");
+                b.Comando($"CALL p_DesactivarProveedor({proveedor.id_proveedor})");
             }
         }
 
         public void Modificar(Proveedores proveedor)
         {
-            b.Comando($"CALL p_modificar_proveedor ('{proveedor.id_proveedor}','{proveedor.nombre}','{proveedor.apellido_paterno}','{proveedor.apellido_materno}'," +
+            b.Comando($"CALL p_ModificarProveedor ('{proveedor.id_proveedor}','{proveedor.nombre}','{proveedor.apellido_paterno}','{proveedor.apellido_materno}'," +
                 $"'{proveedor.telefono}','{proveedor.correo}',{proveedor.plazo_disponibilidad},'{proveedor.status}')");
 
         }
@@ -39,7 +39,7 @@ namespace Manejadores
         {
 
             tabla.Columns.Clear();
-            tabla.DataSource = b.Consulta($"select * from v_proveedores where (nombre like '%{consulta}%') AND status = 'A'", "proveedores").Tables[0];
+            tabla.DataSource = b.Consulta($"select * from v_Proveedores where (Nombre like '%{consulta}%') AND Estatus = 'A'", "proveedores").Tables[0];
             tabla.Columns["id_proveedor"].Visible = false;
             tabla.Columns.Insert(8, Boton("Modificar", Color.Green));
             tabla.Columns.Insert(9, Boton("Borrar", Color.Red));

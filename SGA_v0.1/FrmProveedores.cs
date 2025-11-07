@@ -31,13 +31,13 @@ namespace SGA_v0._1
         private void DtgDatos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             proveedor.id_proveedor = int.Parse(DtgDatos.Rows[fila].Cells["id_proveedor"].Value.ToString());
-            proveedor.nombre = DtgDatos.Rows[fila].Cells["nombre"].Value.ToString();
-            proveedor.apellido_paterno = DtgDatos.Rows[fila].Cells["apellido_paterno"].Value.ToString();
-            proveedor.apellido_materno = DtgDatos.Rows[fila].Cells["apellido_materno"].Value.ToString();
-            proveedor.telefono = DtgDatos.Rows[fila].Cells["telefono"].Value.ToString();
-            proveedor.correo = DtgDatos.Rows[fila].Cells["correo"].Value.ToString();
-            proveedor.plazo_disponibilidad = int.Parse(DtgDatos.Rows[fila].Cells["plazo_disponibilidad"].Value.ToString());
-            string st = DtgDatos.Rows[fila].Cells["status"].Value.ToString();
+            proveedor.nombre = DtgDatos.Rows[fila].Cells["Nombre"].Value.ToString();
+            proveedor.apellido_paterno = DtgDatos.Rows[fila].Cells["Apellido Paterno"].Value.ToString();
+            proveedor.apellido_materno = DtgDatos.Rows[fila].Cells["Apellido Materno"].Value.ToString();
+            proveedor.telefono = DtgDatos.Rows[fila].Cells["Telefono"].Value.ToString();
+            proveedor.correo = DtgDatos.Rows[fila].Cells["Correo"].Value.ToString();
+            proveedor.plazo_disponibilidad = int.Parse(DtgDatos.Rows[fila].Cells["Plazo de Disponibilidad"].Value.ToString());
+            string st = DtgDatos.Rows[fila].Cells["Estatus"].Value.ToString();
             if (st == "A")
                 proveedor.status = "Activo";
             else
