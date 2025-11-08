@@ -35,47 +35,42 @@ namespace SGA_v0._1
             }
         }
 
+        //METODO PARA GUARDAR O MODIFICAR PROVEEDORES
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
-                string.IsNullOrWhiteSpace(txtApPa.Text) ||
-                string.IsNullOrWhiteSpace(txtApMa.Text) ||
-                string.IsNullOrWhiteSpace(txtTelefono.Text) ||
-                string.IsNullOrWhiteSpace(txtCorreo.Text))
+            mp.ValidarCampos(txtNombre, txtApPa, txtApMa, txtTelefono, txtCorreo, txtPlazo); //VALIDAR CAMPOS ANTES DE GUARDAR O MODIFICAR
+
+            if (!mp.valido)
             {
-                MessageBox.Show("Ingrese todos los datos del proveedor");
                 return;
             }
-            if (txtTelefono.Text.Length > 12)
+
+            if (FrmProveedores.proveedor.id_proveedor == 0 && mp.valido)
             {
-                MessageBox.Show("Ingrese correctamente el telefono");
-                return;
+                mp.Guardar(new Proveedores(0, txtNombre.Text, txtApPa.Text, txtApMa.Text, txtTelefono.Text, txtCorreo.Text, int.Parse(txtPlazo.Text), cmbEstatus.Text));
             }
-            try
+
+            else
             {
-                if (FrmProveedores.proveedor.id_proveedor == 0)
+                if (cmbEstatus.Text == "Activo")
                 {
-                    mp.Guardar(new Proveedores(0, txtNombre.Text, txtApPa.Text, txtApMa.Text, txtTelefono.Text,
-                        txtCorreo.Text, int.Parse(txtPlazo.Text), cmbEstatus.Text));
+                    FrmProveedores.proveedor.status = "Activo";
                 }
+
                 else
                 {
-                    if (cmbEstatus.Text == "activo")
-                        FrmProveedores.proveedor.status = "activo";
-                    else
-                        FrmProveedores.proveedor.status = "inactivo";
-
-                    mp.Modificar(new Proveedores(FrmProveedores.proveedor.id_proveedor, txtNombre.Text, txtApPa.Text, txtApMa.Text, txtTelefono.Text,
-                       txtCorreo.Text, int.Parse(txtPlazo.Text), cmbEstatus.Text));
+                    FrmProveedores.proveedor.status = "Inactivo";
                 }
+
+                if (mp.valido)
+                {
+                    mp.Modificar(new Proveedores(FrmProveedores.proveedor.id_proveedor, txtNombre.Text, txtApPa.Text, txtApMa.Text, txtTelefono.Text, txtCorreo.Text, int.Parse(txtPlazo.Text), cmbEstatus.Text));
+                }
+            }
                 Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al guardar los datos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
+        //METODO PARA CANCELAR LA OPERACION
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();

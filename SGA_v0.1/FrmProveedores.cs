@@ -23,11 +23,30 @@ namespace SGA_v0._1
             mp = new ManejadorProveedores();
             InitializeComponent();
         }
+
+        //METODO PARA BUSCAR PROVEEDORES
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             mp.Mostrar(txtBuscar.Text, DtgDatos);
         }
 
+        //METODO PARA AGREGAR PROVEEDORES
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            proveedor.id_proveedor = 0; proveedor.nombre = ""; proveedor.apellido_paterno = ""; proveedor.apellido_materno = "";
+            proveedor.telefono = ""; proveedor.correo = ""; proveedor.plazo_disponibilidad = 0; proveedor.status = "";
+            FrmDatosProveedores fmp = new FrmDatosProveedores();
+            fmp.ShowDialog();
+            DtgDatos.Columns.Clear();
+        }
+
+        //METODO PARA CAPTURAR LA FILA Y COLUMNA SELECCIONADA
+        private void DtgDatos_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            fila = e.RowIndex; columna = e.ColumnIndex;
+        }
+
+        //METODO PARA CAPTURAR EL EVENTO DE CLIC EN LOS BOTONES DE MODIFICAR Y BORRAR
         private void DtgDatos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             proveedor.id_proveedor = int.Parse(DtgDatos.Rows[fila].Cells["id_proveedor"].Value.ToString());
@@ -38,7 +57,7 @@ namespace SGA_v0._1
             proveedor.correo = DtgDatos.Rows[fila].Cells["Correo"].Value.ToString();
             proveedor.plazo_disponibilidad = int.Parse(DtgDatos.Rows[fila].Cells["Plazo de Disponibilidad"].Value.ToString());
             string st = DtgDatos.Rows[fila].Cells["Estatus"].Value.ToString();
-            if (st == "A")
+            if (st == "Activo")
                 proveedor.status = "Activo";
             else
                 proveedor.status = "Inactivo";
@@ -56,20 +75,5 @@ namespace SGA_v0._1
                     break;
             }
         }
-
-        private void DtgDatos_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            fila = e.RowIndex; columna = e.ColumnIndex;
-        }
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            proveedor.id_proveedor = 0; proveedor.nombre = ""; proveedor.apellido_paterno = ""; proveedor.apellido_materno = "";
-            proveedor.telefono = ""; proveedor.correo = ""; proveedor.plazo_disponibilidad = 0; proveedor.status = "";
-            FrmDatosProveedores fmp = new FrmDatosProveedores();
-            fmp.ShowDialog();
-            DtgDatos.Columns.Clear();
-        }
-
     }
 }

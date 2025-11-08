@@ -40,19 +40,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(328, 28);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(437, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 13);
+            this.label2.Size = new System.Drawing.Size(111, 16);
             this.label2.TabIndex = 23;
             this.label2.Text = "PROVEEDORES";
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(700, 58);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregar.Location = new System.Drawing.Point(933, 71);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(27, 19);
+            this.btnAgregar.Size = new System.Drawing.Size(36, 23);
             this.btnAgregar.TabIndex = 22;
             this.btnAgregar.Text = "+";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -60,10 +59,10 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(626, 57);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Location = new System.Drawing.Point(835, 70);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(56, 19);
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 21;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -71,18 +70,17 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(125, 58);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscar.Location = new System.Drawing.Point(167, 71);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(486, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(647, 22);
             this.txtBuscar.TabIndex = 20;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(42, 54);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(56, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.TabIndex = 19;
@@ -93,30 +91,31 @@
             this.DtgDatos.AllowUserToAddRows = false;
             this.DtgDatos.AllowUserToResizeColumns = false;
             this.DtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DtgDatos.Location = new System.Drawing.Point(46, 94);
-            this.DtgDatos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DtgDatos.Location = new System.Drawing.Point(61, 116);
+            this.DtgDatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DtgDatos.Name = "DtgDatos";
             this.DtgDatos.ReadOnly = true;
             this.DtgDatos.RowHeadersWidth = 51;
             this.DtgDatos.RowTemplate.Height = 24;
-            this.DtgDatos.Size = new System.Drawing.Size(682, 318);
+            this.DtgDatos.Size = new System.Drawing.Size(909, 391);
             this.DtgDatos.TabIndex = 18;
             this.DtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellClick);
             this.DtgDatos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellEnter);
             // 
             // FrmProveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 441);
+            this.ClientSize = new System.Drawing.Size(1027, 543);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DtgDatos);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmProveedores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmProveedores";
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
             this.ResumeLayout(false);
