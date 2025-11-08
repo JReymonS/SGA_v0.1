@@ -86,6 +86,7 @@
             this.tsbProveedores.Name = "tsbProveedores";
             this.tsbProveedores.Size = new System.Drawing.Size(60, 60);
             this.tsbProveedores.Text = "PROVEEDORES";
+            this.tsbProveedores.Click += new System.EventHandler(this.tsbProveedores_Click);
             // 
             // tsbCategorias
             // 
@@ -96,6 +97,7 @@
             this.tsbCategorias.Name = "tsbCategorias";
             this.tsbCategorias.Size = new System.Drawing.Size(60, 60);
             this.tsbCategorias.Text = "CATEGORIA";
+            this.tsbCategorias.Click += new System.EventHandler(this.tsbCategorias_Click);
             // 
             // tsbNotificaciones
             // 
@@ -116,6 +118,7 @@
             this.tsbProductos.Name = "tsbProductos";
             this.tsbProductos.Size = new System.Drawing.Size(60, 60);
             this.tsbProductos.Text = "PRODUCTOS";
+            this.tsbProductos.Click += new System.EventHandler(this.tsbProductos_Click);
             // 
             // tsbEntradas
             // 

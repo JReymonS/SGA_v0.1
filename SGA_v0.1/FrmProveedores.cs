@@ -35,8 +35,13 @@ namespace SGA_v0._1
         {
             proveedor.id_proveedor = 0; proveedor.nombre = ""; proveedor.apellido_paterno = ""; proveedor.apellido_materno = "";
             proveedor.telefono = ""; proveedor.correo = ""; proveedor.plazo_disponibilidad = 0; proveedor.status = "";
+
+            this.Hide();
+
             FrmDatosProveedores fmp = new FrmDatosProveedores();
+            fmp.FormClosed += (s, args) => this.Show();
             fmp.ShowDialog();
+            
             DtgDatos.Columns.Clear();
         }
 
@@ -65,8 +70,12 @@ namespace SGA_v0._1
             switch (columna)
             {
                 case 8:
-                    FrmDatosProveedores fmp = new FrmDatosProveedores();
-                    fmp.ShowDialog();
+                    FrmDatosProveedores fmp1 = new FrmDatosProveedores();
+
+                    this.Hide();
+                    fmp1.FormClosed += (s, args) => this.Show();
+                    fmp1.ShowDialog();
+
                     DtgDatos.Columns.Clear();
                     break;
                 case 9:

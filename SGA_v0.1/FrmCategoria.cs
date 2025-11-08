@@ -52,7 +52,7 @@ namespace SGA_v0._1
 
         private void BtnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Close();
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)

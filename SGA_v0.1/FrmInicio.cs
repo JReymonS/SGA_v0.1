@@ -73,6 +73,31 @@ namespace SGA_v0._1
         }
 
 
+        //EVENTO CLICK PARA ABRIR FORMULARIO DE PROVEEDORES
+        private void tsbProveedores_Click(object sender, EventArgs e)
+        {
+            FrmProveedores frmProveedores = new FrmProveedores();
+            frmProveedores.MdiParent = this;
+            frmProveedores.Show();
+
+        }
+
+        //EVENTO CLICK PAARA ABRIR FORMULARIO DE CATEGORIAS
+        private void tsbCategorias_Click(object sender, EventArgs e)
+        {
+            FrmCategoria frmCategoria = new FrmCategoria();
+            frmCategoria.MdiParent = this;
+            frmCategoria.Show();
+        }
+
+        //EVENTO CLICK PARA ABRIR FORMULARIO DE PRODUCTOS
+        private void tsbProductos_Click(object sender, EventArgs e)
+        {
+            FrmVerProductos frmVerProductos = new FrmVerProductos();
+            frmVerProductos.MdiParent = this;
+            frmVerProductos.Show();
+        }
+
         //EVENTO CLICK PARA CERRAR SESION
         private void tsbCerrarSesion_Click(object sender, EventArgs e)
         {
