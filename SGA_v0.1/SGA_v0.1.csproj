@@ -33,8 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
+    <StartupObject>SGA_v0._1.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -68,6 +67,12 @@
     <Compile Include="FrmCategoriaMenu.Designer.cs">
       <DependentUpon>FrmCategoriaMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDatosProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDatosProveedores.Designer.cs">
+      <DependentUpon>FrmDatosProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +84,12 @@
     </Compile>
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProveedores.Designer.cs">
+      <DependentUpon>FrmProveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmVerProductos.cs">
       <SubType>Form</SubType>
@@ -97,11 +108,17 @@
     <EmbeddedResource Include="FrmCategoriaMenu.resx">
       <DependentUpon>FrmCategoriaMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDatosProveedores.resx">
+      <DependentUpon>FrmDatosProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProveedores.resx">
+      <DependentUpon>FrmProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVerProductos.resx">
       <DependentUpon>FrmVerProductos.cs</DependentUpon>
