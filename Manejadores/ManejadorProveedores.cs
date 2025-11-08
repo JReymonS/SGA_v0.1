@@ -44,10 +44,10 @@ namespace Manejadores
         {
 
             tabla.Columns.Clear();
-            tabla.DataSource = b.Consulta($"select * from v_Proveedores where (Nombre like '%{consulta}%')", "proveedores").Tables[0];
+            tabla.DataSource = b.Consulta($"select * from v_Proveedores where (Nombre like '%{consulta.Trim('\'')}%')", "proveedores").Tables[0];
             tabla.Columns["id_proveedor"].Visible = false;
             tabla.Columns.Insert(8, Boton("Modificar", Color.Green));
-            tabla.Columns.Insert(9, Boton("Borrar", Color.Red));
+            tabla.Columns.Insert(9, Boton("Eliminar", Color.Red));
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
         }

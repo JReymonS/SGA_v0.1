@@ -52,22 +52,12 @@ namespace SGA_v0._1
 
             else
             {
-                if (cmbEstatus.Text == "Activo")
-                {
-                    FrmProveedores.proveedor.status = "Activo";
-                }
-
-                else
-                {
-                    FrmProveedores.proveedor.status = "Inactivo";
-                }
-
                 if (mp.valido)
                 {
                     mp.Modificar(new Proveedores(FrmProveedores.proveedor.id_proveedor, txtNombre.Text, txtApPa.Text, txtApMa.Text, txtTelefono.Text, txtCorreo.Text, int.Parse(txtPlazo.Text), cmbEstatus.Text));
                 }
             }
-                Close();
+            Close();
         }
 
         //METODO PARA CANCELAR LA OPERACION
