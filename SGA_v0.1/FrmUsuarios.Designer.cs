@@ -80,6 +80,7 @@
             this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "+";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dtgDatos
             // 
@@ -91,6 +92,8 @@
             this.dtgDatos.ReadOnly = true;
             this.dtgDatos.Size = new System.Drawing.Size(930, 373);
             this.dtgDatos.TabIndex = 5;
+            this.dtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellClick);
+            this.dtgDatos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellEnter);
             // 
             // FrmUsuarios
             // 
@@ -104,7 +107,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBuscar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmUsuarios";

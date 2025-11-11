@@ -169,6 +169,7 @@
             this.tsbUsuarios.Name = "tsbUsuarios";
             this.tsbUsuarios.Size = new System.Drawing.Size(60, 60);
             this.tsbUsuarios.Text = "USUARIOS";
+            this.tsbUsuarios.Click += new System.EventHandler(this.tsbUsuarios_Click);
             // 
             // tsbCerrarSesion
             // 
