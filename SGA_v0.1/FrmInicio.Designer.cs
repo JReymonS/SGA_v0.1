@@ -48,6 +48,7 @@
             // 
             this.tsPrincipal.AutoSize = false;
             this.tsPrincipal.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tsPrincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.tsPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbInicio,
             this.tsbProveedores,
@@ -62,7 +63,7 @@
             this.tsbCerrarSesion});
             this.tsPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tsPrincipal.Name = "tsPrincipal";
-            this.tsPrincipal.Size = new System.Drawing.Size(60, 755);
+            this.tsPrincipal.Size = new System.Drawing.Size(80, 929);
             this.tsPrincipal.TabIndex = 1;
             this.tsPrincipal.Text = "toolStrip1";
             // 
@@ -139,6 +140,7 @@
             this.tsbSalidas.Name = "tsbSalidas";
             this.tsbSalidas.Size = new System.Drawing.Size(60, 60);
             this.tsbSalidas.Text = "SALIDAS";
+            this.tsbSalidas.Click += new System.EventHandler(this.tsbSalidas_Click);
             // 
             // tsbReportes
             // 
@@ -184,20 +186,22 @@
             // LblUsuarioActivo
             // 
             this.LblUsuarioActivo.AutoSize = true;
-            this.LblUsuarioActivo.Location = new System.Drawing.Point(74, 19);
+            this.LblUsuarioActivo.Location = new System.Drawing.Point(99, 23);
+            this.LblUsuarioActivo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblUsuarioActivo.Name = "LblUsuarioActivo";
-            this.LblUsuarioActivo.Size = new System.Drawing.Size(71, 13);
+            this.LblUsuarioActivo.Size = new System.Drawing.Size(87, 16);
             this.LblUsuarioActivo.TabIndex = 3;
             this.LblUsuarioActivo.Text = "Bienvenid@: ";
             // 
             // FrmInicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 755);
+            this.ClientSize = new System.Drawing.Size(1200, 929);
             this.Controls.Add(this.LblUsuarioActivo);
             this.Controls.Add(this.tsPrincipal);
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmInicio";
