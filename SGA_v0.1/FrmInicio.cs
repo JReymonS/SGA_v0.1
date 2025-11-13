@@ -112,6 +112,11 @@ namespace SGA_v0._1
             Application.Restart();
         }
 
-        
+        //EVENTO CLICK PARA ABRIR FORMULARIO DE SALIDAS
+        private void tsbSalidas_Click(object sender, EventArgs e)
+        {
+            FrmVerSalidaProductos frm = new FrmVerSalidaProductos();
+            frm.Show();
+        }
     }
 }
