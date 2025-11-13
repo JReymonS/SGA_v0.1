@@ -32,6 +32,31 @@ namespace Manejadores
 
 
 
+        // Para actualizar stock usando procedimiento almacenado
+        public void ActualizarStockProductoSP(int idProducto, int cantidad)
+        {
+            try
+            {
+                string query = $"CALL SP_ActualizarStock({idProducto}, {cantidad});";
+                b.Comando(query);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al actualizar stock: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Para modificar un producto existente, solo actualiza la diferencia
+        public void ActualizarStockDiferenciaSP(int idProducto, int cantidadAnterior, int nuevaCantidad)
+        {
+            int diferencia = nuevaCantidad - cantidadAnterior;
+            if (diferencia != 0)
+            {
+                ActualizarStockProductoSP(idProducto, diferencia);
+            }
+        }
+
+
         // MÉTODO PARA GUARDAR ENTRADA
         public int GuardarEntrada(Entradas entrada)
         {
@@ -83,6 +108,8 @@ namespace Manejadores
             }
         }
 
+
+
         // MÉTODO PARA MOSTRAR PRODUCTOS DISPONIBLES
         public void MostrarProductos(DateTime fecha, int idProveedor, DataGridView tabla)
         {
@@ -125,8 +152,6 @@ namespace Manejadores
             b.Comando(query);
         }
 
-
-
         public void MostrarProductosTodos(DateTime fecha, int idProveedor, DataGridView tabla)
         {
             try
@@ -150,6 +175,9 @@ namespace Manejadores
                 MessageBox.Show($"Error al mostrar productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+
 
         // MÉTODO PARA MOSTRAR DETALLE DE ENTRADAS (Usado en FrmEntradasDatos)
 

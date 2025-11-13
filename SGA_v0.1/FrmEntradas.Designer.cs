@@ -46,6 +46,7 @@
             this.DtgLista = new System.Windows.Forms.DataGridView();
             this.DtgListaR = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
+            this.TxtIdsProductosSeleccionados = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DtgLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DtgListaR)).BeginInit();
             this.SuspendLayout();
@@ -213,11 +214,19 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "Lista de registro";
             // 
+            // TxtIdsProductosSeleccionados
+            // 
+            this.TxtIdsProductosSeleccionados.Location = new System.Drawing.Point(547, 317);
+            this.TxtIdsProductosSeleccionados.Name = "TxtIdsProductosSeleccionados";
+            this.TxtIdsProductosSeleccionados.Size = new System.Drawing.Size(100, 20);
+            this.TxtIdsProductosSeleccionados.TabIndex = 18;
+            // 
             // FrmEntradas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TxtIdsProductosSeleccionados);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.DtgListaR);
             this.Controls.Add(this.DtgLista);
@@ -265,5 +274,6 @@
         private System.Windows.Forms.DataGridView DtgLista;
         private System.Windows.Forms.DataGridView DtgListaR;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox TxtIdsProductosSeleccionados;
     }
 }

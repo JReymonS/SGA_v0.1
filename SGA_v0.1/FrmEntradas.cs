@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using Entidades;
 using Manejadores;
@@ -19,7 +20,6 @@ namespace SGA_v0._1
         int idUsuario = 1;
         private int idProductoActual = 0;
 
-        // 🔹 Constructor normal (para agregar nuevas entradas)
         public FrmEntradas()
         {
             InitializeComponent();
@@ -33,7 +33,6 @@ namespace SGA_v0._1
             this.FormClosed += FrmEntradas_FormClosed;
         }
 
-        // 🔹 Constructor alternativo (para editar un producto específico)
         public FrmEntradas(int idProducto)
         {
             InitializeComponent();
@@ -100,12 +99,11 @@ namespace SGA_v0._1
                 DtgListaR.AutoResizeColumns();
                 DtgListaR.ReadOnly = true;
 
-                idProductoActual = detalle.fkid_producto; // ✅ Guarda el producto actual
+                idProductoActual = detalle.fkid_producto;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cargar datos para modificar: {ex.Message}",
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al cargar datos para modificar: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -162,13 +160,14 @@ namespace SGA_v0._1
             dt.Columns.Add("Descripcion", typeof(string));
             dt.Columns.Add("Cantidad", typeof(int));
             dt.Columns.Add("Costo", typeof(double));
+            dt.Columns.Add("id_producto", typeof(int)); // Columna oculta para ID
 
             foreach (var item in listaTemporal)
             {
                 string nombreProducto = me.ObtenerNombreProducto(item.fkid_producto);
                 string descripcionProducto = me.ObtenerDescripcionProducto(item.fkid_producto);
 
-                dt.Rows.Add(nombreProducto, descripcionProducto, item.cantidad_entrada, item.precio_entrada);
+                dt.Rows.Add(nombreProducto, descripcionProducto, item.cantidad_entrada, item.precio_entrada, item.fkid_producto);
             }
 
             DtgListaR.DataSource = dt;
@@ -176,6 +175,7 @@ namespace SGA_v0._1
             if (!DtgListaR.Columns.Contains("Eliminar"))
                 DtgListaR.Columns.Add(ManejadorEntradas.Boton("Eliminar", Color.Red));
 
+            DtgListaR.Columns["id_producto"].Visible = false; // Oculta columna ID
             DtgListaR.AutoResizeColumns();
             DtgListaR.AutoResizeRows();
         }
@@ -184,8 +184,28 @@ namespace SGA_v0._1
         {
             if (e.RowIndex >= 0 && DtgListaR.Columns[e.ColumnIndex].Name == "Eliminar")
             {
-                listaTemporal.RemoveAt(e.RowIndex);
-                ActualizarListaTemporal();
+                // 1️⃣ Obtener el id del producto eliminado
+                if (e.RowIndex < listaTemporal.Count)
+                {
+                    int idProductoEliminado = listaTemporal[e.RowIndex].fkid_producto;
+
+                    // 2️⃣ Remover el producto de la lista temporal
+                    listaTemporal.RemoveAt(e.RowIndex);
+                    ActualizarListaTemporal();
+
+                    // 3️⃣ Actualizar el TxtIdsProductosSeleccionados
+                    if (!string.IsNullOrWhiteSpace(TxtIdsProductosSeleccionados.Text))
+                    {
+                        var ids = TxtIdsProductosSeleccionados.Text.Split(',')
+                            .Where(id => !string.IsNullOrWhiteSpace(id))
+                            .Select(id => id.Trim())
+                            .ToList();
+
+                        ids.Remove(idProductoEliminado.ToString());
+
+                        TxtIdsProductosSeleccionados.Text = string.Join(",", ids);
+                    }
+                }
             }
         }
 
@@ -211,6 +231,12 @@ namespace SGA_v0._1
                 TxtCosto.Text = DtgLista.Rows[e.RowIndex].Cells["precio_entrada"].Value.ToString();
                 TxtCantidad.Clear();
                 TxtCantidad.Focus();
+
+                // Agregar al TextBox sin eliminar duplicados
+                if (string.IsNullOrWhiteSpace(TxtIdsProductosSeleccionados.Text))
+                    TxtIdsProductosSeleccionados.Text = idProductoSeleccionado.ToString();
+                else
+                    TxtIdsProductosSeleccionados.Text += "," + idProductoSeleccionado;
             }
         }
 
@@ -239,64 +265,109 @@ namespace SGA_v0._1
                 }
                 else
                 {
-                    MessageBox.Show($"No se pudo guardar la entrada para el producto {detalle.fkid_producto}.",
-                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"No se pudo guardar la entrada para el producto {detalle.fkid_producto}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
-            MessageBox.Show("Se crearon entradas independientes para cada producto.\nLos detalles se guardarán al presionar 'Guardar'.",
-                            "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Se crearon entradas independientes para cada producto.\nLos detalles se guardarán al presionar 'Guardar'.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
+            // Si estamos editando un detalle existente, mantenemos tu lógica actual
             if (FrmEntradasDatos.detalleEntrada.id_detalleEntrada != 0)
             {
-                int nuevaCantidad;
-                if (int.TryParse(TxtCantidad.Text, out nuevaCantidad))
+                if (int.TryParse(TxtCantidad.Text, out int nuevaCantidad))
                 {
                     int cantidadAnterior = FrmEntradasDatos.detalleEntrada.cantidad_entrada;
 
-                    mde.ActualizarCantidadDetalle(FrmEntradasDatos.detalleEntrada.id_detalleEntrada, nuevaCantidad);
+                    try
+                    {
+                        // Actualizar cantidad del detalle
+                        mde.ActualizarCantidadDetalle(FrmEntradasDatos.detalleEntrada.id_detalleEntrada, nuevaCantidad);
 
-                    // ✅ Ahora usa el ID del producto actual (no compartido)
-                    me.ActualizarStockProducto(idProductoActual, cantidadAnterior, nuevaCantidad);
+                        // Actualizar stock del producto con la diferencia
+                        me.ActualizarStockProducto(idProductoActual, cantidadAnterior, nuevaCantidad);
 
-                    MessageBox.Show("Cantidad y stock actualizados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                        MessageBox.Show("Cantidad y stock actualizados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al actualizar detalle o stock: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Cantidad no válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                return; // Salimos porque ya se procesó la edición
             }
-            else
+
+            // Si estamos agregando nuevos detalles
+            if (DtgListaR.Rows.Count == 0)
             {
-                if (listaTemporal.Count == 0)
+                MessageBox.Show("No hay productos agregados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                // 1️⃣ Crear la entrada principal solo una vez
+                Entradas entrada = new Entradas(
+                    0,
+                    DtpFecha.Value.ToString("yyyy-MM-dd"),
+                    idUsuario,
+                    idProveedorSeleccionado
+                );
+
+                int idEntrada = me.GuardarEntrada(entrada);
+                if (idEntrada == 0)
                 {
-                    MessageBox.Show("No hay productos agregados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("No se pudo guardar la entrada principal.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                try
+                // 2️⃣ Recorrer cada fila del DataGridView y guardar detalle + actualizar stock
+                foreach (DataGridViewRow fila in DtgListaR.Rows)
                 {
-                    mde.GuardarDetalle(listaTemporal);
+                    if (fila.IsNewRow) continue;
 
-                    foreach (var detalle in listaTemporal)
-                    {
-                        me.SumarStockProducto(detalle.fkid_producto, detalle.cantidad_entrada);
-                    }
+                    // Obtener datos de cada fila
+                    int idProducto = Convert.ToInt32(fila.Cells["id_producto"].Value);
+                    int cantidad = Convert.ToInt32(fila.Cells["Cantidad"].Value);
+                    double precio = Convert.ToDouble(fila.Cells["Costo"].Value);
 
-                    MessageBox.Show("Detalles de entrada guardados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    listaTemporal.Clear();
-                    DtgListaR.DataSource = null;
+                    // Crear detalle
+                    DetalleEntradas detalle = new DetalleEntradas(
+                        mde.ObtenerSiguienteIdDetalle(idProducto),
+                        precio,
+                        cantidad,
+                        idProducto,
+                        idEntrada
+                    );
+
+                    // Guardar detalle
+                    mde.GuardarDetalle(new List<DetalleEntradas> { detalle });
+
+                    // Actualizar stock individualmente
+                    me.ActualizarStockProductoSP(idProducto, cantidad);
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error al guardar detalles: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+
+                MessageBox.Show("Todos los detalles se guardaron correctamente y el stock se actualizó.",
+                                "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Limpiar lista temporal y DataGridView
+                listaTemporal.Clear();
+                DtgListaR.DataSource = null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar detalles: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
         private void FrmEntradas_FormClosed(object sender, FormClosedEventArgs e)
         {
