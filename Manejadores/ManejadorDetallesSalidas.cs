@@ -56,20 +56,32 @@ namespace Manejadores
         //PERMITE MOSTRAR LOS PRODUCTOS SELECCIONADOS PARA MODIFIFCAR O REGISTRAR COMO SALIDA
         public void MostrarProductosTemporales(DataGridView tabla)
         {
-            
+            bool tieneBotonEliminar = false;
+            foreach (DataGridViewColumn columna in tabla.Columns)
+            {
+                if (columna.Name == "Eliminar")
+                {
+                    tieneBotonEliminar = true;
+                    break;
+                }
+            }
+
             DataSet ds = b.Consulta("CALL p_ObtenerProductosTemporales()", "temp");
             dtTempSalida = ds.Tables["temp"];
 
             tabla.DataSource = dtTempSalida;
 
-            
             if (tabla.Columns.Contains("id_producto"))
                 tabla.Columns["id_producto"].Visible = false;
 
-           
-            if (!tabla.Columns.Contains("Eliminar"))
-                tabla.Columns.Add(Boton("Eliminar", Color.Orange));
+            if (!tieneBotonEliminar)
+            {
+                DataGridViewButtonColumn btnEliminar = Boton("Eliminar", Color.Orange);
+                btnEliminar.Name = "Eliminar"; 
+                tabla.Columns.Add(btnEliminar);
+            }
         }
+
 
         // METODO PARA AGREGAR UN PRODUCTO A LA TABLA TEMPORAL
         public void AgregarProductoTemporal(string id_producto, string nombre, string descripcion, string cantidad, string costo)
@@ -89,6 +101,7 @@ namespace Manejadores
             
             b.Comando($"CALL p_GuardarDesdeTemporales({id_salida})");
         }
+        
 
         // PERMITE LIMPIAR LA TABLA TEMPORAL (destruye la tabla)
         public void LimpiarProductosTemporales()
