@@ -278,7 +278,7 @@ namespace SGA_v0._1
 
             switch (columna2)
             {
-                case 5: 
+                case 0: 
                     {
                         try
                         {
