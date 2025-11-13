@@ -35,6 +35,11 @@ namespace SGA_v0._1
 
             if (rs.Acceso)
             {
+                //RECUPERAR AL USUARIO Y SU ROL GLOBALMENTE PARA HACER USO DE LOS DATOS EN LOS SIGUIENTES REGISTROS DE SALIDA DE PRODUCTOS
+
+                FrmUsuarioSesion.Usuario = rs.UsuarioEncontrado;
+                FrmUsuarioSesion.Rol = rs.RolPerteneciente;
+
                 FrmInicio frmInicio = new FrmInicio(rs.UsuarioEncontrado,rs.RolPerteneciente);
                 frmInicio.ShowDialog();
                 this.Close();
