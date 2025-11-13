@@ -11,18 +11,7 @@ namespace Manejadores
     {
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen", 3310);
         public bool valido = true; // VARIABLE PARA VALIDAR CAMPOS
-        public void ActualizarFechaEntrada(int idEntrada, DateTime nuevaFecha)
-        {
-            try
-            {
-                string query = $"UPDATE entradas SET fecha_entrada = '{nuevaFecha:yyyy-MM-dd}' WHERE id_entrada = {idEntrada};";
-                b.Comando(query);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al actualizar fecha de entrada: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+  
 
         public DataRow ObtenerProductoPorId(int idProducto)
         {
@@ -59,17 +48,7 @@ namespace Manejadores
             }
         }
 
-        // Para modificar un producto existente, solo actualiza la diferencia
-        public void ActualizarStockDiferenciaSP(int idProducto, int cantidadAnterior, int nuevaCantidad)
-        {
-            int diferencia = nuevaCantidad - cantidadAnterior;
-            if (diferencia != 0)
-            {
-                ActualizarStockProductoSP(idProducto, diferencia);
-            }
-        }
-
-
+     
         // MÉTODO PARA GUARDAR ENTRADA
         public int GuardarEntrada(Entradas entrada)
         {
@@ -88,12 +67,7 @@ namespace Manejadores
             }
         }
 
-        public string ObtenerNombreProducto(int idProducto)
-        {
-            string query = $"SELECT nombre FROM v_ProductosPorId WHERE id_producto = {idProducto};";
-            DataTable dt = b.Consulta(query, "productos").Tables[0];
-            return dt.Rows.Count > 0 ? dt.Rows[0]["nombre"].ToString() : "";
-        }
+   
 
         public string ObtenerDescripcionProducto(int idProducto)
         {
@@ -150,45 +124,12 @@ namespace Manejadores
             }
         }
         // Para actualizar stock al modificar
-        public void SumarStockProducto(int idProducto, int cantidad)
-        {
-            string query = $"CALL sp_SumarStockProducto({idProducto}, {cantidad});";
-            b.Comando(query);
-        }
 
         public void ActualizarStockProducto(int idProducto, int cantidadAnterior, int nuevaCantidad)
         {
             string query = $"CALL sp_ActualizarStockProducto({idProducto}, {cantidadAnterior}, {nuevaCantidad});";
             b.Comando(query);
         }
-
-        public void MostrarProductosTodos(DateTime fecha, int idProveedor, DataGridView tabla)
-        {
-            try
-            {
-                string query = $@"
-                    SELECT * 
-                    FROM v_productos_disponibles;";
-
-                tabla.Columns.Clear();
-                tabla.DataSource = b.Consulta(query, "productos").Tables[0];
-
-                if (tabla.Columns.Contains("id_producto"))
-                    tabla.Columns["id_producto"].Visible = false;
-
-
-                tabla.AutoResizeColumns();
-                tabla.AutoResizeRows();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al mostrar productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
-
-
         // MÉTODO PARA MOSTRAR DETALLE DE ENTRADAS (Usado en FrmEntradasDatos)
 
         public DataTable BuscarDetalleEntradasPorFecha(DateTime fecha)

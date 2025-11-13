@@ -29,6 +29,19 @@ public class ManejadorDetalleEntradas
             }
         }
     }
+    public void ActualizarCostoDetalle(int idDetalleEntrada, double nuevoCosto)
+    {
+        try
+        {
+            string query = $"CALL p_ActualizarCostoDetalle({idDetalleEntrada}, {nuevoCosto});";
+            b.Comando(query);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Error al actualizar costo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+
 
     public int ObtenerSiguienteIdDetalle(int idProducto)
     {

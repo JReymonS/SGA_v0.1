@@ -117,7 +117,7 @@ namespace SGA_v0._1
 
                 // Hacer solo lectura todos excepto cantidad
                 TxtProducto.ReadOnly = true;
-                TxtCosto.ReadOnly = true;
+               
                 // TxtCantidad queda editable
 
                 // Agregar producto al DataGridView en modo solo lectura excepto columna "Cantidad"
@@ -307,32 +307,35 @@ namespace SGA_v0._1
                     // Si estamos editando un detalle existente, mantenemos tu lógica actual
                     if (FrmEntradasDatos.detalleEntrada.id_detalleEntrada != 0)
                     {
-                        if (int.TryParse(TxtCantidad.Text, out int nuevaCantidad))
+                        if (int.TryParse(TxtCantidad.Text, out int nuevaCantidad) &&
+                            double.TryParse(TxtCosto.Text, out double nuevoCosto))
                         {
                             int cantidadAnterior = FrmEntradasDatos.detalleEntrada.cantidad_entrada;
 
                             try
                             {
-                                // Actualizar cantidad del detalle
+                                // Actualizar cantidad y costo del detalle
                                 mde.ActualizarCantidadDetalle(FrmEntradasDatos.detalleEntrada.id_detalleEntrada, nuevaCantidad);
+                                mde.ActualizarCostoDetalle(FrmEntradasDatos.detalleEntrada.id_detalleEntrada, nuevoCosto);
 
                                 // Actualizar stock del producto con la diferencia
                                 me.ActualizarStockProducto(idProductoActual, cantidadAnterior, nuevaCantidad);
 
-                                MessageBox.Show("Cantidad y stock actualizados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Cantidad, costo y stock actualizados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
                             catch (Exception ex)
                             {
-                                MessageBox.Show($"Error al actualizar detalle o stock: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show($"Error al actualizar detalle, costo o stock: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Cantidad no válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Cantidad o costo no válidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                        return; // Salimos porque ya se procesó la edición
+                        return;
                     }
+
 
                     // --- MODO AGREGAR NUEVO ---
                     Entradas entrada = new Entradas(

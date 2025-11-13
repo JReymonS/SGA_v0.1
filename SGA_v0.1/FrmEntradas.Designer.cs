@@ -112,7 +112,6 @@
             // 
             this.TxtCosto.Location = new System.Drawing.Point(645, 181);
             this.TxtCosto.Name = "TxtCosto";
-            this.TxtCosto.ReadOnly = true;
             this.TxtCosto.Size = new System.Drawing.Size(100, 20);
             this.TxtCosto.TabIndex = 6;
             // 
