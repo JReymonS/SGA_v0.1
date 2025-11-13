@@ -80,6 +80,9 @@ namespace SGA_v0._1
         {
             try
             {
+
+                me.MostrarProductos(DtpFecha.Value, idProveedorSeleccionado, DtgLista);
+
                 var detalle = FrmEntradasDatos.detalleEntrada;
 
                 if (detalle.id_detalleEntrada == 0)
@@ -137,6 +140,9 @@ namespace SGA_v0._1
                 // Opcional: ocultar botón eliminar
                 if (DtgListaR.Columns.Contains("Eliminar"))
                     DtgListaR.Columns["Eliminar"].Visible = false;
+
+                if (DtgLista.Columns.Contains("Seleccionar"))
+                    DtgLista.Columns["Seleccionar"].Visible = false;
 
                 DtgListaR.AutoResizeColumns();
 
@@ -267,7 +273,7 @@ namespace SGA_v0._1
                 detalle.fkid_entrada = idEntrada;
             }
 
-            MessageBox.Show("Se crearon entradas individuales con sus fechas.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Se crearon entradas individuales.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -353,6 +359,7 @@ namespace SGA_v0._1
 
                     mde.GuardarDetalle(new List<DetalleEntradas> { detalle });
 
+                    this.Close();
                     // Actualizamos stock solo si no se procesó antes
                     if (!idsProcesados.Contains(idProducto))
                     {
@@ -361,10 +368,6 @@ namespace SGA_v0._1
                     }
                 }
 
-                // Limpiamos listas y controles
-                listaTemporal.Clear();
-                DtgListaR.Rows.Clear();
-                TxtIdsProductosSeleccionados.Clear();
             }
             catch (Exception ex)
             {

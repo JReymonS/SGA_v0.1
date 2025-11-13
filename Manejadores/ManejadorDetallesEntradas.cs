@@ -40,7 +40,6 @@ public class ManejadorDetalleEntradas
         }
         catch (Exception ex)
         {
-            MessageBox.Show($"Error al obtener el siguiente ID de detalle: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return 1;
         }
     }

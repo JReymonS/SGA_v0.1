@@ -73,7 +73,7 @@
             // 
             // BtnConfirmar
             // 
-            this.BtnConfirmar.Location = new System.Drawing.Point(481, 234);
+            this.BtnConfirmar.Location = new System.Drawing.Point(491, 234);
             this.BtnConfirmar.Name = "BtnConfirmar";
             this.BtnConfirmar.Size = new System.Drawing.Size(75, 23);
             this.BtnConfirmar.TabIndex = 2;
@@ -112,6 +112,7 @@
             // 
             this.TxtCosto.Location = new System.Drawing.Point(645, 181);
             this.TxtCosto.Name = "TxtCosto";
+            this.TxtCosto.ReadOnly = true;
             this.TxtCosto.Size = new System.Drawing.Size(100, 20);
             this.TxtCosto.TabIndex = 6;
             // 
@@ -119,6 +120,7 @@
             // 
             this.TxtProducto.Location = new System.Drawing.Point(647, 92);
             this.TxtProducto.Name = "TxtProducto";
+            this.TxtProducto.ReadOnly = true;
             this.TxtProducto.Size = new System.Drawing.Size(100, 20);
             this.TxtProducto.TabIndex = 7;
             // 

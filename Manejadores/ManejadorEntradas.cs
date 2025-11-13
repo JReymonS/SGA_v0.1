@@ -130,10 +130,7 @@ namespace Manejadores
             {
                 string query = $@"
                     SELECT * 
-                    FROM v_productos_disponibles
-                    WHERE DATE(FechaCreacion) = '{fecha:yyyy-MM-dd}'
-
-                    ORDER BY FechaCreacion DESC;";
+                    FROM v_productos_disponibles;";
 
                 tabla.Columns.Clear();
                 tabla.DataSource = b.Consulta(query, "productos").Tables[0];

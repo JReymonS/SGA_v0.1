@@ -70,7 +70,6 @@ namespace SGA_v0._1
 
 
         // BOTÓN AGREGAR NUEVA ENTRADA
-        // BOTÓN AGREGAR NUEVA ENTRADA
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             FrmEntradas frm = new FrmEntradas();
@@ -104,6 +103,7 @@ namespace SGA_v0._1
             {
                 try
                 {
+
                     // Obtiene los valores obligatorios
                     detalleEntrada.id_detalleEntrada = Convert.ToInt32(DtgDatos.Rows[e.RowIndex].Cells["ID Detalle"].Value);
                     detalleEntrada.precio_entrada = Convert.ToDouble(DtgDatos.Rows[e.RowIndex].Cells["Precio Unitario"].Value);
