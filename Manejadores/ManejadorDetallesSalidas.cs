@@ -101,6 +101,7 @@ namespace Manejadores
             
             b.Comando($"CALL p_GuardarDesdeTemporales({id_salida})");
         }
+        
 
         // PERMITE LIMPIAR LA TABLA TEMPORAL (destruye la tabla)
         public void LimpiarProductosTemporales()
