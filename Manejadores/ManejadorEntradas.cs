@@ -11,6 +11,19 @@ namespace Manejadores
     {
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen", 3310);
         public bool valido = true; // VARIABLE PARA VALIDAR CAMPOS
+        public void ActualizarFechaEntrada(int idEntrada, DateTime nuevaFecha)
+        {
+            try
+            {
+                string query = $"UPDATE entradas SET fecha_entrada = '{nuevaFecha:yyyy-MM-dd}' WHERE id_entrada = {idEntrada};";
+                b.Comando(query);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al actualizar fecha de entrada: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         public DataRow ObtenerProductoPorId(int idProducto)
         {
             try

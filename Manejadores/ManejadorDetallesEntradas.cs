@@ -8,6 +8,11 @@ using System;
 public class ManejadorDetalleEntradas
 {
     Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen", 3310);
+    public void ActualizarCantidad(int idDetalle, int nuevaCantidad)
+    {
+        string query = $"UPDATE detalle_entradas SET cantidad_entrada = {nuevaCantidad} WHERE id_detalleEntrada = {idDetalle};";
+        b.Comando(query);
+    }
 
     public void GuardarDetalle(List<DetalleEntradas> lista)
     {

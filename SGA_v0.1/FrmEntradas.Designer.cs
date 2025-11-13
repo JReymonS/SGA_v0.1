@@ -220,6 +220,7 @@
             this.TxtIdsProductosSeleccionados.Name = "TxtIdsProductosSeleccionados";
             this.TxtIdsProductosSeleccionados.Size = new System.Drawing.Size(100, 20);
             this.TxtIdsProductosSeleccionados.TabIndex = 18;
+            this.TxtIdsProductosSeleccionados.Visible = false;
             // 
             // FrmEntradas
             // 

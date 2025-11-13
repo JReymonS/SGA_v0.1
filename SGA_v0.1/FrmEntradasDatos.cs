@@ -48,6 +48,17 @@ namespace SGA_v0._1
                 MessageBox.Show("No se encontraron detalles de entrada para la fecha seleccionada.",
                     "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            // Ocultar columnas que no quieres mostrar
+            if (DtgDatos.Columns.Contains("ID Detalle"))
+                DtgDatos.Columns["ID Detalle"].Visible = false;
+
+            if (DtgDatos.Columns.Contains("ID Producto"))
+                DtgDatos.Columns["ID Producto"].Visible = false;
+
+            // Opcional: también puedes ocultar ID Entrada si no quieres que se vea
+            if (DtgDatos.Columns.Contains("ID Entrada"))
+                DtgDatos.Columns["ID Entrada"].Visible = false;
+
         }
         public void LimpiarTabla()
         {
