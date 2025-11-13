@@ -55,12 +55,6 @@
     <Compile Include="FrmAgregarProductos.Designer.cs">
       <DependentUpon>FrmAgregarProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAgregarSalidaProductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAgregarSalidaProductos.Designer.cs">
-      <DependentUpon>FrmAgregarSalidaProductos.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,26 +91,16 @@
     <Compile Include="FrmProveedores.Designer.cs">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmUsuarioSesion.cs" />
     <Compile Include="FrmVerProductos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmVerProductos.Designer.cs">
       <DependentUpon>FrmVerProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmVerSalidaProductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmVerSalidaProductos.Designer.cs">
-      <DependentUpon>FrmVerSalidaProductos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAgregarProductos.resx">
       <DependentUpon>FrmAgregarProductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmAgregarSalidaProductos.resx">
-      <DependentUpon>FrmAgregarSalidaProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
@@ -138,9 +122,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVerProductos.resx">
       <DependentUpon>FrmVerProductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmVerSalidaProductos.resx">
-      <DependentUpon>FrmVerSalidaProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
