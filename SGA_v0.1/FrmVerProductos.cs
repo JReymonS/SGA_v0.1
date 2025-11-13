@@ -14,6 +14,7 @@ namespace SGA_v0._1
 {
     public partial class FrmVerProductos : Form
     {
+        //INSTANCIA DE OBJETOS Y VARIABLES PARA EL FORMULARIO
         ManejadorProductos mp;
         public static Productos producto = new Productos(0, "", "", "", 0.0, 0, 0, "", 0);
         int fila = 0;
@@ -23,9 +24,6 @@ namespace SGA_v0._1
             InitializeComponent();
             mp = new ManejadorProductos();
         }
-
-
-
         private void FrmVerProductos_Load(object sender, EventArgs e)
         {
 
