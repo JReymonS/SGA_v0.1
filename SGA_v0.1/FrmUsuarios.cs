@@ -29,6 +29,7 @@ namespace SGA_v0._1
             mu.Mostrar($"SELECT * FROM v_Usuarios WHERE Nombre like '%{txtBuscar.Text}%'",dtgDatos,"v_Usuarios");
         }
 
+
         //EVENTO CLICK PARA REGISTRAR NUEVOS USUARIOS
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -44,12 +45,14 @@ namespace SGA_v0._1
             dtgDatos.Columns.Clear();
         }
 
+
         //EVENTO CELL ENTER PARA OBTENER FILAS Y COLUMNAS
         private void dtgDatos_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             fila = e.RowIndex;
             columna = e.ColumnIndex;
         }
+
 
         //EVENTO CLICK PARA MODIFICAR O ELIMINAR REGISTROS
         private void dtgDatos_CellClick(object sender, DataGridViewCellEventArgs e)

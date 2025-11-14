@@ -30,6 +30,7 @@ namespace SGA_v0._1
             mp.Mostrar(txtBuscar.Text, DtgDatos);
         }
 
+
         //METODO PARA AGREGAR PROVEEDORES
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -45,11 +46,13 @@ namespace SGA_v0._1
             DtgDatos.Columns.Clear();
         }
 
+
         //METODO PARA CAPTURAR LA FILA Y COLUMNA SELECCIONADA
         private void DtgDatos_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             fila = e.RowIndex; columna = e.ColumnIndex;
         }
+
 
         //METODO PARA CAPTURAR EL EVENTO DE CLIC EN LOS BOTONES DE MODIFICAR Y BORRAR
         private void DtgDatos_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -10,6 +10,7 @@ namespace Manejadores
     {
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen", 3310);
 
+        //METODO PARA GUARDAR CATEGORIAS
         public void Guardar(Categorias categoria)
         {
             try
@@ -24,6 +25,8 @@ namespace Manejadores
             }
         }
 
+
+        //METODO PARA MODIFICAR CATEGORIAS
         public void Modificar(Categorias categoria)
         {
             try
@@ -38,6 +41,8 @@ namespace Manejadores
             }
         }
 
+
+        //METODO PARA BORRAR CATEGORIAS
         public void Borrar(Categorias categoria)
         {
             var rs = MessageBox.Show(
@@ -64,6 +69,8 @@ namespace Manejadores
             }
         }
 
+
+        //METODO PARA MOSTRAR CATEGORIAS
         public void Mostrar(string nombre, DataGridView tabla)
         {
             try
@@ -101,6 +108,8 @@ namespace Manejadores
             }
         }
 
+
+        //METODO PARA GENERAR BOTONES EN TIEMPO DE EJECUCIÓN
         public static DataGridViewButtonColumn Boton(string titulo, Color fondo)
         {
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();

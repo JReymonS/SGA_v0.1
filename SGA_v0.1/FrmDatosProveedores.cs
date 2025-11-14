@@ -35,6 +35,7 @@ namespace SGA_v0._1
             }
         }
 
+
         //METODO PARA GUARDAR O MODIFICAR PROVEEDORES
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -59,6 +60,7 @@ namespace SGA_v0._1
             }
             Close();
         }
+
 
         //METODO PARA CANCELAR LA OPERACION
         private void btnCancelar_Click(object sender, EventArgs e)

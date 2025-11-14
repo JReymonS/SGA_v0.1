@@ -14,7 +14,6 @@ namespace SGA_v0._1
 {
     public partial class FrmVerSalidaProductos : Form
     {
-        // INSTANCIA DE OBJETOS Y VARIABLES PARA EL FORMULARIO
         ManejadorSalidas ms;
         public static Salidas salida = new Salidas(0, "", 0);
         public static Productos producto = new Productos(0, "", "", "", 0.0, 0, 0, "", 0);
@@ -22,6 +21,7 @@ namespace SGA_v0._1
         int fila = 0;
         int columna = 0;
         
+
         //CONSTRUCTOR CON LA INICIALIZACION DEl OBJETO DEL MANEJADOR SALIDAS
         public FrmVerSalidaProductos()
         {
@@ -30,7 +30,8 @@ namespace SGA_v0._1
 
         }
 
-        // FUNCION CLICK PARA MOSTRAR LOS REGISTROS DE SALIDA FILTRADOS POR FECHA
+
+        //EVENTO CLICK PARA MOSTRAR LOS REGISTROS DE SALIDA FILTRADOS POR FECHA
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string fecha = dtpFecha.Value.ToString("yyyy-MM-dd");
@@ -39,7 +40,8 @@ namespace SGA_v0._1
 
         }
 
-        // PERMITE ABRIR UN NUEVO FORMULARIO PARA REGISTRAR NUEVAS SALIDAS
+
+        //EVENTO QUE PERMITE ABRIR UN NUEVO FORMULARIO PARA REGISTRAR NUEVAS SALIDAS
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             salida = new Salidas(0, "", 0);
@@ -50,14 +52,15 @@ namespace SGA_v0._1
             dtgDatos.Columns.Clear();
         }
 
-        // PERMITE OBTENER LA FILA Y COLUMNA ESPECIFICA PARA EL DATAGRIDVIEW
+
+        //EVENTO QUE PERMITE OBTENER LA FILA Y COLUMNA ESPECIFICA PARA EL DATAGRIDVIEW
         private void dtgDatos_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             fila = e.RowIndex;
             columna = e.ColumnIndex;
         }
 
-        // PERMITE MOSTRAR LAS COLUMNAS PARA IDENTIFICAR SI SE CLICKEA LA CElDA
+        //EVENTO QUE PERMITE MOSTRAR LAS COLUMNAS PARA IDENTIFICAR SI SE CLICKEA LA CElDA
         private void dtgDatos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             salida.id_salida = int.Parse(dtgDatos.Rows[fila].Cells["id_salida"].Value.ToString());

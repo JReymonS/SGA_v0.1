@@ -29,6 +29,8 @@ namespace SGA_v0._1
             }
         }
 
+
+        //EVENTO CLICK PARA GUARDAR UN REGISTRO
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(TxtNombre.Text))
@@ -67,6 +69,8 @@ namespace SGA_v0._1
             }
         }
 
+
+        //EVENTO CLICK PARA CANCELAR EL REGISTRO
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             Close();

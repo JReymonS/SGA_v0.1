@@ -15,11 +15,13 @@ namespace Manejadores
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen");
         public bool valido = true;
 
+
         //METODO PARA GUARDAR USUARIOS
         public void Guardar(Usuarios usuario) 
         {
             b.Comando($"CALL p_InsertarUsuario('{usuario.nombre}','{usuario.apellido_paterno}','{usuario.apellido_materno}','{ManejadorLogin.Sha1(usuario.clave)}','{usuario.status}',{usuario.fkid_rol})");
         }
+
 
         //METODO PARA MODIFICAR USUARIOS
         public void Modificar(Usuarios usuario, bool estado) 
@@ -34,6 +36,7 @@ namespace Manejadores
             }
         }
 
+
         //METODO PARA BORRAR USUARIOS
         public void Borrar(Usuarios usuario)
         {
@@ -43,6 +46,7 @@ namespace Manejadores
                 b.Comando($"CALL p_DesactivarUsuario({usuario.id_usuario})");
             }
         }
+
 
         //METOODO PARA MOSTRAR USUARIOS
         public void Mostrar(string consulta, DataGridView tabla, string datos) 
@@ -57,6 +61,7 @@ namespace Manejadores
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
         }
+
 
         //METODO PARA VALIDAR CAMPOS DE REGISTRO
         public void ValidarCampos(TextBox txtNombre, TextBox txtApellidoPaterno, TextBox txtApellidoMaterno, TextBox txtClave, bool estado) 
@@ -109,6 +114,7 @@ namespace Manejadores
 
         }
 
+
         //METODO PARA OBTENER ROLES EXISTENTES
         public void LLenarRoles(ComboBox cajaRol) 
         {
@@ -116,6 +122,7 @@ namespace Manejadores
             cajaRol.DisplayMember = "NombreRol";
             cajaRol.ValueMember = "IdRol";
         }
+
 
         //METODO PARA CODIFICAR ESTATUS
         public string Codificacion(ComboBox cmb) 
@@ -128,6 +135,7 @@ namespace Manejadores
             }
             return valor;
         }
+
 
         //METODO PARA CREAR BOTONES EN TIEMPO DE EJECUCION
         public static DataGridViewButtonColumn Boton(string titulo, Color fondo)

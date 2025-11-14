@@ -19,6 +19,36 @@ namespace SGA_v0._1
             mc = new ManejadorCategorias();
         }
 
+
+        //EVENTO CLICK PARA BUSCAR CATERGORIAS
+        private void BtnBuscar_Click(object sender, EventArgs e)
+        {
+            mc.Mostrar(TxtBuscar.Text, DtgDatos);
+        }
+
+
+        //EVENTO CLICK PARA AGREAGAR CATEGORIAS
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            FrmCategoria.categoria = new Categorias(0, "", "");
+            FrmCategoriaMenu frmMenu = new FrmCategoriaMenu();
+            frmMenu.FormClosed += (s, args) =>
+            {
+                LimpiarTabla();
+            };
+            frmMenu.ShowDialog();
+        }
+
+
+        //EVENTO CELL ENTER PARA OBTENER CELDA DE MODIFICAR O ELIMINAR
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            fila = e.RowIndex;
+            columna = e.ColumnIndex;
+        }
+
+
+        //EVENTO CELL CONTENENT CLICK PARA MODIFICAR O ELIMINAR UNA CATEGORIA
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -50,39 +80,21 @@ namespace SGA_v0._1
             }
         }
 
-        private void BtnSalir_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void BtnAgregar_Click(object sender, EventArgs e)
-        {
-            FrmCategoria.categoria = new Categorias(0, "", "");
-            FrmCategoriaMenu frmMenu = new FrmCategoriaMenu();
-            frmMenu.FormClosed += (s, args) =>
-            {
-                LimpiarTabla();
-            };
-            frmMenu.ShowDialog();
-        }
-
-        private void BtnBuscar_Click(object sender, EventArgs e)
-        {
-            mc.Mostrar(TxtBuscar.Text, DtgDatos);
-        }
-
-        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            fila = e.RowIndex;
-            columna = e.ColumnIndex;
-        }
-
+        
+        //METODO PARA LIMPIAR CONTENEDOR
         public void LimpiarTabla()
         {
             DtgDatos.DataSource = null;
             DtgDatos.Rows.Clear();
             DtgDatos.Columns.Clear();
             DtgDatos.Refresh();
+        }
+
+
+        //EVENTO CLICK PARA SALIR DEL FORMULARIO
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

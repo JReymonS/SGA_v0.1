@@ -8,12 +8,16 @@ using System;
 public class ManejadorDetalleEntradas
 {
     Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen", 3310);
+
+    //METODO PARA ACTUALIZAR LA CANTIDAD EN PRODUCTO REGISTRADO
     public void ActualizarCantidad(int idDetalle, int nuevaCantidad)
     {
         string query = $"UPDATE detalle_entradas SET cantidad_entrada = {nuevaCantidad} WHERE id_detalleEntrada = {idDetalle};";
         b.Comando(query);
     }
 
+
+    //METODO PARA GUARDAR DETALLES DE ENTRADAS
     public void GuardarDetalle(List<DetalleEntradas> lista)
     {
         foreach (var detalle in lista)
@@ -29,6 +33,9 @@ public class ManejadorDetalleEntradas
             }
         }
     }
+
+
+    //METODO PARA ACTUALIZAR COSTO DE DETALLES DE ENTRADAS
     public void ActualizarCostoDetalle(int idDetalleEntrada, double nuevoCosto)
     {
         try
@@ -43,6 +50,7 @@ public class ManejadorDetalleEntradas
     }
 
 
+    //METODO PARA OBTENER EL SIGUIENTE DETALLE DE ENTRADAS
     public int ObtenerSiguienteIdDetalle(int idProducto)
     {
         try
@@ -57,7 +65,8 @@ public class ManejadorDetalleEntradas
         }
     }
 
-    // Solo actualiza la cantidad, no devuelve nada
+
+    //METODO PARA ACTUALIZAR LA CANTIDAD EN DETALLES DE ENTRADAS
     public void ActualizarCantidadDetalle(int idDetalleEntrada, int nuevaCantidad)
     {
         try

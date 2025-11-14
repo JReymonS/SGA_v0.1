@@ -17,7 +17,7 @@ namespace SGA_v0._1
         List<DetalleEntradas> listaTemporal = new List<DetalleEntradas>();
         int idProductoSeleccionado = 0;
         int idProveedorSeleccionado = 0;
-        int idUsuario = 1;
+        int idUsuario = FrmInicio._usuarioActivo.id_usuario;
         private int idProductoActual = 0;
 
 

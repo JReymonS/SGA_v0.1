@@ -14,7 +14,6 @@ namespace SGA_v0._1
 {
     public partial class FrmVerProductos : Form
     {
-        //INSTANCIA DE OBJETOS Y VARIABLES PARA EL FORMULARIO
         ManejadorProductos mp;
         public static Productos producto = new Productos(0, "", "", "", 0.0, 0, 0, "", 0);
         int fila = 0;
@@ -24,18 +23,16 @@ namespace SGA_v0._1
             InitializeComponent();
             mp = new ManejadorProductos();
         }
-        private void FrmVerProductos_Load(object sender, EventArgs e)
-        {
 
-        }
 
-        // Boton para buscar un registro en la base de datos
+        //EVENTO CLICK PARA BUSCAR REGISTROS
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             mp.Mostrar($"CALL p_BuscarProducto('{txtNombre.Text}')", dtgDatos, "productos");
         }
 
-        // Boton para abrir el formulario de registro de productos
+
+        //EVENTO CLICK PARA AGREGAR UN NUEVO PRODUCTO
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             producto.id_producto = 0; producto.nombre = "";
@@ -49,7 +46,17 @@ namespace SGA_v0._1
 
         }
 
-        // Dtg para mostrar los resultados de la busqueda de productos
+
+        //EVENTO CELL ENTER PARA OBTERNER LAS COLUMNAS Y SUS FILAS
+        private void dtgDatos_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            fila = e.RowIndex;
+            columna = e.ColumnIndex;
+
+        }
+
+
+        //EVENTO CELL CLICK PARA OBTENER COLUMNA DE MODIFICAR Y ELIMINAR
         private void dtgDatos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             producto.id_producto = int.Parse(dtgDatos.Rows[fila].Cells[0].Value.ToString());
@@ -80,15 +87,6 @@ namespace SGA_v0._1
                     }
                     break;
             }
-
-        }
-
-        // Permite obtener las ccordenas de las filas y columnas del dtg
-        private void dtgDatos_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            fila = e.RowIndex;
-            columna = e.ColumnIndex;
-
-        }
+        } 
     }
 }

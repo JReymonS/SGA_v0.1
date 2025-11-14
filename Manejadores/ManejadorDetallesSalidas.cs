@@ -13,9 +13,9 @@ namespace Manejadores
 {
     public class ManejadorDetallesSalidas
     {
-        //INSTANCIA DE UN NUEVO OBJETO DE ACCESO DATOS
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen");
         public DataTable dtTempSalida { get; private set; }
+
 
         //CONSTRUCTOR QUE INICIALIZA EL PROCEDIMIENTO Y LAS COLUMNAS CREADAS 
         public ManejadorDetallesSalidas()
@@ -30,7 +30,8 @@ namespace Manejadores
             
         }
 
-        // METODO PARA CREAR BOTONES EN TIEMPO DE EJECUCION
+
+        //METODO PARA CREAR BOTONES EN TIEMPO DE EJECUCION
         public static DataGridViewButtonColumn Boton(string titulo, Color fondo)
         {
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
@@ -42,7 +43,8 @@ namespace Manejadores
             return btn;
         }
        
-        //PERMITE MOSTRAR LOS PRODUCTOS EN EL DATAGRIDVIEW 
+
+        //METODO QUE PERMITE MOSTRAR LOS PRODUCTOS EN EL DATAGRIDVIEW 
         public void MostrarProductos(string consulta, DataGridView tabla, string datos)
         {
             tabla.Columns.Clear();
@@ -53,7 +55,8 @@ namespace Manejadores
             tabla.Columns.Insert(0,Boton("Seleccionar", Color.Orange));
         }
 
-        //PERMITE MOSTRAR LOS PRODUCTOS SELECCIONADOS PARA MODIFIFCAR O REGISTRAR COMO SALIDA
+
+        //METODO QUE PERMITE MOSTRAR LOS PRODUCTOS SELECCIONADOS PARA MODIFIFCAR O REGISTRAR COMO SALIDA
         public void MostrarProductosTemporales(DataGridView tabla)
         {
             bool tieneBotonEliminar = false;
@@ -83,19 +86,21 @@ namespace Manejadores
         }
 
 
-        // METODO PARA AGREGAR UN PRODUCTO A LA TABLA TEMPORAL
+        //METODO PARA AGREGAR UN PRODUCTO A LA TABLA TEMPORAL
         public void AgregarProductoTemporal(string id_producto, string nombre, string descripcion, string cantidad, string costo)
         {
             b.Comando($"CALL p_AgregarProductoTemporal({id_producto}, '{nombre}', '{descripcion}', {cantidad}, {costo})");
         }
 
-        // METODO PARA ELIMINAR PRODUCTOS DE LA TABLA TEMPORAL
+
+        //METODO PARA ELIMINAR PRODUCTOS DE LA TABLA TEMPORAL
         public void EliminarProductoTemporal(string idProducto)
         {
             b.Comando($"CALL p_EliminarProductoTemporal({idProducto})");
         }
 
-       // ESTE METODO PERMITE GUARDAR CADA PRODUCTO DE LA TABLA TEMPORAL COMO REGISTROS INDIVIDUALES
+
+        //METODO QUE PERMITE GUARDAR CADA PRODUCTO DE LA TABLA TEMPORAL COMO REGISTROS INDIVIDUALES
         public void GuardarDetalleSalidas(int id_salida)
         {
             
@@ -103,13 +108,14 @@ namespace Manejadores
         }
         
 
-        // PERMITE LIMPIAR LA TABLA TEMPORAL (destruye la tabla)
+        //PERMITE LIMPIAR LA TABLA TEMPORAL (destruye la tabla)
         public void LimpiarProductosTemporales()
         {
             b.Comando("CALL p_LimpiarProductosTemporales()");
         }
 
-        // PERMITE MODIFICAR UN REGISTRO PREVIO 
+
+        //PERMITE MODIFICAR UN REGISTRO PREVIO 
         public void ModificarDetalleSalida(int idDetalleSalida, int idSalida)
         {
             DataSet ds = b.Consulta("CALL p_ObtenerProductosTemporales()", "temp");
@@ -127,6 +133,8 @@ namespace Manejadores
             b.Comando($"CALL p_ModificarDetalleSalida({idDetalleSalida}, {idProducto}, {cantidad}, {precio})");
         }
 
+
+        //METODO PARA OBTENER EL STOCK ACTUAL
         public int ObtenerStockActual(int idProducto)
         {
             string consulta = $"SELECT stock FROM productos WHERE id_producto = {idProducto}";
@@ -137,7 +145,5 @@ namespace Manejadores
             else
                 return 0;
         }
-
-
     }
 }

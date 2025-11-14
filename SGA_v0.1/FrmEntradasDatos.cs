@@ -19,13 +19,37 @@ namespace SGA_v0._1
             manejador = new ManejadorEntradas();
         }
 
-        // BOTÓN BUSCAR
+
+        //EVENTO CLICK PARA BUSCAR DETALLES DE ENTRADAS
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
             MostrarDetalles();
         }
 
-        // MUESTRA DETALLES EN EL DATAGRIDVIEW
+
+        //METODO PARA AGREGAR UNA NUEVA ENTRADA
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            FrmEntradas frm = new FrmEntradas();
+
+            frm.FormClosed += (s, args) =>
+            {
+                LimpiarTabla();
+            };
+
+            frm.ShowDialog();
+        }
+
+
+        //EVENTO CELL ENTER PARA OBTENER COLUMNAS
+        private void DtgDatos_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            fila = e.RowIndex;
+            columna = e.ColumnIndex;
+        }
+
+
+        //METODO PARA MOSTRAR LOS DETALLES DE ENTRADAS
         private void MostrarDetalles()
         {
             DateTime fechaSeleccionada = DtpEntradas.Value.Date;
@@ -60,6 +84,9 @@ namespace SGA_v0._1
                 DtgDatos.Columns["ID Entrada"].Visible = false;
 
         }
+
+
+        //METODO PARA LIMPIAR CONTENEDOR DE DETALLES ENTRADAS
         public void LimpiarTabla()
         {
             DtgDatos.DataSource = null;
@@ -69,29 +96,7 @@ namespace SGA_v0._1
         }
 
 
-        // BOTÓN AGREGAR NUEVA ENTRADA
-        private void BtnAgregar_Click(object sender, EventArgs e)
-        {
-            FrmEntradas frm = new FrmEntradas();
-
-            frm.FormClosed += (s, args) =>
-            {
-                LimpiarTabla(); 
-            };
-
-            frm.ShowDialog();
-        }
-
-
-
-        private void DtgDatos_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            fila = e.RowIndex;
-            columna = e.ColumnIndex;
-        }
-
-        // EVENTO DE CLIC EN BOTÓN MODIFICAR
-
+        // EVENTO CELL CONTENT CLICK PARA MODIFICAR
         private void DtgDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -112,8 +117,10 @@ namespace SGA_v0._1
                     // Intenta obtener el ID del producto
                     if (DtgDatos.Columns.Contains("ID Producto"))
                         detalleEntrada.fkid_producto = Convert.ToInt32(DtgDatos.Rows[e.RowIndex].Cells["ID Producto"].Value);
+
                     else if (DtgDatos.Columns.Contains("id_producto"))
                         detalleEntrada.fkid_producto = Convert.ToInt32(DtgDatos.Rows[e.RowIndex].Cells["id_producto"].Value);
+
                     else
                     {
                         MessageBox.Show("No se encontró la columna del producto (ID Producto).",
@@ -124,8 +131,10 @@ namespace SGA_v0._1
                     // Intenta obtener el ID de entrada
                     if (DtgDatos.Columns.Contains("ID Entrada"))
                         detalleEntrada.fkid_entrada = Convert.ToInt32(DtgDatos.Rows[e.RowIndex].Cells["ID Entrada"].Value);
+
                     else if (DtgDatos.Columns.Contains("id_entrada"))
                         detalleEntrada.fkid_entrada = Convert.ToInt32(DtgDatos.Rows[e.RowIndex].Cells["id_entrada"].Value);
+
                     else
                         detalleEntrada.fkid_entrada = 0;
 
@@ -146,8 +155,5 @@ namespace SGA_v0._1
                 }
             }
         }
-
-
-
     }
 }

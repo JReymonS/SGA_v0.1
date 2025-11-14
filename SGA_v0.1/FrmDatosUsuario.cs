@@ -33,6 +33,7 @@ namespace SGA_v0._1
             }
         }
 
+
         //EVENTO CLICK PARA GUARDAR REGISTROS O MODIFICACIONES
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -80,6 +81,7 @@ namespace SGA_v0._1
             }
             Close();
         }
+
 
         //EVENTO CLICK PARA CANCELAR REGISTRO O MODIFICACION
         private void btnCancelar_Click(object sender, EventArgs e)

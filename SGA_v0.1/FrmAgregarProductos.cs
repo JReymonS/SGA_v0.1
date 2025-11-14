@@ -16,7 +16,7 @@ namespace SGA_v0._1
     {
         ManejadorProductos mp;
 
-        // El constructor permitira llenar los campos si se modificara un registo
+        //CONSTRUCTO QUE PERMITE LLENAR LOS CAMPOS SI SE MODIFICAN
         public FrmAgregarProductos()
         {
             InitializeComponent();
@@ -40,7 +40,8 @@ namespace SGA_v0._1
             }
         }
 
-        // Permite guardar los cambios o nuevos registros
+
+        //EVENTO CLICK PARA GUARDAR O MODIFICAR REGISTROS
         private void tnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -82,7 +83,8 @@ namespace SGA_v0._1
 
         }
 
-        // Boton para salir de la ventana de registo de productos
+
+        //EVENTO CLICK PARA CERRAR FORMULARIO
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();

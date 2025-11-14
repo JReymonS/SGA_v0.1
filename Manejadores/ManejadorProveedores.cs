@@ -15,11 +15,13 @@ namespace Manejadores
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen");
         public bool valido = true; //VARIABLE PARA VALIDAR CAMPOS
 
+
         //METODO PARA GUARDAR PROVEEDORES
         public void Guardar(Proveedores proveedor)
         {
             b.Comando($"CALL p_AgregarProveedor('{proveedor.nombre}','{proveedor.apellido_paterno}','{proveedor.apellido_materno}','{proveedor.telefono}','{proveedor.correo}',{proveedor.plazo_disponibilidad},'{proveedor.status}')");
         }
+
 
         //METODO PARA MODIFICAR PROVEEDORES
         public void Modificar(Proveedores proveedor)
@@ -27,6 +29,7 @@ namespace Manejadores
             b.Comando($"CALL p_ModificarProveedor ('{proveedor.id_proveedor}','{proveedor.nombre}','{proveedor.apellido_paterno}','{proveedor.apellido_materno}'," +
                 $"'{proveedor.telefono}','{proveedor.correo}',{proveedor.plazo_disponibilidad},'{proveedor.status}')");
         }
+
 
         //METODO PARA BORRAR PROVEEDORES
         public void Borrar(Proveedores proveedor)
@@ -38,6 +41,7 @@ namespace Manejadores
                 b.Comando($"CALL p_DesactivarProveedor({proveedor.id_proveedor})");
             }
         }
+
 
         //METODO PARA MOSTRAR PROVEEDORES
         public void Mostrar(string consulta, DataGridView tabla)
@@ -51,6 +55,7 @@ namespace Manejadores
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
         }
+
 
         //METODO PARA VALIDAR CAMPOS DE REGISTRO
         public void ValidarCampos(TextBox txtNombre, TextBox txtApPa, TextBox txtApMa, TextBox txtTelefono, TextBox txtCorreo, TextBox txtPlazo ) 
@@ -114,6 +119,7 @@ namespace Manejadores
                 return;
             }
         }
+
 
         //METODO PARA CREAR BOTONES EN DATAGRIDVIEW EN TIEMPO DE EJECUCION
         public static DataGridViewButtonColumn Boton(string titulo, Color fondo)

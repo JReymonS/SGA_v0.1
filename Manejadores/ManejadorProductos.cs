@@ -13,24 +13,23 @@ namespace Manejadores
 {
     public class ManejadorProductos
     {
-        // Objeto de la clase base para usar los metodos de conexion a la case de datos
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen");
 
-        // Metodo para realizar registros en la base de datos
+        //METODOS PARA GUARDAR PRODUCTOS 
         public void Guardar(Productos producto)
         {
             b.Comando($"CALL p_InsertarProducto('{producto.nombre}', '{producto.descripcion}', '{producto.unidad}', {producto.precio_salida}, {producto.stock}, {producto.stock_minimo}, '{producto.status}', {producto.fkid_categoria})");
         }
 
 
-
-        // Metodo para modificar registros en la base de datos
+        //METODO PARA MODIFICAR PRODUCTOS
         public void Modificar(Productos producto)
         {
             b.Comando($"update productos set nombre = '{producto.nombre}', descripcion = '{producto.descripcion}', unidad = '{producto.unidad}', precio_salida = '{producto.precio_salida}', stock = '{producto.stock}', stock_minimo = '{producto.stock_minimo}', status = '{producto.status}', fkid_categoria = {producto.fkid_categoria} where id_producto = {producto.id_producto} ");
         }
 
-        // Metodo para crear botones en tiempo de ejecucion
+
+        //METODO PARA CREAR BOTONES EN TIEMPO DE EJECUCION
         public static DataGridViewButtonColumn Boton(string titulo, Color fondo)
         {
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
@@ -43,7 +42,7 @@ namespace Manejadores
         }
 
 
-        // Metodo para mostrar los datos de productos en el Dtg
+        //METODO PARA MOSTRAR PRODUCTOS
         public void Mostrar(string consulta, DataGridView tabla, string datos)
         {
             tabla.Columns.Clear();
@@ -56,8 +55,8 @@ namespace Manejadores
 
         }
 
-        // Metodo para llenar los combo box de tipo ENUM
 
+        //METODO PARA LLENAR EL COMBO BOX DE ESTATUS
         public void LlenarComboBox(ComboBox caja, string campo, string tabla)
         {
             DataTable dt = b.Consulta($"show columns from {tabla} like '{campo}'", $"{tabla}").Tables[0];
@@ -67,7 +66,8 @@ namespace Manejadores
             caja.DataSource = valores.ToList();
         }
 
-        // Metodo para llenar un combo box con datos de una tabla 
+
+        //METODO PARA LLENAR EL COMBO BOX DE CATEGORIAS 
         public void LlenarCategorias(ComboBox caja)
         {
             caja.DataSource = b.Consulta($"select id_categoria, nombre from categorias", $"categorias").Tables[0];
@@ -75,7 +75,8 @@ namespace Manejadores
             caja.ValueMember = $"Id_categoria";
         }
 
-        // Metodo para asegurar que al registrar productos se llenen todos los campos de datos del formulario
+
+        //METODO PARA VALIDAR CAMPOS AL REGISTRAR PRODUCTOS
         public bool ValidarCampos(TextBox nombre, TextBox descripcion, TextBox costo, TextBox stockActual, TextBox stockMinimo)
         {
             if (string.IsNullOrWhiteSpace(nombre.Text) || string.IsNullOrWhiteSpace(descripcion.Text) || string.IsNullOrWhiteSpace(costo.Text) || string.IsNullOrWhiteSpace(stockActual.Text) ||
@@ -87,7 +88,8 @@ namespace Manejadores
             return true;
         }
 
-        //Metodo para validar la entrada de los numeros para registrar o actualizar registros de productos validos, que no sean negativos, letras o numeros decimales donde deben ser enteros
+
+        //METODO PARA VALIDAR NUMEROS Y LETRAS AL ACTUALIZAR O REGISTRAR PRODUCTOS.
         public bool ValidarNumeros(TextBox txtCosto, TextBox txtStockActual, TextBox txtStockMinimo)
         {
             if (!double.TryParse(txtCosto.Text, out double precio) || precio < 0)
@@ -111,7 +113,9 @@ namespace Manejadores
 
             return true;
         }
-        //Metodo para mostrar Activo e Inactivo en los ComboBox
+
+
+        //METODO PARA MOSTRAR ACTIVO E INACTIVO EN COMBO BOX
         public void LlenarComboEstatus(ComboBox caja)
         {
 
@@ -126,7 +130,8 @@ namespace Manejadores
             caja.ValueMember = "Valor";
         }
 
-        // Método para eliminar el producto es decir, cambiar el estatus de un producto a Inactivo
+
+        //METODO PARA ELIMINAR PRODUCTOS (ACTIVO => INACTIVO)
         public void CambiarEstatusInactivo(int idProducto)
         {
             try
@@ -145,8 +150,5 @@ namespace Manejadores
                 MessageBox.Show($"Error al cambiar el estatus del producto: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-
     }
 }

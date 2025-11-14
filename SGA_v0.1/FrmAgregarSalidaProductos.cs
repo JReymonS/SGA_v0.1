@@ -14,7 +14,6 @@ namespace SGA_v0._1
 {
     public partial class FrmAgregarSalidaProductos : Form
     {
-        // INSTANCIA DE OBJETOS Y VARIABLES PARA EL FORMULARIO
         public static Productos producto = new Productos(0, "", "", "", 0.0, 0, 0, "", 0);
         public static Salidas salida = new Salidas(0, "", 0);
         private int idSalida = 0;
@@ -28,7 +27,7 @@ namespace SGA_v0._1
         int columna1 = 0, columna2 = 0;
 
 
-        // CONSTRUCTOR PARA INICIALIZAR EL FORMULARIO CON DATOS SEGUN SEA EL CASO (MODIFICAR / NUEVO REGISTRO)
+        //CONSTRUCTOR PARA INICIALIZAR EL FORMULARIO CON DATOS SEGUN SEA EL CASO (MODIFICAR / NUEVO REGISTRO)
         public FrmAgregarSalidaProductos()
         {
             
@@ -71,14 +70,18 @@ namespace SGA_v0._1
             }
 
         }
-        // OBTIENE LA CELDA ACTUAL
+
+
+        //EVENTO CELL ENTER QUE OBTIENE LA CELDA ACTUAL
         private void dtgMostrarProductos_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             fila1 = e.RowIndex;
             columna1 = e.ColumnIndex;
 
         }
-        // PERMITE IDENTIFICAR LAS COLUMNAS PARA AGREGAR EL NOMBRE AL TEXTBOX
+
+
+        //EVENTO CELL CLICK QUE PERMITE IDENTIFICAR LAS COLUMNAS PARA AGREGAR EL NOMBRE AL TEXTBOX
         private void dtgMostrarProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -107,9 +110,7 @@ namespace SGA_v0._1
         }
 
         
-
-        
-        // PERMITE AGREGAR PRODUCTOS A LA TABLA TEMPORAL
+        //PERMITE AGREGAR PRODUCTOS A LA TABLA TEMPORAL
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 
@@ -163,7 +164,8 @@ namespace SGA_v0._1
             }
         }
 
-        // BOTON PARA CREAR EL REGISTRO DE LA SALIDA Y TRABAJAR SOBRE LA ID PARA LOS DETALLES SALIDAS
+
+        //EVENTO CLICK DE BOTON PARA CREAR EL REGISTRO DE LA SALIDA Y TRABAJAR SOBRE LA ID PARA LOS DETALLES SALIDAS
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             if (FrmUsuarioSesion.Usuario == null)
@@ -186,7 +188,8 @@ namespace SGA_v0._1
                 "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        // REALIZA EL REGISTRO DE LOS DETALLESSALIDAS DE CADA PRODUCTO A REGISTRAR
+
+        //EVENTO CLICK QUE REALIZA EL REGISTRO DE LOS DETALLESSALIDAS DE CADA PRODUCTO A REGISTRAR
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (idSalida == 0)
@@ -230,7 +233,8 @@ namespace SGA_v0._1
             }
         }
 
-        // ELIMINA EL REGISTRO DE LA TABLA SALIDAS PARA REVERTIR LOS CAMBIOS AL NO TERMINAR EL REGISTRO
+
+        //EVENTO CLICK QUE ELIMINA EL REGISTRO DE LA TABLA SALIDAS PARA REVERTIR LOS CAMBIOS AL NO TERMINAR EL REGISTRO
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             if (idSalida > 0 && !esModificacion)
@@ -266,12 +270,8 @@ namespace SGA_v0._1
             }
         }
 
-        private void dtgMostrarProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
 
-        // PERMITE ELIMINAR PRODUCTOS DE LA TABLA TEMPORAL
+        //EVENTO CELL CLICK QUE PERMITE ELIMINAR PRODUCTOS DE LA TABLA TEMPORAL
         private void dtgListaProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return; 
@@ -301,7 +301,8 @@ namespace SGA_v0._1
             }
         }
 
-        // RESCATA LA CELDA ACTUAL PARA EL DTG DE LOS PRODUCTOS SELECCIONADOS
+
+        //EVENTO CELL ENTER PARA OBTENER CELDAD EN EL CONTENEDOR DE PRODUCTOS SELECCIONADOS
         private void dtgListaProductos_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             fila2 = e.RowIndex;

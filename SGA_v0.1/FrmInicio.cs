@@ -14,8 +14,8 @@ namespace SGA_v0._1
 {
     public partial class FrmInicio : Form
     {
-        private Usuarios _usuarioActivo;
-        private Roles _rolPermisosActivo;
+        public static Usuarios _usuarioActivo;
+        public static Roles _rolPermisosActivo;
         public FrmInicio(Usuarios user, Roles rolPermisosActivo)
         {
             InitializeComponent();
@@ -98,6 +98,21 @@ namespace SGA_v0._1
             frmVerProductos.Show();
         }
 
+        //EVENTO CLICK PARA ABRIR FORMULARIO DE SALIDAS
+        private void tsbSalidas_Click(object sender, EventArgs e)
+        {
+            FrmVerSalidaProductos frm = new FrmVerSalidaProductos();
+            frm.Show();
+        }
+
+        //EVENTO CLICK PARA ABRIR FORMULARIO DE ENTRADAS
+        private void tsbEntradas_Click(object sender, EventArgs e)
+        {
+            FrmEntradasDatos frmEntradasDatos = new FrmEntradasDatos();
+            frmEntradasDatos.MdiParent = this;
+            frmEntradasDatos.Show();
+        }
+
         //EVENTO CLICK PARA ABRIR FORMULARIO DE USUARIOS
         private void tsbUsuarios_Click(object sender, EventArgs e)
         {
@@ -110,13 +125,6 @@ namespace SGA_v0._1
         private void tsbCerrarSesion_Click(object sender, EventArgs e)
         {
             Application.Restart();
-        }
-
-        //EVENTO CLICK PARA ABRIR FORMULARIO DE SALIDAS
-        private void tsbSalidas_Click(object sender, EventArgs e)
-        {
-            FrmVerSalidaProductos frm = new FrmVerSalidaProductos();
-            frm.Show();
         }
     }
 }
