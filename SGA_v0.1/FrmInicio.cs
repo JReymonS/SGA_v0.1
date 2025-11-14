@@ -98,10 +98,25 @@ namespace SGA_v0._1
             frmVerProductos.Show();
         }
 
+        //EVENTO CLICK PARA ABRIR FORMULARIO DE USUARIOS
+        private void tsbUsuarios_Click(object sender, EventArgs e)
+        {
+            FrmUsuarios frmUsuarios = new FrmUsuarios();
+            frmUsuarios.MdiParent = this;
+            frmUsuarios.Show();
+        }
+
         //EVENTO CLICK PARA CERRAR SESION
         private void tsbCerrarSesion_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        //EVENTO CLICK PARA ABRIR FORMULARIO DE SALIDAS
+        private void tsbSalidas_Click(object sender, EventArgs e)
+        {
+            FrmVerSalidaProductos frm = new FrmVerSalidaProductos();
+            frm.Show();
         }
     }
 }
