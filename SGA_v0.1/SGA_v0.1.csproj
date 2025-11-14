@@ -79,6 +79,18 @@
     <Compile Include="FrmDatosProveedores.Designer.cs">
       <DependentUpon>FrmDatosProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEntradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEntradas.Designer.cs">
+      <DependentUpon>FrmEntradas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEntradasDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEntradasDatos.Designer.cs">
+      <DependentUpon>FrmEntradasDatos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDatosUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +150,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDatosProveedores.resx">
       <DependentUpon>FrmDatosProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEntradas.resx">
+      <DependentUpon>FrmEntradas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEntradasDatos.resx">
+      <DependentUpon>FrmEntradasDatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDatosUsuario.resx">
       <DependentUpon>FrmDatosUsuario.cs</DependentUpon>
