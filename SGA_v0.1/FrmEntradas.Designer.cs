@@ -125,6 +125,7 @@
             // 
             // CbProveedor
             // 
+            this.CbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbProveedor.FormattingEnabled = true;
             this.CbProveedor.Location = new System.Drawing.Point(411, 41);
             this.CbProveedor.Name = "CbProveedor";
@@ -190,6 +191,7 @@
             this.DtgLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DtgLista.Location = new System.Drawing.Point(15, 69);
             this.DtgLista.Name = "DtgLista";
+            this.DtgLista.ReadOnly = true;
             this.DtgLista.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.DtgLista.Size = new System.Drawing.Size(354, 150);
             this.DtgLista.TabIndex = 15;
@@ -201,10 +203,10 @@
             this.DtgListaR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DtgListaR.Location = new System.Drawing.Point(15, 263);
             this.DtgListaR.Name = "DtgListaR";
+            this.DtgListaR.ReadOnly = true;
             this.DtgListaR.Size = new System.Drawing.Size(354, 150);
             this.DtgListaR.TabIndex = 16;
             this.DtgListaR.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgListaR_CellContentClick);
-            this.DtgListaR.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgListaR_CellEnter);
             // 
             // label6
             // 

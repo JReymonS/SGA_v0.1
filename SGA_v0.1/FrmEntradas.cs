@@ -20,6 +20,8 @@ namespace SGA_v0._1
         int idUsuario = 1;
         private int idProductoActual = 0;
 
+
+        //CONSTRUCTOR SIN PARAMETROS
         public FrmEntradas()
         {
             InitializeComponent();
@@ -34,6 +36,8 @@ namespace SGA_v0._1
             this.FormClosed += FrmEntradas_FormClosed;
         }
 
+
+        //CONSTRUCTOR CON PARAMETROS
         public FrmEntradas(int idProducto)
         {
             InitializeComponent();
@@ -49,6 +53,8 @@ namespace SGA_v0._1
             this.FormClosed += FrmEntradas_FormClosed;
         }
 
+
+        //METODO PARA CONFIGURAR EL DATAGRIDVIEW
         private void ConfigurarDataGridView()
         {
             // Configurar columnas iniciales
@@ -60,22 +66,27 @@ namespace SGA_v0._1
             DtgListaR.Columns.Add("Descripcion", "Descripción");
             DtgListaR.Columns.Add("Cantidad", "Cantidad");
             DtgListaR.Columns.Add("Costo", "Costo Unitario");
-            DtgListaR.Columns.Add("FechaProducto", "Fecha");
+            DtgListaR.Columns.Add("FechaProducto", "Fecha de Registro");
 
             // Agregar columna de botón Eliminar
             if (!DtgListaR.Columns.Contains("Eliminar"))
             {
                 DataGridViewButtonColumn btnEliminar = new DataGridViewButtonColumn();
                 btnEliminar.Name = "Eliminar";
-                btnEliminar.HeaderText = "Eliminar";
+                btnEliminar.HeaderText = "";
                 btnEliminar.Text = "Eliminar";
                 btnEliminar.UseColumnTextForButtonValue = true;
+                btnEliminar.FlatStyle = FlatStyle.Popup;
+                btnEliminar.DefaultCellStyle.BackColor = Color.Orange;
+                btnEliminar.DefaultCellStyle.ForeColor = Color.White;
                 DtgListaR.Columns.Add(btnEliminar);
             }
 
             DtgListaR.ReadOnly = false;
         }
 
+
+        //METODO PARA CARGAR DATOS DE ENTRADAS A MODIFICAR
         private void CargarDatosParaModificar()
         {
             try
@@ -155,6 +166,7 @@ namespace SGA_v0._1
         }
 
 
+        //METODO PARA CARGAR LOS PROVEERODRES
         private void CargarProveedores()
         {
             DataTable dt = me.ObtenerProveedores();
@@ -166,24 +178,29 @@ namespace SGA_v0._1
             }
         }
 
+
+        //EVENTO CLICK PARA MOSTRAR LOS PRODUCTOS
         private void BtnMostrar_Click(object sender, EventArgs e)
         {
             idProveedorSeleccionado = Convert.ToInt32(CbProveedor.SelectedValue);
             me.MostrarProductos(DtpFecha.Value, idProveedorSeleccionado, DtgLista);
         }
 
+
+        //EVENTO CLICK PARA SELECCIONAR DATOS DE UN REGISTRO Y SU RECUPERACIÓN
         private void DtgLista_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && DtgLista.Columns[e.ColumnIndex].Name == "Seleccionar")
             {
                 idProductoSeleccionado = Convert.ToInt32(DtgLista.Rows[e.RowIndex].Cells["id_producto"].Value);
                 TxtProducto.Text = DtgLista.Rows[e.RowIndex].Cells["Producto"].Value.ToString();
-                TxtCosto.Text = DtgLista.Rows[e.RowIndex].Cells["precio_entrada"].Value.ToString();
                 TxtCantidad.Clear();
                 TxtCantidad.Focus();
             }
         }
 
+
+        //EVENTO CLICK PARA AGREGAR UN PRODUCTO EXISTENTE Y REGISTRAR SU ENTRADA
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             if (idProductoSeleccionado == 0)
@@ -198,9 +215,21 @@ namespace SGA_v0._1
                 return;
             }
 
-            int cantidad = int.Parse(TxtCantidad.Text);
-            double costo = double.Parse(TxtCosto.Text);
+            int cantidad;
+            double costo;
             DateTime fechaProducto = DtpFecha.Value;
+
+            if (!int.TryParse(TxtCantidad.Text,out cantidad)||cantidad<=0) 
+            {
+                MessageBox.Show("La cantidad a ingresar, deberá ser un número entero no negativo.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if(!double.TryParse(TxtCosto.Text,out costo) || costo < 0) 
+            {
+                MessageBox.Show("El costo debe ser un número válido y no negativo");
+                return;
+            }
 
             // Agregar a lista temporal
             DetalleEntradas detalle = new DetalleEntradas(0, costo, cantidad, idProductoSeleccionado, 0);
@@ -225,6 +254,8 @@ namespace SGA_v0._1
             LimpiarCampos();
         }
 
+
+        //EVENTO CLICK PARA ELIMINAR UN REGISTRO EN LA LISTA DE DETALLES
         private void DtgListaR_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && DtgListaR.Columns[e.ColumnIndex].Name == "Eliminar")
@@ -250,6 +281,8 @@ namespace SGA_v0._1
             }
         }
 
+
+        //EVENTO CLICK PARA CONFIRMAR LA LISTA DE DETALLES
         private void BtnConfirmar_Click(object sender, EventArgs e)
         {
 
@@ -276,10 +309,10 @@ namespace SGA_v0._1
             MessageBox.Show("Se crearon entradas individuales.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+
+        //EVENTO CLICK PARA GUARDAR REGISTRO EN TABLAS ENTRADAS Y DETALLEENTRADAS
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-           
-
             try
             {
                 // Lista de IDs procesados para actualizar stock solo una vez por producto
@@ -307,8 +340,8 @@ namespace SGA_v0._1
                     // Si estamos editando un detalle existente, mantenemos tu lógica actual
                     if (FrmEntradasDatos.detalleEntrada.id_detalleEntrada != 0)
                     {
-                        if (int.TryParse(TxtCantidad.Text, out int nuevaCantidad) &&
-                            double.TryParse(TxtCosto.Text, out double nuevoCosto))
+                        if (int.TryParse(TxtCantidad.Text, out int nuevaCantidad) && nuevaCantidad>0 &&
+                           double.TryParse(TxtCosto.Text, out double nuevoCosto) && nuevoCosto>0)
                         {
                             int cantidadAnterior = FrmEntradasDatos.detalleEntrada.cantidad_entrada;
 
@@ -335,7 +368,6 @@ namespace SGA_v0._1
                         }
                         return;
                     }
-
 
                     // --- MODO AGREGAR NUEVO ---
                     Entradas entrada = new Entradas(
@@ -378,6 +410,8 @@ namespace SGA_v0._1
             }
         }
 
+
+        //METODO PARA LIMPIAR CAMPOS
         private void LimpiarCampos()
         {
             TxtProducto.Clear();
@@ -386,18 +420,17 @@ namespace SGA_v0._1
             idProductoSeleccionado = 0;
         }
 
+        //EVENTO CLICK PARA CANCELAR EL REGISTRO
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+
+        //EVENTO CERRADO DE FORMULARIO PARA LIMPIAR LISTA DE DETALLES
         private void FrmEntradas_FormClosed(object sender, FormClosedEventArgs e)
         {
             FrmEntradasDatos.detalleEntrada = new DetalleEntradas(0, 0.0, 0, 0, 0);
-        }
-        private void DtgListaR_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

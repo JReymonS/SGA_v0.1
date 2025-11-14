@@ -13,6 +13,7 @@ namespace Manejadores
         public bool valido = true; // VARIABLE PARA VALIDAR CAMPOS
   
 
+        //METODO PARA OBTENER LOS PRODUCTOS POR ID
         public DataRow ObtenerProductoPorId(int idProducto)
         {
             try
@@ -33,8 +34,7 @@ namespace Manejadores
         }
 
 
-
-        // Para actualizar stock usando procedimiento almacenado
+        //METODO PARA ACTUALIZAR EL STOCK
         public void ActualizarStockProductoSP(int idProducto, int cantidad)
         {
             try
@@ -49,7 +49,7 @@ namespace Manejadores
         }
 
      
-        // MÉTODO PARA GUARDAR ENTRADA
+        //METODO PARA GUARDAR ENTRADA
         public int GuardarEntrada(Entradas entrada)
         {
             try
@@ -68,7 +68,7 @@ namespace Manejadores
         }
 
    
-
+        //METODO PARA OBTENER DESCRIPCION DE PRODUCTO
         public string ObtenerDescripcionProducto(int idProducto)
         {
             string query = $"SELECT descripcion FROM v_ProductosPorId WHERE id_producto = {idProducto};";
@@ -77,10 +77,7 @@ namespace Manejadores
         }
 
 
-
-
-
-        // MÉTODO PARA OBTENER PROVEEDORES ACTIVOS
+        // METODO PARA OBTENER PROVEEDORES ACTIVOS
         public DataTable ObtenerProveedores()
         {
             try
@@ -96,8 +93,7 @@ namespace Manejadores
         }
 
 
-
-        // MÉTODO PARA MOSTRAR PRODUCTOS DISPONIBLES
+        //METODO PARA MOSTRAR PRODUCTOS DISPONIBLES
         public void MostrarProductos(DateTime fecha, int idProveedor, DataGridView tabla)
         {
             try
@@ -123,15 +119,16 @@ namespace Manejadores
                 MessageBox.Show($"Error al mostrar productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        // Para actualizar stock al modificar
 
+
+        //METODO PARA ACTUALIZAR STOCK AL MODIFICAR
         public void ActualizarStockProducto(int idProducto, int cantidadAnterior, int nuevaCantidad)
         {
             string query = $"CALL sp_ActualizarStockProducto({idProducto}, {cantidadAnterior}, {nuevaCantidad});";
             b.Comando(query);
         }
-        // MÉTODO PARA MOSTRAR DETALLE DE ENTRADAS (Usado en FrmEntradasDatos)
 
+        //METODO PARA MOSTRAR DETALLE DE ENTRADAS (Usado en FrmEntradasDatos)
         public DataTable BuscarDetalleEntradasPorFecha(DateTime fecha)
         {
             try
@@ -139,7 +136,7 @@ namespace Manejadores
                 string query = $@"
             SELECT *
             FROM v_Buscar_Detalles_Por_Fecha
-            WHERE Fecha = '{fecha:yyyy-MM-dd}';
+            WHERE `Fecha Registro` = '{fecha:yyyy-MM-dd}';
         ";
 
                 return b.Consulta(query, "detalle_entradas").Tables[0];
@@ -152,7 +149,7 @@ namespace Manejadores
         }
 
 
-        // MÉTODO PARA CREAR BOTONES EN DATAGRIDVIEW
+        //METODO PARA CREAR BOTONES EN DATAGRIDVIEW
         public static DataGridViewButtonColumn Boton(string titulo, Color fondo)
         {
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
@@ -161,7 +158,7 @@ namespace Manejadores
             btn.FlatStyle = FlatStyle.Popup;
             btn.DefaultCellStyle.BackColor = fondo;
             btn.DefaultCellStyle.ForeColor = Color.White;
-            btn.HeaderText = titulo; 
+            btn.HeaderText = "";
             btn.Name = titulo;     
             return btn;
         }

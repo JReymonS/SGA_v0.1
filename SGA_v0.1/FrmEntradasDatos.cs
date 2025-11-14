@@ -97,7 +97,7 @@ namespace SGA_v0._1
             if (e.RowIndex < 0)
                 return;
 
-            string nombreColumna = DtgDatos.Columns[e.ColumnIndex].HeaderText;
+            string nombreColumna = DtgDatos.Columns[e.ColumnIndex].Name;
 
             if (nombreColumna == "Modificar")
             {
