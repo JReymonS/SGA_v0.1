@@ -52,6 +52,7 @@
     <Compile Include="ManejadorPermisos.cs" />
     <Compile Include="ManejadorProductos.cs" />
     <Compile Include="ManejadorProveedores.cs" />
+    <Compile Include="ManejadorReportes.cs" />
     <Compile Include="ManejadorRoles.cs" />
     <Compile Include="ManejadorSalidas.cs" />
     <Compile Include="ManejadorUsuarios.cs" />
