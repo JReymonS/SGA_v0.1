@@ -52,6 +52,7 @@
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "+";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnGenerarExcel
             // 
@@ -61,16 +62,21 @@
             this.btnGenerarExcel.TabIndex = 2;
             this.btnGenerarExcel.Text = "Generar Excel";
             this.btnGenerarExcel.UseVisualStyleBackColor = true;
+            this.btnGenerarExcel.Click += new System.EventHandler(this.btnGenerarExcel_Click);
             // 
             // dtgDatos
             // 
+            this.dtgDatos.AllowUserToAddRows = false;
             this.dtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDatos.Location = new System.Drawing.Point(23, 119);
             this.dtgDatos.Name = "dtgDatos";
+            this.dtgDatos.ReadOnly = true;
             this.dtgDatos.RowHeadersWidth = 51;
             this.dtgDatos.RowTemplate.Height = 24;
             this.dtgDatos.Size = new System.Drawing.Size(1168, 393);
             this.dtgDatos.TabIndex = 3;
+            this.dtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellClick);
+            this.dtgDatos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellEnter);
             // 
             // FrmReportes
             // 
