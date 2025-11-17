@@ -53,6 +53,7 @@ namespace SGA_v0._1
             columna = e.ColumnIndex;
         }
 
+
         //EVENTO CELL CLICK PARA MODIFICAR O ELIMINAR
         private void dtgDatos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -69,7 +70,7 @@ namespace SGA_v0._1
                     }break;
                 case 5: 
                     {
-                        //Borrado
+                        mr.EliminarRol(rol);
                         dtgDatos.Columns.Clear();
                     }break;
             }

@@ -121,8 +121,9 @@
             this.dtgDatosPermisos.Location = new System.Drawing.Point(12, 206);
             this.dtgDatosPermisos.Name = "dtgDatosPermisos";
             this.dtgDatosPermisos.ReadOnly = true;
-            this.dtgDatosPermisos.Size = new System.Drawing.Size(505, 166);
+            this.dtgDatosPermisos.Size = new System.Drawing.Size(538, 166);
             this.dtgDatosPermisos.TabIndex = 7;
+            this.dtgDatosPermisos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatosPermisos_CellEnter);
             // 
             // btnGuardar
             // 
@@ -146,7 +147,7 @@
             // 
             // btnAgregarPermiso
             // 
-            this.btnAgregarPermiso.Location = new System.Drawing.Point(538, 206);
+            this.btnAgregarPermiso.Location = new System.Drawing.Point(568, 206);
             this.btnAgregarPermiso.Name = "btnAgregarPermiso";
             this.btnAgregarPermiso.Size = new System.Drawing.Size(75, 28);
             this.btnAgregarPermiso.TabIndex = 10;
@@ -156,12 +157,13 @@
             // 
             // btnEliminarPermiso
             // 
-            this.btnEliminarPermiso.Location = new System.Drawing.Point(538, 252);
+            this.btnEliminarPermiso.Location = new System.Drawing.Point(568, 252);
             this.btnEliminarPermiso.Name = "btnEliminarPermiso";
             this.btnEliminarPermiso.Size = new System.Drawing.Size(75, 28);
             this.btnEliminarPermiso.TabIndex = 11;
             this.btnEliminarPermiso.Text = "Eliminar";
             this.btnEliminarPermiso.UseVisualStyleBackColor = true;
+            this.btnEliminarPermiso.Click += new System.EventHandler(this.btnEliminarPermiso_Click);
             // 
             // chkCrear
             // 

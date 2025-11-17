@@ -121,10 +121,18 @@ namespace SGA_v0._1
             frmUsuarios.Show();
         }
 
+        //EVENTO CLICK PARA ROLES Y PERMISOS
+        private void tsbRolesPermisos_Click(object sender, EventArgs e)
+        {
+            FrmRolesPermisos frmRolesPermisos = new FrmRolesPermisos();
+            frmRolesPermisos.MdiParent = this;
+            frmRolesPermisos.Show();
+        }
+
         //EVENTO CLICK PARA CERRAR SESION
         private void tsbCerrarSesion_Click(object sender, EventArgs e)
         {
             Application.Restart();
-        }
+        } 
     }
 }

@@ -162,6 +162,7 @@
             this.tsbRolesPermisos.Name = "tsbRolesPermisos";
             this.tsbRolesPermisos.Size = new System.Drawing.Size(60, 60);
             this.tsbRolesPermisos.Text = "ROLES Y PERMISOS";
+            this.tsbRolesPermisos.Click += new System.EventHandler(this.tsbRolesPermisos_Click);
             // 
             // tsbUsuarios
             // 

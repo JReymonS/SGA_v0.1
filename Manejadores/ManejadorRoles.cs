@@ -13,12 +13,47 @@ namespace Manejadores
     public class ManejadorRoles
     {
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen");
+        public bool ValidacionRolesPermisos = true;
 
 
         //METODO PARA GUARDAR ROLES
         public void GuardarRol(Roles roles) 
         {
-            b.Comando($"CALL p_RegistrarRoles('{roles.nombre}','{roles.identificador}')");
+            ValidacionRolesPermisos = true;
+            var rs = b.Consulta($"CALL p_RegistrarRoles('{roles.nombre}','{roles.identificador}')", "msg");
+            string mensaje = rs.Tables["msg"].Rows[0]["msg"].ToString();
+
+            if (!mensaje.Equals("Ok"))
+            {
+                ValidacionRolesPermisos = false;
+                MessageBox.Show(mensaje, "¡ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        //METODO PARA MODIFICAR ROLES
+        public void ModificarRol(Roles roles) 
+        {
+            ValidacionRolesPermisos = true;
+            var rs = b.Consulta($"CALL p_ModificarRoles({roles.id_rol},'{roles.nombre}','{roles.identificador}')", "msg");
+            string mensaje = rs.Tables["msg"].Rows[0]["msg"].ToString();
+
+            if (!mensaje.Equals("Ok")) 
+            {
+                ValidacionRolesPermisos= false;
+                MessageBox.Show(mensaje,"¡ATENCIÓN!",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        //METODO PARA ELIMINAR ROLES (CAMBIO ESTATUS)
+        public void EliminarRol(Roles roles) 
+        {
+            var rs = MessageBox.Show($"¿Estas seguro de eliminar el registro: {roles.nombre}?", "¡ATENCIÓN!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes) 
+            {
+                b.Comando($"CALL p_DesactivarRoles({roles.id_rol})");
+            }
         }
 
 
@@ -32,6 +67,40 @@ namespace Manejadores
             tabla.Columns.Insert(5, Boton("ELIMINAR", Color.Red));
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
+        }
+
+
+        //METODO PARA VALIDAR SI EXISTEN PERMISOS Y SI EL NOMBRE ES VALIDO
+        public void ValidarRolPermisos (TextBox CajaNombre, List<Permisos> PermisosAgregados) 
+        {
+            ValidacionRolesPermisos = true;
+            if (string.IsNullOrWhiteSpace(CajaNombre.Text) && PermisosAgregados.Count==0) 
+            {
+                MessageBox.Show("Complete los campos requeridos.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ValidacionRolesPermisos = false;
+                return;
+            }
+
+            if(string.IsNullOrWhiteSpace(CajaNombre.Text)) 
+            {
+                MessageBox.Show("El nombre no puede esta vacio.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ValidacionRolesPermisos = false;
+                return;
+            }
+
+            if (CajaNombre.Text.Length > 50) 
+            {
+                MessageBox.Show("Introduzca un nombre valido.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ValidacionRolesPermisos = false;
+                return;
+            }
+
+            if(PermisosAgregados.Count == 0) 
+            {
+                MessageBox.Show("Se requiere registrar al menos un permiso.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ValidacionRolesPermisos = false;
+                return;
+            }
         }
 
 

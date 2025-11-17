@@ -13,6 +13,7 @@ namespace Manejadores
     public class ManejadorPermisos
     {
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen");
+        public bool ValidacionPermisos = true;
 
 
         //METODO PARA GUARDAR PERMISOS LOCALMENTE
@@ -22,10 +23,24 @@ namespace Manejadores
         }
 
 
+        //METODO PARA ELIMINAR PERMISOS LOCALMENTE
+        public void EliminarPermisos(List<Permisos> lista, int fila) 
+        {
+            lista.RemoveAt(fila);
+        }
+
+
         //METODO PARA GUARDAR PERMISOS EN LA BD
         public void GuardarPermisoBD(Permisos permiso) 
         {
             b.Comando($"CALL p_RegistrarRolesPermisos('{permiso.permiso_crear}','{permiso.permiso_leer}','{permiso.permiso_modificar}','{permiso.permiso_borrar}',{permiso.fkid_rol},{permiso.fkid_modulo})");
+        }
+
+
+        //METODO PARA ELIMINAR PERMISOS EN LA BD
+        public void EliminarPermisosBD(Permisos permisos) 
+        {
+            b.Comando($"CALL p_EliminarPermisos({permisos.fkid_rol},{permisos.fkid_modulo})");
         }
 
 
@@ -74,8 +89,6 @@ namespace Manejadores
             tabla.DataSource = datos;
             tabla.Columns["id_permiso"].Visible = false;
             tabla.Columns["Rol"].Visible=false;
-            tabla.AutoResizeColumns();
-            tabla.AutoResizeRows();
         }
 
 
@@ -105,8 +118,26 @@ namespace Manejadores
             MostrarPermisos(lista,tabla); //UTILZA VISTA LOCAL PARA MOSTRAR EL NOMBRE DEL MODULO
         }
 
-        //FALTA ELIMINAR y Guardar nuevos permisos , verificar no duplicados 
 
+        //VALIDAR EXISTENCIA DE MODULOS DUPLICADOS O SI NO HAY CHECKBOX ACTIVOS
+        public void ValidarPermisos(CheckBox crear, CheckBox leer, CheckBox modificar, CheckBox borrar,ComboBox modulo, List<Permisos>PermisosAgregados)
+        {
+            ValidacionPermisos=true;
+            if(!(crear.Checked || leer.Checked || modificar.Checked || borrar.Checked)) 
+            {
+                MessageBox.Show("Marque al menos un permiso (Crear / Leer / Modificar / Borrar).","¡ATENCIÓN!",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ValidacionPermisos = false;
+                return;
+            }
+
+            int moduloId = int.Parse(modulo.SelectedValue.ToString());
+            if (PermisosAgregados.Any(x => x.fkid_modulo == moduloId)) 
+            {
+                MessageBox.Show("El modulo seleccionado ya se encuentra en uso.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ValidacionPermisos = false;
+                return;
+            }
+        }
 
 
         //METODO PARA OBTENER EL ID DEL ULTIMO REGISTRO
