@@ -126,5 +126,12 @@ namespace SGA_v0._1
         {
             Application.Restart();
         }
+        //EVENTO CLICK PARA RECIBIR NOTIFICACION DE STOCK BAJO
+        private void tsbNotificaciones_Click(object sender, EventArgs e)
+        {
+            FrmAlerta frmAlerta = new FrmAlerta();
+            frmAlerta.MdiParent = this;
+            frmAlerta.Show();
+        }
     }
 }
