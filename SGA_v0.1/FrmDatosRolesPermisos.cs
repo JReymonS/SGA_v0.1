@@ -39,11 +39,20 @@ namespace SGA_v0._1
                 cmbIdentificador.Text = FrmRolesPermisos.rol.identificador;
                 mp.MostrarPermisosBD($"SELECT * FROM v_PermisosAgregados WHERE IdRol={FrmRolesPermisos.rol.id_rol}",dtgDatosPermisos,ListaPermisos);
             }
+
             else 
             {
                 idLocalRol = mp.ObtenerIdRol();
                 cmbIdentificador.SelectedIndex = 0;
             }
+            cmbModulo.SelectedIndexChanged += CmbModulo_SelectedIndexChanged;
+        }
+
+
+        //EVENTO PARA ACTIVAR O DESACTIVAR CHECKBOX´s
+        private void CmbModulo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            mp.VerificarModulo(chkCrear,chkLeer,chkModificar,chkBorrar,cmbModulo);
         }
 
 

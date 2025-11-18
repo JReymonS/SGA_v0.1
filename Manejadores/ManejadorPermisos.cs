@@ -123,9 +123,30 @@ namespace Manejadores
         public void ValidarPermisos(CheckBox crear, CheckBox leer, CheckBox modificar, CheckBox borrar,ComboBox modulo, List<Permisos>PermisosAgregados)
         {
             ValidacionPermisos=true;
-            if(!(crear.Checked || leer.Checked || modificar.Checked || borrar.Checked)) 
+            if(!(crear.Checked || leer.Checked || modificar.Checked || borrar.Checked) && !modulo.Text.Equals("Notificaciones") && !modulo.Text.Equals("Entradas") && !modulo.Text.Equals("Salidas") && !modulo.Text.Equals("Reportes")) 
             {
                 MessageBox.Show("Marque al menos un permiso (Crear / Leer / Modificar / Borrar).","¡ATENCIÓN!",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ValidacionPermisos = false;
+                return;
+            }
+
+            if(!leer.Checked && modulo.Text.Equals("Notificaciones")) 
+            {
+                MessageBox.Show("Marque el permios de (Leer) para poder agregar.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ValidacionPermisos = false;
+                return;
+            }
+
+            if(!(crear.Checked || leer.Checked || modificar.Checked) && (modulo.Text.Equals("Entradas") || modulo.Text.Equals("Salidas"))) 
+            {
+                MessageBox.Show("Marque el permios de (Crear / Leer / Modificar) para poder agregar.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ValidacionPermisos = false;
+                return;
+            }
+
+            if(!(crear.Checked || leer.Checked || borrar.Checked) && modulo.Text.Equals("Reportes")) 
+            {
+                MessageBox.Show("Marque el permios de (Crear / Leer / Borrar) para poder agregar.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ValidacionPermisos = false;
                 return;
             }
@@ -136,6 +157,38 @@ namespace Manejadores
                 MessageBox.Show("El modulo seleccionado ya se encuentra en uso.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ValidacionPermisos = false;
                 return;
+            }
+        }
+
+
+        //METODO PARA ACTIVAR O DESACTIVAR CHECKBOX PARA MODULOS ESPECIFICOS
+        public void VerificarModulo(CheckBox crear, CheckBox leer,CheckBox modificar, CheckBox borrar, ComboBox modulo) 
+        {
+
+            crear.Enabled = true;
+            crear.Checked = false;
+            leer.Enabled = true;
+            leer.Checked = false;
+            modificar.Enabled = true;
+            modificar.Checked = false;
+            borrar.Enabled = true;
+            borrar.Checked = false;
+
+            if (modulo.Text.Equals("Notificaciones")) 
+            {
+                crear.Enabled = false;
+                modificar.Enabled = false;
+                borrar.Enabled = false;
+            }
+
+            if (modulo.Text.Equals("Entradas") || modulo.Text.Equals("Salidas")) 
+            {
+                borrar.Enabled = false;
+            }
+
+            if (modulo.Text.Equals("Reportes")) 
+            {
+                modificar.Enabled = false;
             }
         }
 
