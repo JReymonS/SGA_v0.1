@@ -287,7 +287,6 @@ namespace SGA_v0._1
 
                             mds.EliminarProductoTemporal(idProducto);
                             mds.MostrarProductosTemporales(dtgListaProductos);
-
                             MessageBox.Show("Producto eliminado de la lista",
                                 "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
