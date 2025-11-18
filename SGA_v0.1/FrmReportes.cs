@@ -1,12 +1,5 @@
 ﻿using Manejadores;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -15,18 +8,19 @@ namespace SGA_v0._1
     public partial class FrmReportes : Form
     {
 
-        // CREACION DE OBJETOS Y CREACION DE VARIABLES 
+        //CREACION DE OBJETOS Y CREACION DE VARIABLES 
         ManejadorReportes mr;
         int fila = 0;
         int columna = 0;
         string tipoReporteActual = "";
 
-        // CONSTRUCTOR PARA INICIALIZAR EL FORMULARIO Y EL OBJETO DE ManejadorReportes
+        //CONSTRUCTOR PARA INICIALIZAR EL FORMULARIO Y EL OBJETO DE ManejadorReportes
         public FrmReportes()
         {
             InitializeComponent();
             mr = new ManejadorReportes();     
         }
+
 
         //METODO PARA GENERAR REPORTES DESDE FrmDatosReportes
         public void GenerarReporte(string tipoReporte, DateTime fechaInicio, DateTime fechaFin, string categoria, string nombreUsuario)
@@ -43,14 +37,16 @@ namespace SGA_v0._1
             }
         }
 
-        // BOTON PARA AGREGAR DATOS PARA GENERAR EL REPORTE
+
+        //EVENTO CLICK PARA AGREGAR DATOS PARA GENERAR EL REPORTE
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             FrmDatosReportes dr = new FrmDatosReportes();
             dr.ShowDialog();
         }
 
-        // BOTON PARA EXPORTAR LOS DATOS A EXCEL
+
+        //EVENTO CLICK PARA EXPORTAR PARA EXPORTAR LOS DATOS A EXCEL
         private void btnGenerarExcel_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(tipoReporteActual))
@@ -68,7 +64,7 @@ namespace SGA_v0._1
         }
 
 
-        // EVENTO CLICK PARA ELIMINAR UN REGISTRO ESPECIFICO DEL dtgDatos
+        //EVENTO CLICK PARA ELIMINAR UN REGISTRO ESPECIFICO DEL dtgDatos
         private void dtgDatos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (fila < 0) return;
@@ -94,7 +90,7 @@ namespace SGA_v0._1
         }
         
 
-        // EVENTO CLICK PARA OBTENER LA CELDA ESPECIFICA PARA ELIMINAR UN REGISTRO
+        //EVENTO CLICK PARA OBTENER LA CELDA ESPECIFICA PARA ELIMINAR UN REGISTRO
         private void dtgDatos_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             fila = e.RowIndex;

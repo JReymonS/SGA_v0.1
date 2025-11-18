@@ -79,5 +79,4 @@ public class ManejadorDetalleEntradas
             MessageBox.Show($"Error al actualizar cantidad: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
-
 }

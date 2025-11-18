@@ -129,12 +129,6 @@ namespace SGA_v0._1
             frmRolesPermisos.Show();
         }
 
-        //EVENTO CLICK PARA CERRAR SESION
-        private void tsbCerrarSesion_Click(object sender, EventArgs e)
-        {
-            Application.Restart();
-        } 
-        
         //EVENTO CLICK PARA RECIBIR NOTIFICACION DE STOCK BAJO
         private void tsbNotificaciones_Click(object sender, EventArgs e)
         {
@@ -142,12 +136,19 @@ namespace SGA_v0._1
             frmAlerta.MdiParent = this;
             frmAlerta.Show();
         }
-        
+
         //EVENTO CLICK PARA GENERAR REPORTES
         private void tsbReportes_Click(object sender, EventArgs e)
         {
             FrmReportes fr = new FrmReportes();
-            fr.ShowDialog();
+            fr.MdiParent = this;
+            fr.Show();
+        }
+
+        //EVENTO CLICK PARA CERRAR SESION
+        private void tsbCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

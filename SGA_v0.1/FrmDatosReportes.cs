@@ -1,13 +1,6 @@
-﻿using Entidades;
-using Manejadores;
+﻿using Manejadores;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -15,13 +8,13 @@ namespace SGA_v0._1
 {
     public partial class FrmDatosReportes : Form
     {
-        // INSTANCIA DE OBJETOS Y VARIABLES
+        //INSTANCIA DE OBJETOS Y VARIABLES
         ManejadorReportes mr;
         string tipoReporteSeleccionado = "";
         bool requiereCategoria = false;
 
 
-        // CONSTRUCTOR PARA INICIALIZAR EL FORMULARIO Y OBJETOS
+        //CONSTRUCTOR PARA INICIALIZAR EL FORMULARIO Y OBJETOS
         public FrmDatosReportes()
         {
             InitializeComponent();
@@ -30,7 +23,8 @@ namespace SGA_v0._1
 
         }
        
-        // BOTÓN PARA SELECCIONAR UNA TIPO DE REPORTE
+
+        //EVENTO CLICK PARA SELECCIONAR UNA TIPO DE REPORTE
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
             tipoReporteSeleccionado = cmbTipoAccion.SelectedItem.ToString();
@@ -83,7 +77,8 @@ namespace SGA_v0._1
             btnGenerar.Visible = true;
         }
 
-        // BOTÓN GENERAR PARA MOSTRAR EN EL dtgDatos EL RESULTADO DE LOS FILTROS PARA EL REPORTE
+
+        //EVENTO CLICK PARA GENERAR PARA MOSTRAR EN EL dtgDatos EL RESULTADO DE LOS FILTROS PARA EL REPORTE
         private void btnGenerar_Click(object sender, EventArgs e)
         {
             string categoria = "";
@@ -150,8 +145,8 @@ namespace SGA_v0._1
             this.Close();
         }
 
-        // BOTON PARA SELECCIONAR EL TIPO DE REPORTE A GENERAR
 
+        //EVENTO CLICK PARA SELECCIONAR EL TIPO DE REPORTE A GENERAR
         private void btnSeleccionarCategoria_Click(object sender, EventArgs e)
         {
             tipoReporteSeleccionado = cmbTipoAccion.SelectedItem.ToString();
@@ -202,6 +197,8 @@ namespace SGA_v0._1
             btnGenerar.Visible = true;
         }
 
+
+        //EVENTO CLICK PARA CERRAR FORMULARIO
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();

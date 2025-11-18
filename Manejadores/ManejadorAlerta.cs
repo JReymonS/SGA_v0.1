@@ -8,6 +8,7 @@ namespace Manejadores
     {
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen", 3310);
 
+        //METODO PARA OBTENER LOS PRODUCTOS DE BAJO STOCK (NOTIFICIACION)
         public (string lista, int cantidad) ObtenerProductosBajoStock()
         {
             string consulta = "SELECT nombre FROM v_vistas_tock_bajo;";
@@ -25,12 +26,11 @@ namespace Manejadores
 
                 return (productos, cantidad);
             }
+
             else
             {
                 return ("No hay productos con stock bajo.", 0);
             }
         }
-
-
     }
 }

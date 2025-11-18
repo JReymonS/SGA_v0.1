@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Manejadores;
 
@@ -15,16 +8,16 @@ namespace SGA_v0._1
     {
 
         ManejadorAlerta manejador = new ManejadorAlerta();
+
+
+        //CONSTRUCTOR
         public FrmAlerta()
         {
             InitializeComponent();
         }
 
-        private void BtnOk_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+       
+        //EVENTO LOAD PARA MOSTRAR LOS PRODUCTOS CON BAJO STOCK
         private void FrmAlerta_Load(object sender, EventArgs e)
         {
             var resultado = manejador.ObtenerProductosBajoStock();
@@ -45,6 +38,10 @@ namespace SGA_v0._1
         }
 
 
-
+        //EVENTO CLICK PARA CERRAR EL FORMULARIO
+        private void BtnOk_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
