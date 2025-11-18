@@ -85,6 +85,12 @@
     <Compile Include="FrmDatosProveedores.Designer.cs">
       <DependentUpon>FrmDatosProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDatosRolesPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDatosRolesPermisos.Designer.cs">
+      <DependentUpon>FrmDatosRolesPermisos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDatosReportes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,12 @@
     </Compile>
     <Compile Include="FrmProveedores.Designer.cs">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRolesPermisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRolesPermisos.Designer.cs">
+      <DependentUpon>FrmRolesPermisos.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmReportes.cs">
       <SubType>Form</SubType>
@@ -172,6 +184,9 @@
     <EmbeddedResource Include="FrmDatosProveedores.resx">
       <DependentUpon>FrmDatosProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDatosRolesPermisos.resx">
+      <DependentUpon>FrmDatosRolesPermisos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDatosReportes.resx">
       <DependentUpon>FrmDatosReportes.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProveedores.resx">
       <DependentUpon>FrmProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRolesPermisos.resx">
+      <DependentUpon>FrmRolesPermisos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReportes.resx">
       <DependentUpon>FrmReportes.cs</DependentUpon>

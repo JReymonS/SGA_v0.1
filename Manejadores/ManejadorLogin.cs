@@ -29,7 +29,7 @@ namespace Manejadores
             {
                 DataTable dt = ds.Tables[0];
                 Usuarios user = new Usuarios(0,"","","","","",0);
-                Roles rol = new Roles(0,"","");
+                Roles rol = new Roles(0,"","","");
 
                 foreach (DataRow row in dt.Rows) 
                 {
