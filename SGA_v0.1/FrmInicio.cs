@@ -133,5 +133,11 @@ namespace SGA_v0._1
             frmAlerta.MdiParent = this;
             frmAlerta.Show();
         }
+        //EVENTO CLICK PARA GENERAR REPORTES
+        private void tsbReportes_Click(object sender, EventArgs e)
+        {
+            FrmReportes fr = new FrmReportes();
+            fr.ShowDialog();
+        }
     }
 }

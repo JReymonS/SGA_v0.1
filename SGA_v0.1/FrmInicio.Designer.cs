@@ -153,6 +153,7 @@
             this.tsbReportes.Name = "tsbReportes";
             this.tsbReportes.Size = new System.Drawing.Size(60, 60);
             this.tsbReportes.Text = "REPORTES";
+            this.tsbReportes.Click += new System.EventHandler(this.tsbReportes_Click);
             // 
             // tsbRolesPermisos
             // 
