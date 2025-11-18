@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data;
-using System.Windows.Forms;
 using AccesoDatos;
 
 namespace Manejadores
@@ -11,25 +10,26 @@ namespace Manejadores
 
         public string ObtenerProductoMasBajo()
         {
-            string nombreProducto = "";
+            string consulta = "SELECT nombre FROM v_vistas_tock_bajo;";
 
-            try
+            DataSet ds = b.Consulta(consulta, "stock");
+
+            if (ds.Tables["stock"].Rows.Count > 0)
             {
-                string consulta = "SELECT nombre FROM v_vistas_tock_bajo LIMIT 1";
+                string productos = "";
 
-                DataSet ds = b.Consulta(consulta, "Productos");
-
-                if (ds.Tables.Count > 0 && ds.Tables["Productos"].Rows.Count > 0)
+                foreach (DataRow row in ds.Tables["stock"].Rows)
                 {
-                    nombreProducto = ds.Tables["Productos"].Rows[0]["nombre"].ToString();
+                    productos += row["nombre"].ToString() + Environment.NewLine;
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al obtener el producto: " + ex.Message);
-            }
 
-            return nombreProducto;
+                return productos;
+            }
+            else
+            {
+                return "No hay productos con stock bajo.";
+            }
         }
+
     }
 }

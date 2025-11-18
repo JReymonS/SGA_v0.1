@@ -39,7 +39,7 @@
             // 
             // BtnOk
             // 
-            this.BtnOk.Location = new System.Drawing.Point(324, 115);
+            this.BtnOk.Location = new System.Drawing.Point(411, 115);
             this.BtnOk.Name = "BtnOk";
             this.BtnOk.Size = new System.Drawing.Size(75, 23);
             this.BtnOk.TabIndex = 1;
@@ -89,7 +89,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(453, 150);
+            this.ClientSize = new System.Drawing.Size(498, 150);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.LbProducto);
             this.Controls.Add(this.label1);

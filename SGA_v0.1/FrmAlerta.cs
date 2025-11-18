@@ -27,8 +27,9 @@ namespace SGA_v0._1
 
         private void FrmAlerta_Load(object sender, EventArgs e)
         {
-            LbProducto.Text = manejador.ObtenerProductoMasBajo(); // Solo el nombre
+            LbProducto.Text = manejador.ObtenerProductoMasBajo();
         }
+
 
     }
 }
