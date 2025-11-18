@@ -38,7 +38,7 @@ namespace Manejadores
         // METODO PARA LLENAR EL COMBO BOX DE CATEGORIAS 
         public void LlenarCategorias(ComboBox caja)
         {
-            caja.DataSource = b.Consulta($"select nombre from categorias", $"categorias").Tables[0];
+            caja.DataSource = b.Consulta($"select nombre from categorias where status = 'A'", $"categorias").Tables[0];
             caja.DisplayMember = $"nombre";
             caja.ValueMember = "nombre";
         }

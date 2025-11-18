@@ -201,5 +201,10 @@ namespace SGA_v0._1
             }
             btnGenerar.Visible = true;
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
