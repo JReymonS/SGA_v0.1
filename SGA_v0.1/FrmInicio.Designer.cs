@@ -109,6 +109,7 @@
             this.tsbNotificaciones.Name = "tsbNotificaciones";
             this.tsbNotificaciones.Size = new System.Drawing.Size(60, 60);
             this.tsbNotificaciones.Text = "NOTIFICACION";
+            this.tsbNotificaciones.Click += new System.EventHandler(this.tsbNotificaciones_Click);
             // 
             // tsbProductos
             // 
