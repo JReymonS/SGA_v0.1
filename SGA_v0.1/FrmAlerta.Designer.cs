@@ -43,7 +43,7 @@
             this.BtnOk.Name = "BtnOk";
             this.BtnOk.Size = new System.Drawing.Size(75, 23);
             this.BtnOk.TabIndex = 1;
-            this.BtnOk.Text = "Ok";
+            this.BtnOk.Text = "Aceptar";
             this.BtnOk.UseVisualStyleBackColor = true;
             this.BtnOk.Click += new System.EventHandler(this.BtnOk_Click);
             // 
