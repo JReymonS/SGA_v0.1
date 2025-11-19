@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-
 using Excel = Microsoft.Office.Interop.Excel;
 
 
@@ -185,7 +185,8 @@ namespace Manejadores
 
                 // Generar nombres con contador y unicos para cada reporte 
                 string fechaActual = DateTime.Now.ToString("yyyyMMdd");
-                string rutaBase = @"C:\Users\valer\Desktop\"; //Aqui Modificar la ruta de descarga
+                string rutaBase = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),"Downloads") + @"\";
+
                 string nombreBase = $"{nombreReporte}_{fechaActual}";
                 string filePath = $"{rutaBase}{nombreBase}.xlsx";
 

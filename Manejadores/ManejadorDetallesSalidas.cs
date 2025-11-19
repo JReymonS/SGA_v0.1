@@ -66,7 +66,8 @@ namespace Manejadores
             if (!tabla.Columns.Contains("btnEliminar"))
             {
                 DataGridViewButtonColumn btn = Boton("Eliminar", Color.Orange);
-                btn.Name = "btnEliminar"; 
+                btn.Name = "btnEliminar";
+                btn.HeaderText = "";
                 tabla.Columns.Insert(0, btn);
             }
         }
