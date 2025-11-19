@@ -17,11 +17,22 @@ namespace SGA_v0._1
         ManejadorLogin ml;
         int intentosFallidos = 0;
         bool mostrarContrasena = false;
+        
+
 
         public FrmLogin()
         {
             InitializeComponent();
             ml = new ManejadorLogin();
+            ml.EstiloPanelTexto(pLogin, lblLogin);
+            ml.EstilosBoton(btnIngresar);
+            ml.EstilizarTextBox(txtContrasena);
+            ml.EstilizarTextBox(txtUsuario);
+            ml.QuitarBordesBotones(btnMostrar);
+            ml.QuitarBordesBotones(btnVer);
+            ml.QuitarBordesBotones(btnCerrar);
+            
+            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
         }
 
 
@@ -76,8 +87,63 @@ namespace SGA_v0._1
         //EVENTO CLICK PARA MOSTRAR U OCULTAR CONTRASEÑA
         private void btnMostrar_Click(object sender, EventArgs e)
         {
-            mostrarContrasena = !mostrarContrasena;
+            mostrarContrasena = true;
+
             ml.MostrarOcultarContrasena(txtContrasena, mostrarContrasena);
+
+           
+
+            btnVer.Visible = true;     
+            btnMostrar.Visible = false;
+            
+        }
+
+
+        private void btnMostrar_MouseEnter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnIngresar_MouseEnter(object sender, EventArgs e)
+        {
+            
+            btnIngresar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void btnIngresar_MouseLeave(object sender, EventArgs e)
+        {
+            btnIngresar.BackColor = ColorTranslator.FromHtml("#545454");
+           ml.QuitarBordesBotones(btnIngresar);
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            mostrarContrasena = false;
+            ml.MostrarOcultarContrasena(txtContrasena, mostrarContrasena);
+            btnMostrar.Visible = true;   
+            btnVer.Visible = false;   
+        }
+
+        private void btnCerrar_MouseEnter(object sender, EventArgs e)
+        {
+            btnCerrar.BackColor = ColorTranslator.FromHtml("#8CBFAF");
+            
+        }
+
+        private void btnCerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btnCerrar.BackColor = ColorTranslator.FromHtml("#B7CC18");
+            
         }
     }
 }
