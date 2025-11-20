@@ -1,13 +1,6 @@
 ﻿using Entidades;
 using Manejadores;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SGA_v0._1
@@ -18,6 +11,8 @@ namespace SGA_v0._1
         public static Roles rol = new Roles(0,"","","");
         int fila = 0, columna = 0;
 
+        bool permisoModificar = false, permisoBorrar = false; //PERMISOS PARA BOTONES EN DATAGRIDVIEW
+
 
         //CONSTRUCTOR PARA FORMULARIO PRINCIPAL
         public FrmRolesPermisos()
@@ -27,10 +22,26 @@ namespace SGA_v0._1
         }
 
 
+        // EVENTO LOAD PARA ACTIVAR / DESACTIVAR BOTONES SEGUN PERMISOS DEL ROL
+        private void FrmRolesPermisos_Load(object sender, EventArgs e)
+        {
+            btnAgregar.Enabled = false;
+            foreach(var permiso in FrmInicio._rolPermisosActivo.permisos) 
+            {
+                if(permiso.fkid_modulo == 8) //MODULO DE ROLES Y PERMISOS
+                {
+                    btnAgregar.Enabled = permiso.permiso_crear == "1";
+                    permisoModificar = permiso.permiso_modificar == "1";
+                    permisoBorrar = permiso.permiso_borrar == "1";
+                }
+            }
+        }
+
+
         //EVENTO CLICK PARA BUSCAR ROLES
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            mr.Mostrar($"SELECT * FROM v_DatosRolesExistentes WHERE Nombre like '%{txtBuscar.Text}%'", dtgDatos, "v_DatosRolesExistentes");
+            mr.Mostrar($"SELECT * FROM v_DatosRolesExistentes WHERE Nombre like '%{txtBuscar.Text.Trim('\'')}%'", dtgDatos, "v_DatosRolesExistentes", permisoModificar, permisoBorrar);
         }
 
 

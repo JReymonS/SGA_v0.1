@@ -8,6 +8,7 @@ namespace Manejadores
     {
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen", 3310);
 
+
         //METODO PARA OBTENER LOS PRODUCTOS DE BAJO STOCK (NOTIFICIACION)
         public (string lista, int cantidad) ObtenerProductosBajoStock()
         {

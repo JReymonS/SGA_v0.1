@@ -46,8 +46,8 @@ namespace Manejadores
             tabla.Columns["id_proveedor"].Visible = false;
             tabla.Columns.Insert(8, Boton("Modificar", Color.Green));
             tabla.Columns.Insert(9, Boton("Eliminar", Color.Red));
-            tabla.Columns[8].Visible = permisoModificar; //VISIBLE SEGUN PERMISO
-            tabla.Columns[9].Visible = permisoBorrar; //VISIBLE SEGUN PERMISO
+            tabla.Columns[8].Visible = permisoModificar; 
+            tabla.Columns[9].Visible = permisoBorrar; 
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
         }
@@ -67,6 +67,7 @@ namespace Manejadores
             if (txtNombre.Text.Length > 25) 
             {
                 MessageBox.Show("Ingrese un nombre de proveedor válido (máximo 25 caracteres).", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNombre.Clear();
                 valido = false;
                 return;
             }
@@ -74,6 +75,7 @@ namespace Manejadores
             if( txtApPa.Text.Length > 25)
             {
                 MessageBox.Show("Ingrese un apellido paterno de proveedor válido (máximo 25 caracteres).", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtApPa.Clear();
                 valido = false;
                 return;
             }
@@ -81,6 +83,7 @@ namespace Manejadores
             if (txtApMa.Text.Length > 25)
             {
                 MessageBox.Show("Ingrese un apellido materno de proveedor válido (máximo 25 caracteres).", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtApMa.Clear();
                 valido = false;
                 return;
             }
@@ -88,6 +91,7 @@ namespace Manejadores
             if (txtTelefono.Text.Length > 12)
             {
                 MessageBox.Show("Ingrese un telefono del proveedor válido (máximo 12 caracteres).", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTelefono.Clear();
                 valido = false;
                 return;
             }
@@ -95,6 +99,7 @@ namespace Manejadores
             if(txtCorreo.Text.Length > 100) 
             {
                 MessageBox.Show("Ingrese un correo del proveedor válido (máximo 100 caracteres).", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtCorreo.Clear();
                 valido = false;
                 return;
             }
@@ -104,6 +109,7 @@ namespace Manejadores
                 if (rs0 < 0)
                 {
                     MessageBox.Show("El plazo de disponibilidad del proveedor no puede ser negativo.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPlazo.Clear();
                     valido = false;
                     return;
                 }
@@ -111,6 +117,7 @@ namespace Manejadores
             else if(!int.TryParse(txtPlazo.Text, out int rs1))
             {
                 MessageBox.Show("Ingrese un plazo de disponibilidad de proveedor válido (número entero).", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPlazo.Clear();
                 valido = false;
                 return;
             }

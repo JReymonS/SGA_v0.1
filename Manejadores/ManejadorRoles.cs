@@ -45,7 +45,7 @@ namespace Manejadores
         //METODO PARA ELIMINAR ROLES (CAMBIO ESTATUS)
         public void EliminarRol(Roles roles) 
         {
-            var rs = MessageBox.Show($"¿Estas seguro de eliminar el registro: {roles.nombre}?", "¡ATENCIÓN!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var rs = MessageBox.Show($"¿Estas seguro de eliminar el rol {roles.nombre}? \n\n Este afectara a todos los usuarios relacionados.", "¡ATENCIÓN!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rs == DialogResult.Yes) 
             {
                 b.Comando($"CALL p_DesactivarRoles({roles.id_rol})");
@@ -54,13 +54,15 @@ namespace Manejadores
 
 
         //METODO PARA MOSTRAR ROLES EXISTENTES
-        public void Mostrar(string consulta, DataGridView tabla, string datos)
+        public void Mostrar(string consulta, DataGridView tabla, string datos, bool permisoModificar, bool permisoBorrar)
         {
             tabla.Columns.Clear();
             tabla.DataSource = b.Consulta(consulta, datos).Tables[datos];
             tabla.Columns["IdRol"].Visible = false;
             tabla.Columns.Insert(4, Boton("MODIFICAR", Color.Green));
             tabla.Columns.Insert(5, Boton("ELIMINAR", Color.Red));
+            tabla.Columns[4].Visible = permisoModificar;
+            tabla.Columns[5].Visible = permisoBorrar;
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
         }
@@ -72,21 +74,22 @@ namespace Manejadores
             ValidacionRolesPermisos = true;
             if (string.IsNullOrWhiteSpace(CajaNombre.Text) && PermisosAgregados.Count==0) 
             {
-                MessageBox.Show("Complete los campos requeridos.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingrese todos los campos porfavor.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ValidacionRolesPermisos = false;
                 return;
             }
 
             if(string.IsNullOrWhiteSpace(CajaNombre.Text)) 
             {
-                MessageBox.Show("El nombre no puede esta vacio.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El nombre del rol no puede esta vacío.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ValidacionRolesPermisos = false;
                 return;
             }
 
             if (CajaNombre.Text.Length > 50) 
             {
-                MessageBox.Show("Introduzca un nombre valido.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingrese un nombre de rol válido (máximo 50 caracteres).", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CajaNombre.Clear();
                 ValidacionRolesPermisos = false;
                 return;
             }

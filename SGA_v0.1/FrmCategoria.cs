@@ -28,7 +28,7 @@ namespace SGA_v0._1
             BtnAgregar.Enabled = false;
             foreach(var permiso in FrmInicio._rolPermisosActivo.permisos) 
             {
-                if (permiso.fkid_modulo == 2)
+                if (permiso.fkid_modulo == 2) //MODULO DE CATEGORIAS
                 {
                     BtnAgregar.Enabled = permiso.permiso_crear == "1";
                     permisoModificar = permiso.permiso_modificar == "1";

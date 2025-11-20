@@ -44,6 +44,7 @@ namespace SGA_v0._1
             if(TxtNombre.Text.Length > 100) 
             {
                 MessageBox.Show("Ingrese un nombre de categoría válido (máximo 100 caracteres).", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TxtNombre.Clear();
                 return;
             }
 

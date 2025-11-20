@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Manejadores;
@@ -17,16 +10,38 @@ namespace SGA_v0._1
         ManejadorUsuarios mu;
         public static Usuarios usuario = new Usuarios(0,"","","","","",0);
         int fila = 0, columna = 0;
+        
+        bool permisoModificar = false, permisoBorrar = false; //PERMISOS PARA BOTONES EN DATAGRIDVIEW
+
+
+        //CONSTRUCTOR DEL FORMULARIO
         public FrmUsuarios()
         {
             InitializeComponent();
             mu = new ManejadorUsuarios();
         }
 
+
+        //EVENTO LOAD PARA ACTIVAR / DESACTIVAR BOTONES SEGUN PERMISOS DEL ROL
+        private void FrmUsuarios_Load(object sender, EventArgs e)
+        {
+            btnAgregar.Enabled = false;
+            foreach (var permiso in FrmInicio._rolPermisosActivo.permisos)
+            {
+                if (permiso.fkid_modulo == 9) //MODULO DE USUARIOS
+                {
+                    btnAgregar.Enabled = permiso.permiso_crear == "1";
+                    permisoModificar = permiso.permiso_modificar == "1";
+                    permisoBorrar = permiso.permiso_borrar == "1";
+                }
+            }
+        }
+
+
         //EVENTO CLICK PARA BUSCAR USUARIOS
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            mu.Mostrar($"SELECT * FROM v_Usuarios WHERE Nombre like '%{txtBuscar.Text}%'",dtgDatos,"v_Usuarios");
+            mu.Mostrar($"SELECT * FROM v_Usuarios WHERE Nombre like '%{txtBuscar.Text.Trim('\'')}%'",dtgDatos,"v_Usuarios", permisoModificar, permisoBorrar);
         }
 
 
