@@ -94,7 +94,7 @@ namespace SGA_v0._1
             try
             {
 
-                me.MostrarProductos(DtpFecha.Value, idProveedorSeleccionado, DtgLista, permisoModificar);
+                me.MostrarProductos(DtpFecha.Value, idProveedorSeleccionado, DtgLista);
 
                 var detalle = FrmEntradasDatos.detalleEntrada;
 
@@ -185,7 +185,7 @@ namespace SGA_v0._1
         private void BtnMostrar_Click(object sender, EventArgs e)
         {
             idProveedorSeleccionado = Convert.ToInt32(CbProveedor.SelectedValue);
-            me.MostrarProductos(DtpFecha.Value, idProveedorSeleccionado, DtgLista, permisoModificar);
+            me.MostrarProductos(DtpFecha.Value, idProveedorSeleccionado, DtgLista);
         }
 
 

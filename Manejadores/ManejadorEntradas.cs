@@ -94,7 +94,7 @@ namespace Manejadores
 
 
         //METODO PARA MOSTRAR PRODUCTOS DISPONIBLES
-        public void MostrarProductos(DateTime fecha, int idProveedor, DataGridView tabla, bool permisoModificar)
+        public void MostrarProductos(DateTime fecha, int idProveedor, DataGridView tabla)
         {
             try
             {
@@ -110,10 +110,11 @@ namespace Manejadores
 
                 if (!tabla.Columns.Contains("Seleccionar"))
                     tabla.Columns.Add(Boton("Seleccionar", Color.DarkGreen));
-                tabla.Columns[7].Visible = permisoModificar;
 
+                
                 tabla.AutoResizeColumns();
                 tabla.AutoResizeRows();
+
             }
             catch (Exception ex)
             {
@@ -149,19 +150,19 @@ namespace Manejadores
             }
         }
 
-
-        //METODO PARA CREAR BOTONES EN DATAGRIDVIEW
-        public static DataGridViewButtonColumn Boton(string titulo, Color fondo)
+        public static DataGridViewButtonColumn Boton(string titulo, Color fondo) 
         {
-            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-            btn.Text = titulo;
-            btn.UseColumnTextForButtonValue = true;
-            btn.FlatStyle = FlatStyle.Popup;
-            btn.DefaultCellStyle.BackColor = fondo;
-            btn.DefaultCellStyle.ForeColor = Color.White;
-            btn.HeaderText = "";
-            btn.Name = titulo;     
-            return btn;
+            DataGridViewButtonColumn btn = new DataGridViewButtonColumn(); 
+            btn.Text = titulo; 
+            btn.UseColumnTextForButtonValue = true; 
+            btn.FlatStyle = FlatStyle.Popup; 
+            btn.DefaultCellStyle.BackColor = fondo; 
+            btn.DefaultCellStyle.ForeColor = Color.White; 
+            btn.HeaderText = ""; 
+            btn.Name = titulo; return btn; 
         }
+
+
+
     }
 }

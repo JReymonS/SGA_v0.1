@@ -86,6 +86,7 @@ namespace SGA_v0._1
             // Opcional: también puedes ocultar ID Entrada si no quieres que se vea
             if (DtgDatos.Columns.Contains("ID Entrada"))
                 DtgDatos.Columns["ID Entrada"].Visible = false;
+            
 
         }
 
