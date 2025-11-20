@@ -89,6 +89,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmReportes";
             this.Text = "FrmReportes";
+            this.Load += new System.EventHandler(this.FrmReportes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
