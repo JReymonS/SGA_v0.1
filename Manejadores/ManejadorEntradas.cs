@@ -94,7 +94,7 @@ namespace Manejadores
 
 
         //METODO PARA MOSTRAR PRODUCTOS DISPONIBLES
-        public void MostrarProductos(DateTime fecha, int idProveedor, DataGridView tabla)
+        public void MostrarProductos(DateTime fecha, int idProveedor, DataGridView tabla, bool permisoModificar)
         {
             try
             {
@@ -110,6 +110,7 @@ namespace Manejadores
 
                 if (!tabla.Columns.Contains("Seleccionar"))
                     tabla.Columns.Add(Boton("Seleccionar", Color.DarkGreen));
+                tabla.Columns[7].Visible = permisoModificar;
 
                 tabla.AutoResizeColumns();
                 tabla.AutoResizeRows();

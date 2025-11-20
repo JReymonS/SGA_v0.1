@@ -20,6 +20,8 @@ namespace SGA_v0._1
         int idUsuario = FrmInicio._usuarioActivo.id_usuario;
         private int idProductoActual = 0;
 
+      
+
 
         //CONSTRUCTOR SIN PARAMETROS
         public FrmEntradas()
@@ -92,7 +94,7 @@ namespace SGA_v0._1
             try
             {
 
-                me.MostrarProductos(DtpFecha.Value, idProveedorSeleccionado, DtgLista);
+                me.MostrarProductos(DtpFecha.Value, idProveedorSeleccionado, DtgLista, permisoModificar);
 
                 var detalle = FrmEntradasDatos.detalleEntrada;
 
@@ -183,7 +185,7 @@ namespace SGA_v0._1
         private void BtnMostrar_Click(object sender, EventArgs e)
         {
             idProveedorSeleccionado = Convert.ToInt32(CbProveedor.SelectedValue);
-            me.MostrarProductos(DtpFecha.Value, idProveedorSeleccionado, DtgLista);
+            me.MostrarProductos(DtpFecha.Value, idProveedorSeleccionado, DtgLista, permisoModificar);
         }
 
 
@@ -424,6 +426,11 @@ namespace SGA_v0._1
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FrmEntradas_Load(object sender, EventArgs e)
+        {
+           
         }
 
 
