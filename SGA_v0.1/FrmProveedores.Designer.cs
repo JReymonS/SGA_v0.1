@@ -50,7 +50,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(900, 73);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(36, 22);
             this.btnAgregar.TabIndex = 22;
@@ -61,7 +61,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(784, 71);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(74, 23);
             this.btnBuscar.TabIndex = 21;
@@ -72,7 +72,7 @@
             // txtBuscar
             // 
             this.txtBuscar.Location = new System.Drawing.Point(84, 71);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(646, 22);
             this.txtBuscar.TabIndex = 20;
@@ -94,7 +94,7 @@
             this.DtgDatos.AllowUserToResizeColumns = false;
             this.DtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DtgDatos.Location = new System.Drawing.Point(26, 113);
-            this.DtgDatos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DtgDatos.Margin = new System.Windows.Forms.Padding(2);
             this.DtgDatos.Name = "DtgDatos";
             this.DtgDatos.ReadOnly = true;
             this.DtgDatos.RowHeadersWidth = 51;
@@ -116,10 +116,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DtgDatos);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmProveedores";
+            this.Load += new System.EventHandler(this.FrmProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

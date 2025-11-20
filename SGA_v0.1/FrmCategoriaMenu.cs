@@ -9,6 +9,8 @@ namespace SGA_v0._1
     {
         ManejadorCategorias mc;
 
+
+        //CONSTRUCTOR PARA FORMULARIO
         public FrmCategoriaMenu()
         {
             InitializeComponent();
@@ -35,7 +37,13 @@ namespace SGA_v0._1
         {
             if (string.IsNullOrWhiteSpace(TxtNombre.Text))
             {
-                MessageBox.Show("El nombre de la categoría no puede estar vacío.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El nombre de la categoría no puede estar vacío.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if(TxtNombre.Text.Length > 100) 
+            {
+                MessageBox.Show("Ingrese un nombre de categoría válido (máximo 100 caracteres).", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -52,12 +60,10 @@ namespace SGA_v0._1
                 if (categoria.id_categoria == 0)
                 {
                     mc.Guardar(categoria);
-                    MessageBox.Show("Se guardó correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     mc.Modificar(categoria);
-                    MessageBox.Show("Se modificó correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 Close();
@@ -65,7 +71,7 @@ namespace SGA_v0._1
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al guardar o modificar: {ex.Message}",
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

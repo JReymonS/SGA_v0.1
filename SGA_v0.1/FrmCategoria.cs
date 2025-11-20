@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Data;
-using System.Drawing;
 using System.Windows.Forms;
 using Manejadores;
 using Entidades;
@@ -13,6 +11,10 @@ namespace SGA_v0._1
         int fila = 0, columna = 0;
         public static Categorias categoria = new Categorias(0, "", "");
 
+        bool permisoModificar = false, permisoBorrar = false; //PERMISOS PARA BOTONES EN DATAGRIDVIEW
+
+
+        //CONSTRUCTOR PARA FORMULARIO
         public FrmCategoria()
         {
             InitializeComponent();
@@ -20,10 +22,26 @@ namespace SGA_v0._1
         }
 
 
+        //EVENTO LOAD PARA ACTIVAR / DESACTIVAR BOTONES SEGUN PERMISOS DEL ROL
+        private void FrmCategoria_Load(object sender, EventArgs e)
+        {
+            BtnAgregar.Enabled = false;
+            foreach(var permiso in FrmInicio._rolPermisosActivo.permisos) 
+            {
+                if (permiso.fkid_modulo == 2)
+                {
+                    BtnAgregar.Enabled = permiso.permiso_crear == "1";
+                    permisoModificar = permiso.permiso_modificar == "1";
+                    permisoBorrar = permiso.permiso_borrar == "1";
+                }
+            }
+        }
+        
+
         //EVENTO CLICK PARA BUSCAR CATERGORIAS
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            mc.Mostrar(TxtBuscar.Text, DtgDatos);
+            mc.Mostrar(TxtBuscar.Text, DtgDatos,permisoModificar, permisoBorrar);
         }
 
 
@@ -76,7 +94,7 @@ namespace SGA_v0._1
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al seleccionar fila: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al seleccionar fila: {ex.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -29,8 +29,7 @@ namespace Manejadores
         //METODO PARA BORRAR PROVEEDORES
         public void Borrar(Proveedores proveedor)
         {
-            var rs = MessageBox.Show($"¿Esta seguro de desactivar a {proveedor.nombre}?",
-                "ATENCIÓN!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var rs = MessageBox.Show($"¿Esta seguro de eliminar al proveedor {proveedor.nombre}?","ATENCIÓN!!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (rs == DialogResult.Yes)
             {
                 b.Comando($"CALL p_DesactivarProveedor({proveedor.id_proveedor})");
@@ -39,7 +38,7 @@ namespace Manejadores
 
 
         //METODO PARA MOSTRAR PROVEEDORES
-        public void Mostrar(string consulta, DataGridView tabla)
+        public void Mostrar(string consulta, DataGridView tabla, bool permisoModificar, bool permisoBorrar)
         {
 
             tabla.Columns.Clear();
@@ -47,6 +46,8 @@ namespace Manejadores
             tabla.Columns["id_proveedor"].Visible = false;
             tabla.Columns.Insert(8, Boton("Modificar", Color.Green));
             tabla.Columns.Insert(9, Boton("Eliminar", Color.Red));
+            tabla.Columns[8].Visible = permisoModificar; //VISIBLE SEGUN PERMISO
+            tabla.Columns[9].Visible = permisoBorrar; //VISIBLE SEGUN PERMISO
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
         }
@@ -65,35 +66,35 @@ namespace Manejadores
 
             if (txtNombre.Text.Length > 25) 
             {
-                MessageBox.Show("Ingrese correctamente el nombre porfavor.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingrese un nombre de proveedor válido (máximo 25 caracteres).", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 valido = false;
                 return;
             }
 
             if( txtApPa.Text.Length > 25)
             {
-                MessageBox.Show("Ingrese correctamente el apellido paterno porfavor.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingrese un apellido paterno de proveedor válido (máximo 25 caracteres).", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 valido = false;
                 return;
             }
 
             if (txtApMa.Text.Length > 25)
             {
-                MessageBox.Show("Ingrese correctamente el apellido materno porfavor.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingrese un apellido materno de proveedor válido (máximo 25 caracteres).", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 valido = false;
                 return;
             }
 
             if (txtTelefono.Text.Length > 12)
             {
-                MessageBox.Show("Ingrese correctamente el telefono porfavor.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingrese un telefono del proveedor válido (máximo 12 caracteres).", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 valido = false;
                 return;
             }
 
             if(txtCorreo.Text.Length > 100) 
             {
-                MessageBox.Show("Ingrese correctamente el correo porfavor.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingrese un correo del proveedor válido (máximo 100 caracteres).", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 valido = false;
                 return;
             }
@@ -102,14 +103,14 @@ namespace Manejadores
             {
                 if (rs0 < 0)
                 {
-                    MessageBox.Show("El plazo de disponibilidad no puede ser negativo.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("El plazo de disponibilidad del proveedor no puede ser negativo.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     valido = false;
                     return;
                 }
             }
             else if(!int.TryParse(txtPlazo.Text, out int rs1))
             {
-                MessageBox.Show("Ingrese correctamente el plazo de disponibilidad porfavor.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingrese un plazo de disponibilidad de proveedor válido (número entero).", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 valido = false;
                 return;
             }
