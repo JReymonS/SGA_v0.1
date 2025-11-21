@@ -14,6 +14,7 @@ namespace SGA_v0._1
 {
     public partial class FrmVerProductos : Form
     {
+        // CREACION DE OBJETOS Y VARIABLES
         ManejadorProductos mp;
         public static Productos producto = new Productos(0, "", "", "", 0.0, 0, 0, "", 0);
         int fila = 0;
@@ -57,6 +58,7 @@ namespace SGA_v0._1
 
         }
 
+        // EVENTO PARA OBTENER LOS PERMISOS Y HABILITAR / DESHABILITAR BOTONES
         private void FrmVerProductos_Load(object sender, EventArgs e)
         {
             btnAgregar.Enabled = false;

@@ -11,6 +11,7 @@ namespace Manejadores
 {
     public class ManejadorProductos
     {
+        //INSTANCIA DE UN OBJETO 
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen");
 
         //METODOS PARA GUARDAR PRODUCTOS 

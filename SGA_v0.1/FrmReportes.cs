@@ -98,6 +98,7 @@ namespace SGA_v0._1
             columna = e.ColumnIndex;
         }
 
+        // EVENTO PARA OBTENER LOS PERMISOS Y HABILITAR / DESHABILITAR BOTONES
         private void FrmReportes_Load(object sender, EventArgs e)
         {
             btnAgregar.Enabled = false;

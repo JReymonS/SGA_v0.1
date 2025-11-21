@@ -14,6 +14,7 @@ namespace SGA_v0._1
 {
     public partial class FrmVerSalidaProductos : Form
     {
+         // CREACION DE OBJETOS Y VARIABLES
         ManejadorSalidas ms;
         public static Salidas salida = new Salidas(0, "", 0);
         public static Productos producto = new Productos(0, "", "", "", 0.0, 0, 0, "", 0);
@@ -90,6 +91,7 @@ namespace SGA_v0._1
 
         }
 
+        // EVENTO PARA OBTENER LOS PERMISOS Y HABILITAR / DESHABILITAR BOTONES
         private void FrmVerSalidaProductos_Load(object sender, EventArgs e)
         {
             btnAgregar.Enabled = false;

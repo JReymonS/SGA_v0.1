@@ -14,6 +14,7 @@ namespace SGA_v0._1
 {
     public partial class FrmAgregarSalidaProductos : Form
     {
+        // CREACION DE OBJETOS Y VARIABLES
         public static Productos producto = new Productos(0, "", "", "", 0.0, 0, 0, "", 0);
         public static Salidas salida = new Salidas(0, "", 0);
         private int idSalida = 0;
