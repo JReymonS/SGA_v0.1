@@ -80,7 +80,7 @@ namespace SGA_v0._1
                     try
                     {
                         dtgDatos.Rows.RemoveAt(fila);
-                        MessageBox.Show("Fila eliminada del reporte correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       
                     }
                     catch (Exception ex)
                     {
