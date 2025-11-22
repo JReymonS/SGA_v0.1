@@ -15,6 +15,7 @@ namespace SGA_v0._1
     public partial class FrmLogin : Form
     {
         ManejadorLogin ml;
+        ManejadorDiseño md;
         int intentosFallidos = 0;
         bool mostrarContrasena = false;
         
@@ -24,14 +25,14 @@ namespace SGA_v0._1
         {
             InitializeComponent();
             ml = new ManejadorLogin();
-            ml.EstiloPanelTexto(pLogin, lblLogin);
-            ml.EstilosBoton(btnIngresar);
-            ml.EstilizarTextBox(txtContrasena);
-            ml.EstilizarTextBox(txtUsuario);
-            ml.QuitarBordesBotones(btnMostrar);
-            ml.QuitarBordesBotones(btnVer);
-            ml.QuitarBordesBotones(btnCerrar);
-            
+            md = new ManejadorDiseño();
+            md.EstiloPanelTexto(pLogin, lblLogin);
+            md.EstilosBoton(btnIngresar);
+            md.EstilizarTextBox(txtContrasena);
+            md.EstilizarTextBox(txtUsuario);
+            md.QuitarBordesBotones(btnMostrar);
+            md.QuitarBordesBotones(btnVer);
+            md.QuitarBordesBotones(btnCerrar);
             this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
         }
 
@@ -113,7 +114,7 @@ namespace SGA_v0._1
         private void btnIngresar_MouseLeave(object sender, EventArgs e)
         {
             btnIngresar.BackColor = ColorTranslator.FromHtml("#545454");
-           ml.QuitarBordesBotones(btnIngresar);
+            md.QuitarBordesBotones(btnIngresar);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
