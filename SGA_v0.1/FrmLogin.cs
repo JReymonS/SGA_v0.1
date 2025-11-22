@@ -19,8 +19,7 @@ namespace SGA_v0._1
         int intentosFallidos = 0;
         bool mostrarContrasena = false;
         
-
-
+        // CONSTRUCTOR PARA INICIALIZAR FUNCIONES 
         public FrmLogin()
         {
             InitializeComponent();
@@ -53,8 +52,8 @@ namespace SGA_v0._1
                 FrmUsuarioSesion.Rol = rs.RolPerteneciente;
 
                 FrmInicio frmInicio = new FrmInicio(rs.UsuarioEncontrado,rs.RolPerteneciente);
-                frmInicio.ShowDialog();
-                this.Close();
+                frmInicio.Show();
+                this.Hide();
             }
             else 
             {
@@ -81,6 +80,7 @@ namespace SGA_v0._1
                     MessageBox.Show(rs.Mensaje, "¡ERROR DE AUTENTICACIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     ml.LimipiarCajas(txtUsuario, txtContrasena);
                 }
+                
             }
         }
 
@@ -143,8 +143,7 @@ namespace SGA_v0._1
 
         private void btnCerrar_MouseLeave(object sender, EventArgs e)
         {
-            btnCerrar.BackColor = ColorTranslator.FromHtml("#B7CC18");
-            
+            btnCerrar.BackColor = ColorTranslator.FromHtml("#B7CC18");   
         }
     }
 }

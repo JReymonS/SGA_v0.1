@@ -9,20 +9,38 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Manejadores;
 
 namespace SGA_v0._1
 {
     public partial class FrmInicio : Form
     {
+        // CREACION DE OBJETOS Y VARIABLES
+        ManejadorDiseño md;
         public static Usuarios _usuarioActivo;
         public static Roles _rolPermisosActivo;
+
+        // CONSTRUCTOR DEL FORMULARIO
         public FrmInicio(Usuarios user, Roles rolPermisosActivo)
-        {
+        { 
             InitializeComponent();
+            this.IsMdiContainer = true;
+            foreach (Control ctrl in this.Controls)
+            {
+                ctrl.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            }
+            md = new ManejadorDiseño();
             _usuarioActivo = user;
             _rolPermisosActivo = rolPermisosActivo;
+            tsPrincipal.BackColor = ColorTranslator.FromHtml("#B7CC18");
+            tsPrincipal.ForeColor = ColorTranslator.FromHtml("#B7CC18");
+            pSuperior.BackColor = ColorTranslator.FromHtml("#B7CC18");
+            LblUsuarioActivo.ForeColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnCerrar);
+            md.QuitarBordesBotones(btnOcultarVentana);
         }
 
+        // EVENTO LOAD DEL FORMULARIO
         private void FrmInicio_Load(object sender, EventArgs e)
         {
             //HABILITAR O DESHABILITAR BOTONES SEGUN PERMISOS DEL ROL
@@ -70,6 +88,8 @@ namespace SGA_v0._1
                         break;
                 }
             }
+
+           
         }
 
 
@@ -149,6 +169,51 @@ namespace SGA_v0._1
         private void tsbCerrarSesion_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void LblUsuarioActivo_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tsbCerrarSesion_MouseEnter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tsbCerrarSesion_MouseLeave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+           Application.Exit();
+        }
+
+        private void btnCerrar_MouseEnter(object sender, EventArgs e)
+        {
+            btnCerrar.BackColor = ColorTranslator.FromHtml("#8CBFAF");
+        }
+
+        private void btnCerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btnCerrar.BackColor = ColorTranslator.FromHtml("#B7CC18");
+        }
+
+        private void btnOcultarVentana_MouseLeave(object sender, EventArgs e)
+        {
+            btnOcultarVentana.BackColor = ColorTranslator.FromHtml("#B7CC18");
+        }
+
+        private void btnOcultarVentana_MouseEnter(object sender, EventArgs e)
+        {
+            btnOcultarVentana.BackColor = ColorTranslator.FromHtml("#8CBFAF");
+        }
+
+        private void btnOcultarVentana_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

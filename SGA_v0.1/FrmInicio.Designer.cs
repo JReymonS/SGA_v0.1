@@ -41,7 +41,13 @@
             this.tsbUsuarios = new System.Windows.Forms.ToolStripButton();
             this.tsbCerrarSesion = new System.Windows.Forms.ToolStripButton();
             this.LblUsuarioActivo = new System.Windows.Forms.Label();
+            this.pbUsuario = new System.Windows.Forms.PictureBox();
+            this.btnOcultarVentana = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.pSuperior = new System.Windows.Forms.Panel();
             this.tsPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).BeginInit();
+            this.pSuperior.SuspendLayout();
             this.SuspendLayout();
             // 
             // tsPrincipal
@@ -61,9 +67,9 @@
             this.tsbRolesPermisos,
             this.tsbUsuarios,
             this.tsbCerrarSesion});
-            this.tsPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.tsPrincipal.Location = new System.Drawing.Point(0, 100);
             this.tsPrincipal.Name = "tsPrincipal";
-            this.tsPrincipal.Size = new System.Drawing.Size(80, 929);
+            this.tsPrincipal.Size = new System.Drawing.Size(113, 829);
             this.tsPrincipal.TabIndex = 1;
             this.tsPrincipal.Text = "toolStrip1";
             // 
@@ -187,35 +193,95 @@
             this.tsbCerrarSesion.Size = new System.Drawing.Size(60, 60);
             this.tsbCerrarSesion.Text = "CERRAR SESION";
             this.tsbCerrarSesion.Click += new System.EventHandler(this.tsbCerrarSesion_Click);
+            this.tsbCerrarSesion.MouseEnter += new System.EventHandler(this.tsbCerrarSesion_MouseEnter);
+            this.tsbCerrarSesion.MouseLeave += new System.EventHandler(this.tsbCerrarSesion_MouseLeave);
             // 
             // LblUsuarioActivo
             // 
+            this.LblUsuarioActivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblUsuarioActivo.AutoSize = true;
-            this.LblUsuarioActivo.Location = new System.Drawing.Point(99, 23);
+            this.LblUsuarioActivo.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUsuarioActivo.Location = new System.Drawing.Point(1359, 39);
             this.LblUsuarioActivo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblUsuarioActivo.Name = "LblUsuarioActivo";
-            this.LblUsuarioActivo.Size = new System.Drawing.Size(87, 16);
+            this.LblUsuarioActivo.Size = new System.Drawing.Size(127, 29);
             this.LblUsuarioActivo.TabIndex = 3;
             this.LblUsuarioActivo.Text = "Bienvenid@: ";
+            this.LblUsuarioActivo.Click += new System.EventHandler(this.LblUsuarioActivo_Click);
+            // 
+            // pbUsuario
+            // 
+            this.pbUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbUsuario.BackgroundImage = global::SGA_v0._1.Properties.Resources.Perfil;
+            this.pbUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbUsuario.Location = new System.Drawing.Point(1674, 23);
+            this.pbUsuario.Name = "pbUsuario";
+            this.pbUsuario.Size = new System.Drawing.Size(47, 45);
+            this.pbUsuario.TabIndex = 5;
+            this.pbUsuario.TabStop = false;
+            // 
+            // btnOcultarVentana
+            // 
+            this.btnOcultarVentana.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOcultarVentana.BackgroundImage = global::SGA_v0._1.Properties.Resources.Max;
+            this.btnOcultarVentana.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOcultarVentana.Location = new System.Drawing.Point(1749, 23);
+            this.btnOcultarVentana.Name = "btnOcultarVentana";
+            this.btnOcultarVentana.Size = new System.Drawing.Size(47, 45);
+            this.btnOcultarVentana.TabIndex = 6;
+            this.btnOcultarVentana.UseVisualStyleBackColor = true;
+            this.btnOcultarVentana.Click += new System.EventHandler(this.btnOcultarVentana_Click);
+            this.btnOcultarVentana.MouseEnter += new System.EventHandler(this.btnOcultarVentana_MouseEnter);
+            this.btnOcultarVentana.MouseLeave += new System.EventHandler(this.btnOcultarVentana_MouseLeave);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.BackgroundImage = global::SGA_v0._1.Properties.Resources.Cerrar;
+            this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCerrar.Location = new System.Drawing.Point(1830, 23);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(47, 45);
+            this.btnCerrar.TabIndex = 7;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.btnCerrar.MouseEnter += new System.EventHandler(this.btnCerrar_MouseEnter);
+            this.btnCerrar.MouseLeave += new System.EventHandler(this.btnCerrar_MouseLeave);
+            // 
+            // pSuperior
+            // 
+            this.pSuperior.Controls.Add(this.btnCerrar);
+            this.pSuperior.Controls.Add(this.btnOcultarVentana);
+            this.pSuperior.Controls.Add(this.LblUsuarioActivo);
+            this.pSuperior.Controls.Add(this.pbUsuario);
+            this.pSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pSuperior.Location = new System.Drawing.Point(0, 0);
+            this.pSuperior.Name = "pSuperior";
+            this.pSuperior.Size = new System.Drawing.Size(1924, 100);
+            this.pSuperior.TabIndex = 8;
             // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 929);
-            this.Controls.Add(this.LblUsuarioActivo);
+            this.ClientSize = new System.Drawing.Size(1924, 929);
             this.Controls.Add(this.tsPrincipal);
+            this.Controls.Add(this.pSuperior);
+            this.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmInicio";
+            this.Text = "  ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmInicio_Load);
             this.tsPrincipal.ResumeLayout(false);
             this.tsPrincipal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).EndInit();
+            this.pSuperior.ResumeLayout(false);
+            this.pSuperior.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -234,6 +300,10 @@
         private System.Windows.Forms.ToolStripButton tsbUsuarios;
         private System.Windows.Forms.ToolStripButton tsbCerrarSesion;
         private System.Windows.Forms.Label LblUsuarioActivo;
+        private System.Windows.Forms.PictureBox pbUsuario;
+        private System.Windows.Forms.Button btnOcultarVentana;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Panel pSuperior;
     }
 }
 
