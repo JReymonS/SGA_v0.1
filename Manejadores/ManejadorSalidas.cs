@@ -43,7 +43,7 @@ namespace Manejadores
 
 
         //PERMITE MOSTRAR LOS REGISTROS DE SALIDA FILTRADO POR BUSQUEDA
-        public void MostrarPorBusqueda(string consulta, DataGridView tabla, string datos)
+        public void MostrarPorBusqueda(string consulta, DataGridView tabla, string datos, bool permisoModificar)
         {
             tabla.Columns.Clear();
             tabla.DataSource = b.Consulta(consulta, datos).Tables[datos];
@@ -51,6 +51,8 @@ namespace Manejadores
             tabla.Columns["id_detalleSalida"].Visible = false;
             tabla.Columns["id_producto"].Visible = false;
             tabla.Columns.Insert(9, Boton("Modificar", Color.Orange));
+            tabla.Columns[9].Visible = permisoModificar;
+
         }
 
 

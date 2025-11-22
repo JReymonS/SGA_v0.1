@@ -14,6 +14,7 @@ namespace SGA_v0._1
 {
     public partial class FrmAgregarProductos : Form
     {
+        // CREACION DEL OBJETO DE SU MANEJADOR
         ManejadorProductos mp;
 
         //CONSTRUCTO QUE PERMITE LLENAR LOS CAMPOS SI SE MODIFICAN

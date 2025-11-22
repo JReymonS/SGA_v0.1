@@ -11,6 +11,7 @@ namespace Manejadores
 {
     public class ManejadorProductos
     {
+        //INSTANCIA DE UN OBJETO 
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen");
 
         //METODOS PARA GUARDAR PRODUCTOS 
@@ -41,8 +42,9 @@ namespace Manejadores
 
 
         //METODO PARA MOSTRAR PRODUCTOS
-        public void Mostrar(string consulta, DataGridView tabla, string datos)
+        public void Mostrar(string consulta, DataGridView tabla, string datos, bool permisoModificar, bool permisoEliminar)
         {
+            
             tabla.Columns.Clear();
             tabla.DataSource = b.Consulta(consulta, datos).Tables[datos];
             tabla.Columns["id_producto"].Visible = false;
@@ -50,7 +52,8 @@ namespace Manejadores
             tabla.Columns["Categoria"].Visible = true;
             tabla.Columns.Insert(10, Boton("Modificar", Color.Green));
             tabla.Columns.Insert(11, Boton("Eliminar", Color.Red));
-
+            tabla.Columns[10].Visible = permisoModificar;
+            tabla.Columns[11].Visible = permisoEliminar;
         }
 
 
@@ -68,7 +71,7 @@ namespace Manejadores
         //METODO PARA LLENAR EL COMBO BOX DE CATEGORIAS 
         public void LlenarCategorias(ComboBox caja)
         {
-            caja.DataSource = b.Consulta($"select id_categoria, nombre from categorias", $"categorias").Tables[0];
+            caja.DataSource = b.Consulta($"select id_categoria, nombre from categorias where status = 'A'", $"categorias").Tables[0];
             caja.DisplayMember = $"nombre";
             caja.ValueMember = $"Id_categoria";
         }

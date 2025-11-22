@@ -100,7 +100,7 @@ namespace Manejadores
 
 
         // METODO PRINCIPAL PARA GENERAR LOS DIFERENTES TIPOS DE REPORTES 
-        public void GenerarReporte(string tipoReporte, DataGridView tabla, DateTime fechaInicio, DateTime fechaFin, string categoria, string nombreUsuario)
+        public void GenerarReporte(string tipoReporte, DataGridView tabla, DateTime fechaInicio, DateTime fechaFin, string categoria, string nombreUsuario, bool permisoEliminar)
         {
             tabla.Columns.Clear();
             string consulta = "";
@@ -142,8 +142,14 @@ namespace Manejadores
                 }
                 else
                 {
+                    if (permisoEliminar)
+                    {
+                        if (!tabla.Columns.Contains("ELIMINAR"))
+                            tabla.Columns.Add(Boton("ELIMINAR", Color.OrangeRed));
+                    }
+
                     
-                    tabla.Columns.Add(Boton("ELIMINAR", Color.OrangeRed));
+                   
                 }
             }
             catch (Exception ex)

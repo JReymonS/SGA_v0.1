@@ -13,6 +13,7 @@ namespace SGA_v0._1
         public static DetalleEntradas detalleEntrada = new DetalleEntradas(0, 0.0, 0, 0, 0);
         private int fila = 0, columna = 0;
 
+        bool permisoModificar = false, permisoCrear = false;
         public FrmEntradasDatos()
         {
             InitializeComponent();
@@ -60,8 +61,11 @@ namespace SGA_v0._1
                 DtgDatos.Columns.Clear();
                 DtgDatos.DataSource = datos;
 
-                // Agregar solo botón MODIFICAR
-                DtgDatos.Columns.Insert(DtgDatos.Columns.Count, ManejadorEntradas.Boton("Modificar", Color.Green));
+                if (permisoModificar)
+                {
+                    DtgDatos.Columns.Insert(DtgDatos.Columns.Count,
+                        ManejadorEntradas.Boton("Modificar", Color.Green));
+                }
 
                 DtgDatos.AutoResizeColumns();
                 DtgDatos.AutoResizeRows();
@@ -82,6 +86,7 @@ namespace SGA_v0._1
             // Opcional: también puedes ocultar ID Entrada si no quieres que se vea
             if (DtgDatos.Columns.Contains("ID Entrada"))
                 DtgDatos.Columns["ID Entrada"].Visible = false;
+            
 
         }
 
@@ -95,6 +100,19 @@ namespace SGA_v0._1
             DtgDatos.Refresh();
         }
 
+        private void FrmEntradasDatos_Load(object sender, EventArgs e)
+        {
+            BtnAgregar.Enabled = false;
+            foreach (var permiso in FrmInicio._rolPermisosActivo.permisos)
+            {
+                if (permiso.fkid_modulo == 5)
+                {
+                    BtnAgregar.Enabled = permiso.permiso_crear == "1";
+                    permisoModificar = permiso.permiso_modificar == "1";
+                }
+            }
+        }
+
 
         // EVENTO CELL CONTENT CLICK PARA MODIFICAR
         private void DtgDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -106,6 +124,11 @@ namespace SGA_v0._1
 
             if (nombreColumna == "Modificar")
             {
+                if (!permisoModificar)
+                {
+                    
+                    return;
+                }
                 try
                 {
 

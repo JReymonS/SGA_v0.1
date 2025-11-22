@@ -13,6 +13,7 @@ namespace SGA_v0._1
         int fila = 0;
         int columna = 0;
         string tipoReporteActual = "";
+        bool permisoEliminar = false, permisoCrear = false;
 
         //CONSTRUCTOR PARA INICIALIZAR EL FORMULARIO Y EL OBJETO DE ManejadorReportes
         public FrmReportes()
@@ -27,7 +28,7 @@ namespace SGA_v0._1
         {
             try
             {
-                mr.GenerarReporte(tipoReporte, dtgDatos, fechaInicio, fechaFin, categoria, nombreUsuario); 
+                mr.GenerarReporte(tipoReporte, dtgDatos, fechaInicio, fechaFin, categoria, nombreUsuario, permisoEliminar); 
                 tipoReporteActual = tipoReporte;
                 
             }
@@ -79,7 +80,7 @@ namespace SGA_v0._1
                     try
                     {
                         dtgDatos.Rows.RemoveAt(fila);
-                        MessageBox.Show("Fila eliminada del reporte correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       
                     }
                     catch (Exception ex)
                     {
@@ -95,6 +96,24 @@ namespace SGA_v0._1
         {
             fila = e.RowIndex;
             columna = e.ColumnIndex;
+        }
+
+        // EVENTO PARA OBTENER LOS PERMISOS Y HABILITAR / DESHABILITAR BOTONES
+        private void FrmReportes_Load(object sender, EventArgs e)
+        {
+            btnAgregar.Enabled = false;
+            btnGenerarExcel.Enabled = false;
+            foreach(var permiso in FrmInicio._rolPermisosActivo.permisos)
+            {
+                if(permiso.fkid_modulo == 7)
+                {
+                    btnAgregar.Enabled = permiso.permiso_crear == "1";
+                    btnGenerarExcel.Enabled = permiso.permiso_crear == "1";
+                    permisoEliminar = permiso.permiso_borrar == "1";
+
+                }
+            }
+            
         }
     }
 }

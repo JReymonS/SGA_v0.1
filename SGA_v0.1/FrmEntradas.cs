@@ -20,6 +20,8 @@ namespace SGA_v0._1
         int idUsuario = FrmInicio._usuarioActivo.id_usuario;
         private int idProductoActual = 0;
 
+      
+
 
         //CONSTRUCTOR SIN PARAMETROS
         public FrmEntradas()
@@ -424,6 +426,11 @@ namespace SGA_v0._1
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FrmEntradas_Load(object sender, EventArgs e)
+        {
+           
         }
 
 

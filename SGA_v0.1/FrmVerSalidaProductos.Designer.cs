@@ -87,6 +87,7 @@
             this.dtgDatos.Size = new System.Drawing.Size(997, 442);
             this.dtgDatos.TabIndex = 12;
             this.dtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellClick);
+            this.dtgDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellContentClick);
             this.dtgDatos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellEnter);
             // 
             // dtpFecha
@@ -108,7 +109,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FrmVerSalidaProductos";
-            this.Text = "FrmVerSalidaProductos";
+            this.Load += new System.EventHandler(this.FrmVerSalidaProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

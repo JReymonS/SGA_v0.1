@@ -41,18 +41,21 @@
             // 
             this.DtgDatos.AllowUserToAddRows = false;
             this.DtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DtgDatos.Location = new System.Drawing.Point(105, 107);
+            this.DtgDatos.Location = new System.Drawing.Point(140, 132);
+            this.DtgDatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DtgDatos.Name = "DtgDatos";
-            this.DtgDatos.Size = new System.Drawing.Size(683, 318);
+            this.DtgDatos.RowHeadersWidth = 51;
+            this.DtgDatos.Size = new System.Drawing.Size(911, 391);
             this.DtgDatos.TabIndex = 0;
             this.DtgDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellContentClick);
             this.DtgDatos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellEnter);
             // 
             // BtnBuscar
             // 
-            this.BtnBuscar.Location = new System.Drawing.Point(627, 67);
+            this.BtnBuscar.Location = new System.Drawing.Point(836, 82);
+            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.BtnBuscar.Size = new System.Drawing.Size(100, 28);
             this.BtnBuscar.TabIndex = 2;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
@@ -60,9 +63,10 @@
             // 
             // BtnAgregar
             // 
-            this.BtnAgregar.Location = new System.Drawing.Point(713, 67);
+            this.BtnAgregar.Location = new System.Drawing.Point(951, 82);
+            this.BtnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.BtnAgregar.Size = new System.Drawing.Size(100, 28);
             this.BtnAgregar.TabIndex = 3;
             this.BtnAgregar.Text = "+";
             this.BtnAgregar.UseVisualStyleBackColor = true;
@@ -71,41 +75,46 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(373, 32);
+            this.label1.Location = new System.Drawing.Point(497, 39);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(61, 16);
             this.label1.TabIndex = 4;
             this.label1.Text = "Entradas";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(102, 78);
+            this.label2.Location = new System.Drawing.Point(136, 96);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.Size = new System.Drawing.Size(45, 16);
             this.label2.TabIndex = 5;
             this.label2.Text = "Fecha";
             // 
             // DtpEntradas
             // 
-            this.DtpEntradas.Location = new System.Drawing.Point(216, 72);
+            this.DtpEntradas.Location = new System.Drawing.Point(288, 89);
+            this.DtpEntradas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DtpEntradas.Name = "DtpEntradas";
-            this.DtpEntradas.Size = new System.Drawing.Size(219, 20);
+            this.DtpEntradas.Size = new System.Drawing.Size(291, 22);
             this.DtpEntradas.TabIndex = 6;
             // 
             // FrmEntradasDatos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.DtpEntradas);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.DtgDatos);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmEntradasDatos";
             this.Text = "FrmEntradasDatos";
+            this.Load += new System.EventHandler(this.FrmEntradasDatos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

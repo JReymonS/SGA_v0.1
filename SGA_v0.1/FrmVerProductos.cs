@@ -14,10 +14,13 @@ namespace SGA_v0._1
 {
     public partial class FrmVerProductos : Form
     {
+        // CREACION DE OBJETOS Y VARIABLES
         ManejadorProductos mp;
         public static Productos producto = new Productos(0, "", "", "", 0.0, 0, 0, "", 0);
         int fila = 0;
         int columna = 0;
+        bool permisoModificar = false, permisoEliminar = false, permisoCrear = false;
+
         public FrmVerProductos()
         {
             InitializeComponent();
@@ -28,7 +31,7 @@ namespace SGA_v0._1
         //EVENTO CLICK PARA BUSCAR REGISTROS
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            mp.Mostrar($"CALL p_BuscarProducto('{txtNombre.Text}')", dtgDatos, "productos");
+            mp.Mostrar($"CALL p_BuscarProducto('{txtNombre.Text}')", dtgDatos, "productos", permisoModificar, permisoEliminar);
         }
 
 
@@ -55,6 +58,21 @@ namespace SGA_v0._1
 
         }
 
+        // EVENTO PARA OBTENER LOS PERMISOS Y HABILITAR / DESHABILITAR BOTONES
+        private void FrmVerProductos_Load(object sender, EventArgs e)
+        {
+            btnAgregar.Enabled = false;
+            foreach (var permiso in FrmInicio._rolPermisosActivo.permisos)
+            {
+                if(permiso.fkid_modulo == 4)
+                {
+                    btnAgregar.Enabled = permiso.permiso_crear == "1";
+                    permisoModificar = permiso.permiso_modificar == "1";
+                    permisoEliminar = permiso.permiso_borrar == "1";
+                }
+            }
+        }
+
 
         //EVENTO CELL CLICK PARA OBTENER COLUMNA DE MODIFICAR Y ELIMINAR
         private void dtgDatos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -63,11 +81,12 @@ namespace SGA_v0._1
             producto.nombre = dtgDatos.Rows[fila].Cells["Nombre"].Value.ToString();
             producto.descripcion = dtgDatos.Rows[fila].Cells["Descripcion"].Value.ToString();
             producto.unidad = dtgDatos.Rows[fila].Cells["Unidad"].Value.ToString();
-            producto.precio_salida = double.Parse(dtgDatos.Rows[fila].Cells["Precio"].Value.ToString());
+            producto.precio_salida = double.Parse(dtgDatos.Rows[fila].Cells["Costo"].Value.ToString());
             producto.stock = int.Parse(dtgDatos.Rows[fila].Cells["Stock"].Value.ToString());
+            producto.fkid_categoria = int.Parse(dtgDatos.Rows[fila].Cells["id_categoria"].Value.ToString());
             producto.stock_minimo = int.Parse(dtgDatos.Rows[fila].Cells["Stock Minimo"].Value.ToString());
             producto.status = dtgDatos.Rows[fila].Cells["Estatus"].Value.ToString();
-            producto.fkid_categoria = int.Parse(dtgDatos.Rows[fila].Cells["id_categoria"].Value.ToString());
+            
 
             switch (columna)
             {
