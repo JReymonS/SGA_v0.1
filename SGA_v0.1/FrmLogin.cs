@@ -60,14 +60,14 @@ namespace SGA_v0._1
                 intentosFallidos++;
                 if (intentosFallidos >= 3)
                 {
-                    MessageBox.Show("Ha excedido el número maximo de intentos. Se activo el bloqueo por 3 segundos.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Ha excedido el número maximo de intentos.\n\nSe activo el bloqueo por 3 segundos.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtUsuario.Enabled = false;
                     txtContrasena.Enabled = false;
                     btnIngresar.Enabled = false;
                     btnMostrar.Enabled = false;
                     Thread.Sleep(3000);
 
-                    MessageBox.Show("Se desactivo el bloqueo temporal, puede continuar.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se desactivó el bloqueo temporal, puede intentar nuevamente.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtUsuario.Enabled = true;
                     txtContrasena.Enabled = true;
                     btnIngresar.Enabled = true;

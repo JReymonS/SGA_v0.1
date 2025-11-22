@@ -120,6 +120,7 @@
             this.Name = "FrmCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCategoria";
+            this.Load += new System.EventHandler(this.FrmCategoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

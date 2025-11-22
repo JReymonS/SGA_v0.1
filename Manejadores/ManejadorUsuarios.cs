@@ -35,7 +35,7 @@ namespace Manejadores
         //METODO PARA BORRAR USUARIOS
         public void Borrar(Usuarios usuario)
         {
-            var rs = MessageBox.Show($"¿Estas seguro de eliminar a {usuario.nombre}?","¡ATENCIÓN!",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            var rs = MessageBox.Show($"¿Estas seguro de eliminar al usuario {usuario.nombre}?","¡ATENCIÓN!",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (rs == DialogResult.Yes)
             {
                 b.Comando($"CALL p_DesactivarUsuario({usuario.id_usuario})");
@@ -44,7 +44,7 @@ namespace Manejadores
 
 
         //METOODO PARA MOSTRAR USUARIOS
-        public void Mostrar(string consulta, DataGridView tabla, string datos) 
+        public void Mostrar(string consulta, DataGridView tabla, string datos, bool permisoModificar, bool permisoBorrar) 
         {
             tabla.Columns.Clear();
             tabla.DataSource = b.Consulta(consulta, datos).Tables[datos];
@@ -53,6 +53,8 @@ namespace Manejadores
             tabla.Columns["Clave"].Visible=false;
             tabla.Columns.Insert(8, Boton("MODIFICAR", Color.Green));
             tabla.Columns.Insert(9, Boton("ELIMINAR", Color.Red));
+            tabla.Columns[8].Visible = permisoModificar;
+            tabla.Columns[9].Visible = permisoBorrar;
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
         }
@@ -71,28 +73,32 @@ namespace Manejadores
 
             if(txtNombre.Text.Length > 50) 
             {
-                MessageBox.Show("Ingrese correctamente el nombre porfavor.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingrese un nombre de usuario válido (máximo 50 caracteres).", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNombre.Clear();
                 valido =false; 
                 return;
             }
 
             if (txtApellidoPaterno.Text.Length > 25)
             {
-                MessageBox.Show("Ingrese correctamente el apellido paterno porfavor.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingrese un apellido paterno de usuario válido (máximo 25 caracteres).", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtApellidoPaterno.Clear();
                 valido = false;
                 return;
             }
 
             if (txtApellidoMaterno.Text.Length >25)
             {
-                MessageBox.Show("Ingrese correctamente el apellido materno porfavor.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingrese un apellido materno de usuario válido (máximo 25 caracteres).", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtApellidoMaterno.Clear();
                 valido = false;
                 return;
             }
 
             if (txtClave.Text.Length > 255)
             {
-                MessageBox.Show("Ingrese correctamente la contraseña porfavor.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingrese una contraseña de usuario válida (máximo 255 caracteres).", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtClave.Clear();
                 valido = false;
                 return;
             }
@@ -101,7 +107,7 @@ namespace Manejadores
             {
                 if (string.IsNullOrWhiteSpace(txtClave.Text)) 
                 {
-                    MessageBox.Show("Se requiere de una contraseña porfavor.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Se requiere de una contraseña para el usuario.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     valido = false;
                     return;
                 }

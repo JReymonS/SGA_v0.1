@@ -111,6 +111,7 @@
             this.Name = "FrmRolesPermisos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmRolesPermisos";
+            this.Load += new System.EventHandler(this.FrmRolesPermisos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

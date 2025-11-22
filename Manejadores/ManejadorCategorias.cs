@@ -13,65 +13,31 @@ namespace Manejadores
         //METODO PARA GUARDAR CATEGORIAS
         public void Guardar(Categorias categoria)
         {
-            try
-            {
-                string query = $"CALL p_InsertarCategoria('{categoria.nombre}', '{categoria.status}')";
-                b.Comando(query);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al guardar la categoría: {ex.Message}",
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            b.Comando($"CALL p_InsertarCategoria('{categoria.nombre}','{categoria.status}')");
         }
 
 
         //METODO PARA MODIFICAR CATEGORIAS
         public void Modificar(Categorias categoria)
         {
-            try
-            {
-                string query = $"CALL p_ModificarCategoria({categoria.id_categoria}, '{categoria.nombre}', '{categoria.status}')";
-                b.Comando(query);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al modificar la categoría: {ex.Message}",
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            b.Comando($"CALL p_ModificarCategoria({categoria.id_categoria},'{categoria.nombre}', '{categoria.status}')");
         }
 
 
         //METODO PARA BORRAR CATEGORIAS
         public void Borrar(Categorias categoria)
         {
-            var rs = MessageBox.Show(
-                $"¿Estás seguro de inactivar la categoría '{categoria.nombre}'?",
-                "Confirmar inactivación",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
+            var rs = MessageBox.Show($"¿Estás seguro de eliminar la categoría {categoria.nombre}?","¡ATENCIÓN!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (rs == DialogResult.Yes)
             {
-                try
-                {
-                    string query = $"CALL p_InactivarCategoria({categoria.id_categoria})";
-                    b.Comando(query);
-                    MessageBox.Show("La categoría se marcó como inactiva correctamente.",
-                                    "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error al inactivar la categoría: {ex.Message}",
-                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                b.Comando($"CALL p_InactivarCategoria({categoria.id_categoria})");
             }
         }
 
 
         //METODO PARA MOSTRAR CATEGORIAS
-        public void Mostrar(string nombre, DataGridView tabla)
+        public void Mostrar(string nombre, DataGridView tabla, bool permisoModificar, bool permisoBorrar)
         {
             try
             {
@@ -79,7 +45,7 @@ namespace Manejadores
 
                 tabla.DataSource = b.Consulta(
                     $"SELECT * FROM v_ConsultaCategoria " +
-                    $"WHERE (nombre COLLATE utf8mb4_general_ci LIKE '%{nombre}%') " +
+                    $"WHERE (nombre COLLATE utf8mb4_general_ci LIKE '%{nombre.Trim('\'')}%') " +
                     $"AND status = 'A'",
                     "categorias").Tables[0];
 
@@ -97,14 +63,15 @@ namespace Manejadores
 
                 tabla.Columns.Insert(tabla.Columns.Count, Boton("Modificar", Color.Blue));
                 tabla.Columns.Insert(tabla.Columns.Count, Boton("Eliminar", Color.Red));
+                tabla.Columns[4].Visible = permisoModificar;
+                tabla.Columns[5].Visible = permisoBorrar;
 
                 tabla.AutoResizeColumns();
                 tabla.AutoResizeRows();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al mostrar categorías: {ex.Message}",
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al mostrar categorías: {ex.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

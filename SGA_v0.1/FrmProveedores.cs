@@ -1,13 +1,6 @@
 ﻿using Entidades;
 using Manejadores;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SGA_v0._1
@@ -18,16 +11,37 @@ namespace SGA_v0._1
         public static Proveedores proveedor = new Proveedores(0, "", "", "", "", "", 0, "");
         int fila = 0, columna = 0;
 
+        bool permisoModificar = false, permisoBorrar = false; //PERMISOS PARA BOTONES EN DATAGRIDVIEW
+
+
+        //CONSTRUCTOR DEL FORMULARIO
         public FrmProveedores()
         {
             mp = new ManejadorProveedores();
             InitializeComponent();
         }
 
+
+        //EVENTO LOAD PARA ACTIVAR / DESACTIVAR BOTONES SEGUN PERMISOS DEL ROL
+        private void FrmProveedores_Load(object sender, EventArgs e)
+        {
+            btnAgregar.Enabled = false;
+            foreach(var permiso in FrmInicio._rolPermisosActivo.permisos)
+            {
+                if (permiso.fkid_modulo == 1) //MODULO DE PROVEEDORES
+                {
+                    btnAgregar.Enabled = permiso.permiso_crear == "1";
+                    permisoModificar = permiso.permiso_modificar == "1";
+                    permisoBorrar = permiso.permiso_borrar == "1";
+                }
+            }
+        }
+
+
         //METODO PARA BUSCAR PROVEEDORES
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            mp.Mostrar(txtBuscar.Text, DtgDatos);
+            mp.Mostrar(txtBuscar.Text, DtgDatos,permisoModificar,permisoBorrar);
         }
 
 
