@@ -152,6 +152,9 @@ namespace Manejadores
             var colorBoton = ColorTranslator.FromHtml("#545454");
             var colorTextoBoton = ColorTranslator.FromHtml("#EDE7D5");
 
+            tabla.AllowUserToResizeColumns = false;
+            tabla.AllowUserToResizeRows = false;
+
             tabla.BackgroundColor = colorFondo;
             tabla.DefaultCellStyle.BackColor = colorFondo;
             tabla.DefaultCellStyle.ForeColor = Color.Black;
