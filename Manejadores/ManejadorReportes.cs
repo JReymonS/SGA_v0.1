@@ -15,6 +15,7 @@ namespace Manejadores
 
         // INICIALIZACION DE OBJETOS Y CRECION DE LISTAS
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen");
+        ManejadorDiseño md = new ManejadorDiseño();
 
         List <string> tiposReportes = new List<string> 
         { "Productos de Entrada","Productos de Salida","Productos en Stock Bajo","Productos mas Vendidos", "Productos Stock Actual" };
@@ -146,6 +147,7 @@ namespace Manejadores
                     {
                         if (!tabla.Columns.Contains("ELIMINAR"))
                             tabla.Columns.Add(Boton("ELIMINAR", Color.OrangeRed));
+                        md.EstilizarData(tabla);
                     }
 
                     
