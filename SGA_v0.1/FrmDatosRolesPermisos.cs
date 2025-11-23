@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Entidades;
+using Manejadores;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Entidades;
-using Manejadores;
 
 namespace SGA_v0._1
 { 
@@ -12,6 +13,7 @@ namespace SGA_v0._1
     {
         ManejadorRoles mr;
         ManejadorPermisos mp;
+        ManejadorDiseño md;
         List<Permisos> ListaPermisos;
         List<Permisos> ListaPermisosEliminados;
         int idLocalRol;
@@ -24,11 +26,15 @@ namespace SGA_v0._1
             InitializeComponent();
             mr = new ManejadorRoles();
             mp = new ManejadorPermisos();
+            md = new ManejadorDiseño();
             ListaPermisos = new List<Permisos>();
             ListaPermisosEliminados = new List<Permisos>();
             mr.LLenarModulos(cmbModulo);
+            md.EstiloPanelTexto(pNombre, lblNombre, ColorTranslator.FromHtml("#8CBFAF"));
+            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            md.AgregarBordeFormulario(this);
 
-            if(FrmRolesPermisos.rol.id_rol>0)
+            if (FrmRolesPermisos.rol.id_rol>0)
             {
                 txtNombre.Text = FrmRolesPermisos.rol.nombre;
                 cmbIdentificador.Text = FrmRolesPermisos.rol.identificador;

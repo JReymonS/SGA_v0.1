@@ -1,6 +1,7 @@
 ﻿using Entidades;
 using Manejadores;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace SGA_v0._1
@@ -8,6 +9,7 @@ namespace SGA_v0._1
     public partial class FrmRolesPermisos : Form
     {
         ManejadorRoles mr;
+        ManejadorDiseño md;
         public static Roles rol = new Roles(0,"","","");
         int fila = 0, columna = 0;
 
@@ -19,6 +21,14 @@ namespace SGA_v0._1
         {
             InitializeComponent();
             mr= new ManejadorRoles();
+            md = new ManejadorDiseño();
+            md.EstiloPanelTexto(pNombre, lblNombre, ColorTranslator.FromHtml("#8CBFAF"));
+            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            md.AgregarBordeFormulario(this);
+            md.EstilizarTextBox(txtBuscar);
+            md.EstilosBoton(btnBuscar);
+            md.EstilosBoton(btnAgregar);
+            
         }
 
 
@@ -54,6 +64,28 @@ namespace SGA_v0._1
             FrmDatosRolesPermisos drp = new FrmDatosRolesPermisos();
             drp.ShowDialog();
             dtgDatos.Columns.Clear();
+        }
+
+        private void btnBuscar_MouseEnter(object sender, EventArgs e)
+        {
+            btnBuscar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void btnBuscar_MouseLeave(object sender, EventArgs e)
+        {
+            btnBuscar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnBuscar);
+        }
+
+        private void btnAgregar_MouseEnter(object sender, EventArgs e)
+        {
+            btnAgregar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void btnAgregar_MouseLeave(object sender, EventArgs e)
+        {
+            btnAgregar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnAgregar);
         }
 
 
