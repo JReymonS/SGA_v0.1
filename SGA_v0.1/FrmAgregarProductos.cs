@@ -16,12 +16,27 @@ namespace SGA_v0._1
     {
         // CREACION DEL OBJETO DE SU MANEJADOR
         ManejadorProductos mp;
+        ManejadorDiseño md;
 
         //CONSTRUCTO QUE PERMITE LLENAR LOS CAMPOS SI SE MODIFICAN
         public FrmAgregarProductos()
         {
             InitializeComponent();
             mp = new ManejadorProductos();
+            md = new ManejadorDiseño();
+            md.AgregarBordeFormulario(this);
+            md.EstiloPanelTexto(pNombre, lblProductos, ColorTranslator.FromHtml("#8CBFAF"));
+            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            md.EstilosBoton(btnCancelar);
+            md.EstilosBoton(tnGuardar);
+            md.EstilizarTextBox(txtCosto);
+            md.EstilizarTextBox(txtDescripcion);
+            md.EstilizarTextBox(txtNombre);
+            md.EstilizarTextBox(txtStockActual);
+            md.EstilizarTextBox(txtStockMinimo);
+            md.EstilizarComboBox(cmbCategoria);
+            md.EstilizarComboBox(cmbEstatus);
+            md.EstilizarComboBox(cmbUnidad);
             mp.LlenarCategorias(cmbCategoria);
             mp.LlenarComboEstatus(cmbEstatus);
             mp.LlenarComboBox(cmbUnidad, "unidad", "productos");
@@ -89,6 +104,33 @@ namespace SGA_v0._1
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tnGuardar_MouseLeave(object sender, EventArgs e)
+        {
+            tnGuardar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(tnGuardar);
+        }
+
+        private void tnGuardar_MouseEnter(object sender, EventArgs e)
+        {
+            tnGuardar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void btnCancelar_MouseEnter(object sender, EventArgs e)
+        {
+            btnCancelar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void btnCancelar_MouseLeave(object sender, EventArgs e)
+        {
+            btnCancelar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnCancelar);
         }
     }
 }

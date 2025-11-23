@@ -44,9 +44,10 @@
             // DtgDatos
             // 
             this.DtgDatos.AllowUserToAddRows = false;
+            this.DtgDatos.AllowUserToResizeColumns = false;
             this.DtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DtgDatos.Location = new System.Drawing.Point(38, 218);
-            this.DtgDatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DtgDatos.Margin = new System.Windows.Forms.Padding(4);
             this.DtgDatos.Name = "DtgDatos";
             this.DtgDatos.RowHeadersWidth = 51;
             this.DtgDatos.Size = new System.Drawing.Size(1108, 483);
@@ -58,7 +59,7 @@
             // 
             this.TxtBuscar.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtBuscar.Location = new System.Drawing.Point(187, 134);
-            this.TxtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.TxtBuscar.Multiline = true;
             this.TxtBuscar.Name = "TxtBuscar";
             this.TxtBuscar.Size = new System.Drawing.Size(734, 30);
@@ -68,7 +69,7 @@
             // 
             this.BtnAgregar.Font = new System.Drawing.Font("Livvic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregar.Location = new System.Drawing.Point(1093, 134);
-            this.BtnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(43, 45);
             this.BtnAgregar.TabIndex = 2;
@@ -90,7 +91,7 @@
             // 
             this.BtnBuscar.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBuscar.Location = new System.Drawing.Point(981, 133);
-            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(98, 46);
             this.BtnBuscar.TabIndex = 4;
@@ -141,7 +142,7 @@
             this.Controls.Add(this.TxtBuscar);
             this.Controls.Add(this.DtgDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCategoria";
