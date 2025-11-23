@@ -4,11 +4,13 @@ using System.Windows.Forms;
 using AccesoDatos;
 using Entidades;
 
+
 namespace Manejadores
 {
     public class ManejadorCategorias
     {
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen", 3310);
+        ManejadorDiseño md = new ManejadorDiseño();
 
         //METODO PARA GUARDAR CATEGORIAS
         public void Guardar(Categorias categoria)
@@ -65,7 +67,7 @@ namespace Manejadores
                 tabla.Columns.Insert(tabla.Columns.Count, Boton("Eliminar", Color.Red));
                 tabla.Columns[4].Visible = permisoModificar;
                 tabla.Columns[5].Visible = permisoBorrar;
-
+                md.EstilizarData(tabla);
                 tabla.AutoResizeColumns();
                 tabla.AutoResizeRows();
             }
