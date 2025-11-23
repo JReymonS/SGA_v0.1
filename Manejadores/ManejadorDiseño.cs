@@ -235,5 +235,28 @@ namespace Manejadores
             cmb.BringToFront();
         }
 
+
+        public void EstilizarDTP(DateTimePicker dtp)
+        {
+            int borde = 1;
+            Panel contenedor = new Panel();
+            contenedor.BackColor = ColorTranslator.FromHtml("#545454"); 
+            contenedor.Size = new Size(dtp.Width + (borde * 2), dtp.Height + (borde * 2));
+            contenedor.Location = dtp.Location;
+
+            
+            dtp.CalendarMonthBackground = ColorTranslator.FromHtml("#EDE7D5");
+            dtp.CalendarTitleBackColor = ColorTranslator.FromHtml("#EDE7D5");
+            dtp.CalendarTitleForeColor = Color.Black;
+            dtp.CalendarForeColor = Color.Black;
+            dtp.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            dtp.ForeColor = Color.Black;
+            dtp.Location = new Point(borde, borde);
+            dtp.Parent.Controls.Add(contenedor);
+            contenedor.Controls.Add(dtp);
+            dtp.BringToFront();
+        }
+
+
     }
 }

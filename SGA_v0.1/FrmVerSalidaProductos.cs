@@ -6,9 +6,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.WebRequestMethods;
 
 namespace SGA_v0._1
 {
@@ -16,6 +18,7 @@ namespace SGA_v0._1
     {
          // CREACION DE OBJETOS Y VARIABLES
         ManejadorSalidas ms;
+        ManejadorDiseño md;
         public static Salidas salida = new Salidas(0, "", 0);
         public static Productos producto = new Productos(0, "", "", "", 0.0, 0, 0, "", 0);
         public static DetalleSalidas detalleSalida = new DetalleSalidas(0, 0.0, 0, 0, 0);
@@ -29,6 +32,14 @@ namespace SGA_v0._1
         {
             InitializeComponent();
             ms = new ManejadorSalidas();
+            md = new ManejadorDiseño();
+            md.EstiloPanelTexto(pProveedores, lblNombre, ColorTranslator.FromHtml("#8CBFAF"));
+            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            md.AgregarBordeFormulario(this);
+            md.EstilizarDTP(dtpFecha);
+            md.EstilosBoton(btnAgregar);
+            md.EstilosBoton(btnBuscar);
+           
 
         }
 
@@ -89,6 +100,28 @@ namespace SGA_v0._1
         private void dtgDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnBuscar_MouseLeave(object sender, EventArgs e)
+        {
+            btnBuscar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnBuscar);
+        }
+
+        private void btnBuscar_MouseEnter(object sender, EventArgs e)
+        {
+            btnBuscar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void btnAgregar_MouseLeave(object sender, EventArgs e)
+        {
+            btnAgregar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnAgregar);
+        }
+
+        private void btnAgregar_MouseEnter(object sender, EventArgs e)
+        {
+            btnAgregar.BackColor = ColorTranslator.FromHtml("#7B8A84");
         }
 
         // EVENTO PARA OBTENER LOS PERMISOS Y HABILITAR / DESHABILITAR BOTONES

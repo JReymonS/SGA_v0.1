@@ -9,7 +9,7 @@ namespace Manejadores
     {
         //INSTANCIA DE UN NUEVO OBJETO DE ACCESO DATOS
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen");
-
+        ManejadorDiseño md = new ManejadorDiseño();
 
         // PERMITE CREAR BOTONES EN TIEMPO DE EJECUCION
         public static DataGridViewButtonColumn Boton(string titulo, Color fondo)
@@ -52,6 +52,7 @@ namespace Manejadores
             tabla.Columns["id_producto"].Visible = false;
             tabla.Columns.Insert(9, Boton("Modificar", Color.Orange));
             tabla.Columns[9].Visible = permisoModificar;
+            md.EstilizarData(tabla);
 
         }
 

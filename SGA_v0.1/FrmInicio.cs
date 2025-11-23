@@ -188,7 +188,8 @@ namespace SGA_v0._1
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-           Application.Exit();
+            Application.Exit();
+
         }
 
         private void btnCerrar_MouseEnter(object sender, EventArgs e)

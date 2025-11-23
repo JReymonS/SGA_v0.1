@@ -29,6 +29,7 @@ namespace SGA_v0._1
             md.EstilizarTextBox(txtBuscar);
             md.EstilosBoton(btnAgregar);
             md.EstilosBoton(btnBuscar);
+            
         }
 
         //EVENTO LOAD PARA ACTIVAR / DESACTIVAR BOTONES SEGUN PERMISOS DEL ROL
