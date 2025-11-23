@@ -16,6 +16,7 @@ namespace SGA_v0._1
     {
         // CREACION DE OBJETOS Y VARIABLES
         ManejadorProductos mp;
+        ManejadorDiseño md;
         public static Productos producto = new Productos(0, "", "", "", 0.0, 0, 0, "", 0);
         int fila = 0;
         int columna = 0;
@@ -25,6 +26,9 @@ namespace SGA_v0._1
         {
             InitializeComponent();
             mp = new ManejadorProductos();
+            md = new ManejadorDiseño();
+
+            
         }
 
 
@@ -77,6 +81,7 @@ namespace SGA_v0._1
         //EVENTO CELL CLICK PARA OBTENER COLUMNA DE MODIFICAR Y ELIMINAR
         private void dtgDatos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             producto.id_producto = int.Parse(dtgDatos.Rows[fila].Cells[0].Value.ToString());
             producto.nombre = dtgDatos.Rows[fila].Cells["Nombre"].Value.ToString();
             producto.descripcion = dtgDatos.Rows[fila].Cells["Descripcion"].Value.ToString();

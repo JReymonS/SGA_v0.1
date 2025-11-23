@@ -25,10 +25,10 @@ namespace SGA_v0._1
             InitializeComponent();
             ml = new ManejadorLogin();
             md = new ManejadorDiseño();
-            md.EstiloPanelTexto(pLogin, lblLogin);
+            md.EstiloPanelTexto(pLogin, lblLogin, ColorTranslator.FromHtml("#B7CC18"));
             md.EstilosBoton(btnIngresar);
-            md.EstilizarTextBox(txtContrasena);
-            md.EstilizarTextBox(txtUsuario);
+            md.EstilizarTextBox(txtContrasena, ColorTranslator.FromHtml("#B7CC18"));
+            md.EstilizarTextBox(txtUsuario, ColorTranslator.FromHtml("#B7CC18"));
             md.QuitarBordesBotones(btnMostrar);
             md.QuitarBordesBotones(btnVer);
             md.QuitarBordesBotones(btnCerrar);
