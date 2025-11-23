@@ -106,7 +106,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::SGA_v0._1.Properties.Resources.Proveedores;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(23, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(38, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 81);
             this.pictureBox1.TabIndex = 27;
@@ -116,12 +116,12 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Suravaram", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(308, 0);
+            this.lblNombre.Location = new System.Drawing.Point(239, -14);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(238, 64);
+            this.lblNombre.Size = new System.Drawing.Size(274, 64);
             this.lblNombre.TabIndex = 23;
-            this.lblNombre.Text = "REGISTRO SALIDAS";
+            this.lblNombre.Text = "REGISTRO DE SALIDAS";
             // 
             // pProveedores
             // 

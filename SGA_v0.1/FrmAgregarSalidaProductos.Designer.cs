@@ -232,12 +232,12 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Suravaram", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(343, 0);
+            this.lblNombre.Location = new System.Drawing.Point(333, 0);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(238, 64);
+            this.lblNombre.Size = new System.Drawing.Size(274, 64);
             this.lblNombre.TabIndex = 23;
-            this.lblNombre.Text = "REGISTRO SALIDAS";
+            this.lblNombre.Text = "REGISTRO DE SALIDAS";
             // 
             // FrmAgregarSalidaProductos
             // 
