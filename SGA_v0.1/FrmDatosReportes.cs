@@ -1,6 +1,7 @@
 ﻿using Manejadores;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 
@@ -10,8 +11,10 @@ namespace SGA_v0._1
     {
         //INSTANCIA DE OBJETOS Y VARIABLES
         ManejadorReportes mr;
+        ManejadorDiseño md;
         string tipoReporteSeleccionado = "";
         bool requiereCategoria = false;
+
 
 
         //CONSTRUCTOR PARA INICIALIZAR EL FORMULARIO Y OBJETOS
@@ -19,8 +22,12 @@ namespace SGA_v0._1
         {
             InitializeComponent();
             mr = new ManejadorReportes();
+            md = new ManejadorDiseño();
+            md.EstiloPanelTexto(pNombre, lblNombre, ColorTranslator.FromHtml("#8CBFAF"));
+            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            md.AgregarBordeFormulario(this);
+            md.EstilizarComboBox(cmbTipoAccion);
             mr.LlenarTiposReportes(cmbTipoAccion);
-
         }
        
 
@@ -39,6 +46,8 @@ namespace SGA_v0._1
                 requiereCategoria = true;
                 mr.LlenarCategorias(cmbCategoria);
                 cmbCategoria.Visible = true;
+                md.EstilizarComboBox(cmbCategoria);
+                md.EstilizarComboBox(cmbTipoAccion);
                 if (lblCategoria != null) 
                     lblCategoria.Visible = true;
             }
@@ -46,6 +55,7 @@ namespace SGA_v0._1
             {
                 requiereCategoria = false;
                 cmbCategoria.Visible = false;
+               
                 if (lblCategoria != null) 
                     lblCategoria.Visible = false;
             }
@@ -56,6 +66,8 @@ namespace SGA_v0._1
                 case "Productos de Salida":
                     dtpFechaInicio.Visible = true;
                     dtpFechaFin.Visible = true;
+                    md.EstilizarDTP(dtpFechaFin);
+                    md.EstilizarDTP(dtpFechaInicio);
                     if (lblFechaInicio != null) 
                         lblFechaInicio.Visible = true;
                     if (lblFechaFin != null) 
@@ -67,6 +79,7 @@ namespace SGA_v0._1
                 case "Productos Stock Actual":
                     dtpFechaInicio.Visible = false;
                     dtpFechaFin.Visible = false;
+                    
                     if (lblFechaInicio != null) 
                         lblFechaInicio.Visible = false;
                     if (lblFechaFin != null) 
@@ -159,6 +172,8 @@ namespace SGA_v0._1
             {
                 requiereCategoria = true;
                 mr.LlenarCategorias(cmbCategoria);
+                md.EstilizarComboBox(cmbCategoria);
+                md.EstilizarComboBox(cmbTipoAccion);
                 cmbCategoria.Visible = true;
                 if (lblCategoria != null) 
                     lblCategoria.Visible = true;
@@ -177,6 +192,8 @@ namespace SGA_v0._1
                 case "Productos de Salida":
                     dtpFechaInicio.Visible = true;
                     dtpFechaFin.Visible = true;
+                    md.EstilizarDTP(dtpFechaFin);
+                    md.EstilizarDTP(dtpFechaInicio);
                     if (lblFechaInicio != null) 
                         lblFechaInicio.Visible = true;
                     if (lblFechaFin != null) 
@@ -188,6 +205,7 @@ namespace SGA_v0._1
                 case "Productos Stock Actual":
                     dtpFechaInicio.Visible = false;
                     dtpFechaFin.Visible = false;
+                    
                     if (lblFechaInicio != null) 
                         lblFechaInicio.Visible = false;
                     if (lblFechaFin != null) 
@@ -202,6 +220,46 @@ namespace SGA_v0._1
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnGenerar_MouseLeave(object sender, EventArgs e)
+        {
+            btnGenerar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnGenerar);
+        }
+
+        private void btnGenerar_MouseEnter(object sender, EventArgs e)
+        {
+            btnGenerar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void btnCancelar_MouseEnter(object sender, EventArgs e)
+        {
+            btnCancelar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void btnCancelar_MouseLeave(object sender, EventArgs e)
+        {
+            btnCancelar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnCancelar);
+        }
+
+        private void btnSeleccionarReporte_MouseLeave(object sender, EventArgs e)
+        {
+            btnSeleccionarReporte.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnSeleccionarReporte);
+        }
+
+        private void btnSeleccionarReporte_MouseEnter(object sender, EventArgs e)
+        {
+            btnSeleccionarReporte.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void FrmDatosReportes_Load(object sender, EventArgs e)
+        {
+            md.EstilosBoton(btnCancelar);
+            md.EstilosBoton(btnGenerar);
+            md.EstilosBoton(btnSeleccionarReporte);
         }
     }
 }
