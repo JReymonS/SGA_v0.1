@@ -27,8 +27,8 @@ namespace SGA_v0._1
             md = new ManejadorDiseño();
             md.EstiloPanelTexto(pLogin, lblLogin, ColorTranslator.FromHtml("#B7CC18"));
             md.EstilosBoton(btnIngresar);
-            md.EstilizarTextBox(txtContrasena, ColorTranslator.FromHtml("#B7CC18"));
-            md.EstilizarTextBox(txtUsuario, ColorTranslator.FromHtml("#B7CC18"));
+            md.EstilizarTextBoxLogin(txtContrasena);
+            md.EstilizarTextBoxLogin(txtUsuario);
             md.QuitarBordesBotones(btnMostrar);
             md.QuitarBordesBotones(btnVer);
             md.QuitarBordesBotones(btnCerrar);

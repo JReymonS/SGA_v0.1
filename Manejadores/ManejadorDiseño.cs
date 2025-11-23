@@ -42,27 +42,31 @@ namespace Manejadores
 
 
         //METODO PARA DAR FORMATO AL ENCABEZADO DE CADA FORMULARIO
-        public void EstiloPanelTexto(Panel panel, Label etiqueta, Color panelColor)
+        public void EstiloPanelTexto(Panel panel, Label etiqueta, Color color)
         {
-            panel.BackColor = panelColor;
+            panel.BackColor = color;
             etiqueta.ForeColor = ColorTranslator.FromHtml("#EDE7D5");
             etiqueta.Font = new Font("Suravaram", 30, FontStyle.Bold);
         }
 
 
         // METODO PARA DAR FORMATO A LOS TEXT BOX (COLOR DE BORDE, FONDO Y REDONDEADO)
-        public void EstilizarTextBox(TextBox txt, Color colorBorde)
+        public void EstilizarTextBox(TextBox txt)
         {
             int radio = 45;
             int borde = 2;
-            Panel contenedor = new Panel();
+
+            Panel contenedor = new Panel(); 
+
             contenedor.BackColor = ColorTranslator.FromHtml("#EDE7D5");
             contenedor.Size = new Size(txt.Width + 40, txt.Height + 24);
             contenedor.Location = txt.Location;
+
             txt.BorderStyle = BorderStyle.None;
             txt.BackColor = ColorTranslator.FromHtml("#EDE7D5");
             txt.Location = new Point(12, 8); // centrado perfecto
             txt.Width = contenedor.Width - 24;
+
             contenedor.Paint += (s, e) =>
             {
                 Rectangle rect = new Rectangle(
@@ -71,6 +75,7 @@ namespace Manejadores
                     contenedor.Width - borde * 2 - 1,
                     contenedor.Height - borde * 2 - 1
                 );
+
                 using (GraphicsPath gp = new GraphicsPath())
                 {
                     gp.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
@@ -78,13 +83,61 @@ namespace Manejadores
                     gp.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
                     gp.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
                     gp.CloseFigure();
+
                     e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                    using (Pen p = new Pen(colorBorde, 1))
+                    using (Pen p = new Pen(ColorTranslator.FromHtml("#545454"), 1))
                     {
                         e.Graphics.DrawPath(p, gp);
                     }
                 }
             };
+
+            txt.Parent.Controls.Add(contenedor);
+            contenedor.Controls.Add(txt);
+            txt.BringToFront();
+        }
+        // METODO PARA DAR FORMATO A LOS TEXT BOX (COLOR DE BORDE, FONDO Y REDONDEADO) DE LOGIN
+        public void EstilizarTextBoxLogin(TextBox txt)
+        {
+            int radio = 45;
+            int borde = 2;
+
+            Panel contenedor = new Panel();
+
+            contenedor.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            contenedor.Size = new Size(txt.Width + 40, txt.Height + 24);
+            contenedor.Location = txt.Location;
+
+            txt.BorderStyle = BorderStyle.None;
+            txt.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            txt.Location = new Point(12, 8); // centrado perfecto
+            txt.Width = contenedor.Width - 24;
+
+            contenedor.Paint += (s, e) =>
+            {
+                Rectangle rect = new Rectangle(
+                    borde,
+                    borde,
+                    contenedor.Width - borde * 2 - 1,
+                    contenedor.Height - borde * 2 - 1
+                );
+
+                using (GraphicsPath gp = new GraphicsPath())
+                {
+                    gp.AddArc(rect.X, rect.Y, radio, radio, 180, 90);
+                    gp.AddArc(rect.Right - radio, rect.Y, radio, radio, 270, 90);
+                    gp.AddArc(rect.Right - radio, rect.Bottom - radio, radio, radio, 0, 90);
+                    gp.AddArc(rect.X, rect.Bottom - radio, radio, radio, 90, 90);
+                    gp.CloseFigure();
+
+                    e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                    using (Pen p = new Pen(ColorTranslator.FromHtml("#B7CC18"), 1))
+                    {
+                        e.Graphics.DrawPath(p, gp);
+                    }
+                }
+            };
+
             txt.Parent.Controls.Add(contenedor);
             contenedor.Controls.Add(txt);
             txt.BringToFront();
@@ -144,7 +197,7 @@ namespace Manejadores
             }
         }
 
-        // METODO PARA AGREGAR BORDE AL FORMULARIO CON COLORES PERSONALIZADOS
+        // METODO PARA AGREGAR BORDE AL FORMULARIO 
         public void AgregarBordeFormulario(Form formulario)
         {
             formulario.FormBorderStyle = FormBorderStyle.None;
@@ -156,9 +209,30 @@ namespace Manejadores
                     e.Graphics.DrawLine(penGris, 0, 0, formulario.Width, 0);
                     e.Graphics.DrawLine(penGris, formulario.Width - 1, 0, formulario.Width - 1, formulario.Height);
                     e.Graphics.DrawLine(penGris, 0, 0, 0, formulario.Height);
+
+
                     e.Graphics.DrawLine(penNegro, 0, formulario.Height - 1, formulario.Width, formulario.Height - 1);
                 }
             };
+        }
+
+        // METODO PARA DAR FORMATO A LOS COMBO BOX (COLOR DE BORDE Y FONDO)
+        public void EstilizarComboBox(ComboBox cmb)
+        {
+            int borde = 1;
+            Panel contenedor = new Panel();
+            contenedor.BackColor = ColorTranslator.FromHtml("#545454"); 
+            contenedor.Size = new Size(cmb.Width + (borde * 2), cmb.Height + (borde * 2));
+            contenedor.Location = cmb.Location;
+
+            cmb.FlatStyle = FlatStyle.Flat;
+            cmb.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            cmb.ForeColor = Color.Black;
+            cmb.Location = new Point(borde, borde);
+
+            cmb.Parent.Controls.Add(contenedor);
+            contenedor.Controls.Add(cmb);
+            cmb.BringToFront();
         }
 
     }

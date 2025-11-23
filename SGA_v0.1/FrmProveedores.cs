@@ -26,7 +26,7 @@ namespace SGA_v0._1
             this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
             md.EstiloPanelTexto(pProveedores, lblNombre, ColorTranslator.FromHtml("#8CBFAF"));
             md.AgregarBordeFormulario(this);
-            md.EstilizarTextBox(txtBuscar, ColorTranslator.FromHtml("#545454"));
+            md.EstilizarTextBox(txtBuscar);
             md.EstilosBoton(btnAgregar);
             md.EstilosBoton(btnBuscar);
         }
