@@ -64,7 +64,7 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(121, 152);
+            this.txtNombre.Location = new System.Drawing.Point(116, 145);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(429, 33);
             this.txtNombre.TabIndex = 2;
@@ -137,6 +137,8 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnGuardar.MouseEnter += new System.EventHandler(this.btnGuardar_MouseEnter);
+            this.btnGuardar.MouseLeave += new System.EventHandler(this.btnGuardar_MouseLeave);
             // 
             // btnCancelar
             // 
@@ -148,6 +150,9 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnCancelar.MouseEnter += new System.EventHandler(this.btnCancelar_MouseEnter);
+            this.btnCancelar.MouseLeave += new System.EventHandler(this.btnCancelar_MouseLeave);
+            this.btnCancelar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnCancelar_MouseMove);
             // 
             // btnAgregarPermiso
             // 
@@ -159,6 +164,8 @@
             this.btnAgregarPermiso.TabIndex = 10;
             this.btnAgregarPermiso.UseVisualStyleBackColor = true;
             this.btnAgregarPermiso.Click += new System.EventHandler(this.btnAgregarPermiso_Click);
+            this.btnAgregarPermiso.MouseEnter += new System.EventHandler(this.btnAgregarPermiso_MouseEnter);
+            this.btnAgregarPermiso.MouseLeave += new System.EventHandler(this.btnAgregarPermiso_MouseLeave);
             // 
             // btnEliminarPermiso
             // 
@@ -170,6 +177,8 @@
             this.btnEliminarPermiso.TabIndex = 11;
             this.btnEliminarPermiso.UseVisualStyleBackColor = true;
             this.btnEliminarPermiso.Click += new System.EventHandler(this.btnEliminarPermiso_Click);
+            this.btnEliminarPermiso.MouseEnter += new System.EventHandler(this.btnEliminarPermiso_MouseEnter);
+            this.btnEliminarPermiso.MouseLeave += new System.EventHandler(this.btnEliminarPermiso_MouseLeave);
             // 
             // chkCrear
             // 
@@ -272,6 +281,7 @@
             this.Name = "FrmDatosRolesPermisos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDatosRolesPermisos";
+            this.Load += new System.EventHandler(this.FrmDatosRolesPermisos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatosPermisos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pNombre.ResumeLayout(false);
