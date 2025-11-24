@@ -106,11 +106,6 @@ namespace SGA_v0._1
             Close();
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tnGuardar_MouseLeave(object sender, EventArgs e)
         {
             tnGuardar.BackColor = ColorTranslator.FromHtml("#545454");

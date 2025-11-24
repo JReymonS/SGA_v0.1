@@ -107,11 +107,6 @@ namespace SGA_v0._1
             columna = e.ColumnIndex;
         }
 
-        private void lblNombre_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAgregar_MouseEnter(object sender, EventArgs e)
         {
             btnAgregar.BackColor = ColorTranslator.FromHtml("#7B8A84");

@@ -69,16 +69,6 @@ namespace SGA_v0._1
             DtgDatos.Columns.Clear();
         }
 
-        private void DtgDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void FrmProveedores_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
         private void btnBuscar_MouseEnter(object sender, EventArgs e)
         {
 

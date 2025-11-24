@@ -121,8 +121,9 @@ namespace SGA_v0._1
         //EVENTO CLICK PARA ABRIR FORMULARIO DE SALIDAS
         private void tsbSalidas_Click(object sender, EventArgs e)
         {
-            FrmVerSalidaProductos frm = new FrmVerSalidaProductos();
-            frm.Show();
+            FrmVerSalidaProductos frmVerSalida = new FrmVerSalidaProductos();
+            frmVerSalida.MdiParent = this;
+            frmVerSalida.Show();
         }
 
         //EVENTO CLICK PARA ABRIR FORMULARIO DE ENTRADAS
@@ -169,21 +170,6 @@ namespace SGA_v0._1
         private void tsbCerrarSesion_Click(object sender, EventArgs e)
         {
             Application.Restart();
-        }
-
-        private void LblUsuarioActivo_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void tsbCerrarSesion_MouseEnter(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void tsbCerrarSesion_MouseLeave(object sender, EventArgs e)
-        {
-            
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

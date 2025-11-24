@@ -114,8 +114,6 @@ namespace SGA_v0._1
             BtnCancelar.BackColor = ColorTranslator.FromHtml("#545454");
             md.QuitarBordesBotones(BtnCancelar);
         }
-
-        
     }
 }
 

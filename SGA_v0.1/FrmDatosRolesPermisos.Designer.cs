@@ -57,7 +57,7 @@
             this.label1.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 148);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 34);
+            this.label1.Size = new System.Drawing.Size(81, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
@@ -66,7 +66,7 @@
             this.txtNombre.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(116, 145);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(429, 33);
+            this.txtNombre.Size = new System.Drawing.Size(429, 28);
             this.txtNombre.TabIndex = 2;
             // 
             // cmbIdentificador
@@ -81,7 +81,7 @@
             "Cliente"});
             this.cmbIdentificador.Location = new System.Drawing.Point(909, 145);
             this.cmbIdentificador.Name = "cmbIdentificador";
-            this.cmbIdentificador.Size = new System.Drawing.Size(214, 37);
+            this.cmbIdentificador.Size = new System.Drawing.Size(214, 32);
             this.cmbIdentificador.TabIndex = 3;
             // 
             // label3
@@ -90,7 +90,7 @@
             this.label3.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(693, 152);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(143, 34);
+            this.label3.Size = new System.Drawing.Size(119, 27);
             this.label3.TabIndex = 4;
             this.label3.Text = "Identificador";
             // 
@@ -100,7 +100,7 @@
             this.label4.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(721, 235);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 34);
+            this.label4.Size = new System.Drawing.Size(78, 27);
             this.label4.TabIndex = 5;
             this.label4.Text = "Modulo";
             // 
@@ -111,7 +111,7 @@
             this.cmbModulo.FormattingEnabled = true;
             this.cmbModulo.Location = new System.Drawing.Point(909, 232);
             this.cmbModulo.Name = "cmbModulo";
-            this.cmbModulo.Size = new System.Drawing.Size(214, 37);
+            this.cmbModulo.Size = new System.Drawing.Size(214, 32);
             this.cmbModulo.TabIndex = 6;
             // 
             // dtgDatosPermisos
@@ -152,7 +152,6 @@
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             this.btnCancelar.MouseEnter += new System.EventHandler(this.btnCancelar_MouseEnter);
             this.btnCancelar.MouseLeave += new System.EventHandler(this.btnCancelar_MouseLeave);
-            this.btnCancelar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnCancelar_MouseMove);
             // 
             // btnAgregarPermiso
             // 
@@ -186,7 +185,7 @@
             this.chkCrear.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkCrear.Location = new System.Drawing.Point(26, 232);
             this.chkCrear.Name = "chkCrear";
-            this.chkCrear.Size = new System.Drawing.Size(94, 38);
+            this.chkCrear.Size = new System.Drawing.Size(77, 31);
             this.chkCrear.TabIndex = 12;
             this.chkCrear.Text = "Crear";
             this.chkCrear.UseVisualStyleBackColor = true;
@@ -197,7 +196,7 @@
             this.chkLeer.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkLeer.Location = new System.Drawing.Point(147, 232);
             this.chkLeer.Name = "chkLeer";
-            this.chkLeer.Size = new System.Drawing.Size(81, 38);
+            this.chkLeer.Size = new System.Drawing.Size(67, 31);
             this.chkLeer.TabIndex = 13;
             this.chkLeer.Text = "Leer";
             this.chkLeer.UseVisualStyleBackColor = true;
@@ -208,7 +207,7 @@
             this.chkModificar.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkModificar.Location = new System.Drawing.Point(261, 232);
             this.chkModificar.Name = "chkModificar";
-            this.chkModificar.Size = new System.Drawing.Size(134, 38);
+            this.chkModificar.Size = new System.Drawing.Size(111, 31);
             this.chkModificar.TabIndex = 14;
             this.chkModificar.Text = "Modificar";
             this.chkModificar.UseVisualStyleBackColor = true;
@@ -219,7 +218,7 @@
             this.chkBorrar.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkBorrar.Location = new System.Drawing.Point(399, 232);
             this.chkBorrar.Name = "chkBorrar";
-            this.chkBorrar.Size = new System.Drawing.Size(103, 38);
+            this.chkBorrar.Size = new System.Drawing.Size(85, 31);
             this.chkBorrar.TabIndex = 15;
             this.chkBorrar.Text = "Borrar";
             this.chkBorrar.UseVisualStyleBackColor = true;
@@ -249,13 +248,13 @@
             this.lblNombre.Location = new System.Drawing.Point(306, -13);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(241, 64);
+            this.lblNombre.Size = new System.Drawing.Size(191, 51);
             this.lblNombre.TabIndex = 23;
             this.lblNombre.Text = "ROLES Y PERMISOS";
             // 
             // FrmDatosRolesPermisos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1152, 637);
             this.Controls.Add(this.pictureBox1);

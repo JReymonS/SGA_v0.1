@@ -466,11 +466,6 @@ namespace SGA_v0._1
             FrmEntradasDatos.detalleEntrada = new DetalleEntradas(0, 0.0, 0, 0, 0);
         }
 
-        private void lblNombre_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void BtnMostrar_MouseLeave(object sender, EventArgs e)
         {
             BtnMostrar.BackColor = ColorTranslator.FromHtml("#545454");

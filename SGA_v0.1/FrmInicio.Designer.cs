@@ -70,9 +70,9 @@
             this.tsbRolesPermisos,
             this.tsbUsuarios,
             this.tsbCerrarSesion});
-            this.tsPrincipal.Location = new System.Drawing.Point(0, 100);
+            this.tsPrincipal.Location = new System.Drawing.Point(0, 81);
             this.tsPrincipal.Name = "tsPrincipal";
-            this.tsPrincipal.Size = new System.Drawing.Size(113, 829);
+            this.tsPrincipal.Size = new System.Drawing.Size(85, 674);
             this.tsPrincipal.TabIndex = 1;
             this.tsPrincipal.Text = "toolStrip1";
             // 
@@ -84,7 +84,7 @@
             this.tsbInicio.Image = global::SGA_v0._1.Properties.Resources.Inicio;
             this.tsbInicio.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbInicio.Name = "tsbInicio";
-            this.tsbInicio.Size = new System.Drawing.Size(60, 60);
+            this.tsbInicio.Size = new System.Drawing.Size(85, 60);
             this.tsbInicio.Text = "INICIO";
             // 
             // tsbProveedores
@@ -94,7 +94,7 @@
             this.tsbProveedores.Image = global::SGA_v0._1.Properties.Resources.Proveedores;
             this.tsbProveedores.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbProveedores.Name = "tsbProveedores";
-            this.tsbProveedores.Size = new System.Drawing.Size(60, 60);
+            this.tsbProveedores.Size = new System.Drawing.Size(85, 60);
             this.tsbProveedores.Text = "PROVEEDORES";
             this.tsbProveedores.Click += new System.EventHandler(this.tsbProveedores_Click);
             // 
@@ -105,7 +105,7 @@
             this.tsbCategorias.Image = global::SGA_v0._1.Properties.Resources.Categoria;
             this.tsbCategorias.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbCategorias.Name = "tsbCategorias";
-            this.tsbCategorias.Size = new System.Drawing.Size(60, 60);
+            this.tsbCategorias.Size = new System.Drawing.Size(85, 60);
             this.tsbCategorias.Text = "CATEGORIA";
             this.tsbCategorias.Click += new System.EventHandler(this.tsbCategorias_Click);
             // 
@@ -116,7 +116,7 @@
             this.tsbNotificaciones.Image = global::SGA_v0._1.Properties.Resources.Notificacion;
             this.tsbNotificaciones.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbNotificaciones.Name = "tsbNotificaciones";
-            this.tsbNotificaciones.Size = new System.Drawing.Size(60, 60);
+            this.tsbNotificaciones.Size = new System.Drawing.Size(85, 60);
             this.tsbNotificaciones.Text = "NOTIFICACION";
             this.tsbNotificaciones.Click += new System.EventHandler(this.tsbNotificaciones_Click);
             // 
@@ -127,7 +127,7 @@
             this.tsbProductos.Image = global::SGA_v0._1.Properties.Resources.Producto;
             this.tsbProductos.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbProductos.Name = "tsbProductos";
-            this.tsbProductos.Size = new System.Drawing.Size(60, 60);
+            this.tsbProductos.Size = new System.Drawing.Size(85, 60);
             this.tsbProductos.Text = "PRODUCTOS";
             this.tsbProductos.Click += new System.EventHandler(this.tsbProductos_Click);
             // 
@@ -138,7 +138,7 @@
             this.tsbEntradas.Image = global::SGA_v0._1.Properties.Resources.Registro_Entrada;
             this.tsbEntradas.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEntradas.Name = "tsbEntradas";
-            this.tsbEntradas.Size = new System.Drawing.Size(60, 60);
+            this.tsbEntradas.Size = new System.Drawing.Size(85, 60);
             this.tsbEntradas.Text = "ENTRADAS";
             this.tsbEntradas.Click += new System.EventHandler(this.tsbEntradas_Click);
             // 
@@ -149,7 +149,7 @@
             this.tsbSalidas.Image = global::SGA_v0._1.Properties.Resources.Registro_Salida;
             this.tsbSalidas.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbSalidas.Name = "tsbSalidas";
-            this.tsbSalidas.Size = new System.Drawing.Size(60, 60);
+            this.tsbSalidas.Size = new System.Drawing.Size(85, 60);
             this.tsbSalidas.Text = "SALIDAS";
             this.tsbSalidas.Click += new System.EventHandler(this.tsbSalidas_Click);
             // 
@@ -160,7 +160,7 @@
             this.tsbReportes.Image = global::SGA_v0._1.Properties.Resources.Reporte;
             this.tsbReportes.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbReportes.Name = "tsbReportes";
-            this.tsbReportes.Size = new System.Drawing.Size(60, 60);
+            this.tsbReportes.Size = new System.Drawing.Size(85, 60);
             this.tsbReportes.Text = "REPORTES";
             this.tsbReportes.Click += new System.EventHandler(this.tsbReportes_Click);
             // 
@@ -171,7 +171,7 @@
             this.tsbRolesPermisos.Image = global::SGA_v0._1.Properties.Resources.Rol_Permisos;
             this.tsbRolesPermisos.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbRolesPermisos.Name = "tsbRolesPermisos";
-            this.tsbRolesPermisos.Size = new System.Drawing.Size(60, 60);
+            this.tsbRolesPermisos.Size = new System.Drawing.Size(85, 60);
             this.tsbRolesPermisos.Text = "ROLES Y PERMISOS";
             this.tsbRolesPermisos.Click += new System.EventHandler(this.tsbRolesPermisos_Click);
             // 
@@ -182,7 +182,7 @@
             this.tsbUsuarios.Image = global::SGA_v0._1.Properties.Resources.Usuarios;
             this.tsbUsuarios.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbUsuarios.Name = "tsbUsuarios";
-            this.tsbUsuarios.Size = new System.Drawing.Size(60, 60);
+            this.tsbUsuarios.Size = new System.Drawing.Size(85, 60);
             this.tsbUsuarios.Text = "USUARIOS";
             this.tsbUsuarios.Click += new System.EventHandler(this.tsbUsuarios_Click);
             // 
@@ -193,33 +193,30 @@
             this.tsbCerrarSesion.Image = global::SGA_v0._1.Properties.Resources.Salir;
             this.tsbCerrarSesion.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbCerrarSesion.Name = "tsbCerrarSesion";
-            this.tsbCerrarSesion.Size = new System.Drawing.Size(60, 60);
+            this.tsbCerrarSesion.Size = new System.Drawing.Size(85, 60);
             this.tsbCerrarSesion.Text = "CERRAR SESION";
             this.tsbCerrarSesion.Click += new System.EventHandler(this.tsbCerrarSesion_Click);
-            this.tsbCerrarSesion.MouseEnter += new System.EventHandler(this.tsbCerrarSesion_MouseEnter);
-            this.tsbCerrarSesion.MouseLeave += new System.EventHandler(this.tsbCerrarSesion_MouseLeave);
             // 
             // LblUsuarioActivo
             // 
             this.LblUsuarioActivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblUsuarioActivo.AutoSize = true;
             this.LblUsuarioActivo.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblUsuarioActivo.Location = new System.Drawing.Point(1359, 39);
-            this.LblUsuarioActivo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblUsuarioActivo.Location = new System.Drawing.Point(1019, 32);
             this.LblUsuarioActivo.Name = "LblUsuarioActivo";
-            this.LblUsuarioActivo.Size = new System.Drawing.Size(127, 29);
+            this.LblUsuarioActivo.Size = new System.Drawing.Size(104, 24);
             this.LblUsuarioActivo.TabIndex = 3;
             this.LblUsuarioActivo.Text = "Bienvenid@: ";
-            this.LblUsuarioActivo.Click += new System.EventHandler(this.LblUsuarioActivo_Click);
             // 
             // pbUsuario
             // 
             this.pbUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pbUsuario.BackgroundImage = global::SGA_v0._1.Properties.Resources.Perfil;
             this.pbUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbUsuario.Location = new System.Drawing.Point(1674, 23);
+            this.pbUsuario.Location = new System.Drawing.Point(1256, 19);
+            this.pbUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.pbUsuario.Name = "pbUsuario";
-            this.pbUsuario.Size = new System.Drawing.Size(47, 45);
+            this.pbUsuario.Size = new System.Drawing.Size(35, 37);
             this.pbUsuario.TabIndex = 5;
             this.pbUsuario.TabStop = false;
             // 
@@ -228,9 +225,10 @@
             this.btnOcultarVentana.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOcultarVentana.BackgroundImage = global::SGA_v0._1.Properties.Resources.Max;
             this.btnOcultarVentana.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOcultarVentana.Location = new System.Drawing.Point(1749, 23);
+            this.btnOcultarVentana.Location = new System.Drawing.Point(1312, 19);
+            this.btnOcultarVentana.Margin = new System.Windows.Forms.Padding(2);
             this.btnOcultarVentana.Name = "btnOcultarVentana";
-            this.btnOcultarVentana.Size = new System.Drawing.Size(47, 45);
+            this.btnOcultarVentana.Size = new System.Drawing.Size(35, 37);
             this.btnOcultarVentana.TabIndex = 6;
             this.btnOcultarVentana.UseVisualStyleBackColor = true;
             this.btnOcultarVentana.Click += new System.EventHandler(this.btnOcultarVentana_Click);
@@ -242,9 +240,10 @@
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.BackgroundImage = global::SGA_v0._1.Properties.Resources.Cerrar;
             this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCerrar.Location = new System.Drawing.Point(1830, 23);
+            this.btnCerrar.Location = new System.Drawing.Point(1372, 19);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(47, 45);
+            this.btnCerrar.Size = new System.Drawing.Size(35, 37);
             this.btnCerrar.TabIndex = 7;
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -260,31 +259,32 @@
             this.pSuperior.Controls.Add(this.pbUsuario);
             this.pSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.pSuperior.Location = new System.Drawing.Point(0, 0);
+            this.pSuperior.Margin = new System.Windows.Forms.Padding(2);
             this.pSuperior.Name = "pSuperior";
-            this.pSuperior.Size = new System.Drawing.Size(1924, 100);
+            this.pSuperior.Size = new System.Drawing.Size(1443, 81);
             this.pSuperior.TabIndex = 8;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(114, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(88, -6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(204, 94);
+            this.pictureBox1.Size = new System.Drawing.Size(254, 104);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
             // FrmInicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 929);
+            this.ClientSize = new System.Drawing.Size(1443, 755);
             this.Controls.Add(this.tsPrincipal);
             this.Controls.Add(this.pSuperior);
             this.ForeColor = System.Drawing.SystemColors.Desktop;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";

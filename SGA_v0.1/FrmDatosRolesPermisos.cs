@@ -203,11 +203,6 @@ namespace SGA_v0._1
             btnCancelar.BackColor = ColorTranslator.FromHtml("#7B8A84");
         }
 
-        private void btnCancelar_MouseMove(object sender, MouseEventArgs e)
-        {
-
-        }
-
         private void btnCancelar_MouseLeave(object sender, EventArgs e)
         {
             btnCancelar.BackColor = ColorTranslator.FromHtml("#545454");

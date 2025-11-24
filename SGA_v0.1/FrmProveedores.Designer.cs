@@ -47,7 +47,7 @@
             this.lblNombre.Location = new System.Drawing.Point(359, 0);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(138, 20);
+            this.lblNombre.Size = new System.Drawing.Size(111, 16);
             this.lblNombre.TabIndex = 23;
             this.lblNombre.Text = "PROVEEDORES";
             // 
@@ -96,7 +96,7 @@
             this.label1.Location = new System.Drawing.Point(44, 146);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 41);
+            this.label1.Size = new System.Drawing.Size(94, 32);
             this.label1.TabIndex = 19;
             this.label1.Text = "Nombre";
             // 
@@ -114,7 +114,6 @@
             this.DtgDatos.Size = new System.Drawing.Size(1108, 483);
             this.DtgDatos.TabIndex = 18;
             this.DtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellClick);
-            this.DtgDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellContentClick);
             this.DtgDatos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellEnter);
             // 
             // pProveedores
@@ -137,7 +136,7 @@
             // 
             // FrmProveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 753);
             this.Controls.Add(this.pictureBox1);
@@ -154,7 +153,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmProveedores";
             this.Load += new System.EventHandler(this.FrmProveedores_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmProveedores_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
             this.pProveedores.ResumeLayout(false);
             this.pProveedores.PerformLayout();

@@ -100,11 +100,6 @@ namespace SGA_v0._1
         }
 
 
-        private void btnMostrar_MouseEnter(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnIngresar_MouseEnter(object sender, EventArgs e)
         {
             
