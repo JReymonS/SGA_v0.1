@@ -10,6 +10,7 @@ namespace SGA_v0._1
     public partial class FrmEntradasDatos : Form
     {
         private ManejadorEntradas manejador;
+        ManejadorDiseño md;
         public static DetalleEntradas detalleEntrada = new DetalleEntradas(0, 0.0, 0, 0, 0);
         private int fila = 0, columna = 0;
 
@@ -18,6 +19,13 @@ namespace SGA_v0._1
         {
             InitializeComponent();
             manejador = new ManejadorEntradas();
+            md = new ManejadorDiseño();
+            md.EstiloPanelTexto(pRegistro, lblNombre, ColorTranslator.FromHtml("#8CBFAF"));
+            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            md.AgregarBordeFormulario(this);
+            md.EstilosBoton(BtnAgregar);
+            md.EstilosBoton(BtnBuscar);
+            md.EstilizarDTP(DtpEntradas);
         }
 
 
@@ -53,6 +61,7 @@ namespace SGA_v0._1
         //METODO PARA MOSTRAR LOS DETALLES DE ENTRADAS
         private void MostrarDetalles()
         {
+
             DateTime fechaSeleccionada = DtpEntradas.Value.Date;
             DataTable datos = manejador.BuscarDetalleEntradasPorFecha(fechaSeleccionada);
 
@@ -87,7 +96,7 @@ namespace SGA_v0._1
             if (DtgDatos.Columns.Contains("ID Entrada"))
                 DtgDatos.Columns["ID Entrada"].Visible = false;
             
-
+         md.EstilizarData(DtgDatos);
         }
 
 
@@ -100,8 +109,31 @@ namespace SGA_v0._1
             DtgDatos.Refresh();
         }
 
+        private void BtnBuscar_MouseEnter(object sender, EventArgs e)
+        {
+            BtnBuscar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void BtnBuscar_MouseLeave(object sender, EventArgs e)
+        {
+            BtnBuscar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(BtnBuscar);
+        }
+
+        private void BtnAgregar_MouseEnter(object sender, EventArgs e)
+        {
+            BtnAgregar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void BtnAgregar_MouseLeave(object sender, EventArgs e)
+        {
+            BtnAgregar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(BtnAgregar);
+        }
+
         private void FrmEntradasDatos_Load(object sender, EventArgs e)
         {
+            
             BtnAgregar.Enabled = false;
             foreach (var permiso in FrmInicio._rolPermisosActivo.permisos)
             {

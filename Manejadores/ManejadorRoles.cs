@@ -10,7 +10,7 @@ namespace Manejadores
     {
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen");
         public bool ValidacionRolesPermisos = true;
-
+        ManejadorDiseño md = new ManejadorDiseño();
 
         //METODO PARA GUARDAR ROLES
         public void GuardarRol(Roles roles) 
@@ -63,6 +63,7 @@ namespace Manejadores
             tabla.Columns.Insert(5, Boton("ELIMINAR", Color.Red));
             tabla.Columns[4].Visible = permisoModificar;
             tabla.Columns[5].Visible = permisoBorrar;
+            md.EstilizarData(tabla);
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
         }

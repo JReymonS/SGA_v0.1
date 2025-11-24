@@ -16,6 +16,7 @@ namespace SGA_v0._1
     {
         // CREACION DE OBJETOS Y VARIABLES
         ManejadorProductos mp;
+        ManejadorDiseño md;
         public static Productos producto = new Productos(0, "", "", "", 0.0, 0, 0, "", 0);
         int fila = 0;
         int columna = 0;
@@ -25,6 +26,14 @@ namespace SGA_v0._1
         {
             InitializeComponent();
             mp = new ManejadorProductos();
+            md = new ManejadorDiseño();
+            md.EstiloPanelTexto(pNombre, lblProductos, ColorTranslator.FromHtml("#8CBFAF"));
+            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            md.EstilosBoton(btnAgregar);
+            md.EstilosBoton(btnBuscar);
+            md.EstilizarTextBox(txtNombre);
+            md.AgregarBordeFormulario(this);
+
         }
 
 
@@ -57,6 +66,29 @@ namespace SGA_v0._1
             columna = e.ColumnIndex;
 
         }
+       
+
+        private void btnBuscar_MouseEnter(object sender, EventArgs e)
+        {
+            btnBuscar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void btnBuscar_MouseLeave(object sender, EventArgs e)
+        {
+            btnBuscar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnBuscar);
+        }
+
+        private void btnAgregar_MouseLeave(object sender, EventArgs e)
+        {
+            btnAgregar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnAgregar);
+        }
+
+        private void btnAgregar_MouseEnter(object sender, EventArgs e)
+        {
+            btnAgregar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
 
         // EVENTO PARA OBTENER LOS PERMISOS Y HABILITAR / DESHABILITAR BOTONES
         private void FrmVerProductos_Load(object sender, EventArgs e)
@@ -77,7 +109,8 @@ namespace SGA_v0._1
         //EVENTO CELL CLICK PARA OBTENER COLUMNA DE MODIFICAR Y ELIMINAR
         private void dtgDatos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            producto.id_producto = int.Parse(dtgDatos.Rows[fila].Cells[0].Value.ToString());
+
+            producto.id_producto = int.Parse(dtgDatos.Rows[fila].Cells["id_producto"].Value.ToString());
             producto.nombre = dtgDatos.Rows[fila].Cells["Nombre"].Value.ToString();
             producto.descripcion = dtgDatos.Rows[fila].Cells["Descripcion"].Value.ToString();
             producto.unidad = dtgDatos.Rows[fila].Cells["Unidad"].Value.ToString();

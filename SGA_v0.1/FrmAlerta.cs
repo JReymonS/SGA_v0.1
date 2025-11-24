@@ -1,6 +1,7 @@
-﻿using System;
+﻿using Manejadores;
+using System;
+using System.Drawing;
 using System.Windows.Forms;
-using Manejadores;
 
 namespace SGA_v0._1
 {
@@ -8,12 +9,16 @@ namespace SGA_v0._1
     {
 
         ManejadorAlerta manejador = new ManejadorAlerta();
+        ManejadorDiseño md;
 
 
         //CONSTRUCTOR
         public FrmAlerta()
         {
             InitializeComponent();
+            md = new ManejadorDiseño();
+            md.EstilosBoton(BtnOk);
+            md.EstiloPanelTexto(pNombre, lblAlerta, ColorTranslator.FromHtml("#8CBFAF"));
         }
 
        

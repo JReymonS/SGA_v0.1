@@ -1,13 +1,15 @@
-﻿using System;
-using System.Windows.Forms;
-using Entidades;
+﻿using Entidades;
 using Manejadores;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace SGA_v0._1
 {
     public partial class FrmUsuarios : Form
     {
         ManejadorUsuarios mu;
+        ManejadorDiseño md;
         public static Usuarios usuario = new Usuarios(0,"","","","","",0);
         int fila = 0, columna = 0;
         
@@ -19,6 +21,13 @@ namespace SGA_v0._1
         {
             InitializeComponent();
             mu = new ManejadorUsuarios();
+            md = new ManejadorDiseño();
+            md.EstiloPanelTexto(pNombre, lblNombre, ColorTranslator.FromHtml("#8CBFAF"));
+            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            md.AgregarBordeFormulario(this);
+            md.EstilizarTextBox(txtBuscar);
+            md.EstilosBoton(btnAgregar);
+            md.EstilosBoton(btnBuscar);
         }
 
 
@@ -58,6 +67,29 @@ namespace SGA_v0._1
             FrmDatosUsuario du = new FrmDatosUsuario();
             du.ShowDialog();
             dtgDatos.Columns.Clear();
+        }
+
+        private void btnBuscar_MouseEnter(object sender, EventArgs e)
+        {
+            btnBuscar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void btnBuscar_MouseLeave(object sender, EventArgs e)
+        {
+            btnBuscar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnBuscar);
+        }
+        
+
+        private void btnAgregar_MouseEnter(object sender, EventArgs e)
+        {
+            btnAgregar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void btnAgregar_MouseLeave(object sender, EventArgs e)
+        {
+            btnAgregar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnAgregar);
         }
 
 

@@ -1,6 +1,7 @@
 ﻿using Entidades;
 using Manejadores;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace SGA_v0._1
@@ -8,6 +9,8 @@ namespace SGA_v0._1
     public partial class FrmProveedores : Form
     {
         ManejadorProveedores mp;
+        ManejadorDiseño md;
+
         public static Proveedores proveedor = new Proveedores(0, "", "", "", "", "", 0, "");
         int fila = 0, columna = 0;
 
@@ -18,9 +21,16 @@ namespace SGA_v0._1
         public FrmProveedores()
         {
             mp = new ManejadorProveedores();
+            md = new ManejadorDiseño();
             InitializeComponent();
+            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            md.EstiloPanelTexto(pProveedores, lblNombre, ColorTranslator.FromHtml("#8CBFAF"));
+            md.AgregarBordeFormulario(this);
+            md.EstilizarTextBox(txtBuscar);
+            md.EstilosBoton(btnAgregar);
+            md.EstilosBoton(btnBuscar);
+            
         }
-
 
         //EVENTO LOAD PARA ACTIVAR / DESACTIVAR BOTONES SEGUN PERMISOS DEL ROL
         private void FrmProveedores_Load(object sender, EventArgs e)
@@ -34,10 +44,9 @@ namespace SGA_v0._1
                     permisoModificar = permiso.permiso_modificar == "1";
                     permisoBorrar = permiso.permiso_borrar == "1";
                 }
-            }
+            }   
+
         }
-
-
         //METODO PARA BUSCAR PROVEEDORES
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -58,6 +67,39 @@ namespace SGA_v0._1
             fmp.ShowDialog();
             
             DtgDatos.Columns.Clear();
+        }
+
+        private void DtgDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FrmProveedores_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void btnBuscar_MouseEnter(object sender, EventArgs e)
+        {
+
+            btnBuscar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void btnBuscar_MouseLeave(object sender, EventArgs e)
+        {
+            btnBuscar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnBuscar);
+        }
+
+        private void btnAgregar_MouseLeave(object sender, EventArgs e)
+        {
+            btnAgregar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnAgregar);
+        }
+
+        private void btnAgregar_MouseEnter(object sender, EventArgs e)
+        {
+            btnAgregar.BackColor = ColorTranslator.FromHtml("#7B8A84");
         }
 
 

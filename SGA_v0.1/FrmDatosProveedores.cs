@@ -1,6 +1,7 @@
 ﻿using Entidades;
 using Manejadores;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace SGA_v0._1
@@ -8,6 +9,7 @@ namespace SGA_v0._1
     public partial class FrmDatosProveedores : Form
     {
         ManejadorProveedores mp;
+        ManejadorDiseño md;
 
 
         //CONSTRUCTOR DEL FORMULARIO
@@ -15,6 +17,7 @@ namespace SGA_v0._1
         {
             InitializeComponent();
             mp = new ManejadorProveedores();
+            md = new ManejadorDiseño();
             if (FrmProveedores.proveedor.id_proveedor > 0)
             {
                 txtNombre.Text = FrmProveedores.proveedor.nombre.ToString();
@@ -29,6 +32,19 @@ namespace SGA_v0._1
             {
                 cmbEstatus.SelectedIndex = 0;
             }
+            md.EstilizarTextBox(txtNombre);
+            md.EstilizarTextBox(txtApPa);
+            md.EstilizarTextBox(txtApMa);
+            md.EstilizarTextBox(txtCorreo);
+            md.EstilizarTextBox(txtPlazo);
+            md.EstilizarTextBox(txtTelefono);
+            md.EstilosBoton(btnCancelar);
+            md.EstilosBoton(btnGuardar);
+            md.EstilizarComboBox(cmbEstatus);
+            md.EstiloPanelTexto(pNombre, lblProveedores, ColorTranslator.FromHtml("#8CBFAF"));
+            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            md.AgregarBordeFormulario(this);
+            
         }
 
 
@@ -62,6 +78,28 @@ namespace SGA_v0._1
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnGuardar_MouseEnter(object sender, EventArgs e)
+        {
+            btnGuardar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void btnGuardar_MouseLeave(object sender, EventArgs e)
+        {
+            btnGuardar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnGuardar);
+        }
+
+        private void btnCancelar_MouseLeave(object sender, EventArgs e)
+        {
+            btnCancelar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnCancelar);
+        }
+
+        private void btnCancelar_MouseEnter(object sender, EventArgs e)
+        {
+            btnCancelar.BackColor = ColorTranslator.FromHtml("#7B8A84");
         }
     }
 }

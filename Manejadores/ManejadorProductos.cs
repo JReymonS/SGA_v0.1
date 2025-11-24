@@ -13,6 +13,7 @@ namespace Manejadores
     {
         //INSTANCIA DE UN OBJETO 
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen");
+        ManejadorDiseño md = new ManejadorDiseño();
 
         //METODOS PARA GUARDAR PRODUCTOS 
         public void Guardar(Productos producto)
@@ -52,6 +53,7 @@ namespace Manejadores
             tabla.Columns["Categoria"].Visible = true;
             tabla.Columns.Insert(10, Boton("Modificar", Color.Green));
             tabla.Columns.Insert(11, Boton("Eliminar", Color.Red));
+            md.EstilizarData(tabla);
             tabla.Columns[10].Visible = permisoModificar;
             tabla.Columns[11].Visible = permisoEliminar;
         }

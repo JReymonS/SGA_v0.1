@@ -1,13 +1,15 @@
-﻿using System;
-using System.Windows.Forms;
-using Entidades;
+﻿using Entidades;
 using Manejadores;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace SGA_v0._1
 {
     public partial class FrmCategoriaMenu : Form
     {
         ManejadorCategorias mc;
+        ManejadorDiseño md;
 
 
         //CONSTRUCTOR PARA FORMULARIO
@@ -15,7 +17,7 @@ namespace SGA_v0._1
         {
             InitializeComponent();
             mc = new ManejadorCategorias();
-
+            md = new ManejadorDiseño();
             CmbStatus.Items.Add("Activo");
             CmbStatus.Items.Add("Inactivo");
 
@@ -29,6 +31,14 @@ namespace SGA_v0._1
             {
                 CmbStatus.SelectedIndex = 0;
             }
+
+            md.AgregarBordeFormulario(this);
+            md.EstiloPanelTexto(pCategorias, lblCategorias, ColorTranslator.FromHtml("#8CBFAF"));
+            md.EstilosBoton(BtnCancelar);
+            md.EstilosBoton(BtnGuardar);
+            md.EstilizarTextBox(TxtNombre);
+            md.EstilizarComboBox(CmbStatus);
+            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
         }
 
 
@@ -82,6 +92,30 @@ namespace SGA_v0._1
         {
             Close();
         }
+
+        private void BtnGuardar_MouseEnter(object sender, EventArgs e)
+        {
+            BtnGuardar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void BtnGuardar_MouseLeave(object sender, EventArgs e)
+        {
+            BtnGuardar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(BtnGuardar);
+        }
+
+        private void BtnCancelar_MouseEnter(object sender, EventArgs e)
+        {
+            BtnCancelar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void BtnCancelar_MouseLeave(object sender, EventArgs e)
+        {
+            BtnCancelar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(BtnCancelar);
+        }
+
+        
     }
 }
 

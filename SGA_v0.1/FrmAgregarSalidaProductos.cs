@@ -23,6 +23,7 @@ namespace SGA_v0._1
 
         ManejadorSalidas ms;
         ManejadorDetallesSalidas mds;
+        ManejadorDiseño md;
 
         int fila1 = 0, fila2 = 0;
         int columna1 = 0, columna2 = 0;
@@ -36,6 +37,18 @@ namespace SGA_v0._1
             InitializeComponent();
             ms = new ManejadorSalidas();
             mds = new ManejadorDetallesSalidas();
+            md = new ManejadorDiseño();
+            md.EstiloPanelTexto(pProveedores, lblNombre, ColorTranslator.FromHtml("#8CBFAF"));
+            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            md.AgregarBordeFormulario(this);
+            md.EstilizarTextBox(txtCantidad);
+            md.EstilizarTextBox(txtProducto);
+            md.EstilosBoton(btnGuardar);
+            md.EstilosBoton(btnConfirmar);
+            md.EstilosBoton(btnCancelar);
+            md.EstilosBoton(btnAgregar);
+            md.EstilizarDTP(dtpFecha);
+            md.EstilizarData(dtgMostrarProductos);
             mds.MostrarProductos("SELECT * FROM v_Productos", dtgMostrarProductos, "v_Productos");
            
 
@@ -70,6 +83,8 @@ namespace SGA_v0._1
                 mds.MostrarProductosTemporales(dtgListaProductos);
             }
 
+
+
         }
 
 
@@ -85,6 +100,7 @@ namespace SGA_v0._1
         //EVENTO CELL CLICK QUE PERMITE IDENTIFICAR LAS COLUMNAS PARA AGREGAR EL NOMBRE AL TEXTBOX
         private void dtgMostrarProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             try
             {
                 producto.id_producto = int.Parse(dtgMostrarProductos.Rows[e.RowIndex].Cells["id_producto"].Value.ToString());
@@ -108,6 +124,7 @@ namespace SGA_v0._1
                 MessageBox.Show($"Error al seleccionar el producto:\n\n{ex.Message}\n\nAsegúrese de hacer clic en el botón 'Seleccionar' un producto válido.",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         
@@ -271,6 +288,55 @@ namespace SGA_v0._1
             }
         }
 
+        private void btnAgregar_MouseEnter(object sender, EventArgs e)
+        {
+            btnAgregar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void btnAgregar_MouseLeave(object sender, EventArgs e)
+        {
+            btnAgregar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnAgregar);
+        }
+
+        private void btnConfirmar_MouseEnter(object sender, EventArgs e)
+        {
+            btnConfirmar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void btnConfirmar_MouseLeave(object sender, EventArgs e)
+        {
+            btnConfirmar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnConfirmar);
+        }
+
+        private void btnGuardar_MouseEnter(object sender, EventArgs e)
+        {
+            btnGuardar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void btnGuardar_MouseLeave(object sender, EventArgs e)
+        {
+            btnGuardar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnGuardar);
+        }
+
+        private void btnCancelar_MouseEnter(object sender, EventArgs e)
+        {
+            btnCancelar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void btnCancelar_MouseLeave(object sender, EventArgs e)
+        {
+            btnCancelar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnCancelar);
+        }
+
+        private void FrmAgregarSalidaProductos_Load(object sender, EventArgs e)
+        {
+            md.EstilizarData(dtgMostrarProductos);
+        }
+
 
         //EVENTO CELL CLICK QUE PERMITE ELIMINAR PRODUCTOS DE LA TABLA TEMPORAL
         private void dtgListaProductos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -288,8 +354,7 @@ namespace SGA_v0._1
 
                             mds.EliminarProductoTemporal(idProducto);
                             mds.MostrarProductosTemporales(dtgListaProductos);
-                            MessageBox.Show("Producto eliminado de la lista",
-                                "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                           
                         }
                         catch (Exception ex)
                         {

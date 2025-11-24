@@ -8,6 +8,8 @@ namespace Manejadores
     public class ManejadorProveedores
     {
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen");
+        ManejadorDiseño md = new ManejadorDiseño();
+      
         public bool valido = true; //VARIABLE PARA VALIDAR CAMPOS
 
 
@@ -40,19 +42,21 @@ namespace Manejadores
         //METODO PARA MOSTRAR PROVEEDORES
         public void Mostrar(string consulta, DataGridView tabla, bool permisoModificar, bool permisoBorrar)
         {
-
+            var color = ColorTranslator.FromHtml("#545454");
             tabla.Columns.Clear();
             tabla.DataSource = b.Consulta($"select * from v_Proveedores where (Nombre like '%{consulta.Trim('\'')}%')", "proveedores").Tables[0];
             tabla.Columns["id_proveedor"].Visible = false;
-            tabla.Columns.Insert(8, Boton("Modificar", Color.Green));
-            tabla.Columns.Insert(9, Boton("Eliminar", Color.Red));
-            tabla.Columns[8].Visible = permisoModificar; 
-            tabla.Columns[9].Visible = permisoBorrar; 
+            tabla.Columns.Insert(8, Boton("Modificar", color));
+            tabla.Columns.Insert(9, Boton("Eliminar", color));
+            tabla.Columns[8].Visible = permisoModificar;
+            tabla.Columns[9].Visible = permisoBorrar;
+            md.EstilizarData(tabla); 
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
         }
 
 
+        
         //METODO PARA VALIDAR CAMPOS DE REGISTRO
         public void ValidarCampos(TextBox txtNombre, TextBox txtApPa, TextBox txtApMa, TextBox txtTelefono, TextBox txtCorreo, TextBox txtPlazo ) 
         {
@@ -127,12 +131,13 @@ namespace Manejadores
         //METODO PARA CREAR BOTONES EN DATAGRIDVIEW EN TIEMPO DE EJECUCION
         public static DataGridViewButtonColumn Boton(string titulo, Color fondo)
         {
+            var color = ColorTranslator.FromHtml("#EDE7D5");
             DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             btn.Text = titulo;
             btn.UseColumnTextForButtonValue = true;
             btn.FlatStyle = FlatStyle.Popup;
             btn.DefaultCellStyle.BackColor = fondo;
-            btn.DefaultCellStyle.ForeColor = Color.White;
+            btn.DefaultCellStyle.ForeColor = color;
             return btn;
         }
     }

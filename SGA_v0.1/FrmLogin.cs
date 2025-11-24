@@ -15,23 +15,23 @@ namespace SGA_v0._1
     public partial class FrmLogin : Form
     {
         ManejadorLogin ml;
+        ManejadorDiseño md;
         int intentosFallidos = 0;
         bool mostrarContrasena = false;
         
-
-
+        // CONSTRUCTOR PARA INICIALIZAR FUNCIONES 
         public FrmLogin()
         {
             InitializeComponent();
             ml = new ManejadorLogin();
-            ml.EstiloPanelTexto(pLogin, lblLogin);
-            ml.EstilosBoton(btnIngresar);
-            ml.EstilizarTextBox(txtContrasena);
-            ml.EstilizarTextBox(txtUsuario);
-            ml.QuitarBordesBotones(btnMostrar);
-            ml.QuitarBordesBotones(btnVer);
-            ml.QuitarBordesBotones(btnCerrar);
-            
+            md = new ManejadorDiseño();
+            md.EstiloPanelTexto(pLogin, lblLogin, ColorTranslator.FromHtml("#B7CC18"));
+            md.EstilosBoton(btnIngresar);
+            md.EstilizarTextBoxLogin(txtContrasena);
+            md.EstilizarTextBoxLogin(txtUsuario);
+            md.QuitarBordesBotones(btnMostrar);
+            md.QuitarBordesBotones(btnVer);
+            md.QuitarBordesBotones(btnCerrar);
             this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
         }
 
@@ -52,8 +52,8 @@ namespace SGA_v0._1
                 FrmUsuarioSesion.Rol = rs.RolPerteneciente;
 
                 FrmInicio frmInicio = new FrmInicio(rs.UsuarioEncontrado,rs.RolPerteneciente);
-                frmInicio.ShowDialog();
-                this.Close();
+                frmInicio.Show();
+                this.Hide();
             }
             else 
             {
@@ -80,6 +80,7 @@ namespace SGA_v0._1
                     MessageBox.Show(rs.Mensaje, "¡ERROR DE AUTENTICACIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     ml.LimipiarCajas(txtUsuario, txtContrasena);
                 }
+                
             }
         }
 
@@ -113,7 +114,7 @@ namespace SGA_v0._1
         private void btnIngresar_MouseLeave(object sender, EventArgs e)
         {
             btnIngresar.BackColor = ColorTranslator.FromHtml("#545454");
-           ml.QuitarBordesBotones(btnIngresar);
+            md.QuitarBordesBotones(btnIngresar);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -142,8 +143,7 @@ namespace SGA_v0._1
 
         private void btnCerrar_MouseLeave(object sender, EventArgs e)
         {
-            btnCerrar.BackColor = ColorTranslator.FromHtml("#B7CC18");
-            
+            btnCerrar.BackColor = ColorTranslator.FromHtml("#B7CC18");   
         }
     }
 }

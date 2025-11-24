@@ -1,5 +1,7 @@
-﻿using Manejadores;
+﻿using Entidades;
+using Manejadores;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 
@@ -14,12 +16,19 @@ namespace SGA_v0._1
         int columna = 0;
         string tipoReporteActual = "";
         bool permisoEliminar = false, permisoCrear = false;
+        ManejadorDiseño md;
 
         //CONSTRUCTOR PARA INICIALIZAR EL FORMULARIO Y EL OBJETO DE ManejadorReportes
         public FrmReportes()
         {
             InitializeComponent();
             mr = new ManejadorReportes();     
+            md = new ManejadorDiseño();
+            md.EstiloPanelTexto(pNombre, lblNombre, ColorTranslator.FromHtml("#8CBFAF"));
+            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            md.AgregarBordeFormulario(this);
+            md.EstilosBoton(btnGenerarExcel);
+            md.EstilosBoton(btnAgregar);
         }
 
 
@@ -98,9 +107,37 @@ namespace SGA_v0._1
             columna = e.ColumnIndex;
         }
 
+        private void lblNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregar_MouseEnter(object sender, EventArgs e)
+        {
+            btnAgregar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void btnAgregar_MouseLeave(object sender, EventArgs e)
+        {
+            btnAgregar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnAgregar);
+        }
+
+        private void btnGenerarExcel_MouseEnter(object sender, EventArgs e)
+        {
+            btnGenerarExcel.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void btnGenerarExcel_MouseLeave(object sender, EventArgs e)
+        {
+            btnGenerarExcel.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnGenerarExcel);
+        }
+
         // EVENTO PARA OBTENER LOS PERMISOS Y HABILITAR / DESHABILITAR BOTONES
         private void FrmReportes_Load(object sender, EventArgs e)
         {
+            
             btnAgregar.Enabled = false;
             btnGenerarExcel.Enabled = false;
             foreach(var permiso in FrmInicio._rolPermisosActivo.permisos)

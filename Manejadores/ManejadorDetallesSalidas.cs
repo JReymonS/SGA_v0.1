@@ -9,6 +9,7 @@ namespace Manejadores
     public class ManejadorDetallesSalidas
     {
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen");
+        ManejadorDiseño md = new ManejadorDiseño();
         public DataTable dtTempSalida { get; private set; }
 
 
@@ -21,8 +22,7 @@ namespace Manejadores
             dtTempSalida.Columns.Add("Nombre");
             dtTempSalida.Columns.Add("Descripcion");
             dtTempSalida.Columns.Add("Cantidad");
-            dtTempSalida.Columns.Add("Costo");
-            
+            dtTempSalida.Columns.Add("Costo");  
         }
 
 
@@ -42,12 +42,13 @@ namespace Manejadores
         //METODO QUE PERMITE MOSTRAR LOS PRODUCTOS EN EL DATAGRIDVIEW 
         public void MostrarProductos(string consulta, DataGridView tabla, string datos)
         {
+            
+            var color = ColorTranslator.FromHtml("#545454");
             tabla.Columns.Clear();
-            
             tabla.DataSource = b.Consulta(consulta, datos).Tables[datos];
-            
             tabla.Columns["id_producto"].Visible = false;
-            tabla.Columns.Insert(0,Boton("Seleccionar", Color.Orange));
+            tabla.Columns.Insert(0, Boton("Seleccionar", color));
+        
         }
 
 
@@ -70,6 +71,7 @@ namespace Manejadores
                 btn.HeaderText = "";
                 tabla.Columns.Insert(0, btn);
             }
+            md.EstilizarData(tabla);
         }
 
 

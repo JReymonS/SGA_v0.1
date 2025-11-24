@@ -11,6 +11,7 @@ namespace Manejadores
     {
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen", 3310);
         public bool valido = true; // VARIABLE PARA VALIDAR CAMPOS
+        
   
 
         //METODO PARA OBTENER LOS PRODUCTOS POR ID
@@ -96,6 +97,7 @@ namespace Manejadores
         //METODO PARA MOSTRAR PRODUCTOS DISPONIBLES
         public void MostrarProductos(DateTime fecha, int idProveedor, DataGridView tabla)
         {
+            var color = ColorTranslator.FromHtml("#545454");
             try
             {
                 string query = $@"
@@ -109,9 +111,9 @@ namespace Manejadores
                     tabla.Columns["id_producto"].Visible = false;
 
                 if (!tabla.Columns.Contains("Seleccionar"))
-                    tabla.Columns.Add(Boton("Seleccionar", Color.DarkGreen));
+                    tabla.Columns.Add(Boton("Seleccionar", color));
 
-                
+               
                 tabla.AutoResizeColumns();
                 tabla.AutoResizeRows();
 

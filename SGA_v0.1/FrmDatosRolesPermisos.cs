@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Entidades;
+using Manejadores;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Entidades;
-using Manejadores;
 
 namespace SGA_v0._1
 { 
@@ -12,6 +13,7 @@ namespace SGA_v0._1
     {
         ManejadorRoles mr;
         ManejadorPermisos mp;
+        ManejadorDiseño md;
         List<Permisos> ListaPermisos;
         List<Permisos> ListaPermisosEliminados;
         int idLocalRol;
@@ -24,11 +26,22 @@ namespace SGA_v0._1
             InitializeComponent();
             mr = new ManejadorRoles();
             mp = new ManejadorPermisos();
+            md = new ManejadorDiseño();
             ListaPermisos = new List<Permisos>();
             ListaPermisosEliminados = new List<Permisos>();
             mr.LLenarModulos(cmbModulo);
+            md.EstiloPanelTexto(pNombre, lblNombre, ColorTranslator.FromHtml("#8CBFAF"));
+            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            md.AgregarBordeFormulario(this);
+            md.EstilizarComboBox(cmbModulo);
+            md.EstilizarComboBox(cmbIdentificador);
+            md.EstilizarTextBox(txtNombre);
+            md.QuitarBordesBotones(btnAgregarPermiso);
+            md.QuitarBordesBotones(btnEliminarPermiso);
+            md.EstilosBoton(btnGuardar);
+            md.EstilosBoton(btnCancelar);
 
-            if(FrmRolesPermisos.rol.id_rol>0)
+            if (FrmRolesPermisos.rol.id_rol>0)
             {
                 txtNombre.Text = FrmRolesPermisos.rol.nombre;
                 cmbIdentificador.Text = FrmRolesPermisos.rol.identificador;
@@ -172,6 +185,58 @@ namespace SGA_v0._1
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnGuardar_MouseEnter(object sender, EventArgs e)
+        {
+            btnGuardar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void btnGuardar_MouseLeave(object sender, EventArgs e)
+        {
+            btnGuardar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnGuardar);
+        }
+
+        private void btnCancelar_MouseEnter(object sender, EventArgs e)
+        {
+            btnCancelar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void btnCancelar_MouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_MouseLeave(object sender, EventArgs e)
+        {
+            btnCancelar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(btnCancelar);
+        }
+
+        private void FrmDatosRolesPermisos_Load(object sender, EventArgs e)
+        {
+            md.EstilizarData(dtgDatosPermisos);
+        }
+
+        private void btnAgregarPermiso_MouseEnter(object sender, EventArgs e)
+        {
+            btnAgregarPermiso.BackColor = ColorTranslator.FromHtml("#8CBFAF");
+        }
+
+        private void btnAgregarPermiso_MouseLeave(object sender, EventArgs e)
+        {
+            btnAgregarPermiso.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+        }
+
+        private void btnEliminarPermiso_MouseEnter(object sender, EventArgs e)
+        {
+            btnEliminarPermiso.BackColor = ColorTranslator.FromHtml("#8CBFAF");
+        }
+
+        private void btnEliminarPermiso_MouseLeave(object sender, EventArgs e)
+        {
+            btnEliminarPermiso.BackColor = ColorTranslator.FromHtml("#EDE7D5");
         }
     }
 }

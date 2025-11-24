@@ -1,13 +1,15 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using Entidades;
 using Manejadores;
-using Entidades;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace SGA_v0._1
 {
     public partial class FrmCategoria : Form
     {
         ManejadorCategorias mc;
+        ManejadorDiseño md;
         int fila = 0, columna = 0;
         public static Categorias categoria = new Categorias(0, "", "");
 
@@ -19,6 +21,13 @@ namespace SGA_v0._1
         {
             InitializeComponent();
             mc = new ManejadorCategorias();
+            md = new ManejadorDiseño();
+            md.AgregarBordeFormulario(this);
+            md.EstiloPanelTexto(pCategorias, lblCategorias, ColorTranslator.FromHtml("#8CBFAF"));
+            md.EstilosBoton(BtnAgregar);
+            md.EstilosBoton(BtnBuscar);
+            md.EstilizarTextBox(TxtBuscar);
+            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
         }
 
 
@@ -109,10 +118,6 @@ namespace SGA_v0._1
         }
 
 
-        //EVENTO CLICK PARA SALIR DEL FORMULARIO
-        private void BtnSalir_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        
     }
 }

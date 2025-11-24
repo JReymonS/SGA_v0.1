@@ -36,8 +36,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMostrar = new System.Windows.Forms.Button();
             this.pLogin = new System.Windows.Forms.Panel();
-            this.lblLogin = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.lblLogin = new System.Windows.Forms.Label();
             this.btnVer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pLogin.SuspendLayout();
@@ -69,7 +69,7 @@
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(262, 175);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Multiline = true;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(256, 29);
@@ -79,7 +79,7 @@
             // 
             this.txtContrasena.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrasena.Location = new System.Drawing.Point(262, 307);
-            this.txtContrasena.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContrasena.Margin = new System.Windows.Forms.Padding(4);
             this.txtContrasena.Multiline = true;
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.PasswordChar = '*';
@@ -91,7 +91,7 @@
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.Location = new System.Drawing.Point(308, 405);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(159, 57);
             this.btnIngresar.TabIndex = 4;
@@ -106,7 +106,7 @@
             this.pictureBox1.BackgroundImage = global::SGA_v0._1.Properties.Resources.Perfil;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Location = new System.Drawing.Point(19, 150);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(191, 164);
             this.pictureBox1.TabIndex = 5;
@@ -117,7 +117,7 @@
             this.btnMostrar.BackgroundImage = global::SGA_v0._1.Properties.Resources.No_Mostrar;
             this.btnMostrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMostrar.Location = new System.Drawing.Point(687, 306);
-            this.btnMostrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMostrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(62, 45);
             this.btnMostrar.TabIndex = 6;
@@ -134,6 +134,20 @@
             this.pLogin.Size = new System.Drawing.Size(798, 97);
             this.pLogin.TabIndex = 7;
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackgroundImage = global::SGA_v0._1.Properties.Resources.Cerrar;
+            this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCerrar.Location = new System.Drawing.Point(711, 30);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(52, 50);
+            this.btnCerrar.TabIndex = 8;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.btnCerrar.MouseEnter += new System.EventHandler(this.btnCerrar_MouseEnter);
+            this.btnCerrar.MouseLeave += new System.EventHandler(this.btnCerrar_MouseLeave);
+            // 
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
@@ -146,20 +160,6 @@
             this.lblLogin.TabIndex = 8;
             this.lblLogin.Text = "LOGIN";
             this.lblLogin.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackgroundImage = global::SGA_v0._1.Properties.Resources.Cerrar;
-            this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCerrar.Location = new System.Drawing.Point(711, 26);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(52, 45);
-            this.btnCerrar.TabIndex = 8;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            this.btnCerrar.MouseEnter += new System.EventHandler(this.btnCerrar_MouseEnter);
-            this.btnCerrar.MouseLeave += new System.EventHandler(this.btnCerrar_MouseLeave);
             // 
             // btnVer
             // 
@@ -188,7 +188,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";

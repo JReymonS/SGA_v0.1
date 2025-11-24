@@ -13,6 +13,7 @@ namespace SGA_v0._1
     {
         ManejadorEntradas me = new ManejadorEntradas();
         ManejadorDetalleEntradas mde = new ManejadorDetalleEntradas();
+        ManejadorDiseño md;
 
         List<DetalleEntradas> listaTemporal = new List<DetalleEntradas>();
         int idProductoSeleccionado = 0;
@@ -29,6 +30,21 @@ namespace SGA_v0._1
             InitializeComponent();
             CargarProveedores();
             ConfigurarDataGridView();
+            md = new ManejadorDiseño();
+            md.EstiloPanelTexto(pRegistro, lblNombre, ColorTranslator.FromHtml("#8CBFAF"));
+            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            md.AgregarBordeFormulario(this);
+            md.EstilizarComboBox(CbProveedor);
+            md.EstilizarTextBox(TxtCantidad);
+            md.EstilizarTextBox(TxtCosto);
+            md.EstilizarTextBox(TxtProducto);
+            md.EstilizarDTP(DtpFecha);
+            md.EstilosBoton(BtnAgregar);
+            md.EstilosBoton(BtnCancelar);
+            md.EstilosBoton(BtnConfirmar);
+            md.EstilosBoton(BtnGuardar);
+            md.EstilosBoton(BtnMostrar);
+            
 
             if (FrmEntradasDatos.detalleEntrada.id_detalleEntrada != 0)
             {
@@ -59,6 +75,9 @@ namespace SGA_v0._1
         //METODO PARA CONFIGURAR EL DATAGRIDVIEW
         private void ConfigurarDataGridView()
         {
+
+            var color = ColorTranslator.FromHtml("#545454");
+            var color2 = ColorTranslator.FromHtml("#EDE7D5");
             // Configurar columnas iniciales
             DtgListaR.Columns.Clear();
             DtgListaR.Columns.Add("id_producto", "ID");
@@ -79,12 +98,14 @@ namespace SGA_v0._1
                 btnEliminar.Text = "Eliminar";
                 btnEliminar.UseColumnTextForButtonValue = true;
                 btnEliminar.FlatStyle = FlatStyle.Popup;
-                btnEliminar.DefaultCellStyle.BackColor = Color.Orange;
-                btnEliminar.DefaultCellStyle.ForeColor = Color.White;
+                btnEliminar.DefaultCellStyle.BackColor = color;
+                btnEliminar.DefaultCellStyle.ForeColor = color2;
                 DtgListaR.Columns.Add(btnEliminar);
+              
             }
 
             DtgListaR.ReadOnly = false;
+            
         }
 
 
@@ -157,7 +178,9 @@ namespace SGA_v0._1
                 if (DtgLista.Columns.Contains("Seleccionar"))
                     DtgLista.Columns["Seleccionar"].Visible = false;
 
+                
                 DtgListaR.AutoResizeColumns();
+                md.EstilizarData(DtgListaR);
 
                 idProductoActual = detalle.fkid_producto;
             }
@@ -184,6 +207,8 @@ namespace SGA_v0._1
         //EVENTO CLICK PARA MOSTRAR LOS PRODUCTOS
         private void BtnMostrar_Click(object sender, EventArgs e)
         {
+            md.EstilizarData(DtgLista);
+            md.EstilizarData(DtgListaR);
             idProveedorSeleccionado = Convert.ToInt32(CbProveedor.SelectedValue);
             me.MostrarProductos(DtpFecha.Value, idProveedorSeleccionado, DtgLista);
         }
@@ -430,7 +455,8 @@ namespace SGA_v0._1
 
         private void FrmEntradas_Load(object sender, EventArgs e)
         {
-           
+            md.EstilizarData(DtgLista);
+            md.EstilizarData(DtgListaR);
         }
 
 
@@ -438,6 +464,66 @@ namespace SGA_v0._1
         private void FrmEntradas_FormClosed(object sender, FormClosedEventArgs e)
         {
             FrmEntradasDatos.detalleEntrada = new DetalleEntradas(0, 0.0, 0, 0, 0);
+        }
+
+        private void lblNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnMostrar_MouseLeave(object sender, EventArgs e)
+        {
+            BtnMostrar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(BtnMostrar);
+        }
+
+        private void BtnMostrar_MouseEnter(object sender, EventArgs e)
+        {
+            BtnMostrar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void BtnAgregar_MouseEnter(object sender, EventArgs e)
+        {
+            BtnAgregar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void BtnAgregar_MouseLeave(object sender, EventArgs e)
+        {
+            BtnAgregar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(BtnAgregar);
+        }
+
+        private void BtnConfirmar_MouseEnter(object sender, EventArgs e)
+        {
+            BtnConfirmar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void BtnConfirmar_MouseLeave(object sender, EventArgs e)
+        {
+            BtnConfirmar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(BtnConfirmar);
+        }
+
+        private void BtnGuardar_MouseEnter(object sender, EventArgs e)
+        {
+            BtnGuardar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void BtnGuardar_MouseLeave(object sender, EventArgs e)
+        {
+            BtnGuardar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(BtnGuardar);
+        }
+
+        private void BtnCancelar_MouseEnter(object sender, EventArgs e)
+        {
+            BtnCancelar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+        }
+
+        private void BtnCancelar_MouseLeave(object sender, EventArgs e)
+        {
+            BtnCancelar.BackColor = ColorTranslator.FromHtml("#545454");
+            md.QuitarBordesBotones(BtnCancelar);
         }
     }
 }

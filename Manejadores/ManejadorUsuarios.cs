@@ -8,6 +8,7 @@ namespace Manejadores
     public class ManejadorUsuarios
     {
         Base b = new Base("localhost", "root", "2025", "SistemaGestionAlmacen");
+        ManejadorDiseño md = new ManejadorDiseño();
         public bool valido = true;
 
 
@@ -55,6 +56,7 @@ namespace Manejadores
             tabla.Columns.Insert(9, Boton("ELIMINAR", Color.Red));
             tabla.Columns[8].Visible = permisoModificar;
             tabla.Columns[9].Visible = permisoBorrar;
+            md.EstilizarData(tabla);
             tabla.AutoResizeColumns();
             tabla.AutoResizeRows();
         }
