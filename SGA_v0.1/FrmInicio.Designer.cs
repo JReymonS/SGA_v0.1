@@ -86,6 +86,7 @@
             this.tsbInicio.Name = "tsbInicio";
             this.tsbInicio.Size = new System.Drawing.Size(85, 60);
             this.tsbInicio.Text = "INICIO";
+            this.tsbInicio.Click += new System.EventHandler(this.tsbInicio_Click);
             // 
             // tsbProveedores
             // 
@@ -268,10 +269,10 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(88, -6);
+            this.pictureBox1.Location = new System.Drawing.Point(88, -16);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(254, 104);
+            this.pictureBox1.Size = new System.Drawing.Size(250, 122);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
@@ -284,10 +285,11 @@
             this.Controls.Add(this.pSuperior);
             this.ForeColor = System.Drawing.SystemColors.Desktop;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "FrmInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "  ";
+            this.Text = "INICIO";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmInicio_Load);
             this.tsPrincipal.ResumeLayout(false);

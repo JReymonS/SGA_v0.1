@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDatosUsuario));
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,7 +56,7 @@
             this.label2.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(23, 128);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 34);
+            this.label2.Size = new System.Drawing.Size(81, 27);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre";
             // 
@@ -64,7 +65,7 @@
             this.txtNombre.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(150, 128);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(492, 33);
+            this.txtNombre.Size = new System.Drawing.Size(492, 28);
             this.txtNombre.TabIndex = 2;
             // 
             // label3
@@ -73,7 +74,7 @@
             this.label3.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(718, 131);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 34);
+            this.label3.Size = new System.Drawing.Size(76, 27);
             this.label3.TabIndex = 3;
             this.label3.Text = "Estatus";
             // 
@@ -87,7 +88,7 @@
             "Inactivo"});
             this.cmbEstatus.Location = new System.Drawing.Point(837, 128);
             this.cmbEstatus.Name = "cmbEstatus";
-            this.cmbEstatus.Size = new System.Drawing.Size(324, 37);
+            this.cmbEstatus.Size = new System.Drawing.Size(324, 32);
             this.cmbEstatus.TabIndex = 4;
             // 
             // label4
@@ -96,7 +97,7 @@
             this.label4.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(18, 230);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(184, 34);
+            this.label4.Size = new System.Drawing.Size(154, 27);
             this.label4.TabIndex = 5;
             this.label4.Text = "Apellido Paterno";
             // 
@@ -105,7 +106,7 @@
             this.txtApellidoPaterno.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidoPaterno.Location = new System.Drawing.Point(230, 230);
             this.txtApellidoPaterno.Name = "txtApellidoPaterno";
-            this.txtApellidoPaterno.Size = new System.Drawing.Size(293, 33);
+            this.txtApellidoPaterno.Size = new System.Drawing.Size(293, 28);
             this.txtApellidoPaterno.TabIndex = 6;
             // 
             // label5
@@ -114,7 +115,7 @@
             this.label5.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(615, 230);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(192, 34);
+            this.label5.Size = new System.Drawing.Size(160, 27);
             this.label5.TabIndex = 7;
             this.label5.Text = "Apellido Materno";
             // 
@@ -123,7 +124,7 @@
             this.txtApellidoMaterno.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidoMaterno.Location = new System.Drawing.Point(837, 230);
             this.txtApellidoMaterno.Name = "txtApellidoMaterno";
-            this.txtApellidoMaterno.Size = new System.Drawing.Size(293, 33);
+            this.txtApellidoMaterno.Size = new System.Drawing.Size(293, 28);
             this.txtApellidoMaterno.TabIndex = 8;
             // 
             // label6
@@ -132,7 +133,7 @@
             this.label6.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(23, 339);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 34);
+            this.label6.Size = new System.Drawing.Size(59, 27);
             this.label6.TabIndex = 9;
             this.label6.Text = "Clave";
             // 
@@ -141,7 +142,7 @@
             this.txtClave.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtClave.Location = new System.Drawing.Point(150, 344);
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(492, 33);
+            this.txtClave.Size = new System.Drawing.Size(492, 28);
             this.txtClave.TabIndex = 10;
             // 
             // label7
@@ -150,7 +151,7 @@
             this.label7.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(887, 340);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 34);
+            this.label7.Size = new System.Drawing.Size(39, 27);
             this.label7.TabIndex = 11;
             this.label7.Text = "Rol";
             // 
@@ -161,7 +162,7 @@
             this.cmbRol.FormattingEnabled = true;
             this.cmbRol.Location = new System.Drawing.Point(990, 340);
             this.cmbRol.Name = "cmbRol";
-            this.cmbRol.Size = new System.Drawing.Size(171, 37);
+            this.cmbRol.Size = new System.Drawing.Size(171, 32);
             this.cmbRol.TabIndex = 12;
             // 
             // btnGuardar
@@ -215,13 +216,13 @@
             this.lblNombre.Location = new System.Drawing.Point(387, -3);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(140, 64);
+            this.lblNombre.Size = new System.Drawing.Size(112, 51);
             this.lblNombre.TabIndex = 23;
             this.lblNombre.Text = "USUARIOS";
             // 
             // FrmDatosUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1185, 573);
             this.Controls.Add(this.pictureBox1);
@@ -242,10 +243,11 @@
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmDatosUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmDatosUsuario";
+            this.Text = "USUARIOS";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pNombre.ResumeLayout(false);
             this.pNombre.PerformLayout();

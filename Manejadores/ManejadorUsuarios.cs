@@ -1,6 +1,7 @@
 ﻿using AccesoDatos;
 using Entidades;
 using System.Drawing;
+using System.Web;
 using System.Windows.Forms;
 
 namespace Manejadores
@@ -15,20 +16,43 @@ namespace Manejadores
         //METODO PARA GUARDAR USUARIOS
         public void Guardar(Usuarios usuario) 
         {
-            b.Comando($"CALL p_InsertarUsuario('{usuario.nombre}','{usuario.apellido_paterno}','{usuario.apellido_materno}','{ManejadorLogin.Sha1(usuario.clave)}','{usuario.status}',{usuario.fkid_rol})");
+            valido = true;
+            var rs = b.Consulta($"CALL p_InsertarUsuario('{usuario.nombre}','{usuario.apellido_paterno}','{usuario.apellido_materno}','{ManejadorLogin.Sha1(usuario.clave)}','{usuario.status}',{usuario.fkid_rol})","msg");
+            string mensaje = rs.Tables["msg"].Rows[0]["msg"].ToString();
+
+            if(!mensaje.Equals("Ok")) 
+            {
+                valido = false;
+                MessageBox.Show(mensaje, "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
         //METODO PARA MODIFICAR USUARIOS
         public void Modificar(Usuarios usuario, bool estado) 
         {
+            valido = true;
             if (estado)
             {
-                b.Comando($"CALL p_ModificarUsuario({usuario.id_usuario},'{usuario.nombre}','{usuario.apellido_paterno}','{usuario.apellido_materno}','{ManejadorLogin.Sha1(usuario.clave)}','{usuario.status}',{usuario.fkid_rol},1)");
+                var rs = b.Consulta($"CALL p_ModificarUsuario({usuario.id_usuario},'{usuario.nombre}','{usuario.apellido_paterno}','{usuario.apellido_materno}','{ManejadorLogin.Sha1(usuario.clave)}','{usuario.status}',{usuario.fkid_rol},1)","msg");
+                string mensaje = rs.Tables["msg"].Rows[0]["msg"].ToString();
+
+                if (!mensaje.Equals("Ok")) 
+                {
+                    valido = false;
+                    MessageBox.Show(mensaje, "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else 
             {
-                b.Comando($"CALL p_ModificarUsuario({usuario.id_usuario},'{usuario.nombre}','{usuario.apellido_paterno}','{usuario.apellido_materno}','{ManejadorLogin.Sha1(usuario.clave)}','{usuario.status}',{usuario.fkid_rol},0)");
+                var rs = b.Consulta($"CALL p_ModificarUsuario({usuario.id_usuario},'{usuario.nombre}','{usuario.apellido_paterno}','{usuario.apellido_materno}','{ManejadorLogin.Sha1(usuario.clave)}','{usuario.status}',{usuario.fkid_rol},0)", "msg");
+                string mensaje = rs.Tables["msg"].Rows[0]["msg"].ToString();
+
+                if(!mensaje.Equals("Ok")) 
+                {
+                    valido = false;
+                    MessageBox.Show(mensaje, "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

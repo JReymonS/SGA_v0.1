@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVerProductos));
             this.label1 = new System.Windows.Forms.Label();
             this.lblProductos = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -45,9 +46,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Livvic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 134);
+            this.label1.Location = new System.Drawing.Point(16, 109);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 41);
+            this.label1.Size = new System.Drawing.Size(94, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
@@ -55,29 +57,30 @@
             // 
             this.lblProductos.AutoSize = true;
             this.lblProductos.Font = new System.Drawing.Font("Suravaram", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductos.Location = new System.Drawing.Point(352, -3);
+            this.lblProductos.Location = new System.Drawing.Point(264, -2);
+            this.lblProductos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProductos.Name = "lblProductos";
-            this.lblProductos.Size = new System.Drawing.Size(178, 71);
+            this.lblProductos.Size = new System.Drawing.Size(145, 58);
             this.lblProductos.TabIndex = 1;
             this.lblProductos.Text = "PRODUCTOS";
             // 
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(147, 129);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNombre.Location = new System.Drawing.Point(110, 105);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(734, 28);
+            this.txtNombre.Size = new System.Drawing.Size(552, 24);
             this.txtNombre.TabIndex = 2;
             // 
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(938, 129);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscar.Location = new System.Drawing.Point(704, 105);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(131, 54);
+            this.btnBuscar.Size = new System.Drawing.Size(98, 44);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -88,10 +91,10 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Livvic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(1093, 129);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAgregar.Location = new System.Drawing.Point(820, 105);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(53, 54);
+            this.btnAgregar.Size = new System.Drawing.Size(40, 44);
             this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "+";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -104,13 +107,13 @@
             this.dtgDatos.AllowUserToAddRows = false;
             this.dtgDatos.AllowUserToResizeColumns = false;
             this.dtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgDatos.Location = new System.Drawing.Point(38, 218);
-            this.dtgDatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgDatos.Location = new System.Drawing.Point(28, 177);
+            this.dtgDatos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtgDatos.Name = "dtgDatos";
             this.dtgDatos.ReadOnly = true;
             this.dtgDatos.RowHeadersWidth = 51;
             this.dtgDatos.RowTemplate.Height = 24;
-            this.dtgDatos.Size = new System.Drawing.Size(1108, 483);
+            this.dtgDatos.Size = new System.Drawing.Size(831, 392);
             this.dtgDatos.TabIndex = 35;
             this.dtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellClick);
             this.dtgDatos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellEnter);
@@ -118,26 +121,28 @@
             // pNombre
             // 
             this.pNombre.Controls.Add(this.lblProductos);
-            this.pNombre.Location = new System.Drawing.Point(147, 12);
+            this.pNombre.Location = new System.Drawing.Point(110, 10);
+            this.pNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pNombre.Name = "pNombre";
-            this.pNombre.Size = new System.Drawing.Size(999, 81);
+            this.pNombre.Size = new System.Drawing.Size(749, 66);
             this.pNombre.TabIndex = 36;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::SGA_v0._1.Properties.Resources.Producto;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(38, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(28, 10);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(81, 81);
+            this.pictureBox1.Size = new System.Drawing.Size(61, 66);
             this.pictureBox1.TabIndex = 37;
             this.pictureBox1.TabStop = false;
             // 
             // FrmVerProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1183, 753);
+            this.ClientSize = new System.Drawing.Size(887, 612);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pNombre);
             this.Controls.Add(this.dtgDatos);
@@ -146,10 +151,11 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmVerProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmVerProductos";
+            this.Text = "PRODUCTOS";
             this.Load += new System.EventHandler(this.FrmVerProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).EndInit();
             this.pNombre.ResumeLayout(false);

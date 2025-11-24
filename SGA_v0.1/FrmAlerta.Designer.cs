@@ -42,10 +42,10 @@
             // BtnOk
             // 
             this.BtnOk.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnOk.Location = new System.Drawing.Point(671, 176);
-            this.BtnOk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnOk.Location = new System.Drawing.Point(503, 143);
+            this.BtnOk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtnOk.Name = "BtnOk";
-            this.BtnOk.Size = new System.Drawing.Size(122, 53);
+            this.BtnOk.Size = new System.Drawing.Size(92, 43);
             this.BtnOk.TabIndex = 1;
             this.BtnOk.Text = "Aceptar";
             this.BtnOk.UseVisualStyleBackColor = true;
@@ -55,10 +55,10 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(9, 10);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(69, 63);
+            this.pictureBox1.Size = new System.Drawing.Size(52, 51);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -67,9 +67,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 105);
+            this.label1.Location = new System.Drawing.Point(23, 85);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(224, 29);
+            this.label1.Size = new System.Drawing.Size(178, 24);
             this.label1.TabIndex = 3;
             this.label1.Text = "Stock de producto bajo:";
             // 
@@ -77,9 +78,10 @@
             // 
             this.LbProducto.AutoSize = true;
             this.LbProducto.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbProducto.Location = new System.Drawing.Point(319, 105);
+            this.LbProducto.Location = new System.Drawing.Point(239, 85);
+            this.LbProducto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LbProducto.Name = "LbProducto";
-            this.LbProducto.Size = new System.Drawing.Size(70, 29);
+            this.LbProducto.Size = new System.Drawing.Size(55, 24);
             this.LbProducto.TabIndex = 4;
             this.LbProducto.Text = "label2";
             // 
@@ -87,35 +89,38 @@
             // 
             this.lblAlerta.AutoSize = true;
             this.lblAlerta.Font = new System.Drawing.Font("Suravaram", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlerta.Location = new System.Drawing.Point(21, -21);
+            this.lblAlerta.Location = new System.Drawing.Point(16, -17);
+            this.lblAlerta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAlerta.Name = "lblAlerta";
-            this.lblAlerta.Size = new System.Drawing.Size(189, 64);
+            this.lblAlerta.Size = new System.Drawing.Size(151, 51);
             this.lblAlerta.TabIndex = 5;
             this.lblAlerta.Text = "Alerta de Stock";
             // 
             // pNombre
             // 
             this.pNombre.Controls.Add(this.lblAlerta);
-            this.pNombre.Location = new System.Drawing.Point(114, 21);
+            this.pNombre.Location = new System.Drawing.Point(86, 17);
+            this.pNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pNombre.Name = "pNombre";
-            this.pNombre.Size = new System.Drawing.Size(679, 54);
+            this.pNombre.Size = new System.Drawing.Size(509, 44);
             this.pNombre.TabIndex = 6;
             // 
             // FrmAlerta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(830, 252);
+            this.ClientSize = new System.Drawing.Size(622, 205);
             this.Controls.Add(this.pNombre);
             this.Controls.Add(this.LbProducto);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BtnOk);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmAlerta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmAlerta";
+            this.Text = "NOTIFICACIONES";
             this.Load += new System.EventHandler(this.FrmAlerta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pNombre.ResumeLayout(false);

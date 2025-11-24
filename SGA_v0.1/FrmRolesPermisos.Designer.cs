@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRolesPermisos));
             this.label2 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -47,7 +48,7 @@
             this.label2.Font = new System.Drawing.Font("Livvic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(35, 136);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 41);
+            this.label2.Size = new System.Drawing.Size(94, 32);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre";
             // 
@@ -125,13 +126,13 @@
             this.lblNombre.Location = new System.Drawing.Point(306, -3);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(241, 64);
+            this.lblNombre.Size = new System.Drawing.Size(191, 51);
             this.lblNombre.TabIndex = 23;
             this.lblNombre.Text = "ROLES Y PERMISOS";
             // 
             // FrmRolesPermisos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 753);
             this.Controls.Add(this.pictureBox1);
@@ -143,10 +144,11 @@
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmRolesPermisos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmRolesPermisos";
+            this.Text = "ROLES Y PERMISOS";
             this.Load += new System.EventHandler(this.FrmRolesPermisos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

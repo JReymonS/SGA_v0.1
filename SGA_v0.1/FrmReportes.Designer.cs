@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReportes));
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnGenerarExcel = new System.Windows.Forms.Button();
             this.dtgDatos = new System.Windows.Forms.DataGridView();
@@ -43,7 +44,7 @@
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.Location = new System.Drawing.Point(652, 115);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(56, 44);
             this.btnAgregar.TabIndex = 1;
@@ -57,7 +58,7 @@
             // 
             this.btnGenerarExcel.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarExcel.Location = new System.Drawing.Point(744, 115);
-            this.btnGenerarExcel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGenerarExcel.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenerarExcel.Name = "btnGenerarExcel";
             this.btnGenerarExcel.Size = new System.Drawing.Size(100, 44);
             this.btnGenerarExcel.TabIndex = 2;
@@ -73,7 +74,7 @@
             this.dtgDatos.AllowUserToResizeColumns = false;
             this.dtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDatos.Location = new System.Drawing.Point(28, 177);
-            this.dtgDatos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgDatos.Margin = new System.Windows.Forms.Padding(2);
             this.dtgDatos.Name = "dtgDatos";
             this.dtgDatos.ReadOnly = true;
             this.dtgDatos.RowHeadersWidth = 51;
@@ -99,7 +100,7 @@
             this.pictureBox1.BackgroundImage = global::SGA_v0._1.Properties.Resources.Reporte;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(28, 26);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(56, 66);
             this.pictureBox1.TabIndex = 29;
@@ -109,7 +110,7 @@
             // 
             this.pNombre.Controls.Add(this.lblNombre);
             this.pNombre.Location = new System.Drawing.Point(103, 26);
-            this.pNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pNombre.Margin = new System.Windows.Forms.Padding(2);
             this.pNombre.Name = "pNombre";
             this.pNombre.Size = new System.Drawing.Size(757, 66);
             this.pNombre.TabIndex = 28;
@@ -125,10 +126,11 @@
             this.Controls.Add(this.btnGenerarExcel);
             this.Controls.Add(this.btnAgregar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmReportes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmReportes";
+            this.Text = "REPORTES";
             this.Load += new System.EventHandler(this.FrmReportes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

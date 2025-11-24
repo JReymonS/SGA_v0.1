@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarProductos));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -145,7 +146,7 @@
             // 
             this.txtNombre.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(146, 131);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(362, 28);
@@ -155,7 +156,7 @@
             // 
             this.txtCosto.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCosto.Location = new System.Drawing.Point(710, 132);
-            this.txtCosto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCosto.Margin = new System.Windows.Forms.Padding(2);
             this.txtCosto.Multiline = true;
             this.txtCosto.Name = "txtCosto";
             this.txtCosto.Size = new System.Drawing.Size(76, 28);
@@ -165,7 +166,7 @@
             // 
             this.txtStockMinimo.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStockMinimo.Location = new System.Drawing.Point(434, 388);
-            this.txtStockMinimo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStockMinimo.Margin = new System.Windows.Forms.Padding(2);
             this.txtStockMinimo.Multiline = true;
             this.txtStockMinimo.Name = "txtStockMinimo";
             this.txtStockMinimo.Size = new System.Drawing.Size(76, 28);
@@ -175,7 +176,7 @@
             // 
             this.txtStockActual.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStockActual.Location = new System.Drawing.Point(146, 388);
-            this.txtStockActual.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStockActual.Margin = new System.Windows.Forms.Padding(2);
             this.txtStockActual.Multiline = true;
             this.txtStockActual.Name = "txtStockActual";
             this.txtStockActual.Size = new System.Drawing.Size(76, 28);
@@ -185,7 +186,7 @@
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.Location = new System.Drawing.Point(146, 200);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(362, 123);
@@ -197,7 +198,7 @@
             this.cmbEstatus.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstatus.FormattingEnabled = true;
             this.cmbEstatus.Location = new System.Drawing.Point(710, 208);
-            this.cmbEstatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbEstatus.Margin = new System.Windows.Forms.Padding(2);
             this.cmbEstatus.Name = "cmbEstatus";
             this.cmbEstatus.Size = new System.Drawing.Size(187, 32);
             this.cmbEstatus.TabIndex = 14;
@@ -208,7 +209,7 @@
             this.cmbCategoria.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Location = new System.Drawing.Point(710, 396);
-            this.cmbCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(187, 32);
             this.cmbCategoria.TabIndex = 15;
@@ -219,7 +220,7 @@
             this.cmbUnidad.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbUnidad.FormattingEnabled = true;
             this.cmbUnidad.Location = new System.Drawing.Point(710, 292);
-            this.cmbUnidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbUnidad.Margin = new System.Windows.Forms.Padding(2);
             this.cmbUnidad.Name = "cmbUnidad";
             this.cmbUnidad.Size = new System.Drawing.Size(187, 32);
             this.cmbUnidad.TabIndex = 16;
@@ -228,7 +229,7 @@
             // 
             this.tnGuardar.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tnGuardar.Location = new System.Drawing.Point(603, 482);
-            this.tnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.tnGuardar.Name = "tnGuardar";
             this.tnGuardar.Size = new System.Drawing.Size(130, 48);
             this.tnGuardar.TabIndex = 17;
@@ -242,7 +243,7 @@
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Location = new System.Drawing.Point(766, 482);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(130, 48);
             this.btnCancelar.TabIndex = 18;
@@ -257,7 +258,7 @@
             this.pictureBox1.BackgroundImage = global::SGA_v0._1.Properties.Resources.Producto;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(16, 25);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(61, 66);
             this.pictureBox1.TabIndex = 39;
@@ -278,7 +279,7 @@
             // 
             this.pNombre.Controls.Add(this.lblProductos);
             this.pNombre.Location = new System.Drawing.Point(135, 25);
-            this.pNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pNombre.Margin = new System.Windows.Forms.Padding(2);
             this.pNombre.Name = "pNombre";
             this.pNombre.Size = new System.Drawing.Size(782, 66);
             this.pNombre.TabIndex = 38;
@@ -309,9 +310,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmAgregarProductos";
-            this.Text = "FrmAgregarProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "AGREGAR PRODUCTOS";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pNombre.ResumeLayout(false);
             this.pNombre.PerformLayout();

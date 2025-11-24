@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarSalidaProductos));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -57,7 +58,7 @@
             this.label2.Location = new System.Drawing.Point(703, 275);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 34);
+            this.label2.Size = new System.Drawing.Size(90, 27);
             this.label2.TabIndex = 1;
             this.label2.Text = "Cantidad";
             // 
@@ -68,7 +69,7 @@
             this.label3.Location = new System.Drawing.Point(702, 211);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(248, 34);
+            this.label3.Size = new System.Drawing.Size(206, 27);
             this.label3.TabIndex = 2;
             this.label3.Text = "Producto Seleccionado";
             // 
@@ -79,7 +80,7 @@
             this.label4.Location = new System.Drawing.Point(33, 139);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 34);
+            this.label4.Size = new System.Drawing.Size(62, 27);
             this.label4.TabIndex = 3;
             this.label4.Text = "Fecha";
             // 
@@ -89,7 +90,7 @@
             this.txtCantidad.Location = new System.Drawing.Point(943, 275);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(136, 33);
+            this.txtCantidad.Size = new System.Drawing.Size(136, 28);
             this.txtCantidad.TabIndex = 5;
             // 
             // txtProducto
@@ -99,7 +100,7 @@
             this.txtProducto.Margin = new System.Windows.Forms.Padding(4);
             this.txtProducto.Name = "txtProducto";
             this.txtProducto.ReadOnly = true;
-            this.txtProducto.Size = new System.Drawing.Size(230, 33);
+            this.txtProducto.Size = new System.Drawing.Size(230, 28);
             this.txtProducto.TabIndex = 6;
             // 
             // btnCancelar
@@ -197,7 +198,7 @@
             this.label5.Location = new System.Drawing.Point(33, 406);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(200, 34);
+            this.label5.Size = new System.Drawing.Size(167, 27);
             this.label5.TabIndex = 14;
             this.label5.Text = "Lista de Productos";
             // 
@@ -207,7 +208,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(167, 140);
             this.dtpFecha.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(507, 33);
+            this.dtpFecha.Size = new System.Drawing.Size(507, 28);
             this.dtpFecha.TabIndex = 15;
             // 
             // pictureBox1
@@ -235,13 +236,13 @@
             this.lblNombre.Location = new System.Drawing.Point(333, 0);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(274, 64);
+            this.lblNombre.Size = new System.Drawing.Size(216, 51);
             this.lblNombre.TabIndex = 23;
             this.lblNombre.Text = "REGISTRO DE SALIDAS";
             // 
             // FrmAgregarSalidaProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1258, 736);
             this.Controls.Add(this.pictureBox1);
@@ -261,10 +262,11 @@
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAgregarSalidaProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmAgregarSalidaProductos";
+            this.Text = "REGISTRO DE SALIDAS";
             this.Load += new System.EventHandler(this.FrmAgregarSalidaProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgMostrarProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgListaProductos)).EndInit();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -122,7 +123,7 @@
             this.pLogin.Controls.Add(this.btnCerrar);
             this.pLogin.Controls.Add(this.lblLogin);
             this.pLogin.Location = new System.Drawing.Point(-4, -2);
-            this.pLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pLogin.Margin = new System.Windows.Forms.Padding(2);
             this.pLogin.Name = "pLogin";
             this.pLogin.Size = new System.Drawing.Size(598, 79);
             this.pLogin.TabIndex = 7;
@@ -178,9 +179,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmLogin";
+            this.Text = "INICIO DE SESIÓN";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pLogin.ResumeLayout(false);
             this.pLogin.PerformLayout();
