@@ -124,6 +124,16 @@ namespace SGA_v0._1
             btnAgregar.BackColor = ColorTranslator.FromHtml("#7B8A84");
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
         // EVENTO PARA OBTENER LOS PERMISOS Y HABILITAR / DESHABILITAR BOTONES
         private void FrmVerSalidaProductos_Load(object sender, EventArgs e)
         {

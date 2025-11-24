@@ -140,5 +140,10 @@ namespace SGA_v0._1
         {
             btnCerrar.BackColor = ColorTranslator.FromHtml("#B7CC18");   
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

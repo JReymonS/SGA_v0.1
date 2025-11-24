@@ -18,7 +18,7 @@ namespace SGA_v0._1
             InitializeComponent();
             md = new ManejadorDiseño();
             md.EstilosBoton(BtnOk);
-            md.EstiloPanelTexto(pNombre, lblAlerta, ColorTranslator.FromHtml("#8CBFAF"));
+            //md.EstiloPanelTexto(pNombre, lblAlerta, ColorTranslator.FromHtml("#8CBFAF"));
         }
 
        

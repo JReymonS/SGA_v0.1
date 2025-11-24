@@ -87,6 +87,11 @@ namespace SGA_v0._1
             btnAgregar.BackColor = ColorTranslator.FromHtml("#7B8A84");
         }
 
+        private void lblNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         //METODO PARA CAPTURAR LA FILA Y COLUMNA SELECCIONADA
         private void DtgDatos_CellEnter(object sender, DataGridViewCellEventArgs e)

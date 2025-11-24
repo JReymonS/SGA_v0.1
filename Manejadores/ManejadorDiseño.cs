@@ -41,6 +41,7 @@ namespace Manejadores
         {
             panel.BackColor = color;
             etiqueta.ForeColor = ColorTranslator.FromHtml("#EDE7D5");
+            //etiqueta.Location = new Point(5, 9);
             etiqueta.Font = new Font("Suravaram", 30, FontStyle.Bold);
         }
 
@@ -54,12 +55,12 @@ namespace Manejadores
             Panel contenedor = new Panel();
 
             contenedor.BackColor = ColorTranslator.FromHtml("#EDE7D5");
-            contenedor.Size = new Size(txt.Width + 40, txt.Height + 24);
+            contenedor.Size = new Size(txt.Width + 40, txt.Height + 18);
             contenedor.Location = txt.Location;
 
             txt.BorderStyle = BorderStyle.None;
             txt.BackColor = ColorTranslator.FromHtml("#EDE7D5");
-            txt.Location = new Point(12, 8); // centrado perfecto
+            txt.Location = new Point(12, 12); // centrado perfecto
             txt.Width = contenedor.Width - 24;
 
             contenedor.Paint += (s, e) =>
@@ -100,7 +101,7 @@ namespace Manejadores
             Panel contenedor = new Panel();
 
             contenedor.BackColor = ColorTranslator.FromHtml("#EDE7D5");
-            contenedor.Size = new Size(txt.Width + 40, txt.Height + 24);
+            contenedor.Size = new Size(txt.Width + 40, txt.Height + 20);
             contenedor.Location = txt.Location;
 
             txt.BorderStyle = BorderStyle.None;
