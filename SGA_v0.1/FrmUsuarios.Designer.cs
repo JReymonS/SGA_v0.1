@@ -76,7 +76,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Livvic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(1093, 129);
+            this.btnAgregar.Location = new System.Drawing.Point(1093, 134);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(53, 54);
             this.btnAgregar.TabIndex = 4;

@@ -58,11 +58,11 @@
             // TxtBuscar
             // 
             this.TxtBuscar.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtBuscar.Location = new System.Drawing.Point(187, 134);
+            this.TxtBuscar.Location = new System.Drawing.Point(147, 129);
             this.TxtBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.TxtBuscar.Multiline = true;
             this.TxtBuscar.Name = "TxtBuscar";
-            this.TxtBuscar.Size = new System.Drawing.Size(734, 30);
+            this.TxtBuscar.Size = new System.Drawing.Size(734, 28);
             this.TxtBuscar.TabIndex = 1;
             // 
             // BtnAgregar
@@ -71,7 +71,7 @@
             this.BtnAgregar.Location = new System.Drawing.Point(1093, 134);
             this.BtnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(43, 45);
+            this.BtnAgregar.Size = new System.Drawing.Size(53, 54);
             this.BtnAgregar.TabIndex = 2;
             this.BtnAgregar.Text = "+";
             this.BtnAgregar.UseVisualStyleBackColor = true;
@@ -89,11 +89,11 @@
             // 
             // BtnBuscar
             // 
-            this.BtnBuscar.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBuscar.Location = new System.Drawing.Point(981, 133);
+            this.BtnBuscar.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnBuscar.Location = new System.Drawing.Point(938, 129);
             this.BtnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(98, 46);
+            this.BtnBuscar.Size = new System.Drawing.Size(131, 54);
             this.BtnBuscar.TabIndex = 4;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Livvic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(44, 136);
+            this.label2.Location = new System.Drawing.Point(21, 141);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 41);

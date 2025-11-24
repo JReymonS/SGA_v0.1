@@ -104,11 +104,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::SGA_v0._1.Properties.Resources.Proveedores;
+            this.pictureBox1.BackgroundImage = global::SGA_v0._1.Properties.Resources.Registro_Salida;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(38, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 81);
+            this.pictureBox1.Size = new System.Drawing.Size(82, 81);
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
             // 

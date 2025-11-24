@@ -45,7 +45,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Livvic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 139);
+            this.label1.Location = new System.Drawing.Point(21, 134);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 41);
             this.label1.TabIndex = 0;
@@ -55,7 +55,7 @@
             // 
             this.lblProductos.AutoSize = true;
             this.lblProductos.Font = new System.Drawing.Font("Suravaram", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductos.Location = new System.Drawing.Point(430, -3);
+            this.lblProductos.Location = new System.Drawing.Point(352, -3);
             this.lblProductos.Name = "lblProductos";
             this.lblProductos.Size = new System.Drawing.Size(178, 71);
             this.lblProductos.TabIndex = 1;
@@ -64,20 +64,20 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(196, 131);
+            this.txtNombre.Location = new System.Drawing.Point(147, 129);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(852, 30);
+            this.txtNombre.Size = new System.Drawing.Size(734, 28);
             this.txtNombre.TabIndex = 2;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(1132, 139);
+            this.btnBuscar.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(938, 129);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(98, 46);
+            this.btnBuscar.Size = new System.Drawing.Size(131, 54);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -88,10 +88,10 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Livvic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(1271, 137);
+            this.btnAgregar.Location = new System.Drawing.Point(1093, 129);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(43, 45);
+            this.btnAgregar.Size = new System.Drawing.Size(53, 54);
             this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "+";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -110,7 +110,7 @@
             this.dtgDatos.ReadOnly = true;
             this.dtgDatos.RowHeadersWidth = 51;
             this.dtgDatos.RowTemplate.Height = 24;
-            this.dtgDatos.Size = new System.Drawing.Size(1271, 483);
+            this.dtgDatos.Size = new System.Drawing.Size(1108, 483);
             this.dtgDatos.TabIndex = 35;
             this.dtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellClick);
             this.dtgDatos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellEnter);
@@ -118,9 +118,9 @@
             // pNombre
             // 
             this.pNombre.Controls.Add(this.lblProductos);
-            this.pNombre.Location = new System.Drawing.Point(196, 12);
+            this.pNombre.Location = new System.Drawing.Point(147, 12);
             this.pNombre.Name = "pNombre";
-            this.pNombre.Size = new System.Drawing.Size(1118, 81);
+            this.pNombre.Size = new System.Drawing.Size(999, 81);
             this.pNombre.TabIndex = 36;
             // 
             // pictureBox1
@@ -137,7 +137,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1354, 753);
+            this.ClientSize = new System.Drawing.Size(1183, 753);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pNombre);
             this.Controls.Add(this.dtgDatos);

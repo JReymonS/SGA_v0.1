@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicio));
             this.tsPrincipal = new System.Windows.Forms.ToolStrip();
             this.tsbInicio = new System.Windows.Forms.ToolStripButton();
             this.tsbProveedores = new System.Windows.Forms.ToolStripButton();
@@ -45,9 +46,11 @@
             this.btnOcultarVentana = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.pSuperior = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tsPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).BeginInit();
             this.pSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tsPrincipal
@@ -250,6 +253,7 @@
             // 
             // pSuperior
             // 
+            this.pSuperior.Controls.Add(this.pictureBox1);
             this.pSuperior.Controls.Add(this.btnCerrar);
             this.pSuperior.Controls.Add(this.btnOcultarVentana);
             this.pSuperior.Controls.Add(this.LblUsuarioActivo);
@@ -259,6 +263,16 @@
             this.pSuperior.Name = "pSuperior";
             this.pSuperior.Size = new System.Drawing.Size(1924, 100);
             this.pSuperior.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(114, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(204, 94);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmInicio
             // 
@@ -281,6 +295,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).EndInit();
             this.pSuperior.ResumeLayout(false);
             this.pSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -304,6 +319,7 @@
         private System.Windows.Forms.Button btnOcultarVentana;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Panel pSuperior;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
