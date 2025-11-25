@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36401.2 d17.14
+VisualStudioVersion = 17.14.36401.2
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGA_v0.1", "SGA_v0.1\SGA_v0.1.csproj", "{4A7C4454-3F94-425F-8E53-26D502CEFA01}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{CFA13FAC-C127-4C37-B3FC-ED2112430C8B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Manejadores", "Manejadores\Manejadores.csproj", "{0E546127-F838-4274-8AC1-FCEF65F37D49}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SGA_v0.1_NexStock", "SGA_v0.1_NexStock\SGA_v0.1_NexStock.vdproj", "{511010E0-9986-3C27-1537-977D07ABDA47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,8 @@ Global
 		{0E546127-F838-4274-8AC1-FCEF65F37D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E546127-F838-4274-8AC1-FCEF65F37D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E546127-F838-4274-8AC1-FCEF65F37D49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{511010E0-9986-3C27-1537-977D07ABDA47}.Debug|Any CPU.ActiveCfg = Debug
+		{511010E0-9986-3C27-1537-977D07ABDA47}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
