@@ -115,9 +115,6 @@ namespace SGA_v0._1
             DtgDatos.Rows.Clear();
             DtgDatos.Columns.Clear();
             DtgDatos.Refresh();
-        }
-
-
-        
+        }        
     }
 }

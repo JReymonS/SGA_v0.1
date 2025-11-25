@@ -95,7 +95,7 @@ namespace SGA_v0._1
         {
             if(fila<0 || fila>=ListaPermisos.Count) 
             {
-                MessageBox.Show("Seleccione un registro primero","¡ATENCIÓN!",MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
+                MessageBox.Show("Seleccione un registro primero.","¡ATENCIÓN!",MessageBoxButtons.OK, MessageBoxIcon.Warning); return;
             }
            
             var permisoSeleccionado = ListaPermisos[fila];
@@ -187,6 +187,8 @@ namespace SGA_v0._1
             Close();
         }
 
+
+        // EVENTOS PARA DISEÑO DE FORMULARIO
         private void btnGuardar_MouseEnter(object sender, EventArgs e)
         {
             btnGuardar.BackColor = ColorTranslator.FromHtml("#7B8A84");
@@ -233,5 +235,6 @@ namespace SGA_v0._1
         {
             btnEliminarPermiso.BackColor = ColorTranslator.FromHtml("#EDE7D5");
         }
+        // FIN EVENTOS PARA DISEÑO DE FORMULARIO
     }
 }

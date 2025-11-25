@@ -44,7 +44,7 @@
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.Image = global::SGA_v0._1.Properties.Resources.Agregar_3;
-            this.btnAgregar.Location = new System.Drawing.Point(810, 125);
+            this.btnAgregar.Location = new System.Drawing.Point(810, 126);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(87, 45);
@@ -91,7 +91,7 @@
             this.lblNombre.Location = new System.Drawing.Point(-2, -12);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(971, 67);
+            this.lblNombre.Size = new System.Drawing.Size(981, 67);
             this.lblNombre.TabIndex = 23;
             this.lblNombre.Text = "REPORTES";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -113,7 +113,7 @@
             this.pNombre.Location = new System.Drawing.Point(132, 26);
             this.pNombre.Margin = new System.Windows.Forms.Padding(2);
             this.pNombre.Name = "pNombre";
-            this.pNombre.Size = new System.Drawing.Size(969, 66);
+            this.pNombre.Size = new System.Drawing.Size(979, 66);
             this.pNombre.TabIndex = 28;
             // 
             // FrmReportes

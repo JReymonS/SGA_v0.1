@@ -36,7 +36,6 @@ namespace SGA_v0._1
                 txtClave.Text = FrmUsuarios.usuario.clave;
                 cmbEstatus.SelectedValue = FrmUsuarios.usuario.status;
                 cmbRol.SelectedValue = FrmUsuarios.usuario.fkid_rol;
-
             }
         }
 
@@ -110,6 +109,8 @@ namespace SGA_v0._1
             Close();
         }
 
+
+        //EVENTO CLICK PARA DISEÑO DEL FORMULARIO
         private void btnGuardar_MouseEnter(object sender, EventArgs e)
         {
             btnGuardar.BackColor = ColorTranslator.FromHtml("#7B8A84");
@@ -131,5 +132,6 @@ namespace SGA_v0._1
             btnCancelar.BackColor = ColorTranslator.FromHtml("#545454");
             md.QuitarBordesBotones(btnCancelar);
         }
+        // FIN EVENTOS PARA DISEÑO DEL FORMULARIO
     }
 }

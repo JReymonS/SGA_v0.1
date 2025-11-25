@@ -45,7 +45,7 @@
             // BtnGuardar
             // 
             this.BtnGuardar.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.Location = new System.Drawing.Point(366, 348);
+            this.BtnGuardar.Location = new System.Drawing.Point(384, 297);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(130, 48);
             this.BtnGuardar.TabIndex = 0;
@@ -58,7 +58,7 @@
             // BtnCancelar
             // 
             this.BtnCancelar.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Location = new System.Drawing.Point(534, 348);
+            this.BtnCancelar.Location = new System.Drawing.Point(561, 297);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(130, 48);
             this.BtnCancelar.TabIndex = 1;
@@ -71,16 +71,16 @@
             // TxtNombre
             // 
             this.TxtNombre.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNombre.Location = new System.Drawing.Point(120, 123);
+            this.TxtNombre.Location = new System.Drawing.Point(135, 136);
             this.TxtNombre.Name = "TxtNombre";
-            this.TxtNombre.Size = new System.Drawing.Size(330, 28);
+            this.TxtNombre.Size = new System.Drawing.Size(442, 28);
             this.TxtNombre.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 122);
+            this.label2.Location = new System.Drawing.Point(30, 143);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 27);
             this.label2.TabIndex = 5;
@@ -90,7 +90,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 232);
+            this.label3.Location = new System.Drawing.Point(27, 224);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 27);
             this.label3.TabIndex = 6;
@@ -101,26 +101,26 @@
             this.CmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbStatus.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmbStatus.FormattingEnabled = true;
-            this.CmbStatus.Location = new System.Drawing.Point(120, 232);
+            this.CmbStatus.Location = new System.Drawing.Point(135, 220);
             this.CmbStatus.Name = "CmbStatus";
-            this.CmbStatus.Size = new System.Drawing.Size(330, 32);
+            this.CmbStatus.Size = new System.Drawing.Size(473, 32);
             this.CmbStatus.TabIndex = 7;
             // 
             // lblCategorias
             // 
-            this.lblCategorias.AutoSize = true;
-            this.lblCategorias.Location = new System.Drawing.Point(118, 0);
+            this.lblCategorias.Location = new System.Drawing.Point(0, -6);
             this.lblCategorias.Name = "lblCategorias";
-            this.lblCategorias.Size = new System.Drawing.Size(76, 13);
+            this.lblCategorias.Size = new System.Drawing.Size(556, 56);
             this.lblCategorias.TabIndex = 3;
             this.lblCategorias.Text = "CATEGORIAS";
+            this.lblCategorias.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::SGA_v0._1.Properties.Resources.Categoria;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 19);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(35, 31);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(68, 66);
             this.pictureBox1.TabIndex = 28;
@@ -129,17 +129,17 @@
             // pCategorias
             // 
             this.pCategorias.Controls.Add(this.lblCategorias);
-            this.pCategorias.Location = new System.Drawing.Point(120, 19);
-            this.pCategorias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pCategorias.Location = new System.Drawing.Point(135, 31);
+            this.pCategorias.Margin = new System.Windows.Forms.Padding(2);
             this.pCategorias.Name = "pCategorias";
-            this.pCategorias.Size = new System.Drawing.Size(562, 66);
+            this.pCategorias.Size = new System.Drawing.Size(556, 66);
             this.pCategorias.TabIndex = 27;
             // 
             // FrmCategoriaMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(718, 450);
+            this.ClientSize = new System.Drawing.Size(718, 376);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pCategorias);
             this.Controls.Add(this.CmbStatus);
@@ -155,7 +155,6 @@
             this.Text = "CATEGORIAS";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pCategorias.ResumeLayout(false);
-            this.pCategorias.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

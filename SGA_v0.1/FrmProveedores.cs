@@ -47,6 +47,8 @@ namespace SGA_v0._1
             }   
 
         }
+
+
         //METODO PARA BUSCAR PROVEEDORES
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -64,6 +66,8 @@ namespace SGA_v0._1
             DtgDatos.Columns.Clear();
         }
 
+
+        //EVENTOS PARA DISEÑO DE FORMULARIO
         private void btnBuscar_MouseEnter(object sender, EventArgs e)
         {
 
@@ -86,11 +90,7 @@ namespace SGA_v0._1
         {
             btnAgregar.BackColor = ColorTranslator.FromHtml("#7B8A84");
         }
-
-        private void lblNombre_Click(object sender, EventArgs e)
-        {
-
-        }
+        //FIN DE EVENTOS PARA DISEÑO DE FORMULARIO
 
 
         //METODO PARA CAPTURAR LA FILA Y COLUMNA SELECCIONADA

@@ -104,7 +104,6 @@
             this.lblNombre.TabIndex = 23;
             this.lblNombre.Text = "PROVEEDORES";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblNombre.Click += new System.EventHandler(this.lblNombre_Click);
             // 
             // pProveedores
             // 

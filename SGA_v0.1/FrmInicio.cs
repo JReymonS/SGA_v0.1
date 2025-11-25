@@ -1,13 +1,6 @@
 ﻿using Entidades;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Manejadores;
 
@@ -41,11 +34,12 @@ namespace SGA_v0._1
             md.QuitarBordesBotones(btnOcultarVentana);
         }
 
+
         // EVENTO LOAD DEL FORMULARIO
         private void FrmInicio_Load(object sender, EventArgs e)
         {
             //HABILITAR O DESHABILITAR BOTONES SEGUN PERMISOS DEL ROL
-            LblUsuarioActivo.Text = $"Bienvenid@: {_usuarioActivo.nombre}";
+            LblUsuarioActivo.Text = $" {_usuarioActivo.nombre} ";
             tsbProveedores.Enabled = false;
             tsbCategorias.Enabled = false;
             tsbNotificaciones.Enabled = false;
@@ -91,6 +85,7 @@ namespace SGA_v0._1
             }
             tsbInicio.PerformClick();
         }
+
 
         // EVENTO CLICK PARA VOLVER AL INICIO
         private void tsbInicio_Click(object sender, EventArgs e)

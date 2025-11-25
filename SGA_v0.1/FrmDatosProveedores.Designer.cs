@@ -60,17 +60,17 @@
             this.cmbEstatus.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cmbEstatus.Location = new System.Drawing.Point(633, 384);
-            this.cmbEstatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbEstatus.Location = new System.Drawing.Point(619, 355);
+            this.cmbEstatus.Margin = new System.Windows.Forms.Padding(2);
             this.cmbEstatus.Name = "cmbEstatus";
-            this.cmbEstatus.Size = new System.Drawing.Size(192, 32);
+            this.cmbEstatus.Size = new System.Drawing.Size(221, 32);
             this.cmbEstatus.TabIndex = 80;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(689, 515);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Location = new System.Drawing.Point(689, 509);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(135, 48);
             this.btnCancelar.TabIndex = 79;
@@ -83,8 +83,8 @@
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(512, 515);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.Location = new System.Drawing.Point(512, 509);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(130, 48);
             this.btnGuardar.TabIndex = 78;
@@ -97,17 +97,17 @@
             // txtPlazo
             // 
             this.txtPlazo.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPlazo.Location = new System.Drawing.Point(198, 476);
-            this.txtPlazo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPlazo.Location = new System.Drawing.Point(198, 447);
+            this.txtPlazo.Margin = new System.Windows.Forms.Padding(2);
             this.txtPlazo.Name = "txtPlazo";
-            this.txtPlazo.Size = new System.Drawing.Size(76, 28);
+            this.txtPlazo.Size = new System.Drawing.Size(103, 28);
             this.txtPlazo.TabIndex = 77;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(28, 462);
+            this.label7.Location = new System.Drawing.Point(28, 437);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(133, 54);
@@ -119,7 +119,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(535, 386);
+            this.label6.Location = new System.Drawing.Point(525, 358);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 27);
@@ -129,8 +129,8 @@
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(198, 384);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelefono.Location = new System.Drawing.Point(198, 355);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(192, 28);
             this.txtTelefono.TabIndex = 74;
@@ -139,18 +139,18 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(28, 396);
+            this.label5.Location = new System.Drawing.Point(29, 362);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 27);
             this.label5.TabIndex = 73;
-            this.label5.Text = "Telefono";
+            this.label5.Text = "Teléfono";
             // 
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(198, 315);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCorreo.Location = new System.Drawing.Point(198, 286);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(348, 28);
             this.txtCorreo.TabIndex = 72;
@@ -159,7 +159,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(27, 323);
+            this.label4.Location = new System.Drawing.Point(29, 292);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(166, 27);
@@ -169,17 +169,17 @@
             // txtApMa
             // 
             this.txtApMa.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApMa.Location = new System.Drawing.Point(619, 241);
-            this.txtApMa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtApMa.Location = new System.Drawing.Point(619, 205);
+            this.txtApMa.Margin = new System.Windows.Forms.Padding(2);
             this.txtApMa.Name = "txtApMa";
-            this.txtApMa.Size = new System.Drawing.Size(180, 28);
+            this.txtApMa.Size = new System.Drawing.Size(192, 28);
             this.txtApMa.TabIndex = 70;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(458, 249);
+            this.label3.Location = new System.Drawing.Point(444, 213);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(160, 27);
@@ -189,8 +189,8 @@
             // txtApPa
             // 
             this.txtApPa.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApPa.Location = new System.Drawing.Point(198, 241);
-            this.txtApPa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtApPa.Location = new System.Drawing.Point(198, 205);
+            this.txtApPa.Margin = new System.Windows.Forms.Padding(2);
             this.txtApPa.Name = "txtApPa";
             this.txtApPa.Size = new System.Drawing.Size(192, 28);
             this.txtApPa.TabIndex = 68;
@@ -199,7 +199,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(28, 249);
+            this.label2.Location = new System.Drawing.Point(29, 213);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(154, 27);
@@ -209,8 +209,8 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(198, 160);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Location = new System.Drawing.Point(198, 131);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(348, 28);
             this.txtNombre.TabIndex = 66;
@@ -219,7 +219,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 171);
+            this.label1.Location = new System.Drawing.Point(29, 137);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 27);
@@ -229,30 +229,30 @@
             // pNombre
             // 
             this.pNombre.Controls.Add(this.lblProveedores);
-            this.pNombre.Location = new System.Drawing.Point(125, 48);
-            this.pNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pNombre.Location = new System.Drawing.Point(139, 17);
+            this.pNombre.Margin = new System.Windows.Forms.Padding(2);
             this.pNombre.Name = "pNombre";
-            this.pNombre.Size = new System.Drawing.Size(717, 76);
+            this.pNombre.Size = new System.Drawing.Size(711, 72);
             this.pNombre.TabIndex = 81;
             // 
             // lblProveedores
             // 
-            this.lblProveedores.AutoSize = true;
-            this.lblProveedores.Location = new System.Drawing.Point(143, 0);
+            this.lblProveedores.Location = new System.Drawing.Point(0, -5);
             this.lblProveedores.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProveedores.Name = "lblProveedores";
-            this.lblProveedores.Size = new System.Drawing.Size(145, 13);
+            this.lblProveedores.Size = new System.Drawing.Size(711, 68);
             this.lblProveedores.TabIndex = 0;
             this.lblProveedores.Text = "AGREGAR PROVEEDORES";
+            this.lblProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::SGA_v0._1.Properties.Resources.Proveedores;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(32, 48);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(34, 19);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(75, 68);
+            this.pictureBox1.Size = new System.Drawing.Size(76, 66);
             this.pictureBox1.TabIndex = 26;
             this.pictureBox1.TabStop = false;
             // 
@@ -260,7 +260,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(873, 601);
+            this.ClientSize = new System.Drawing.Size(874, 593);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pNombre);
             this.Controls.Add(this.cmbEstatus);
@@ -281,12 +281,11 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmDatosProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AGREGAR PROVEEDORES";
             this.pNombre.ResumeLayout(false);
-            this.pNombre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

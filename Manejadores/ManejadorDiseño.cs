@@ -92,6 +92,8 @@ namespace Manejadores
             contenedor.Controls.Add(txt);
             txt.BringToFront();
         }
+
+
         // METODO PARA DAR FORMATO A LOS TEXT BOX (COLOR DE BORDE, FONDO Y REDONDEADO) DE LOGIN
         public void EstilizarTextBoxLogin(TextBox txt)
         {
@@ -138,6 +140,7 @@ namespace Manejadores
             contenedor.Controls.Add(txt);
             txt.BringToFront();
         }
+
 
         //METODO PARA ESTILIZAR EL DATAGRIDVIEW
         public void EstilizarData(DataGridView tabla)
@@ -196,6 +199,7 @@ namespace Manejadores
             }
         }
 
+
         // METODO PARA AGREGAR BORDE AL FORMULARIO 
         public void AgregarBordeFormulario(Form formulario)
         {
@@ -214,6 +218,7 @@ namespace Manejadores
                 }
             };
         }
+
 
         // METODO PARA DAR FORMATO A LOS COMBO BOX (COLOR DE BORDE Y FONDO)
         public void EstilizarComboBox(ComboBox cmb)

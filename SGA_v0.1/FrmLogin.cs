@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Manejadores;
 
@@ -89,20 +83,15 @@ namespace SGA_v0._1
         private void btnMostrar_Click(object sender, EventArgs e)
         {
             mostrarContrasena = true;
-
             ml.MostrarOcultarContrasena(txtContrasena, mostrarContrasena);
-
-           
-
             btnVer.Visible = true;     
             btnMostrar.Visible = false;
-            
         }
 
 
+        //EVENTOS PARA DISEÑO DE FOMULARIO
         private void btnIngresar_MouseEnter(object sender, EventArgs e)
         {
-            
             btnIngresar.BackColor = ColorTranslator.FromHtml("#7B8A84");
         }
 
@@ -112,6 +101,8 @@ namespace SGA_v0._1
             md.QuitarBordesBotones(btnIngresar);
         }
 
+
+        // EVENTO CLICK PARA CERRAR LA APLICACION
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit(); 
@@ -133,17 +124,12 @@ namespace SGA_v0._1
         private void btnCerrar_MouseEnter(object sender, EventArgs e)
         {
             btnCerrar.BackColor = ColorTranslator.FromHtml("#8CBFAF");
-            
         }
 
         private void btnCerrar_MouseLeave(object sender, EventArgs e)
         {
             btnCerrar.BackColor = ColorTranslator.FromHtml("#B7CC18");   
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        //FIN EVENTOS DISEÑO FORMULARIO
     }
 }

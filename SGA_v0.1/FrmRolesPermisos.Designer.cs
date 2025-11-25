@@ -55,7 +55,7 @@
             // btnBuscar
             // 
             this.btnBuscar.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(881, 124);
+            this.btnBuscar.Location = new System.Drawing.Point(889, 125);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(106, 46);
             this.btnBuscar.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Livvic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.Image = global::SGA_v0._1.Properties.Resources.Agregar_3;
-            this.btnAgregar.Location = new System.Drawing.Point(1017, 124);
+            this.btnAgregar.Location = new System.Drawing.Point(1025, 127);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(87, 45);
             this.btnAgregar.TabIndex = 3;
@@ -117,7 +117,7 @@
             this.pNombre.Controls.Add(this.lblNombre);
             this.pNombre.Location = new System.Drawing.Point(137, 32);
             this.pNombre.Name = "pNombre";
-            this.pNombre.Size = new System.Drawing.Size(969, 66);
+            this.pNombre.Size = new System.Drawing.Size(977, 66);
             this.pNombre.TabIndex = 32;
             // 
             // lblNombre
@@ -126,7 +126,7 @@
             this.lblNombre.Location = new System.Drawing.Point(0, -14);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(967, 67);
+            this.lblNombre.Size = new System.Drawing.Size(977, 67);
             this.lblNombre.TabIndex = 23;
             this.lblNombre.Text = "ROLES Y PERMISOS";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

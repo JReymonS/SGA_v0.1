@@ -35,8 +35,8 @@
             this.txtContrasena = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.pLogin = new System.Windows.Forms.Panel();
-            this.lblLogin = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.lblLogin = new System.Windows.Forms.Label();
             this.btnMostrar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnVer = new System.Windows.Forms.Button();
@@ -53,7 +53,6 @@
             this.label1.Size = new System.Drawing.Size(95, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "USUARIO";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -89,7 +88,7 @@
             this.btnIngresar.FlatAppearance.BorderSize = 0;
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.Location = new System.Drawing.Point(241, 314);
+            this.btnIngresar.Location = new System.Drawing.Point(255, 319);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(170, 46);
             this.btnIngresar.TabIndex = 4;
@@ -109,18 +108,6 @@
             this.pLogin.Size = new System.Drawing.Size(598, 79);
             this.pLogin.TabIndex = 7;
             // 
-            // lblLogin
-            // 
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.BackColor = System.Drawing.Color.Transparent;
-            this.lblLogin.Font = new System.Drawing.Font("Suravaram", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(14, 2);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(122, 81);
-            this.lblLogin.TabIndex = 8;
-            this.lblLogin.Text = "LOGIN";
-            this.lblLogin.Click += new System.EventHandler(this.label3_Click);
-            // 
             // btnCerrar
             // 
             this.btnCerrar.BackgroundImage = global::SGA_v0._1.Properties.Resources.Cerrar;
@@ -134,11 +121,23 @@
             this.btnCerrar.MouseEnter += new System.EventHandler(this.btnCerrar_MouseEnter);
             this.btnCerrar.MouseLeave += new System.EventHandler(this.btnCerrar_MouseLeave);
             // 
+            // lblLogin
+            // 
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.BackColor = System.Drawing.Color.Transparent;
+            this.lblLogin.Font = new System.Drawing.Font("Suravaram", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogin.Location = new System.Drawing.Point(14, 2);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(122, 81);
+            this.lblLogin.TabIndex = 8;
+            this.lblLogin.Text = "LOGIN";
+            this.lblLogin.Click += new System.EventHandler(this.label3_Click);
+            // 
             // btnMostrar
             // 
             this.btnMostrar.BackgroundImage = global::SGA_v0._1.Properties.Resources.No_Mostrar;
             this.btnMostrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMostrar.Location = new System.Drawing.Point(515, 248);
+            this.btnMostrar.Location = new System.Drawing.Point(521, 253);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(46, 37);
             this.btnMostrar.TabIndex = 6;
@@ -159,7 +158,7 @@
             // 
             this.btnVer.BackgroundImage = global::SGA_v0._1.Properties.Resources.Mostrar;
             this.btnVer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVer.Location = new System.Drawing.Point(515, 248);
+            this.btnVer.Location = new System.Drawing.Point(521, 253);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(46, 37);
             this.btnVer.TabIndex = 8;
@@ -170,7 +169,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 386);
+            this.ClientSize = new System.Drawing.Size(592, 396);
             this.Controls.Add(this.pLogin);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.pictureBox1);

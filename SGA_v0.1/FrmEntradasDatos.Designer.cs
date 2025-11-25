@@ -72,7 +72,7 @@
             // 
             this.BtnAgregar.Font = new System.Drawing.Font("Livvic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregar.Image = global::SGA_v0._1.Properties.Resources.Agregar_3;
-            this.BtnAgregar.Location = new System.Drawing.Point(1024, 121);
+            this.BtnAgregar.Location = new System.Drawing.Point(1024, 123);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(87, 45);
             this.BtnAgregar.TabIndex = 3;

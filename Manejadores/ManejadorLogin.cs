@@ -1,14 +1,9 @@
 ﻿using AccesoDatos;
 using Entidades;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -102,7 +97,5 @@ namespace Manejadores
             }
             return cadena.ToString();
         }
-
-
     }
 }

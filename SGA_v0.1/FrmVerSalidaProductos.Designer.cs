@@ -52,7 +52,6 @@
             this.label2.Size = new System.Drawing.Size(74, 32);
             this.label2.TabIndex = 1;
             this.label2.Text = "Fecha";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnBuscar
             // 
@@ -72,7 +71,7 @@
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Livvic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.Image = global::SGA_v0._1.Properties.Resources.Agregar_3;
-            this.btnAgregar.Location = new System.Drawing.Point(1022, 125);
+            this.btnAgregar.Location = new System.Drawing.Point(1022, 127);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(87, 45);
@@ -97,7 +96,6 @@
             this.dtgDatos.Size = new System.Drawing.Size(1073, 483);
             this.dtgDatos.TabIndex = 12;
             this.dtgDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellClick);
-            this.dtgDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellContentClick);
             this.dtgDatos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatos_CellEnter);
             // 
             // dtpFecha
@@ -109,7 +107,6 @@
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(552, 28);
             this.dtpFecha.TabIndex = 13;
-            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // pictureBox1
             // 
@@ -125,7 +122,7 @@
             // lblNombre
             // 
             this.lblNombre.Font = new System.Drawing.Font("Suravaram", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(-5, -10);
+            this.lblNombre.Location = new System.Drawing.Point(17, -10);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(968, 67);

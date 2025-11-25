@@ -343,5 +343,14 @@
   <ItemGroup>
     <None Include="Resources\Usuario.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InicioBV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono2.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

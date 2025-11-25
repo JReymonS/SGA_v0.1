@@ -78,7 +78,7 @@
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Livvic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.Image = global::SGA_v0._1.Properties.Resources.Agregar_3;
-            this.btnAgregar.Location = new System.Drawing.Point(1024, 121);
+            this.btnAgregar.Location = new System.Drawing.Point(1024, 124);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(87, 45);
             this.btnAgregar.TabIndex = 4;
@@ -105,7 +105,7 @@
             // lblNombre
             // 
             this.lblNombre.Font = new System.Drawing.Font("Suravaram", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(34, -14);
+            this.lblNombre.Location = new System.Drawing.Point(-1, -12);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(964, 67);
@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1153, 714);
+            this.ClientSize = new System.Drawing.Size(1149, 714);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pNombre);
             this.Controls.Add(this.dtgDatos);

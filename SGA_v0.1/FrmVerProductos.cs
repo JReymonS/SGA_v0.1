@@ -1,13 +1,7 @@
 ﻿using Entidades;
 using Manejadores;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SGA_v0._1
@@ -66,8 +60,9 @@ namespace SGA_v0._1
             columna = e.ColumnIndex;
 
         }
-       
 
+
+        //EVENTOS PARA DISEÑO DE FORMULARIO
         private void btnBuscar_MouseEnter(object sender, EventArgs e)
         {
             btnBuscar.BackColor = ColorTranslator.FromHtml("#7B8A84");
@@ -89,6 +84,8 @@ namespace SGA_v0._1
         {
             btnAgregar.BackColor = ColorTranslator.FromHtml("#7B8A84");
         }
+        //FIN DE EVENTOS PARA DISEÑO DE FORMULARIO
+
 
         // EVENTO PARA OBTENER LOS PERMISOS Y HABILITAR / DESHABILITAR BOTONES
         private void FrmVerProductos_Load(object sender, EventArgs e)
