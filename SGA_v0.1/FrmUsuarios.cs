@@ -69,6 +69,8 @@ namespace SGA_v0._1
             dtgDatos.Columns.Clear();
         }
 
+
+        //EVENTOS PARA DISEÑO DE FORMULARIO
         private void btnBuscar_MouseEnter(object sender, EventArgs e)
         {
             btnBuscar.BackColor = ColorTranslator.FromHtml("#7B8A84");
@@ -91,6 +93,7 @@ namespace SGA_v0._1
             btnAgregar.BackColor = ColorTranslator.FromHtml("#545454");
             md.QuitarBordesBotones(btnAgregar);
         }
+        //FIN DE EVENTOS PARA DISEÑO DE FORMULARIO
 
 
         //EVENTO CELL ENTER PARA OBTENER FILAS Y COLUMNAS

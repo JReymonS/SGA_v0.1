@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEntradasDatos));
             this.DtgDatos = new System.Windows.Forms.DataGridView();
             this.BtnBuscar = new System.Windows.Forms.Button();
             this.BtnAgregar = new System.Windows.Forms.Button();
@@ -44,12 +45,12 @@
             // DtgDatos
             // 
             this.DtgDatos.AllowUserToAddRows = false;
+            this.DtgDatos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
             this.DtgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DtgDatos.Location = new System.Drawing.Point(51, 215);
-            this.DtgDatos.Margin = new System.Windows.Forms.Padding(4);
+            this.DtgDatos.Location = new System.Drawing.Point(38, 200);
             this.DtgDatos.Name = "DtgDatos";
             this.DtgDatos.RowHeadersWidth = 51;
-            this.DtgDatos.Size = new System.Drawing.Size(1108, 483);
+            this.DtgDatos.Size = new System.Drawing.Size(1073, 483);
             this.DtgDatos.TabIndex = 0;
             this.DtgDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellContentClick);
             this.DtgDatos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgDatos_CellEnter);
@@ -57,10 +58,9 @@
             // BtnBuscar
             // 
             this.BtnBuscar.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBuscar.Location = new System.Drawing.Point(957, 147);
-            this.BtnBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnBuscar.Location = new System.Drawing.Point(873, 121);
             this.BtnBuscar.Name = "BtnBuscar";
-            this.BtnBuscar.Size = new System.Drawing.Size(131, 54);
+            this.BtnBuscar.Size = new System.Drawing.Size(106, 46);
             this.BtnBuscar.TabIndex = 2;
             this.BtnBuscar.Text = "Buscar";
             this.BtnBuscar.UseVisualStyleBackColor = true;
@@ -71,12 +71,11 @@
             // BtnAgregar
             // 
             this.BtnAgregar.Font = new System.Drawing.Font("Livvic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregar.Location = new System.Drawing.Point(1106, 148);
-            this.BtnAgregar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnAgregar.Image = global::SGA_v0._1.Properties.Resources.Agregar_3;
+            this.BtnAgregar.Location = new System.Drawing.Point(1024, 123);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(53, 54);
+            this.BtnAgregar.Size = new System.Drawing.Size(87, 45);
             this.BtnAgregar.TabIndex = 3;
-            this.BtnAgregar.Text = "+";
             this.BtnAgregar.UseVisualStyleBackColor = true;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             this.BtnAgregar.MouseEnter += new System.EventHandler(this.BtnAgregar_MouseEnter);
@@ -86,56 +85,59 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Livvic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(58, 148);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(33, 129);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 41);
+            this.label2.Size = new System.Drawing.Size(74, 32);
             this.label2.TabIndex = 5;
             this.label2.Text = "Fecha";
             // 
             // DtpEntradas
             // 
+            this.DtpEntradas.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(231)))), ((int)(((byte)(213)))));
+            this.DtpEntradas.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(204)))), ((int)(((byte)(24)))));
+            this.DtpEntradas.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(204)))), ((int)(((byte)(24)))));
             this.DtpEntradas.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtpEntradas.Location = new System.Drawing.Point(165, 157);
-            this.DtpEntradas.Margin = new System.Windows.Forms.Padding(4);
+            this.DtpEntradas.Location = new System.Drawing.Point(124, 129);
             this.DtpEntradas.Name = "DtpEntradas";
-            this.DtpEntradas.Size = new System.Drawing.Size(734, 33);
+            this.DtpEntradas.Size = new System.Drawing.Size(552, 28);
             this.DtpEntradas.TabIndex = 6;
             // 
             // lblNombre
             // 
-            this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Suravaram", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(251, -10);
+            this.lblNombre.Location = new System.Drawing.Point(2, -14);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(299, 64);
+            this.lblNombre.Size = new System.Drawing.Size(987, 67);
             this.lblNombre.TabIndex = 23;
             this.lblNombre.Text = "REGISTRO DE ENTRADAS";
+            this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::SGA_v0._1.Properties.Resources.Registro_Entrada;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(51, 37);
+            this.pictureBox1.Location = new System.Drawing.Point(39, 31);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(89, 81);
+            this.pictureBox1.Size = new System.Drawing.Size(67, 66);
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             // 
             // pRegistro
             // 
             this.pRegistro.Controls.Add(this.lblNombre);
-            this.pRegistro.Location = new System.Drawing.Point(165, 37);
+            this.pRegistro.Location = new System.Drawing.Point(124, 31);
+            this.pRegistro.Margin = new System.Windows.Forms.Padding(2);
             this.pRegistro.Name = "pRegistro";
-            this.pRegistro.Size = new System.Drawing.Size(994, 81);
+            this.pRegistro.Size = new System.Drawing.Size(987, 66);
             this.pRegistro.TabIndex = 32;
             // 
             // FrmEntradasDatos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1208, 724);
+            this.ClientSize = new System.Drawing.Size(1153, 714);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pRegistro);
             this.Controls.Add(this.DtpEntradas);
@@ -144,15 +146,14 @@
             this.Controls.Add(this.BtnBuscar);
             this.Controls.Add(this.DtgDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmEntradasDatos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmEntradasDatos";
+            this.Text = "REGISTRO DE ENTRADAS";
             this.Load += new System.EventHandler(this.FrmEntradasDatos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DtgDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pRegistro.ResumeLayout(false);
-            this.pRegistro.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

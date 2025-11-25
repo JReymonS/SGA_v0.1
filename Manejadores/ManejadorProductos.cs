@@ -85,7 +85,7 @@ namespace Manejadores
             if (string.IsNullOrWhiteSpace(nombre.Text) || string.IsNullOrWhiteSpace(descripcion.Text) || string.IsNullOrWhiteSpace(costo.Text) || string.IsNullOrWhiteSpace(stockActual.Text) ||
                 string.IsNullOrWhiteSpace(stockMinimo.Text))
             {
-                MessageBox.Show("Por favor, complete todos los campos", "Registro incompleto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, complete todos los campos.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             return true;
@@ -97,20 +97,19 @@ namespace Manejadores
         {
             if (!double.TryParse(txtCosto.Text, out double precio) || precio < 0)
             {
-                MessageBox.Show("El precio debe ser un numero",
-                               "Precio invalido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El precio debe ser un numero.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             if (!int.TryParse(txtStockActual.Text, out int stock) || stock < 0)
             {
-                MessageBox.Show("El stock debe ser un numero entero", "Stock invalido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El stock debe ser un numero entero.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             if (!int.TryParse(txtStockMinimo.Text, out int stockMinimo) || stockMinimo < 0)
             {
-                MessageBox.Show("El stock mínimo debe ser un numero entero", "Stock mínimo invalido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El stock mínimo debe ser un numero entero", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
@@ -139,18 +138,17 @@ namespace Manejadores
         {
             try
             {
-                var rs = MessageBox.Show("¿Esta seguro de eliminar el Producto?", "Eliminar Producto", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var rs = MessageBox.Show("¿Esta seguro de eliminar el producto seleccionado?", "¡ATENCIÓN!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (rs == DialogResult.Yes)
                 {
                     b.Comando($"UPDATE productos SET status = 'I' WHERE id_producto = {idProducto}");
-                    MessageBox.Show("El producto ha sido marcado como Inactivo.", "Estatus actualizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cambiar el estatus del producto: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al cambiar el estatus del producto: {ex.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

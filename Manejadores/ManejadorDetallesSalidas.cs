@@ -112,7 +112,7 @@ namespace Manejadores
 
             if (ds.Tables["temp"].Rows.Count == 0)
             {
-                throw new Exception("No hay productos para modificar");
+                throw new Exception("No hay productos para modificar.");
             }
 
             DataRow row = ds.Tables["temp"].Rows[0];

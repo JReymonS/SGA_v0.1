@@ -121,7 +121,7 @@ namespace SGA_v0._1
 
                 if (detalle.id_detalleEntrada == 0)
                 {
-                    MessageBox.Show("No hay un detalle válido para modificar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("No hay un detalle válido para modificar.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -140,7 +140,7 @@ namespace SGA_v0._1
                 DataRow producto = me.ObtenerProductoPorId(detalle.fkid_producto);
                 if (producto == null)
                 {
-                    MessageBox.Show("No se encontró el producto en la base de datos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("No se encontró el producto en la base de datos.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -186,7 +186,7 @@ namespace SGA_v0._1
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cargar datos para modificar: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al cargar datos para modificar: {ex.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -207,10 +207,11 @@ namespace SGA_v0._1
         //EVENTO CLICK PARA MOSTRAR LOS PRODUCTOS
         private void BtnMostrar_Click(object sender, EventArgs e)
         {
-            md.EstilizarData(DtgLista);
-            md.EstilizarData(DtgListaR);
+
             idProveedorSeleccionado = Convert.ToInt32(CbProveedor.SelectedValue);
             me.MostrarProductos(DtpFecha.Value, idProveedorSeleccionado, DtgLista);
+            md.EstilizarData(DtgLista);
+            md.EstilizarData(DtgListaR);
         }
 
 
@@ -232,13 +233,13 @@ namespace SGA_v0._1
         {
             if (idProductoSeleccionado == 0)
             {
-                MessageBox.Show("Selecciona un producto primero.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecciona un producto primero.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(TxtCantidad.Text))
             {
-                MessageBox.Show("Debes ingresar una cantidad.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Debes ingresar una cantidad.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -248,13 +249,13 @@ namespace SGA_v0._1
 
             if (!int.TryParse(TxtCantidad.Text,out cantidad)||cantidad<=0) 
             {
-                MessageBox.Show("La cantidad a ingresar, deberá ser un número entero no negativo.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("La cantidad a ingresar, deberá ser un número entero no negativo.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if(!double.TryParse(TxtCosto.Text,out costo) || costo < 0) 
             {
-                MessageBox.Show("El costo debe ser un número válido y no negativo");
+                MessageBox.Show("El costo debe ser un número válido y no negativo.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -315,7 +316,7 @@ namespace SGA_v0._1
 
             if (listaTemporal.Count == 0)
             {
-                MessageBox.Show("No hay productos para guardar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No hay productos para guardar.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -333,7 +334,7 @@ namespace SGA_v0._1
                 detalle.fkid_entrada = idEntrada;
             }
 
-            MessageBox.Show("Se crearon entradas individuales.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Se crearon entradas de productos individuales.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
@@ -381,17 +382,17 @@ namespace SGA_v0._1
                                 // Actualizar stock del producto con la diferencia
                                 me.ActualizarStockProducto(idProductoActual, cantidadAnterior, nuevaCantidad);
 
-                                MessageBox.Show("Cantidad, costo y stock actualizados correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Cantidad, costo y stock actualizados correctamente.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
                             catch (Exception ex)
                             {
-                                MessageBox.Show($"Error al actualizar detalle, costo o stock: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show($"Error al actualizar detalle, costo o stock: {ex.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Cantidad o costo no válidos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Cantidad o costo no válidos.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         return;
                     }
@@ -407,7 +408,7 @@ namespace SGA_v0._1
                     int idEntrada = me.GuardarEntrada(entrada);
                     if (idEntrada == 0)
                     {
-                        MessageBox.Show($"No se pudo guardar la entrada para el producto {idProducto}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($"No se pudo guardar la entrada para el producto {idProducto}.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         continue;
                     }
 
@@ -433,7 +434,7 @@ namespace SGA_v0._1
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al guardar detalles: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al guardar detalles: {ex.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -466,6 +467,8 @@ namespace SGA_v0._1
             FrmEntradasDatos.detalleEntrada = new DetalleEntradas(0, 0.0, 0, 0, 0);
         }
 
+
+        //EVENTO PARA DISEÑO DE FOMULARIO
         private void BtnMostrar_MouseLeave(object sender, EventArgs e)
         {
             BtnMostrar.BackColor = ColorTranslator.FromHtml("#545454");
@@ -520,5 +523,6 @@ namespace SGA_v0._1
             BtnCancelar.BackColor = ColorTranslator.FromHtml("#545454");
             md.QuitarBordesBotones(BtnCancelar);
         }
+        // FIN DE EVENTOS PARA DISEÑO DE FORMULARIO
     }
 }

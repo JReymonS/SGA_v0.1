@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDatosRolesPermisos));
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.cmbIdentificador = new System.Windows.Forms.ComboBox();
@@ -55,7 +57,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 148);
+            this.label1.Location = new System.Drawing.Point(21, 152);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 27);
             this.label1.TabIndex = 0;
@@ -64,9 +66,9 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(116, 145);
+            this.txtNombre.Location = new System.Drawing.Point(131, 145);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(429, 28);
+            this.txtNombre.Size = new System.Drawing.Size(480, 28);
             this.txtNombre.TabIndex = 2;
             // 
             // cmbIdentificador
@@ -79,7 +81,7 @@
             "Empleado",
             "Admin. Sistema",
             "Cliente"});
-            this.cmbIdentificador.Location = new System.Drawing.Point(909, 145);
+            this.cmbIdentificador.Location = new System.Drawing.Point(867, 144);
             this.cmbIdentificador.Name = "cmbIdentificador";
             this.cmbIdentificador.Size = new System.Drawing.Size(214, 32);
             this.cmbIdentificador.TabIndex = 3;
@@ -88,7 +90,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(693, 152);
+            this.label3.Location = new System.Drawing.Point(716, 152);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 27);
             this.label3.TabIndex = 4;
@@ -98,7 +100,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(721, 235);
+            this.label4.Location = new System.Drawing.Point(716, 236);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 27);
             this.label4.TabIndex = 5;
@@ -109,7 +111,7 @@
             this.cmbModulo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbModulo.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbModulo.FormattingEnabled = true;
-            this.cmbModulo.Location = new System.Drawing.Point(909, 232);
+            this.cmbModulo.Location = new System.Drawing.Point(867, 230);
             this.cmbModulo.Name = "cmbModulo";
             this.cmbModulo.Size = new System.Drawing.Size(214, 32);
             this.cmbModulo.TabIndex = 6;
@@ -118,19 +120,28 @@
             // 
             this.dtgDatosPermisos.AllowUserToAddRows = false;
             this.dtgDatosPermisos.AllowUserToResizeColumns = false;
+            this.dtgDatosPermisos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
             this.dtgDatosPermisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgDatosPermisos.Location = new System.Drawing.Point(12, 301);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgDatosPermisos.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgDatosPermisos.Location = new System.Drawing.Point(26, 301);
             this.dtgDatosPermisos.Name = "dtgDatosPermisos";
             this.dtgDatosPermisos.ReadOnly = true;
             this.dtgDatosPermisos.RowHeadersWidth = 51;
-            this.dtgDatosPermisos.Size = new System.Drawing.Size(605, 210);
+            this.dtgDatosPermisos.Size = new System.Drawing.Size(585, 210);
             this.dtgDatosPermisos.TabIndex = 7;
             this.dtgDatosPermisos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDatosPermisos_CellEnter);
             // 
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(909, 431);
+            this.btnGuardar.Location = new System.Drawing.Point(907, 372);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(174, 59);
             this.btnGuardar.TabIndex = 8;
@@ -143,7 +154,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(909, 544);
+            this.btnCancelar.Location = new System.Drawing.Point(907, 452);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(174, 59);
             this.btnCancelar.TabIndex = 9;
@@ -157,9 +168,9 @@
             // 
             this.btnAgregarPermiso.BackgroundImage = global::SGA_v0._1.Properties.Resources.Registro_Entrada;
             this.btnAgregarPermiso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAgregarPermiso.Location = new System.Drawing.Point(651, 310);
+            this.btnAgregarPermiso.Location = new System.Drawing.Point(635, 310);
             this.btnAgregarPermiso.Name = "btnAgregarPermiso";
-            this.btnAgregarPermiso.Size = new System.Drawing.Size(54, 46);
+            this.btnAgregarPermiso.Size = new System.Drawing.Size(34, 33);
             this.btnAgregarPermiso.TabIndex = 10;
             this.btnAgregarPermiso.UseVisualStyleBackColor = true;
             this.btnAgregarPermiso.Click += new System.EventHandler(this.btnAgregarPermiso_Click);
@@ -170,9 +181,9 @@
             // 
             this.btnEliminarPermiso.BackgroundImage = global::SGA_v0._1.Properties.Resources.Eliminar;
             this.btnEliminarPermiso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminarPermiso.Location = new System.Drawing.Point(651, 362);
+            this.btnEliminarPermiso.Location = new System.Drawing.Point(635, 362);
             this.btnEliminarPermiso.Name = "btnEliminarPermiso";
-            this.btnEliminarPermiso.Size = new System.Drawing.Size(54, 50);
+            this.btnEliminarPermiso.Size = new System.Drawing.Size(34, 33);
             this.btnEliminarPermiso.TabIndex = 11;
             this.btnEliminarPermiso.UseVisualStyleBackColor = true;
             this.btnEliminarPermiso.Click += new System.EventHandler(this.btnEliminarPermiso_Click);
@@ -194,7 +205,7 @@
             // 
             this.chkLeer.AutoSize = true;
             this.chkLeer.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkLeer.Location = new System.Drawing.Point(147, 232);
+            this.chkLeer.Location = new System.Drawing.Point(144, 232);
             this.chkLeer.Name = "chkLeer";
             this.chkLeer.Size = new System.Drawing.Size(67, 31);
             this.chkLeer.TabIndex = 13;
@@ -205,7 +216,7 @@
             // 
             this.chkModificar.AutoSize = true;
             this.chkModificar.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkModificar.Location = new System.Drawing.Point(261, 232);
+            this.chkModificar.Location = new System.Drawing.Point(254, 232);
             this.chkModificar.Name = "chkModificar";
             this.chkModificar.Size = new System.Drawing.Size(111, 31);
             this.chkModificar.TabIndex = 14;
@@ -216,7 +227,7 @@
             // 
             this.chkBorrar.AutoSize = true;
             this.chkBorrar.Font = new System.Drawing.Font("Livvic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkBorrar.Location = new System.Drawing.Point(399, 232);
+            this.chkBorrar.Location = new System.Drawing.Point(408, 232);
             this.chkBorrar.Name = "chkBorrar";
             this.chkBorrar.Size = new System.Drawing.Size(85, 31);
             this.chkBorrar.TabIndex = 15;
@@ -227,36 +238,36 @@
             // 
             this.pictureBox1.BackgroundImage = global::SGA_v0._1.Properties.Resources.Rol_Permisos;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(26, 35);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(74, 81);
+            this.pictureBox1.Size = new System.Drawing.Size(64, 67);
             this.pictureBox1.TabIndex = 31;
             this.pictureBox1.TabStop = false;
             // 
             // pNombre
             // 
             this.pNombre.Controls.Add(this.lblNombre);
-            this.pNombre.Location = new System.Drawing.Point(114, 12);
+            this.pNombre.Location = new System.Drawing.Point(114, 21);
             this.pNombre.Name = "pNombre";
-            this.pNombre.Size = new System.Drawing.Size(1009, 81);
+            this.pNombre.Size = new System.Drawing.Size(969, 66);
             this.pNombre.TabIndex = 30;
             // 
             // lblNombre
             // 
-            this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Suravaram", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(306, -13);
+            this.lblNombre.Location = new System.Drawing.Point(0, -14);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(191, 51);
+            this.lblNombre.Size = new System.Drawing.Size(967, 67);
             this.lblNombre.TabIndex = 23;
             this.lblNombre.Text = "ROLES Y PERMISOS";
+            this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmDatosRolesPermisos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 637);
+            this.ClientSize = new System.Drawing.Size(1121, 569);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pNombre);
             this.Controls.Add(this.chkBorrar);
@@ -276,15 +287,15 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmDatosRolesPermisos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmDatosRolesPermisos";
+            this.Text = "ROLES Y PERMISOS";
             this.Load += new System.EventHandler(this.FrmDatosRolesPermisos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDatosPermisos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pNombre.ResumeLayout(false);
-            this.pNombre.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

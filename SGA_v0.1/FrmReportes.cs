@@ -1,5 +1,4 @@
-﻿using Entidades;
-using Manejadores;
+﻿using Manejadores;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -43,7 +42,7 @@ namespace SGA_v0._1
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al cargar el reporte: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al cargar el reporte: {ex.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -61,7 +60,7 @@ namespace SGA_v0._1
         {
             if (string.IsNullOrEmpty(tipoReporteActual))
             {
-                MessageBox.Show("No hay ningun reporte generado para exportar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No hay ningun reporte generado para exportar.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -81,7 +80,7 @@ namespace SGA_v0._1
             if (columna == 6)
             {
                
-                DialogResult resultado = MessageBox.Show("¿Está seguro de eliminar este registro del reporte?", "Confirmar Eliminacion",
+                DialogResult resultado = MessageBox.Show("¿Está seguro de eliminar este registro del reporte?", "¡ATENCIÓN!",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (resultado == DialogResult.Yes)
@@ -93,7 +92,7 @@ namespace SGA_v0._1
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"Error al eliminar la fila: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($"Error al eliminar la fila: {ex.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -107,6 +106,8 @@ namespace SGA_v0._1
             columna = e.ColumnIndex;
         }
 
+
+        //EVENTOS PARA DISEÑO DE FORMULARIO
         private void btnAgregar_MouseEnter(object sender, EventArgs e)
         {
             btnAgregar.BackColor = ColorTranslator.FromHtml("#7B8A84");
@@ -128,6 +129,8 @@ namespace SGA_v0._1
             btnGenerarExcel.BackColor = ColorTranslator.FromHtml("#545454");
             md.QuitarBordesBotones(btnGenerarExcel);
         }
+        //FIN EVENTOS PARA DISEÑO DE FORMULARIO
+
 
         // EVENTO PARA OBTENER LOS PERMISOS Y HABILITAR / DESHABILITAR BOTONES
         private void FrmReportes_Load(object sender, EventArgs e)
@@ -144,8 +147,7 @@ namespace SGA_v0._1
                     permisoEliminar = permiso.permiso_borrar == "1";
 
                 }
-            }
-            
+            }   
         }
     }
 }

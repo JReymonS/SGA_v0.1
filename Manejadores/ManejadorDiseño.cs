@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Manejadores
@@ -46,6 +41,7 @@ namespace Manejadores
         {
             panel.BackColor = color;
             etiqueta.ForeColor = ColorTranslator.FromHtml("#EDE7D5");
+            //etiqueta.Location = new Point(5, 9);
             etiqueta.Font = new Font("Suravaram", 30, FontStyle.Bold);
         }
 
@@ -56,15 +52,15 @@ namespace Manejadores
             int radio = 45;
             int borde = 2;
 
-            Panel contenedor = new Panel(); 
+            Panel contenedor = new Panel();
 
             contenedor.BackColor = ColorTranslator.FromHtml("#EDE7D5");
-            contenedor.Size = new Size(txt.Width + 40, txt.Height + 24);
+            contenedor.Size = new Size(txt.Width + 40, txt.Height + 18);
             contenedor.Location = txt.Location;
 
             txt.BorderStyle = BorderStyle.None;
             txt.BackColor = ColorTranslator.FromHtml("#EDE7D5");
-            txt.Location = new Point(12, 8); // centrado perfecto
+            txt.Location = new Point(12, 12); // centrado perfecto
             txt.Width = contenedor.Width - 24;
 
             contenedor.Paint += (s, e) =>
@@ -96,6 +92,8 @@ namespace Manejadores
             contenedor.Controls.Add(txt);
             txt.BringToFront();
         }
+
+
         // METODO PARA DAR FORMATO A LOS TEXT BOX (COLOR DE BORDE, FONDO Y REDONDEADO) DE LOGIN
         public void EstilizarTextBoxLogin(TextBox txt)
         {
@@ -105,7 +103,7 @@ namespace Manejadores
             Panel contenedor = new Panel();
 
             contenedor.BackColor = ColorTranslator.FromHtml("#EDE7D5");
-            contenedor.Size = new Size(txt.Width + 40, txt.Height + 24);
+            contenedor.Size = new Size(txt.Width + 40, txt.Height + 20);
             contenedor.Location = txt.Location;
 
             txt.BorderStyle = BorderStyle.None;
@@ -143,6 +141,7 @@ namespace Manejadores
             txt.BringToFront();
         }
 
+
         //METODO PARA ESTILIZAR EL DATAGRIDVIEW
         public void EstilizarData(DataGridView tabla)
         {
@@ -172,7 +171,7 @@ namespace Manejadores
             tabla.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
             tabla.ColumnHeadersDefaultCellStyle.SelectionBackColor = colorSeleccion;
             tabla.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
-            tabla.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; 
+            tabla.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             tabla.RowHeadersDefaultCellStyle.BackColor = colorFondo;
             tabla.RowHeadersDefaultCellStyle.ForeColor = Color.Black;
@@ -184,7 +183,7 @@ namespace Manejadores
             tabla.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             tabla.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
 
-            
+
             foreach (DataGridViewRow fila in tabla.Rows)
             {
                 foreach (DataGridViewCell celda in fila.Cells)
@@ -199,6 +198,7 @@ namespace Manejadores
                 }
             }
         }
+
 
         // METODO PARA AGREGAR BORDE AL FORMULARIO 
         public void AgregarBordeFormulario(Form formulario)
@@ -219,12 +219,13 @@ namespace Manejadores
             };
         }
 
+
         // METODO PARA DAR FORMATO A LOS COMBO BOX (COLOR DE BORDE Y FONDO)
         public void EstilizarComboBox(ComboBox cmb)
         {
             int borde = 1;
             Panel contenedor = new Panel();
-            contenedor.BackColor = ColorTranslator.FromHtml("#545454"); 
+            contenedor.BackColor = ColorTranslator.FromHtml("#545454");
             contenedor.Size = new Size(cmb.Width + (borde * 2), cmb.Height + (borde * 2));
             contenedor.Location = cmb.Location;
 
@@ -239,15 +240,16 @@ namespace Manejadores
         }
 
 
+        // METODO PARA DAR FORMATO A LOS DATE TIME PICKER (COLOR DE BORDE Y FONDO)
         public void EstilizarDTP(DateTimePicker dtp)
         {
             int borde = 1;
             Panel contenedor = new Panel();
-            contenedor.BackColor = ColorTranslator.FromHtml("#545454"); 
+            contenedor.BackColor = ColorTranslator.FromHtml("#545454");
             contenedor.Size = new Size(dtp.Width + (borde * 2), dtp.Height + (borde * 2));
             contenedor.Location = dtp.Location;
 
-            
+
             dtp.CalendarMonthBackground = ColorTranslator.FromHtml("#EDE7D5");
             dtp.CalendarTitleBackColor = ColorTranslator.FromHtml("#EDE7D5");
             dtp.CalendarTitleForeColor = Color.Black;
@@ -260,9 +262,36 @@ namespace Manejadores
             dtp.BringToFront();
         }
 
-       
+
+        // METODO PARA CERRAR FORMULARIOS ACTIVOS AL CAMBIAR DE OPCION EN EL MENU
+        public void CerrarFormulariosActivos(Form formularioPadre)
+        {
+            foreach (Form formularioHijo in formularioPadre.MdiChildren)
+            {
+                formularioHijo.Close();
+            }
+        }
 
 
+        // METODO PARA COLOREAR SELECCIONES EN EL TOOLSTRIP
+        public void Boton(object senderBoton, ToolStrip tsMenu, ToolStripButton tsBoton) 
+        {
+            Color colorSeleccion = ColorTranslator.FromHtml("#8CBFAF");
+            Color colorOriginal = ColorTranslator.FromHtml("#B7CC18");
 
+            foreach(ToolStripItem item in tsMenu.Items) 
+            {
+                if(item is ToolStripButton) 
+                {
+                    item.BackColor = colorOriginal;
+                }
+            }
+
+            if(senderBoton is ToolStripButton boton) 
+            {
+                boton.BackColor = colorSeleccion;
+                tsBoton = boton;
+            }
+        }
     }
 }

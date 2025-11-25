@@ -47,6 +47,8 @@ namespace SGA_v0._1
             }   
 
         }
+
+
         //METODO PARA BUSCAR PROVEEDORES
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -59,16 +61,13 @@ namespace SGA_v0._1
         {
             proveedor.id_proveedor = 0; proveedor.nombre = ""; proveedor.apellido_paterno = ""; proveedor.apellido_materno = "";
             proveedor.telefono = ""; proveedor.correo = ""; proveedor.plazo_disponibilidad = 0; proveedor.status = "";
-
-            this.Hide();
-
             FrmDatosProveedores fmp = new FrmDatosProveedores();
-            fmp.FormClosed += (s, args) => this.Show();
             fmp.ShowDialog();
-            
             DtgDatos.Columns.Clear();
         }
 
+
+        //EVENTOS PARA DISEÑO DE FORMULARIO
         private void btnBuscar_MouseEnter(object sender, EventArgs e)
         {
 
@@ -91,6 +90,7 @@ namespace SGA_v0._1
         {
             btnAgregar.BackColor = ColorTranslator.FromHtml("#7B8A84");
         }
+        //FIN DE EVENTOS PARA DISEÑO DE FORMULARIO
 
 
         //METODO PARA CAPTURAR LA FILA Y COLUMNA SELECCIONADA

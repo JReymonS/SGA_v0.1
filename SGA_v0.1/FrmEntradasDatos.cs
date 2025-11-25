@@ -83,7 +83,7 @@ namespace SGA_v0._1
             {
                 DtgDatos.DataSource = null;
                 MessageBox.Show("No se encontraron detalles de entrada para la fecha seleccionada.",
-                    "Sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             // Ocultar columnas que no quieres mostrar
             if (DtgDatos.Columns.Contains("ID Detalle"))
@@ -109,6 +109,8 @@ namespace SGA_v0._1
             DtgDatos.Refresh();
         }
 
+
+        //EVENTOS PARA DISEÑO DE FORMULARIO
         private void BtnBuscar_MouseEnter(object sender, EventArgs e)
         {
             BtnBuscar.BackColor = ColorTranslator.FromHtml("#7B8A84");
@@ -144,6 +146,7 @@ namespace SGA_v0._1
                 }
             }
         }
+        // FIN EVENTOS DISEÑO FORMULARIO
 
 
         // EVENTO CELL CONTENT CLICK PARA MODIFICAR
@@ -179,7 +182,7 @@ namespace SGA_v0._1
                     else
                     {
                         MessageBox.Show("No se encontró la columna del producto (ID Producto).",
-                                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
@@ -206,7 +209,7 @@ namespace SGA_v0._1
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Error al cargar los datos para modificar: {ex.Message}",
-                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

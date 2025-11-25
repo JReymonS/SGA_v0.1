@@ -1,13 +1,7 @@
 ﻿using Entidades;
 using Manejadores;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SGA_v0._1
@@ -32,8 +26,6 @@ namespace SGA_v0._1
         //CONSTRUCTOR PARA INICIALIZAR EL FORMULARIO CON DATOS SEGUN SEA EL CASO (MODIFICAR / NUEVO REGISTRO)
         public FrmAgregarSalidaProductos()
         {
-            
-
             InitializeComponent();
             ms = new ManejadorSalidas();
             mds = new ManejadorDetallesSalidas();
@@ -82,9 +74,6 @@ namespace SGA_v0._1
                 );
                 mds.MostrarProductosTemporales(dtgListaProductos);
             }
-
-
-
         }
 
 
@@ -93,7 +82,6 @@ namespace SGA_v0._1
         {
             fila1 = e.RowIndex;
             columna1 = e.ColumnIndex;
-
         }
 
 
@@ -121,10 +109,9 @@ namespace SGA_v0._1
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al seleccionar el producto:\n\n{ex.Message}\n\nAsegúrese de hacer clic en el botón 'Seleccionar' un producto válido.",
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al seleccionar el producto:\n\n{ex.Message}\n\n\nAsegúrese de hacer clic en el botón 'Seleccionar' en un producto válido.",
+                    "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
 
         
@@ -135,15 +122,15 @@ namespace SGA_v0._1
             int stockActual = mds.ObtenerStockActual(producto.id_producto);
             if (producto.id_producto == 0 || string.IsNullOrEmpty(producto.nombre) || txtProducto.Text == null)
             {
-                MessageBox.Show("Por favor seleccione un producto del primero.\nDebe hacer clic en el botón 'Seleccionar' del producto deseado.",
-                    "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor seleccione un producto del primero.\n\nDebe hacer clic en el botón 'Seleccionar' del producto deseado.",
+                    "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (!int.TryParse(txtCantidad.Text, out int cantidad) || cantidad <= 0)
             {
                 MessageBox.Show("La cantidad debe ser un número mayor a cero.",
-                    "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtCantidad.Focus();
                 txtCantidad.Clear();
                 return;
@@ -153,7 +140,7 @@ namespace SGA_v0._1
             if (cantidad > stockActual)
             {
                 MessageBox.Show($"La cantidad solicitada ({cantidad}) supera el stock disponible ({producto.stock}).",
-                    "Stock insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtCantidad.Focus();
                 txtCantidad.Clear();
                 return;
@@ -189,21 +176,21 @@ namespace SGA_v0._1
             if (FrmUsuarioSesion.Usuario == null)
             {
                 MessageBox.Show("No hay un usuario activo en sesión. Por favor inicie sesión antes de registrar una salida.",
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (esModificacion)
             {
-                MessageBox.Show("Salida existente.",
-                    "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Salida en existencia.",
+                    "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
             var fecha = dtpFecha.Value.ToString("yyyy-MM-dd");
             idSalida = ms.GuardarSalidaObtenerId(new Salidas(0, fecha, FrmUsuarioSesion.Usuario.id_usuario));
 
-            MessageBox.Show("Salida confirmada. Ahora presione 'Guardar'",
-                "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Productos confirmados para su salida.\n\n\nPorfavor presione en 'Guardar'.",
+                "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
@@ -212,8 +199,8 @@ namespace SGA_v0._1
         {
             if (idSalida == 0)
             {
-                MessageBox.Show("Primero debe confirmar la salida antes de guardar los detalles",
-                                "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Primero debe confirmar los productos de salida antes de guardar los detalles.",
+                                "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -222,8 +209,8 @@ namespace SGA_v0._1
                 if (esModificacion)
                 {
                     mds.ModificarDetalleSalida(idDetalleSalida, idSalida);
-                    MessageBox.Show("La Salida se ha modificado correctamente",
-                                    "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se ha modificado la salida correctamente.",
+                                    "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtCantidad.Clear();
                     txtProducto.Clear();
                     dtgListaProductos.Columns.Clear();
@@ -233,8 +220,8 @@ namespace SGA_v0._1
                 {
                     
                     mds.GuardarDetalleSalidas(idSalida);
-                    MessageBox.Show("Salida registrada Correctamente. \nEl stock ha sido actualizado.",
-                                    "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Salidas registrada correctamente. \n\n\nSe ha actualizado el stock actual.",
+                                    "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtCantidad.Clear();
                     txtProducto.Clear();
                     dtgListaProductos.Columns.Clear();
@@ -247,7 +234,7 @@ namespace SGA_v0._1
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -259,7 +246,7 @@ namespace SGA_v0._1
             {
                 DialogResult resultado = MessageBox.Show(
                     "¿Esta seguro que desea cancelar?",
-                    "Confirmar cancelacion",
+                    "¡ATENCIÓN!",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Warning
                 );
@@ -270,14 +257,14 @@ namespace SGA_v0._1
                     {
                         ms.EliminarSalida(idSalida);
                         mds.LimpiarProductosTemporales();
-                        MessageBox.Show("Salida cancelada correctamente",
-                            "Cancelado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Salida cancelada correctamente.",
+                            "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show($"Error al cancelar: {ex.Message}",
-                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -288,6 +275,8 @@ namespace SGA_v0._1
             }
         }
 
+
+        // EVENTOS PARA DISEÑO DEL FORMULARIO
         private void btnAgregar_MouseEnter(object sender, EventArgs e)
         {
             btnAgregar.BackColor = ColorTranslator.FromHtml("#7B8A84");
@@ -336,6 +325,7 @@ namespace SGA_v0._1
         {
             md.EstilizarData(dtgMostrarProductos);
         }
+        // FIN DE EVENTOS PARA DISEÑO DEL FORMULARIO
 
 
         //EVENTO CELL CLICK QUE PERMITE ELIMINAR PRODUCTOS DE LA TABLA TEMPORAL
@@ -349,7 +339,7 @@ namespace SGA_v0._1
                     {
                         try
                         {
-                            
+                          
                             string idProducto = dtgListaProductos.Rows[e.RowIndex].Cells["id_producto"].Value.ToString();
 
                             mds.EliminarProductoTemporal(idProducto);
@@ -359,7 +349,7 @@ namespace SGA_v0._1
                         catch (Exception ex)
                         {
                             MessageBox.Show($"Error al eliminar: {ex.Message}",
-                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     break;

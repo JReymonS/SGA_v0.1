@@ -1,13 +1,7 @@
 ﻿using Entidades;
 using Manejadores;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SGA_v0._1
@@ -17,6 +11,7 @@ namespace SGA_v0._1
         // CREACION DEL OBJETO DE SU MANEJADOR
         ManejadorProductos mp;
         ManejadorDiseño md;
+
 
         //CONSTRUCTO QUE PERMITE LLENAR LOS CAMPOS SI SE MODIFICAN
         public FrmAgregarProductos()
@@ -51,8 +46,6 @@ namespace SGA_v0._1
                 cmbEstatus.Text = FrmVerProductos.producto.status;
                 cmbUnidad.Text = FrmVerProductos.producto.unidad;
                 cmbCategoria.SelectedValue = FrmVerProductos.producto.fkid_categoria;
-
-
             }
         }
 
@@ -73,7 +66,7 @@ namespace SGA_v0._1
                         return;
                     }
                     mp.Guardar(new Productos(0, txtNombre.Text, txtDescripcion.Text, cmbUnidad.Text, double.Parse(txtCosto.Text), int.Parse(txtStockActual.Text), int.Parse(txtStockMinimo.Text), cmbEstatus.SelectedValue.ToString(), (int)cmbCategoria.SelectedValue));
-                    MessageBox.Show("Datos Guardados Exitosamente");
+                    MessageBox.Show("Los datos se guardaron con exito.","¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
 
                 }
@@ -88,13 +81,13 @@ namespace SGA_v0._1
                         return;
                     }
                     mp.Modificar(new Productos(FrmVerProductos.producto.id_producto, txtNombre.Text, txtDescripcion.Text, cmbUnidad.Text, double.Parse(txtCosto.Text), int.Parse(txtStockActual.Text), int.Parse(txtStockMinimo.Text), cmbEstatus.SelectedValue.ToString(), (int)cmbCategoria.SelectedValue));
-                    MessageBox.Show("Datos Actualizados Correctamente");
+                    MessageBox.Show("Los datos se guardaron con exito.","¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al Guardar los Datos. Hubo un problema: {ex.Message}");
+                MessageBox.Show($"Error sl guardar los datos: {ex.Message}","ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -106,6 +99,8 @@ namespace SGA_v0._1
             Close();
         }
 
+
+        // EVENTOS PARA DISEÑO DEL FOMULARIO
         private void tnGuardar_MouseLeave(object sender, EventArgs e)
         {
             tnGuardar.BackColor = ColorTranslator.FromHtml("#545454");
@@ -127,5 +122,6 @@ namespace SGA_v0._1
             btnCancelar.BackColor = ColorTranslator.FromHtml("#545454");
             md.QuitarBordesBotones(btnCancelar);
         }
+        // FIN EVENTOS PARA DISEÑO DEL FOMULARIO
     }
 }

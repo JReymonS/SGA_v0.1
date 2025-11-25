@@ -86,7 +86,7 @@ namespace Manejadores
         // METODO PARA PREGUNTAR SI QUIERE FILTRAR POR CATEGORÍA EN REPORTES DE STOCK
         public string PreguntarCategoria(ComboBox comboCategoria)
         {
-            DialogResult resultado = MessageBox.Show("¿Desea filtrar el reporte por una categorIa especIfica?", "Filtrar por CategorIa", MessageBoxButtons.YesNo,
+            DialogResult resultado = MessageBox.Show("¿Desea filtrar el reporte por una categoría específica?", "¡ATENCIÓN!", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
@@ -129,7 +129,7 @@ namespace Manejadores
                     break;
 
                 default:
-                    MessageBox.Show("Tipo de reporte no valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Tipo de reporte no valido.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
             }
 
@@ -139,7 +139,7 @@ namespace Manejadores
 
                 if (tabla.Rows.Count == 0)
                 {
-                    MessageBox.Show("No se encontraron datos para el reporte seleccionado.", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No se encontraron datos para el reporte seleccionado.", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -149,14 +149,12 @@ namespace Manejadores
                             tabla.Columns.Add(Boton("ELIMINAR", Color.OrangeRed));
                         md.EstilizarData(tabla);
                     }
-
-                    
                    
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al generar el reporte: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al generar el reporte: {ex.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -207,7 +205,7 @@ namespace Manejadores
 
                 excelWorkBook.SaveAs(filePath);
 
-                MessageBox.Show($"El Archivo Excel se ha guardado en:\n{filePath}", "Exportación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"El Archivo Excel se ha guardado en:\n{filePath}", "¡ATENCIÓN!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // LIMPIAR EL DATAGRIDVIEW DESPUÉS DE EXPORTAR
                 tabla.DataSource = null;
@@ -216,7 +214,7 @@ namespace Manejadores
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al Exportar a Excel: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al Exportar a Excel: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -228,6 +226,5 @@ namespace Manejadores
                 Marshal.ReleaseComObject(excelApp);
             }
         }
-
     }
 }

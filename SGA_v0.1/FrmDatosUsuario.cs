@@ -36,7 +36,6 @@ namespace SGA_v0._1
                 txtClave.Text = FrmUsuarios.usuario.clave;
                 cmbEstatus.SelectedValue = FrmUsuarios.usuario.status;
                 cmbRol.SelectedValue = FrmUsuarios.usuario.fkid_rol;
-
             }
         }
 
@@ -47,7 +46,6 @@ namespace SGA_v0._1
             if (FrmUsuarios.usuario.id_usuario == 0)
             {
                 mu.ValidarCampos(txtNombre, txtApellidoPaterno, txtApellidoMaterno, txtClave, true);
-
                 if (!mu.valido)
                 {
                     return;
@@ -56,6 +54,12 @@ namespace SGA_v0._1
                 else
                 {
                     mu.Guardar(new Usuarios(0, txtNombre.Text, txtApellidoPaterno.Text, txtApellidoMaterno.Text, txtClave.Text, mu.Codificacion(cmbEstatus), int.Parse(cmbRol.SelectedValue.ToString())));
+                      
+                    if(!mu.valido) 
+                    {
+                       return;
+                    }
+                    Close();
                 }
             }
             else 
@@ -71,6 +75,11 @@ namespace SGA_v0._1
                     else
                     {
                         mu.Modificar(new Usuarios(FrmUsuarios.usuario.id_usuario, txtNombre.Text, txtApellidoPaterno.Text, txtApellidoMaterno.Text, FrmUsuarios.usuario.clave, mu.Codificacion(cmbEstatus), int.Parse(cmbRol.SelectedValue.ToString())), false);
+                        if(!mu.valido) 
+                        {
+                            return;
+                        }
+                        Close();
                     }
                 }
                 else
@@ -83,10 +92,14 @@ namespace SGA_v0._1
                     else
                     {
                         mu.Modificar(new Usuarios(FrmUsuarios.usuario.id_usuario, txtNombre.Text, txtApellidoPaterno.Text, txtApellidoMaterno.Text, txtClave.Text, mu.Codificacion(cmbEstatus), int.Parse(cmbRol.SelectedValue.ToString())), true);
+                        if(!mu.valido) 
+                        {
+                            return;
+                        }
+                        Close();
                     }
                 }
             }
-            Close();
         }
 
 
@@ -96,6 +109,8 @@ namespace SGA_v0._1
             Close();
         }
 
+
+        //EVENTO CLICK PARA DISEÑO DEL FORMULARIO
         private void btnGuardar_MouseEnter(object sender, EventArgs e)
         {
             btnGuardar.BackColor = ColorTranslator.FromHtml("#7B8A84");
@@ -117,5 +132,6 @@ namespace SGA_v0._1
             btnCancelar.BackColor = ColorTranslator.FromHtml("#545454");
             md.QuitarBordesBotones(btnCancelar);
         }
+        // FIN EVENTOS PARA DISEÑO DEL FORMULARIO
     }
 }

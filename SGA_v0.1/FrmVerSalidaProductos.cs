@@ -1,16 +1,8 @@
 ﻿using Entidades;
 using Manejadores;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Security.Permissions;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.WebRequestMethods;
 
 namespace SGA_v0._1
 {
@@ -73,6 +65,7 @@ namespace SGA_v0._1
             columna = e.ColumnIndex;
         }
 
+
         //EVENTO QUE PERMITE MOSTRAR LAS COLUMNAS PARA IDENTIFICAR SI SE CLICKEA LA CElDA
         private void dtgDatos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -97,11 +90,8 @@ namespace SGA_v0._1
             }
         }
 
-        private void dtgDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
-
+        //EVENTOS PARA DISEÑO DE FORMULARIO
         private void btnBuscar_MouseLeave(object sender, EventArgs e)
         {
             btnBuscar.BackColor = ColorTranslator.FromHtml("#545454");
@@ -123,6 +113,8 @@ namespace SGA_v0._1
         {
             btnAgregar.BackColor = ColorTranslator.FromHtml("#7B8A84");
         }
+        //FIN DE EVENTOS PARA DISEÑO DE FORMULARIO
+
 
         // EVENTO PARA OBTENER LOS PERMISOS Y HABILITAR / DESHABILITAR BOTONES
         private void FrmVerSalidaProductos_Load(object sender, EventArgs e)
@@ -135,7 +127,6 @@ namespace SGA_v0._1
                     btnAgregar.Enabled = permiso.permiso_crear == "1";
                     permisoModificar = permiso.permiso_modificar == "1";
                 }
-               
             }
         }
     }

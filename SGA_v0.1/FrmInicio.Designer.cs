@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicio));
             this.tsPrincipal = new System.Windows.Forms.ToolStrip();
+            this.LblUsuarioActivo = new System.Windows.Forms.Label();
+            this.pSuperior = new System.Windows.Forms.Panel();
             this.tsbInicio = new System.Windows.Forms.ToolStripButton();
             this.tsbProveedores = new System.Windows.Forms.ToolStripButton();
             this.tsbCategorias = new System.Windows.Forms.ToolStripButton();
@@ -41,22 +43,21 @@
             this.tsbRolesPermisos = new System.Windows.Forms.ToolStripButton();
             this.tsbUsuarios = new System.Windows.Forms.ToolStripButton();
             this.tsbCerrarSesion = new System.Windows.Forms.ToolStripButton();
-            this.LblUsuarioActivo = new System.Windows.Forms.Label();
-            this.pbUsuario = new System.Windows.Forms.PictureBox();
-            this.btnOcultarVentana = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.pSuperior = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnOcultarVentana = new System.Windows.Forms.Button();
+            this.pbUsuario = new System.Windows.Forms.PictureBox();
             this.tsPrincipal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).BeginInit();
             this.pSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // tsPrincipal
             // 
             this.tsPrincipal.AutoSize = false;
             this.tsPrincipal.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tsPrincipal.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tsPrincipal.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.tsPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbInicio,
@@ -72,24 +73,52 @@
             this.tsbCerrarSesion});
             this.tsPrincipal.Location = new System.Drawing.Point(0, 81);
             this.tsPrincipal.Name = "tsPrincipal";
+            this.tsPrincipal.Padding = new System.Windows.Forms.Padding(0);
             this.tsPrincipal.Size = new System.Drawing.Size(85, 674);
             this.tsPrincipal.TabIndex = 1;
-            this.tsPrincipal.Text = "toolStrip1";
+            this.tsPrincipal.Text = "MENU";
+            // 
+            // LblUsuarioActivo
+            // 
+            this.LblUsuarioActivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblUsuarioActivo.AutoSize = true;
+            this.LblUsuarioActivo.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblUsuarioActivo.Location = new System.Drawing.Point(1026, 28);
+            this.LblUsuarioActivo.Name = "LblUsuarioActivo";
+            this.LblUsuarioActivo.Size = new System.Drawing.Size(69, 24);
+            this.LblUsuarioActivo.TabIndex = 3;
+            this.LblUsuarioActivo.Text = "Usuario.";
+            // 
+            // pSuperior
+            // 
+            this.pSuperior.Controls.Add(this.pictureBox1);
+            this.pSuperior.Controls.Add(this.btnCerrar);
+            this.pSuperior.Controls.Add(this.btnOcultarVentana);
+            this.pSuperior.Controls.Add(this.LblUsuarioActivo);
+            this.pSuperior.Controls.Add(this.pbUsuario);
+            this.pSuperior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pSuperior.Location = new System.Drawing.Point(0, 0);
+            this.pSuperior.Margin = new System.Windows.Forms.Padding(2);
+            this.pSuperior.Name = "pSuperior";
+            this.pSuperior.Size = new System.Drawing.Size(1443, 81);
+            this.pSuperior.TabIndex = 8;
             // 
             // tsbInicio
             // 
             this.tsbInicio.AutoSize = false;
-            this.tsbInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tsbInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tsbInicio.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbInicio.Image = global::SGA_v0._1.Properties.Resources.Inicio;
             this.tsbInicio.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbInicio.Name = "tsbInicio";
             this.tsbInicio.Size = new System.Drawing.Size(85, 60);
             this.tsbInicio.Text = "INICIO";
+            this.tsbInicio.Click += new System.EventHandler(this.tsbInicio_Click);
             // 
             // tsbProveedores
             // 
             this.tsbProveedores.AutoSize = false;
+            this.tsbProveedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tsbProveedores.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbProveedores.Image = global::SGA_v0._1.Properties.Resources.Proveedores;
             this.tsbProveedores.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -101,12 +130,13 @@
             // tsbCategorias
             // 
             this.tsbCategorias.AutoSize = false;
+            this.tsbCategorias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tsbCategorias.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbCategorias.Image = global::SGA_v0._1.Properties.Resources.Categoria;
             this.tsbCategorias.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbCategorias.Name = "tsbCategorias";
             this.tsbCategorias.Size = new System.Drawing.Size(85, 60);
-            this.tsbCategorias.Text = "CATEGORIA";
+            this.tsbCategorias.Text = "CATEGORÍAS";
             this.tsbCategorias.Click += new System.EventHandler(this.tsbCategorias_Click);
             // 
             // tsbNotificaciones
@@ -117,7 +147,7 @@
             this.tsbNotificaciones.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbNotificaciones.Name = "tsbNotificaciones";
             this.tsbNotificaciones.Size = new System.Drawing.Size(85, 60);
-            this.tsbNotificaciones.Text = "NOTIFICACION";
+            this.tsbNotificaciones.Text = "ALERTAS";
             this.tsbNotificaciones.Click += new System.EventHandler(this.tsbNotificaciones_Click);
             // 
             // tsbProductos
@@ -197,50 +227,23 @@
             this.tsbCerrarSesion.Text = "CERRAR SESION";
             this.tsbCerrarSesion.Click += new System.EventHandler(this.tsbCerrarSesion_Click);
             // 
-            // LblUsuarioActivo
+            // pictureBox1
             // 
-            this.LblUsuarioActivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LblUsuarioActivo.AutoSize = true;
-            this.LblUsuarioActivo.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblUsuarioActivo.Location = new System.Drawing.Point(1019, 32);
-            this.LblUsuarioActivo.Name = "LblUsuarioActivo";
-            this.LblUsuarioActivo.Size = new System.Drawing.Size(104, 24);
-            this.LblUsuarioActivo.TabIndex = 3;
-            this.LblUsuarioActivo.Text = "Bienvenid@: ";
-            // 
-            // pbUsuario
-            // 
-            this.pbUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbUsuario.BackgroundImage = global::SGA_v0._1.Properties.Resources.Perfil;
-            this.pbUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbUsuario.Location = new System.Drawing.Point(1256, 19);
-            this.pbUsuario.Margin = new System.Windows.Forms.Padding(2);
-            this.pbUsuario.Name = "pbUsuario";
-            this.pbUsuario.Size = new System.Drawing.Size(35, 37);
-            this.pbUsuario.TabIndex = 5;
-            this.pbUsuario.TabStop = false;
-            // 
-            // btnOcultarVentana
-            // 
-            this.btnOcultarVentana.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOcultarVentana.BackgroundImage = global::SGA_v0._1.Properties.Resources.Max;
-            this.btnOcultarVentana.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOcultarVentana.Location = new System.Drawing.Point(1312, 19);
-            this.btnOcultarVentana.Margin = new System.Windows.Forms.Padding(2);
-            this.btnOcultarVentana.Name = "btnOcultarVentana";
-            this.btnOcultarVentana.Size = new System.Drawing.Size(35, 37);
-            this.btnOcultarVentana.TabIndex = 6;
-            this.btnOcultarVentana.UseVisualStyleBackColor = true;
-            this.btnOcultarVentana.Click += new System.EventHandler(this.btnOcultarVentana_Click);
-            this.btnOcultarVentana.MouseEnter += new System.EventHandler(this.btnOcultarVentana_MouseEnter);
-            this.btnOcultarVentana.MouseLeave += new System.EventHandler(this.btnOcultarVentana_MouseLeave);
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(85, -16);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(250, 122);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
             // 
             // btnCerrar
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.BackgroundImage = global::SGA_v0._1.Properties.Resources.Cerrar;
             this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCerrar.Location = new System.Drawing.Point(1372, 19);
+            this.btnCerrar.Location = new System.Drawing.Point(1372, 22);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(35, 37);
@@ -250,30 +253,32 @@
             this.btnCerrar.MouseEnter += new System.EventHandler(this.btnCerrar_MouseEnter);
             this.btnCerrar.MouseLeave += new System.EventHandler(this.btnCerrar_MouseLeave);
             // 
-            // pSuperior
+            // btnOcultarVentana
             // 
-            this.pSuperior.Controls.Add(this.pictureBox1);
-            this.pSuperior.Controls.Add(this.btnCerrar);
-            this.pSuperior.Controls.Add(this.btnOcultarVentana);
-            this.pSuperior.Controls.Add(this.LblUsuarioActivo);
-            this.pSuperior.Controls.Add(this.pbUsuario);
-            this.pSuperior.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pSuperior.Location = new System.Drawing.Point(0, 0);
-            this.pSuperior.Margin = new System.Windows.Forms.Padding(2);
-            this.pSuperior.Name = "pSuperior";
-            this.pSuperior.Size = new System.Drawing.Size(1443, 81);
-            this.pSuperior.TabIndex = 8;
+            this.btnOcultarVentana.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOcultarVentana.BackgroundImage = global::SGA_v0._1.Properties.Resources.Max;
+            this.btnOcultarVentana.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOcultarVentana.Location = new System.Drawing.Point(1312, 22);
+            this.btnOcultarVentana.Margin = new System.Windows.Forms.Padding(2);
+            this.btnOcultarVentana.Name = "btnOcultarVentana";
+            this.btnOcultarVentana.Size = new System.Drawing.Size(35, 37);
+            this.btnOcultarVentana.TabIndex = 6;
+            this.btnOcultarVentana.UseVisualStyleBackColor = true;
+            this.btnOcultarVentana.Click += new System.EventHandler(this.btnOcultarVentana_Click);
+            this.btnOcultarVentana.MouseEnter += new System.EventHandler(this.btnOcultarVentana_MouseEnter);
+            this.btnOcultarVentana.MouseLeave += new System.EventHandler(this.btnOcultarVentana_MouseLeave);
             // 
-            // pictureBox1
+            // pbUsuario
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(88, -6);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(254, 104);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.pbUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbUsuario.BackgroundImage = global::SGA_v0._1.Properties.Resources.Perfil;
+            this.pbUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbUsuario.Location = new System.Drawing.Point(1256, 22);
+            this.pbUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.pbUsuario.Name = "pbUsuario";
+            this.pbUsuario.Size = new System.Drawing.Size(35, 37);
+            this.pbUsuario.TabIndex = 5;
+            this.pbUsuario.TabStop = false;
             // 
             // FrmInicio
             // 
@@ -284,18 +289,19 @@
             this.Controls.Add(this.pSuperior);
             this.ForeColor = System.Drawing.SystemColors.Desktop;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "FrmInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "  ";
+            this.Text = "INICIO";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmInicio_Load);
             this.tsPrincipal.ResumeLayout(false);
             this.tsPrincipal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).EndInit();
             this.pSuperior.ResumeLayout(false);
             this.pSuperior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUsuario)).EndInit();
             this.ResumeLayout(false);
 
         }

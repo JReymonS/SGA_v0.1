@@ -13,7 +13,6 @@ namespace Manejadores
         public bool valido = true; // VARIABLE PARA VALIDAR CAMPOS
         
   
-
         //METODO PARA OBTENER LOS PRODUCTOS POR ID
         public DataRow ObtenerProductoPorId(int idProducto)
         {
@@ -29,7 +28,7 @@ namespace Manejadores
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al obtener producto por ID: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al obtener producto: {ex.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -45,7 +44,7 @@ namespace Manejadores
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al actualizar stock: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al actualizar stock: {ex.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -63,7 +62,7 @@ namespace Manejadores
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al guardar la entrada: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al guardar la entrada: {ex.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 0;
             }
         }
@@ -88,7 +87,7 @@ namespace Manejadores
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al obtener proveedores: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al obtener proveedores: {ex.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -120,7 +119,7 @@ namespace Manejadores
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al mostrar productos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al mostrar productos: {ex.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -131,6 +130,7 @@ namespace Manejadores
             string query = $"CALL sp_ActualizarStockProducto({idProducto}, {cantidadAnterior}, {nuevaCantidad});";
             b.Comando(query);
         }
+
 
         //METODO PARA MOSTRAR DETALLE DE ENTRADAS (Usado en FrmEntradasDatos)
         public DataTable BuscarDetalleEntradasPorFecha(DateTime fecha)
@@ -147,7 +147,7 @@ namespace Manejadores
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al obtener detalles de entrada: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al obtener detalles de entrada: {ex.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -163,8 +163,5 @@ namespace Manejadores
             btn.HeaderText = ""; 
             btn.Name = titulo; return btn; 
         }
-
-
-
     }
 }

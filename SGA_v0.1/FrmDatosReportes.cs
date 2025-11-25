@@ -16,7 +16,6 @@ namespace SGA_v0._1
         bool requiereCategoria = false;
 
 
-
         //CONSTRUCTOR PARA INICIALIZAR EL FORMULARIO Y OBJETOS
         public FrmDatosReportes()
         {
@@ -38,11 +37,12 @@ namespace SGA_v0._1
 
             
             DialogResult resultado = MessageBox.Show(
-                "¿Desea filtrar el reporte por alguna categoria especifica?", "Filtrar por Categoria", MessageBoxButtons.YesNo,
+                "¿Desea filtrar el reporte por alguna categoría específica?", "¡ATENCIÓN!", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
+                cmbTipoAccion.Enabled = false;
                 requiereCategoria = true;
                 mr.LlenarCategorias(cmbCategoria);
                 cmbCategoria.Visible = true;
@@ -53,6 +53,7 @@ namespace SGA_v0._1
             }
             else
             {
+                cmbTipoAccion.Enabled = false;
                 requiereCategoria = false;
                 cmbCategoria.Visible = false;
                
@@ -117,7 +118,7 @@ namespace SGA_v0._1
                 case "Productos de Salida":
                     if (dtpFechaInicio.Value > dtpFechaFin.Value)
                     {
-                        MessageBox.Show("La fecha de inicio no puede ser mayor a la fecha fin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("La fecha de inicio no puede ser mayor a la fecha fin.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                     fechaInicio = dtpFechaInicio.Value;
@@ -127,7 +128,7 @@ namespace SGA_v0._1
 
             if (FrmUsuarioSesion.Usuario == null)
             {
-                MessageBox.Show("No hay un usuario en sesion. Por favor inicie sesion nuevamente.", "Error de Sesion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No hay un usuario en sesion.\n\nPor favor inicie sesion nuevamente.", "ERROR DE SESIÓN", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -165,11 +166,12 @@ namespace SGA_v0._1
             tipoReporteSeleccionado = cmbTipoAccion.SelectedItem.ToString();
 
            
-            DialogResult resultado = MessageBox.Show("¿Desea filtrar el reporte por una categoria especifica?","Filtrar por Categoria",
+            DialogResult resultado = MessageBox.Show("¿Desea filtrar el reporte por una categoría específica?","¡ATENCIÓN!",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
+                cmbTipoAccion.Enabled = false;
                 requiereCategoria = true;
                 mr.LlenarCategorias(cmbCategoria);
                 md.EstilizarComboBox(cmbCategoria);
@@ -180,6 +182,7 @@ namespace SGA_v0._1
             }
             else
             {
+                cmbTipoAccion.Enabled = false;
                 requiereCategoria = false;
                 cmbCategoria.Visible = false;
                 if (lblCategoria != null)
@@ -222,6 +225,8 @@ namespace SGA_v0._1
             Close();
         }
 
+
+        //EVENTO PARA DISEÑO DE FORMULARIO
         private void btnGenerar_MouseLeave(object sender, EventArgs e)
         {
             btnGenerar.BackColor = ColorTranslator.FromHtml("#545454");
@@ -261,5 +266,6 @@ namespace SGA_v0._1
             md.EstilosBoton(btnGenerar);
             md.EstilosBoton(btnSeleccionarReporte);
         }
+        //FIN DE EVENTOS PARA DISEÑO DE FORMULARIO
     }
 }

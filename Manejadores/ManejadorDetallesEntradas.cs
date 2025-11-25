@@ -29,7 +29,7 @@ public class ManejadorDetalleEntradas
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al guardar detalle de entrada: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al guardar detalle de entrada: {ex.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
@@ -45,7 +45,7 @@ public class ManejadorDetalleEntradas
         }
         catch (Exception ex)
         {
-            MessageBox.Show($"Error al actualizar costo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show($"Error al actualizar costo: {ex.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 
@@ -76,7 +76,7 @@ public class ManejadorDetalleEntradas
         }
         catch (Exception ex)
         {
-            MessageBox.Show($"Error al actualizar cantidad: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show($"Error al actualizar cantidad: {ex.Message}", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

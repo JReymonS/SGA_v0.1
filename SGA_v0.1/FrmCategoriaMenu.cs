@@ -93,6 +93,8 @@ namespace SGA_v0._1
             Close();
         }
 
+
+        //EVENTOS PARA DISEÑO DE FORMULARIO
         private void BtnGuardar_MouseEnter(object sender, EventArgs e)
         {
             BtnGuardar.BackColor = ColorTranslator.FromHtml("#7B8A84");
@@ -114,6 +116,7 @@ namespace SGA_v0._1
             BtnCancelar.BackColor = ColorTranslator.FromHtml("#545454");
             md.QuitarBordesBotones(BtnCancelar);
         }
+        // FIN DE EVENTOS PARA DISEÑO DE FORMULARIO
     }
 }
 
