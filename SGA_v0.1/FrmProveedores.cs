@@ -120,9 +120,6 @@ namespace SGA_v0._1
             {
                 case 8:
                     FrmDatosProveedores fmp1 = new FrmDatosProveedores();
-
-                    this.Hide();
-                    fmp1.FormClosed += (s, args) => this.Show();
                     fmp1.ShowDialog();
 
                     DtgDatos.Columns.Clear();

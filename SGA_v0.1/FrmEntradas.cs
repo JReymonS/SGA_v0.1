@@ -59,6 +59,17 @@ namespace SGA_v0._1
         public FrmEntradas(int idProducto)
         {
             InitializeComponent();
+            md = new ManejadorDiseño();
+            md.EstiloPanelTexto(pRegistro, lblNombre, ColorTranslator.FromHtml("#8CBFAF"));
+            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            md.AgregarBordeFormulario(this);
+            md.EstilizarTextBox(TxtCantidad);
+            md.EstilizarTextBox(TxtCosto);
+            md.EstilizarTextBox(TxtProducto);
+            md.EstilosBoton(BtnAgregar);
+            md.EstilosBoton(BtnCancelar);
+            md.EstilosBoton(BtnConfirmar);
+            md.EstilosBoton(BtnGuardar);
             CargarProveedores();
             idProductoActual = idProducto;
             ConfigurarDataGridView();
