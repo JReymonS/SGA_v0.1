@@ -225,7 +225,7 @@ namespace Manejadores
         {
             int borde = 1;
             Panel contenedor = new Panel();
-            contenedor.BackColor = ColorTranslator.FromHtml("#B0B0B0");
+            contenedor.BackColor = ColorTranslator.FromHtml("#343D45");
             contenedor.Size = new Size(cmb.Width + (borde * 2), cmb.Height + (borde * 2));
             contenedor.Location = cmb.Location;
 
