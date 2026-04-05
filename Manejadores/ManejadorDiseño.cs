@@ -12,8 +12,8 @@ namespace Manejadores
             int radio = 25;
             boton.FlatAppearance.BorderSize = 0;
             boton.FlatStyle = FlatStyle.Flat;
-            boton.BackColor = ColorTranslator.FromHtml("#545454");
-            boton.ForeColor = ColorTranslator.FromHtml("#EDE7D5");
+            boton.BackColor = ColorTranslator.FromHtml("#A8C8E9");
+            boton.ForeColor = ColorTranslator.FromHtml("#003B5C");
             GraphicsPath gp = new GraphicsPath();
             gp.StartFigure();
             gp.AddArc(new Rectangle(0, 0, radio, radio), 180, 90);
@@ -40,7 +40,7 @@ namespace Manejadores
         public void EstiloPanelTexto(Panel panel, Label etiqueta, Color color)
         {
             panel.BackColor = color;
-            etiqueta.ForeColor = ColorTranslator.FromHtml("#EDE7D5");
+            etiqueta.ForeColor = ColorTranslator.FromHtml("#E0E0E0");
             //etiqueta.Location = new Point(5, 9);
             etiqueta.Font = new Font("Suravaram", 30, FontStyle.Bold);
         }
@@ -54,12 +54,12 @@ namespace Manejadores
 
             Panel contenedor = new Panel();
 
-            contenedor.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            contenedor.BackColor = ColorTranslator.FromHtml("#E0E0E0");
             contenedor.Size = new Size(txt.Width + 40, txt.Height + 18);
             contenedor.Location = txt.Location;
 
             txt.BorderStyle = BorderStyle.None;
-            txt.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            txt.BackColor = ColorTranslator.FromHtml("#E0E0E0");
             txt.Location = new Point(12, 12); // centrado perfecto
             txt.Width = contenedor.Width - 24;
 
@@ -81,7 +81,7 @@ namespace Manejadores
                     gp.CloseFigure();
 
                     e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                    using (Pen p = new Pen(ColorTranslator.FromHtml("#545454"), 1))
+                    using (Pen p = new Pen(ColorTranslator.FromHtml("#B0B0B0"), 1))
                     {
                         e.Graphics.DrawPath(p, gp);
                     }
@@ -147,9 +147,9 @@ namespace Manejadores
         {
             var colorFondo = ColorTranslator.FromHtml("#D9D9D9");
             var colorSeleccion = ColorTranslator.FromHtml("#B0B0B0");
-            var colorGrid = ColorTranslator.FromHtml("#545454");
-            var colorBoton = ColorTranslator.FromHtml("#545454");
-            var colorTextoBoton = ColorTranslator.FromHtml("#EDE7D5");
+            var colorGrid = ColorTranslator.FromHtml("#343D45");
+            var colorBoton = ColorTranslator.FromHtml("#343D45");
+            var colorTextoBoton = ColorTranslator.FromHtml("#FFFFFF");
 
             tabla.AllowUserToResizeColumns = false;
             tabla.AllowUserToResizeRows = false;
@@ -225,12 +225,12 @@ namespace Manejadores
         {
             int borde = 1;
             Panel contenedor = new Panel();
-            contenedor.BackColor = ColorTranslator.FromHtml("#545454");
+            contenedor.BackColor = ColorTranslator.FromHtml("#343D45");
             contenedor.Size = new Size(cmb.Width + (borde * 2), cmb.Height + (borde * 2));
             contenedor.Location = cmb.Location;
 
             cmb.FlatStyle = FlatStyle.Flat;
-            cmb.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            cmb.BackColor = ColorTranslator.FromHtml("#E0E0E0");
             cmb.ForeColor = Color.Black;
             cmb.Location = new Point(borde, borde);
 
@@ -245,16 +245,16 @@ namespace Manejadores
         {
             int borde = 1;
             Panel contenedor = new Panel();
-            contenedor.BackColor = ColorTranslator.FromHtml("#545454");
+            contenedor.BackColor = ColorTranslator.FromHtml("#B0B0B0");
             contenedor.Size = new Size(dtp.Width + (borde * 2), dtp.Height + (borde * 2));
             contenedor.Location = dtp.Location;
 
 
-            dtp.CalendarMonthBackground = ColorTranslator.FromHtml("#EDE7D5");
-            dtp.CalendarTitleBackColor = ColorTranslator.FromHtml("#EDE7D5");
+            dtp.CalendarMonthBackground = ColorTranslator.FromHtml("#E0E0E0");
+            dtp.CalendarTitleBackColor = ColorTranslator.FromHtml("#E0E0E0");
             dtp.CalendarTitleForeColor = Color.Black;
             dtp.CalendarForeColor = Color.Black;
-            dtp.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            dtp.BackColor = ColorTranslator.FromHtml("#E0E0E0");
             dtp.ForeColor = Color.Black;
             dtp.Location = new Point(borde, borde);
             dtp.Parent.Controls.Add(contenedor);

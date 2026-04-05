@@ -338,9 +338,6 @@
     <None Include="Resources\Agregar 2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Agregar 3.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Usuario.png" />
   </ItemGroup>
   <ItemGroup>
@@ -351,6 +348,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icono2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Agregar 3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -31,8 +31,8 @@ namespace SGA_v0._1
             CargarProveedores();
             ConfigurarDataGridView();
             md = new ManejadorDiseño();
-            md.EstiloPanelTexto(pRegistro, lblNombre, ColorTranslator.FromHtml("#8CBFAF"));
-            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            md.EstiloPanelTexto(pRegistro, lblNombre, ColorTranslator.FromHtml("#FF6A13"));
+            this.BackColor = ColorTranslator.FromHtml("#E0E0E0");
             md.AgregarBordeFormulario(this);
             md.EstilizarComboBox(CbProveedor);
             md.EstilizarTextBox(TxtCantidad);
@@ -60,8 +60,8 @@ namespace SGA_v0._1
         {
             InitializeComponent();
             md = new ManejadorDiseño();
-            md.EstiloPanelTexto(pRegistro, lblNombre, ColorTranslator.FromHtml("#8CBFAF"));
-            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            md.EstiloPanelTexto(pRegistro, lblNombre, ColorTranslator.FromHtml("#FF6A13"));
+            this.BackColor = ColorTranslator.FromHtml("#E0E0E0");
             md.AgregarBordeFormulario(this);
             md.EstilizarTextBox(TxtCantidad);
             md.EstilizarTextBox(TxtCosto);
@@ -87,8 +87,8 @@ namespace SGA_v0._1
         private void ConfigurarDataGridView()
         {
 
-            var color = ColorTranslator.FromHtml("#545454");
-            var color2 = ColorTranslator.FromHtml("#EDE7D5");
+            var color = ColorTranslator.FromHtml("#343D45");
+            var color2 = ColorTranslator.FromHtml("#FFFFFF");
             // Configurar columnas iniciales
             DtgListaR.Columns.Clear();
             DtgListaR.Columns.Add("id_producto", "ID");
@@ -482,56 +482,56 @@ namespace SGA_v0._1
         //EVENTO PARA DISEÑO DE FOMULARIO
         private void BtnMostrar_MouseLeave(object sender, EventArgs e)
         {
-            BtnMostrar.BackColor = ColorTranslator.FromHtml("#545454");
+            BtnMostrar.BackColor = ColorTranslator.FromHtml("#A8C8E9");
             md.QuitarBordesBotones(BtnMostrar);
         }
 
         private void BtnMostrar_MouseEnter(object sender, EventArgs e)
         {
-            BtnMostrar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+            BtnMostrar.BackColor = ColorTranslator.FromHtml("#97B3D1");
         }
 
         private void BtnAgregar_MouseEnter(object sender, EventArgs e)
         {
-            BtnAgregar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+            BtnAgregar.BackColor = ColorTranslator.FromHtml("#97B3D1");
         }
 
         private void BtnAgregar_MouseLeave(object sender, EventArgs e)
         {
-            BtnAgregar.BackColor = ColorTranslator.FromHtml("#545454");
+            BtnAgregar.BackColor = ColorTranslator.FromHtml("#A8C8E9");
             md.QuitarBordesBotones(BtnAgregar);
         }
 
         private void BtnConfirmar_MouseEnter(object sender, EventArgs e)
         {
-            BtnConfirmar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+            BtnConfirmar.BackColor = ColorTranslator.FromHtml("#97B3D1");
         }
 
         private void BtnConfirmar_MouseLeave(object sender, EventArgs e)
         {
-            BtnConfirmar.BackColor = ColorTranslator.FromHtml("#545454");
+            BtnConfirmar.BackColor = ColorTranslator.FromHtml("#A8C8E9");
             md.QuitarBordesBotones(BtnConfirmar);
         }
 
         private void BtnGuardar_MouseEnter(object sender, EventArgs e)
         {
-            BtnGuardar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+            BtnGuardar.BackColor = ColorTranslator.FromHtml("#97B3D1");
         }
 
         private void BtnGuardar_MouseLeave(object sender, EventArgs e)
         {
-            BtnGuardar.BackColor = ColorTranslator.FromHtml("#545454");
+            BtnGuardar.BackColor = ColorTranslator.FromHtml("#A8C8E9");
             md.QuitarBordesBotones(BtnGuardar);
         }
 
         private void BtnCancelar_MouseEnter(object sender, EventArgs e)
         {
-            BtnCancelar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+            BtnCancelar.BackColor = ColorTranslator.FromHtml("#97B3D1");
         }
 
         private void BtnCancelar_MouseLeave(object sender, EventArgs e)
         {
-            BtnCancelar.BackColor = ColorTranslator.FromHtml("#545454");
+            BtnCancelar.BackColor = ColorTranslator.FromHtml("#A8C8E9");
             md.QuitarBordesBotones(BtnCancelar);
         }
         // FIN DE EVENTOS PARA DISEÑO DE FORMULARIO
