@@ -276,8 +276,8 @@ namespace Manejadores
         // METODO PARA COLOREAR SELECCIONES EN EL TOOLSTRIP
         public void Boton(object senderBoton, ToolStrip tsMenu, ToolStripButton tsBoton) 
         {
-            Color colorSeleccion = ColorTranslator.FromHtml("#8CBFAF");
-            Color colorOriginal = ColorTranslator.FromHtml("#B7CC18");
+            Color colorSeleccion = ColorTranslator.FromHtml("#6381A1");
+            Color colorOriginal = ColorTranslator.FromHtml("#003B5C");
 
             foreach(ToolStripItem item in tsMenu.Items) 
             {

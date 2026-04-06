@@ -30,8 +30,8 @@ namespace SGA_v0._1
             ListaPermisos = new List<Permisos>();
             ListaPermisosEliminados = new List<Permisos>();
             mr.LLenarModulos(cmbModulo);
-            md.EstiloPanelTexto(pNombre, lblNombre, ColorTranslator.FromHtml("#8CBFAF"));
-            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            md.EstiloPanelTexto(pNombre, lblNombre, ColorTranslator.FromHtml("#FF6A13"));
+            this.BackColor = ColorTranslator.FromHtml("#E0E0E0");
             md.AgregarBordeFormulario(this);
             md.EstilizarComboBox(cmbModulo);
             md.EstilizarComboBox(cmbIdentificador);
@@ -191,23 +191,23 @@ namespace SGA_v0._1
         // EVENTOS PARA DISEÑO DE FORMULARIO
         private void btnGuardar_MouseEnter(object sender, EventArgs e)
         {
-            btnGuardar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+            btnGuardar.BackColor = ColorTranslator.FromHtml("#97B3D1");
         }
 
         private void btnGuardar_MouseLeave(object sender, EventArgs e)
         {
-            btnGuardar.BackColor = ColorTranslator.FromHtml("#545454");
+            btnGuardar.BackColor = ColorTranslator.FromHtml("#A8C8E9");
             md.QuitarBordesBotones(btnGuardar);
         }
 
         private void btnCancelar_MouseEnter(object sender, EventArgs e)
         {
-            btnCancelar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+            btnCancelar.BackColor = ColorTranslator.FromHtml("#97B3D1");
         }
 
         private void btnCancelar_MouseLeave(object sender, EventArgs e)
         {
-            btnCancelar.BackColor = ColorTranslator.FromHtml("#545454");
+            btnCancelar.BackColor = ColorTranslator.FromHtml("#A8C8E9");
             md.QuitarBordesBotones(btnCancelar);
         }
 
@@ -218,22 +218,22 @@ namespace SGA_v0._1
 
         private void btnAgregarPermiso_MouseEnter(object sender, EventArgs e)
         {
-            btnAgregarPermiso.BackColor = ColorTranslator.FromHtml("#8CBFAF");
+            btnAgregarPermiso.BackColor = ColorTranslator.FromHtml("#A8C8E9");
         }
 
         private void btnAgregarPermiso_MouseLeave(object sender, EventArgs e)
         {
-            btnAgregarPermiso.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            btnAgregarPermiso.BackColor = ColorTranslator.FromHtml("#E0E0E0");
         }
 
         private void btnEliminarPermiso_MouseEnter(object sender, EventArgs e)
         {
-            btnEliminarPermiso.BackColor = ColorTranslator.FromHtml("#8CBFAF");
+            btnEliminarPermiso.BackColor = ColorTranslator.FromHtml("#A8C8E9");
         }
 
         private void btnEliminarPermiso_MouseLeave(object sender, EventArgs e)
         {
-            btnEliminarPermiso.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            btnEliminarPermiso.BackColor = ColorTranslator.FromHtml("#E0E0E0");
         }
         // FIN EVENTOS PARA DISEÑO DE FORMULARIO
     }

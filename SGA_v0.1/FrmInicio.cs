@@ -21,15 +21,15 @@ namespace SGA_v0._1
             this.IsMdiContainer = true;
             foreach (Control ctrl in this.Controls)
             {
-                ctrl.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+                ctrl.BackColor = ColorTranslator.FromHtml("#E0E0E0");
             }
             md = new ManejadorDiseño();
             _usuarioActivo = user;
             _rolPermisosActivo = rolPermisosActivo;
-            tsPrincipal.BackColor = ColorTranslator.FromHtml("#B7CC18");
-            tsPrincipal.ForeColor = ColorTranslator.FromHtml("#B7CC18");
-            pSuperior.BackColor = ColorTranslator.FromHtml("#B7CC18");
-            LblUsuarioActivo.ForeColor = ColorTranslator.FromHtml("#545454");
+            tsPrincipal.BackColor = ColorTranslator.FromHtml("#003B5C");
+            tsPrincipal.ForeColor = ColorTranslator.FromHtml("#003B5C");
+            pSuperior.BackColor = ColorTranslator.FromHtml("#003B5C");
+            LblUsuarioActivo.ForeColor = ColorTranslator.FromHtml("#E0E0E0");
             md.QuitarBordesBotones(btnCerrar);
             md.QuitarBordesBotones(btnOcultarVentana);
         }
@@ -203,22 +203,22 @@ namespace SGA_v0._1
         // EVENTOS PARA DISEÑO DE INTERFAZ
         private void btnCerrar_MouseEnter(object sender, EventArgs e)
         {
-            btnCerrar.BackColor = ColorTranslator.FromHtml("#8CBFAF");
+            btnCerrar.BackColor = ColorTranslator.FromHtml("#A8C8E9");
         }
 
         private void btnCerrar_MouseLeave(object sender, EventArgs e)
         {
-            btnCerrar.BackColor = ColorTranslator.FromHtml("#B7CC18");
+            btnCerrar.BackColor = ColorTranslator.FromHtml("#003B5C");
         }
 
         private void btnOcultarVentana_MouseLeave(object sender, EventArgs e)
         {
-            btnOcultarVentana.BackColor = ColorTranslator.FromHtml("#B7CC18");
+            btnOcultarVentana.BackColor = ColorTranslator.FromHtml("#003B5C");
         }
 
         private void btnOcultarVentana_MouseEnter(object sender, EventArgs e)
         {
-            btnOcultarVentana.BackColor = ColorTranslator.FromHtml("#8CBFAF");
+            btnOcultarVentana.BackColor = ColorTranslator.FromHtml("#A8C8E9");
         }
 
         private void btnOcultarVentana_Click(object sender, EventArgs e)

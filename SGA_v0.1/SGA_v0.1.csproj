@@ -247,6 +247,37 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{cfa13fac-c127-4c37-b3fc-ed2112430c8b}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Manejadores\Manejadores.csproj">
+      <Project>{0e546127-f838-4274-8ac1-fcef65f37d49}</Project>
+      <Name>Manejadores</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Agregar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Agregar 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InicioBV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Agregar 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\Alerta.png" />
   </ItemGroup>
   <ItemGroup>
@@ -254,9 +285,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Categoria.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Cerrar.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Configuracion.png" />
@@ -274,9 +302,6 @@
     <None Include="Resources\Inicio.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Max.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Menu.png" />
   </ItemGroup>
   <ItemGroup>
@@ -287,9 +312,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Notificacion.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Perfil.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Producto.png" />
@@ -322,35 +344,52 @@
     <None Include="Resources\Usuarios.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Entidades\Entidades.csproj">
-      <Project>{cfa13fac-c127-4c37-b3fc-ed2112430c8b}</Project>
-      <Name>Entidades</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Manejadores\Manejadores.csproj">
-      <Project>{0e546127-f838-4274-8ac1-fcef65f37d49}</Project>
-      <Name>Manejadores</Name>
-    </ProjectReference>
+    <None Include="Resources\Perfil.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Agregar.png" />
+    <None Include="Resources\Cerrar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Agregar 2.png" />
+    <None Include="Resources\Max.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Usuario.png" />
+    <None Include="Resources\Salir2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\InicioBV.png" />
+    <None Include="Resources\Usuarios2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icono.ico" />
+    <None Include="Resources\Rol_Permisos2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icono2.ico" />
+    <None Include="Resources\Reporte2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Agregar 3.png" />
+    <None Include="Resources\Registro_Salida2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Registro_Entrada2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Producto2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notificacion2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Categoria2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Proveedores2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inicio2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inicio21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
