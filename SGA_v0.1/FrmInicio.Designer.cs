@@ -83,7 +83,7 @@
             this.tsbInicio.AutoSize = false;
             this.tsbInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tsbInicio.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbInicio.Image = global::SGA_v0._1.Properties.Resources.Inicio;
+            this.tsbInicio.Image = global::SGA_v0._1.Properties.Resources.Inicio21;
             this.tsbInicio.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbInicio.Name = "tsbInicio";
             this.tsbInicio.Size = new System.Drawing.Size(85, 60);
@@ -95,7 +95,7 @@
             this.tsbProveedores.AutoSize = false;
             this.tsbProveedores.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tsbProveedores.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbProveedores.Image = global::SGA_v0._1.Properties.Resources.Proveedores;
+            this.tsbProveedores.Image = global::SGA_v0._1.Properties.Resources.Proveedores2;
             this.tsbProveedores.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbProveedores.Name = "tsbProveedores";
             this.tsbProveedores.Size = new System.Drawing.Size(85, 60);
@@ -107,7 +107,7 @@
             this.tsbCategorias.AutoSize = false;
             this.tsbCategorias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tsbCategorias.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbCategorias.Image = global::SGA_v0._1.Properties.Resources.Categoria;
+            this.tsbCategorias.Image = global::SGA_v0._1.Properties.Resources.Categoria2;
             this.tsbCategorias.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbCategorias.Name = "tsbCategorias";
             this.tsbCategorias.Size = new System.Drawing.Size(85, 60);
@@ -118,7 +118,7 @@
             // 
             this.tsbNotificaciones.AutoSize = false;
             this.tsbNotificaciones.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbNotificaciones.Image = global::SGA_v0._1.Properties.Resources.Notificacion;
+            this.tsbNotificaciones.Image = global::SGA_v0._1.Properties.Resources.Notificacion2;
             this.tsbNotificaciones.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbNotificaciones.Name = "tsbNotificaciones";
             this.tsbNotificaciones.Size = new System.Drawing.Size(85, 60);
@@ -129,7 +129,7 @@
             // 
             this.tsbProductos.AutoSize = false;
             this.tsbProductos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbProductos.Image = global::SGA_v0._1.Properties.Resources.Producto;
+            this.tsbProductos.Image = global::SGA_v0._1.Properties.Resources.Producto2;
             this.tsbProductos.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbProductos.Name = "tsbProductos";
             this.tsbProductos.Size = new System.Drawing.Size(85, 60);
@@ -140,7 +140,7 @@
             // 
             this.tsbEntradas.AutoSize = false;
             this.tsbEntradas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEntradas.Image = global::SGA_v0._1.Properties.Resources.Registro_Entrada;
+            this.tsbEntradas.Image = global::SGA_v0._1.Properties.Resources.Registro_Entrada2;
             this.tsbEntradas.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEntradas.Name = "tsbEntradas";
             this.tsbEntradas.Size = new System.Drawing.Size(85, 60);
@@ -151,7 +151,7 @@
             // 
             this.tsbSalidas.AutoSize = false;
             this.tsbSalidas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbSalidas.Image = global::SGA_v0._1.Properties.Resources.Registro_Salida;
+            this.tsbSalidas.Image = global::SGA_v0._1.Properties.Resources.Registro_Salida2;
             this.tsbSalidas.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbSalidas.Name = "tsbSalidas";
             this.tsbSalidas.Size = new System.Drawing.Size(85, 60);
@@ -162,7 +162,7 @@
             // 
             this.tsbReportes.AutoSize = false;
             this.tsbReportes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbReportes.Image = global::SGA_v0._1.Properties.Resources.Reporte;
+            this.tsbReportes.Image = global::SGA_v0._1.Properties.Resources.Reporte2;
             this.tsbReportes.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbReportes.Name = "tsbReportes";
             this.tsbReportes.Size = new System.Drawing.Size(85, 60);
@@ -173,7 +173,7 @@
             // 
             this.tsbRolesPermisos.AutoSize = false;
             this.tsbRolesPermisos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbRolesPermisos.Image = global::SGA_v0._1.Properties.Resources.Rol_Permisos;
+            this.tsbRolesPermisos.Image = global::SGA_v0._1.Properties.Resources.Rol_Permisos2;
             this.tsbRolesPermisos.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbRolesPermisos.Name = "tsbRolesPermisos";
             this.tsbRolesPermisos.Size = new System.Drawing.Size(85, 60);
@@ -184,7 +184,7 @@
             // 
             this.tsbUsuarios.AutoSize = false;
             this.tsbUsuarios.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbUsuarios.Image = global::SGA_v0._1.Properties.Resources.Usuarios;
+            this.tsbUsuarios.Image = global::SGA_v0._1.Properties.Resources.Usuarios2;
             this.tsbUsuarios.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbUsuarios.Name = "tsbUsuarios";
             this.tsbUsuarios.Size = new System.Drawing.Size(85, 60);
@@ -195,7 +195,7 @@
             // 
             this.tsbCerrarSesion.AutoSize = false;
             this.tsbCerrarSesion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbCerrarSesion.Image = global::SGA_v0._1.Properties.Resources.Salir;
+            this.tsbCerrarSesion.Image = global::SGA_v0._1.Properties.Resources.Salir2;
             this.tsbCerrarSesion.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbCerrarSesion.Name = "tsbCerrarSesion";
             this.tsbCerrarSesion.Size = new System.Drawing.Size(85, 60);
@@ -230,12 +230,12 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::SGA_v0._1.Properties.Resources.icono;
+            this.pictureBox1.BackgroundImage = global::SGA_v0._1.Properties.Resources.logo2;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(116, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(106, 98);
+            this.pictureBox1.Size = new System.Drawing.Size(272, 112);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
