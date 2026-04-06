@@ -253,12 +253,6 @@
     <None Include="Resources\Almacen.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Categoria.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Cerrar.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Configuracion.png" />
   </ItemGroup>
   <ItemGroup>
@@ -271,12 +265,6 @@
     <None Include="Resources\Eliminar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Inicio.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Max.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Menu.png" />
   </ItemGroup>
   <ItemGroup>
@@ -286,40 +274,10 @@
     <None Include="Resources\No_Mostrar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Notificacion.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Perfil.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Producto.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Proveedores.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Recargar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Registro_Entrada.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Registro_Salida.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Reloj.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Reporte.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Rol_Permisos.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Salir.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Usuarios.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
@@ -338,9 +296,6 @@
     <None Include="Resources\Agregar 2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Usuario.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\InicioBV.png" />
   </ItemGroup>
   <ItemGroup>
@@ -351,6 +306,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Agregar 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Max.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rol_Permisos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reporte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Registro_Salida.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Registro_Entrada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Producto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notificacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Categoria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Proveedores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inicio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Perfil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
