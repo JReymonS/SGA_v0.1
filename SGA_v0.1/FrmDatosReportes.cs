@@ -22,8 +22,8 @@ namespace SGA_v0._1
             InitializeComponent();
             mr = new ManejadorReportes();
             md = new ManejadorDiseño();
-            md.EstiloPanelTexto(pNombre, lblNombre, ColorTranslator.FromHtml("#8CBFAF"));
-            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            md.EstiloPanelTexto(pNombre, lblNombre, ColorTranslator.FromHtml("#FF6A13"));
+            this.BackColor = ColorTranslator.FromHtml("#E0E0E0");
             md.AgregarBordeFormulario(this);
             md.EstilizarComboBox(cmbTipoAccion);
             mr.LlenarTiposReportes(cmbTipoAccion);

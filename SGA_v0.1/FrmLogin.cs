@@ -19,14 +19,14 @@ namespace SGA_v0._1
             InitializeComponent();
             ml = new ManejadorLogin();
             md = new ManejadorDiseño();
-            md.EstiloPanelTexto(pLogin, lblLogin, ColorTranslator.FromHtml("#B7CC18"));
+            md.EstiloPanelTexto(pLogin, lblLogin, ColorTranslator.FromHtml("#FF6A13"));
             md.EstilosBoton(btnIngresar);
             md.EstilizarTextBoxLogin(txtContrasena);
             md.EstilizarTextBoxLogin(txtUsuario);
             md.QuitarBordesBotones(btnMostrar);
             md.QuitarBordesBotones(btnVer);
             md.QuitarBordesBotones(btnCerrar);
-            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            this.BackColor = ColorTranslator.FromHtml("#E0E0E0");
         }
 
 

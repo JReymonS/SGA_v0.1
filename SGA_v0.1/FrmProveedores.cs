@@ -23,8 +23,8 @@ namespace SGA_v0._1
             mp = new ManejadorProveedores();
             md = new ManejadorDiseño();
             InitializeComponent();
-            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
-            md.EstiloPanelTexto(pProveedores, lblNombre, ColorTranslator.FromHtml("#8CBFAF"));
+            this.BackColor = ColorTranslator.FromHtml("#E0E0E0");
+            md.EstiloPanelTexto(pProveedores, lblNombre, ColorTranslator.FromHtml("#FF6A13"));
             md.AgregarBordeFormulario(this);
             md.EstilizarTextBox(txtBuscar);
             md.EstilosBoton(btnAgregar);

@@ -33,12 +33,12 @@ namespace SGA_v0._1
             }
 
             md.AgregarBordeFormulario(this);
-            md.EstiloPanelTexto(pCategorias, lblCategorias, ColorTranslator.FromHtml("#8CBFAF"));
+            md.EstiloPanelTexto(pCategorias, lblCategorias, ColorTranslator.FromHtml("#FF6A13"));
             md.EstilosBoton(BtnCancelar);
             md.EstilosBoton(BtnGuardar);
             md.EstilizarTextBox(TxtNombre);
             md.EstilizarComboBox(CmbStatus);
-            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            this.BackColor = ColorTranslator.FromHtml("#E0E0E0");
         }
 
 
