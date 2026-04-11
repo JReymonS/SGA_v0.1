@@ -171,7 +171,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_774A25BD6A054058B1CCA6DBFE0348E0"
+        "MsmKey" = "8:_75E176363FEE47F4A5420D4BB974D1E2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -746,12 +746,12 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_774A25BD6A054058B1CCA6DBFE0348E0"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_75E176363FEE47F4A5420D4BB974D1E2"
             {
-            "SourcePath" = "8:..\\..\\RESOURCES\\Logo e Icono (Instalador & Develop)\\iconito.ico"
-            "TargetName" = "8:iconito.ico"
+            "SourcePath" = "8:..\\..\\RESOURCES\\Logo e Icono (Instalador & Develop)\\icono2.ico"
+            "TargetName" = "8:icono2.ico"
             "Tag" = "8:"
-            "Folder" = "8:_8364EEA985CC436394A6611A5535ED6D"
+            "Folder" = "8:_736E2890274D49619BD631F45F90176B"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -1326,7 +1326,7 @@
             "Target" = "8:_0EB044A2ABB548B899ACF539AB1BCA11"
             "Folder" = "8:_55A00412D05848ABA25439169CD59B04"
             "WorkingFolder" = "8:_8364EEA985CC436394A6611A5535ED6D"
-            "Icon" = "8:_774A25BD6A054058B1CCA6DBFE0348E0"
+            "Icon" = "8:_75E176363FEE47F4A5420D4BB974D1E2"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_572D33064EFF4205A00A99A91FA87590"
@@ -1340,7 +1340,7 @@
             "Target" = "8:_0EB044A2ABB548B899ACF539AB1BCA11"
             "Folder" = "8:_D0F3AC38AFE4496F90B57B830A7A85AE"
             "WorkingFolder" = "8:_8364EEA985CC436394A6611A5535ED6D"
-            "Icon" = "8:_774A25BD6A054058B1CCA6DBFE0348E0"
+            "Icon" = "8:_75E176363FEE47F4A5420D4BB974D1E2"
             "Feature" = "8:"
             }
         }
