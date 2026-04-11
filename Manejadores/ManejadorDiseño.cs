@@ -102,12 +102,12 @@ namespace Manejadores
 
             Panel contenedor = new Panel();
 
-            contenedor.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            contenedor.BackColor = ColorTranslator.FromHtml("#E0E0E0");
             contenedor.Size = new Size(txt.Width + 40, txt.Height + 20);
             contenedor.Location = txt.Location;
 
             txt.BorderStyle = BorderStyle.None;
-            txt.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            txt.BackColor = ColorTranslator.FromHtml("#E0E0E0");
             txt.Location = new Point(12, 8); // centrado perfecto
             txt.Width = contenedor.Width - 24;
 
@@ -129,7 +129,7 @@ namespace Manejadores
                     gp.CloseFigure();
 
                     e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                    using (Pen p = new Pen(ColorTranslator.FromHtml("#B7CC18"), 1))
+                    using (Pen p = new Pen(ColorTranslator.FromHtml("#B0B0B0"), 1))
                     {
                         e.Graphics.DrawPath(p, gp);
                     }

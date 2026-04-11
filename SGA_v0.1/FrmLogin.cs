@@ -19,14 +19,14 @@ namespace SGA_v0._1
             InitializeComponent();
             ml = new ManejadorLogin();
             md = new ManejadorDiseño();
-            md.EstiloPanelTexto(pLogin, lblLogin, ColorTranslator.FromHtml("#B7CC18"));
+            md.EstiloPanelTexto(pLogin, lblLogin, ColorTranslator.FromHtml("#FF6A13"));
             md.EstilosBoton(btnIngresar);
             md.EstilizarTextBoxLogin(txtContrasena);
             md.EstilizarTextBoxLogin(txtUsuario);
             md.QuitarBordesBotones(btnMostrar);
             md.QuitarBordesBotones(btnVer);
             md.QuitarBordesBotones(btnCerrar);
-            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            this.BackColor = ColorTranslator.FromHtml("#E0E0E0");
         }
 
 
@@ -92,12 +92,12 @@ namespace SGA_v0._1
         //EVENTOS PARA DISEÑO DE FOMULARIO
         private void btnIngresar_MouseEnter(object sender, EventArgs e)
         {
-            btnIngresar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+            btnIngresar.BackColor = ColorTranslator.FromHtml("#97B3D1");
         }
 
         private void btnIngresar_MouseLeave(object sender, EventArgs e)
         {
-            btnIngresar.BackColor = ColorTranslator.FromHtml("#545454");
+            btnIngresar.BackColor = ColorTranslator.FromHtml("#A8C8E9");
             md.QuitarBordesBotones(btnIngresar);
         }
 
@@ -123,7 +123,7 @@ namespace SGA_v0._1
 
         private void btnCerrar_MouseEnter(object sender, EventArgs e)
         {
-            btnCerrar.BackColor = ColorTranslator.FromHtml("#8CBFAF");
+            btnCerrar.BackColor = ColorTranslator.FromHtml("#97B3D1");
         }
 
         private void btnCerrar_MouseLeave(object sender, EventArgs e)

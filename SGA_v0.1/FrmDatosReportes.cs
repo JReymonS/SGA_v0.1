@@ -22,8 +22,8 @@ namespace SGA_v0._1
             InitializeComponent();
             mr = new ManejadorReportes();
             md = new ManejadorDiseño();
-            md.EstiloPanelTexto(pNombre, lblNombre, ColorTranslator.FromHtml("#8CBFAF"));
-            this.BackColor = ColorTranslator.FromHtml("#EDE7D5");
+            md.EstiloPanelTexto(pNombre, lblNombre, ColorTranslator.FromHtml("#FF6A13"));
+            this.BackColor = ColorTranslator.FromHtml("#E0E0E0");
             md.AgregarBordeFormulario(this);
             md.EstilizarComboBox(cmbTipoAccion);
             mr.LlenarTiposReportes(cmbTipoAccion);
@@ -229,35 +229,35 @@ namespace SGA_v0._1
         //EVENTO PARA DISEÑO DE FORMULARIO
         private void btnGenerar_MouseLeave(object sender, EventArgs e)
         {
-            btnGenerar.BackColor = ColorTranslator.FromHtml("#545454");
+            btnGenerar.BackColor = ColorTranslator.FromHtml("#A8C8E9");
             md.QuitarBordesBotones(btnGenerar);
         }
 
         private void btnGenerar_MouseEnter(object sender, EventArgs e)
         {
-            btnGenerar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+            btnGenerar.BackColor = ColorTranslator.FromHtml("#97B3D1");
         }
 
         private void btnCancelar_MouseEnter(object sender, EventArgs e)
         {
-            btnCancelar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+            btnCancelar.BackColor = ColorTranslator.FromHtml("#97B3D1");
         }
 
         private void btnCancelar_MouseLeave(object sender, EventArgs e)
         {
-            btnCancelar.BackColor = ColorTranslator.FromHtml("#545454");
+            btnCancelar.BackColor = ColorTranslator.FromHtml("#A8C8E9");
             md.QuitarBordesBotones(btnCancelar);
         }
 
         private void btnSeleccionarReporte_MouseLeave(object sender, EventArgs e)
         {
-            btnSeleccionarReporte.BackColor = ColorTranslator.FromHtml("#545454");
+            btnSeleccionarReporte.BackColor = ColorTranslator.FromHtml("#A8C8E9");
             md.QuitarBordesBotones(btnSeleccionarReporte);
         }
 
         private void btnSeleccionarReporte_MouseEnter(object sender, EventArgs e)
         {
-            btnSeleccionarReporte.BackColor = ColorTranslator.FromHtml("#7B8A84");
+            btnSeleccionarReporte.BackColor = ColorTranslator.FromHtml("#97B3D1");
         }
 
         private void FrmDatosReportes_Load(object sender, EventArgs e)
