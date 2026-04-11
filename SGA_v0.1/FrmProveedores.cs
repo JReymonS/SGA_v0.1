@@ -71,24 +71,24 @@ namespace SGA_v0._1
         private void btnBuscar_MouseEnter(object sender, EventArgs e)
         {
 
-            btnBuscar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+            btnBuscar.BackColor = ColorTranslator.FromHtml("#97B3D1");
         }
 
         private void btnBuscar_MouseLeave(object sender, EventArgs e)
         {
-            btnBuscar.BackColor = ColorTranslator.FromHtml("#545454");
+            btnBuscar.BackColor = ColorTranslator.FromHtml("#A8C8E9");
             md.QuitarBordesBotones(btnBuscar);
         }
 
         private void btnAgregar_MouseLeave(object sender, EventArgs e)
         {
-            btnAgregar.BackColor = ColorTranslator.FromHtml("#545454");
+            btnAgregar.BackColor = ColorTranslator.FromHtml("#A8C8E9");
             md.QuitarBordesBotones(btnAgregar);
         }
 
         private void btnAgregar_MouseEnter(object sender, EventArgs e)
         {
-            btnAgregar.BackColor = ColorTranslator.FromHtml("#7B8A84");
+            btnAgregar.BackColor = ColorTranslator.FromHtml("#97B3D1");
         }
         //FIN DE EVENTOS PARA DISEÑO DE FORMULARIO
 
