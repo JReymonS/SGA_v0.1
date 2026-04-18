@@ -128,7 +128,7 @@ namespace SGA_v0._1
 
         private void btnCerrar_MouseLeave(object sender, EventArgs e)
         {
-            btnCerrar.BackColor = ColorTranslator.FromHtml("#B7CC18");   
+            btnCerrar.BackColor = ColorTranslator.FromHtml("#FF6A13");   
         }
         //FIN EVENTOS DISEÑO FORMULARIO
     }
