@@ -25,19 +25,9 @@ namespace SGA_v0._1
         {
             var resultado = manejador.ObtenerProductosBajoStock();
 
-            LbProducto.Text = resultado.lista;
+           RTxtAlertas.Text = resultado.lista;
 
-            // Si hay más de 5 productos, aumentar el tamaño del form
-            if (resultado.cantidad > 5)
-            {
-                // Por cada producto adicional, agrandar un poco
-                int extra = (resultado.cantidad - 5) * 17;
-
-                this.Height += extra;
-
-                // mover el botón OK hacia abajo
-                BtnOk.Top += extra;
-            }
+            
         }
 
 

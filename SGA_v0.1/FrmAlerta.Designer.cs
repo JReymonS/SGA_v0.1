@@ -32,9 +32,9 @@
             this.BtnOk = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.LbProducto = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.RTxtAlertas = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -45,10 +45,10 @@
             this.BtnOk.FlatAppearance.BorderSize = 0;
             this.BtnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnOk.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnOk.Location = new System.Drawing.Point(432, 152);
-            this.BtnOk.Margin = new System.Windows.Forms.Padding(2);
+            this.BtnOk.Location = new System.Drawing.Point(593, 350);
+            this.BtnOk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnOk.Name = "BtnOk";
-            this.BtnOk.Size = new System.Drawing.Size(144, 55);
+            this.BtnOk.Size = new System.Drawing.Size(192, 68);
             this.BtnOk.TabIndex = 1;
             this.BtnOk.Text = "Aceptar";
             this.BtnOk.UseVisualStyleBackColor = false;
@@ -59,10 +59,10 @@
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 16);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(24, 20);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(52, 51);
+            this.pictureBox1.Size = new System.Drawing.Size(69, 63);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -72,59 +72,61 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label1.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 102);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(19, 126);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 24);
+            this.label1.Size = new System.Drawing.Size(224, 29);
             this.label1.TabIndex = 3;
             this.label1.Text = "Stock de producto bajo:";
-            // 
-            // LbProducto
-            // 
-            this.LbProducto.AutoSize = true;
-            this.LbProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.LbProducto.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbProducto.Location = new System.Drawing.Point(200, 103);
-            this.LbProducto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.LbProducto.Name = "LbProducto";
-            this.LbProducto.Size = new System.Drawing.Size(55, 24);
-            this.LbProducto.TabIndex = 4;
-            this.LbProducto.Text = "label2";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.Controls.Add(this.RTxtAlertas);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.LbProducto);
             this.panel1.Controls.Add(this.BtnOk);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(22, 22);
+            this.panel1.Location = new System.Drawing.Point(29, 27);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(603, 222);
+            this.panel1.Size = new System.Drawing.Size(804, 438);
             this.panel1.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Livvic", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
-            this.label2.Location = new System.Drawing.Point(75, 13);
+            this.label2.Location = new System.Drawing.Point(100, 16);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(500, 69);
+            this.label2.Size = new System.Drawing.Size(667, 85);
             this.label2.TabIndex = 6;
             this.label2.Text = "Alerta de Stock";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // RTxtAlertas
+            // 
+            this.RTxtAlertas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.RTxtAlertas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RTxtAlertas.Font = new System.Drawing.Font("Livvic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RTxtAlertas.Location = new System.Drawing.Point(288, 133);
+            this.RTxtAlertas.Name = "RTxtAlertas";
+            this.RTxtAlertas.ReadOnly = true;
+            this.RTxtAlertas.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.RTxtAlertas.Size = new System.Drawing.Size(479, 203);
+            this.RTxtAlertas.TabIndex = 7;
+            this.RTxtAlertas.Text = "";
+            // 
             // FrmAlerta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(19)))));
-            this.ClientSize = new System.Drawing.Size(648, 268);
+            this.ClientSize = new System.Drawing.Size(864, 495);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmAlerta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NOTIFICACIONES";
@@ -140,8 +142,8 @@
         private System.Windows.Forms.Button BtnOk;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label LbProducto;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RichTextBox RTxtAlertas;
     }
 }
